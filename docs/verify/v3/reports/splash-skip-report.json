@@ -1,0 +1,649 @@
+{
+  "mode": "skip",
+  "outDir": "E:\\dshdesign\\dsh-startup-moss2\\_work\\splash\\v03\\skip",
+  "url": "http://127.0.0.1:57123/?token=U9f3Z9HtEdcRuKmfe8YyiX5Nu_MbZlHJt_KFAEw1tdg",
+  "width": 1536,
+  "height": 960,
+  "emulateMedia": "",
+  "injectCfg": null,
+  "shots": [
+    {
+      "afterMs": 111,
+      "t": 10.128199999988079,
+      "progress": 0.88,
+      "pct": 88
+    },
+    {
+      "afterMs": 227,
+      "t": 10.2295,
+      "progress": 0.9,
+      "pct": 90
+    },
+    {
+      "afterMs": 337,
+      "t": 10.35429999998212,
+      "progress": 0.91,
+      "pct": 91
+    },
+    {
+      "afterMs": 452,
+      "t": 10.44469999998808,
+      "progress": 0.93,
+      "pct": 93
+    },
+    {
+      "afterMs": 566,
+      "t": 10.58409999999404,
+      "progress": 0.94,
+      "pct": 94
+    },
+    {
+      "afterMs": 675,
+      "t": 10.66679999998212,
+      "progress": 0.96,
+      "pct": 96
+    },
+    {
+      "afterMs": 785,
+      "t": 10.798599999994039,
+      "progress": 0.97,
+      "pct": 97
+    },
+    {
+      "afterMs": 900,
+      "t": 10.91679999998212,
+      "progress": 0.99,
+      "pct": 99
+    },
+    {
+      "afterMs": 1020,
+      "t": 11.02259999999404,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 1827,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 1939,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2048,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2153,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2275,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2392,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2503,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2612,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2718,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2830,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2934,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 3040,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 3143,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 3282,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 3386,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    }
+  ],
+  "samples": [],
+  "checks": [],
+  "exceptions": [],
+  "consoles": [],
+  "final": {
+    "state": "done",
+    "phase": "handoff",
+    "elapsed": 11.8,
+    "lastT": 11.798899999976157,
+    "reduced": false,
+    "dataPhase": null,
+    "rootConnected": false,
+    "api": {
+      "state": "done",
+      "progress": 1,
+      "reduced": false,
+      "duration": 11.8
+    },
+    "prog": {
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100,
+      "trackWidth": 1441,
+      "fill": 1,
+      "spark": 1441,
+      "complete": true
+    },
+    "lock": {
+      "phase": "search",
+      "reticle": {
+        "x": 0,
+        "y": 0
+      },
+      "eye": {
+        "x": 0,
+        "y": 0
+      },
+      "locked": false,
+      "lockedAt": 7.42,
+      "t": 0
+    },
+    "audio": {
+      "ok": true,
+      "ctxState": "closed",
+      "started": false,
+      "nodes": 0,
+      "masterGain": 0,
+      "events": 0,
+      "error": ""
+    },
+    "buildAudioFn": true,
+    "stage": null,
+    "pct": null,
+    "fill": null,
+    "spark": null,
+    "trackWidth": null,
+    "bottom": null,
+    "videoMoss": null,
+    "tgt": {
+      "layer": null,
+      "reticle": null,
+      "ringO": null,
+      "dot": null,
+      "lockLabel": null,
+      "dist": null,
+      "dataState": null,
+      "dataRead": null,
+      "grid": null,
+      "scan": null,
+      "corners": [],
+      "ghosts": [],
+      "shock": [],
+      "gaze": null
+    },
+    "finishReason": "skip",
+    "rootPresent": false,
+    "armed": true,
+    "armedTime": 0.6193,
+    "armError": null,
+    "handoff": {
+      "ok": true,
+      "requested": 0.6192999999999991,
+      "applied": 0.619299,
+      "duration": 30,
+      "pending": false,
+      "at": 1793984333579,
+      "videoState": {
+        "paused": false,
+        "currentTime": 0.619299,
+        "readyState": 1
+      }
+    },
+    "ambient": {
+      "paused": false,
+      "ct": 3.6,
+      "dur": 30
+    }
+  },
+  "before": {
+    "label": "before-skip",
+    "state": "playing",
+    "phase": "neuro",
+    "elapsed": 2.244800000011921,
+    "lastT": 2.225600000023842,
+    "reduced": false,
+    "dataPhase": "neuro",
+    "rootConnected": true,
+    "api": {
+      "state": "playing",
+      "progress": 0.18861016949354592,
+      "reduced": false,
+      "duration": 11.8
+    },
+    "prog": {
+      "t": 2.225600000023842,
+      "progress": 0.17,
+      "pct": 17,
+      "trackWidth": 1441,
+      "fill": 0.17,
+      "spark": 244.97000000000003,
+      "complete": false
+    },
+    "lock": {
+      "phase": "search",
+      "reticle": {
+        "x": 0,
+        "y": 0
+      },
+      "eye": {
+        "x": 0,
+        "y": 0
+      },
+      "locked": false,
+      "lockedAt": 7.42,
+      "t": 0
+    },
+    "audio": {
+      "ok": true,
+      "ctxState": "running",
+      "started": true,
+      "nodes": 268,
+      "masterGain": 0.45,
+      "events": 106,
+      "error": ""
+    },
+    "buildAudioFn": true,
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "w": 1536,
+      "h": 960
+    },
+    "pct": {
+      "dataComplete": null,
+      "num": "17",
+      "cap": "INITIALIZING",
+      "opacity": "0",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "cx": 0,
+        "cy": 0
+      }
+    },
+    "fill": {
+      "transform": "none",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "cx": 0,
+        "cy": 0
+      }
+    },
+    "spark": {
+      "transform": "none",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "cx": 0,
+        "cy": 0
+      }
+    },
+    "trackWidth": 0,
+    "bottom": {
+      "opacity": "0",
+      "display": "none",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "cx": 0,
+        "cy": 0
+      }
+    },
+    "videoMoss": {
+      "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+      "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+      "currentTime": 0,
+      "playbackRate": 1,
+      "paused": true,
+      "styleFilter": "",
+      "styleTransform": "",
+      "styleOpacity": "",
+      "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+      "computedTransform": "none",
+      "videoWidth": 1280,
+      "videoHeight": 720,
+      "className": "ms-video"
+    },
+    "tgt": {
+      "layer": {
+        "phase": null,
+        "opacity": "1"
+      },
+      "reticle": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "cx": 0,
+          "cy": 0
+        },
+        "opacity": "0",
+        "transform": "none"
+      },
+      "ringO": {
+        "opacity": "1",
+        "transform": "none"
+      },
+      "dot": "1",
+      "lockLabel": {
+        "text": "LOCKED · 550W",
+        "opacity": "0"
+      },
+      "dist": null,
+      "dataState": "TARGET SEARCH",
+      "dataRead": null,
+      "grid": "0",
+      "scan": {
+        "top": "",
+        "opacity": "0"
+      },
+      "corners": [
+        {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        },
+        {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        },
+        {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        },
+        {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      ],
+      "ghosts": [
+        "0",
+        "0",
+        "0"
+      ],
+      "shock": [
+        {
+          "opacity": "0",
+          "transform": "none",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        },
+        {
+          "opacity": "0",
+          "transform": "none",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      ],
+      "gaze": {
+        "opacity": "0",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "cx": 0,
+          "cy": 0
+        }
+      }
+    },
+    "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\splash\\v03\\skip\\skip-before-skip.png"
+  },
+  "skipTimeline": [
+    {
+      "afterMs": 111,
+      "t": 10.128199999988079,
+      "progress": 0.88,
+      "pct": 88
+    },
+    {
+      "afterMs": 227,
+      "t": 10.2295,
+      "progress": 0.9,
+      "pct": 90
+    },
+    {
+      "afterMs": 337,
+      "t": 10.35429999998212,
+      "progress": 0.91,
+      "pct": 91
+    },
+    {
+      "afterMs": 452,
+      "t": 10.44469999998808,
+      "progress": 0.93,
+      "pct": 93
+    },
+    {
+      "afterMs": 566,
+      "t": 10.58409999999404,
+      "progress": 0.94,
+      "pct": 94
+    },
+    {
+      "afterMs": 675,
+      "t": 10.66679999998212,
+      "progress": 0.96,
+      "pct": 96
+    },
+    {
+      "afterMs": 785,
+      "t": 10.798599999994039,
+      "progress": 0.97,
+      "pct": 97
+    },
+    {
+      "afterMs": 900,
+      "t": 10.91679999998212,
+      "progress": 0.99,
+      "pct": 99
+    },
+    {
+      "afterMs": 1020,
+      "t": 11.02259999999404,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 1827,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 1939,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2048,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2153,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2275,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2392,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2503,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2612,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2718,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2830,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 2934,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 3040,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 3143,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 3282,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    },
+    {
+      "afterMs": 3386,
+      "t": 11.798899999976157,
+      "progress": 1,
+      "pct": 100
+    }
+  ],
+  "summary": {
+    "checks": 0,
+    "failed": 0,
+    "shots": 24,
+    "samples": 0,
+    "exceptions": 0
+  }
+}

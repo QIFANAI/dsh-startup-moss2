@@ -1,0 +1,227 @@
+{
+  "at": "2026-11-06T17:29:12.078Z",
+  "host": "http://127.0.0.1:64819",
+  "steps": [
+    {
+      "step": "first-load-v02-state",
+      "snap": {
+        "splashRoot": false,
+        "localStorageMoss": {
+          "dsh-startup-moss2:day": "2026-11-06",
+          "dsh-startup-moss2:rev": "v0.3-r1"
+        }
+      }
+    },
+    {
+      "step": "upgrade-reload-early",
+      "snap": {
+        "docH": 1020,
+        "y": 0,
+        "innerH": 1020,
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--immersive dsh-moss-motion-hint moss-lock",
+        "splashRoot": true,
+        "splashState": "playing",
+        "upgradeReplay": true,
+        "api": true,
+        "replayFn": "function",
+        "progress": {
+          "t": 0.03419999998807907,
+          "pct": 0,
+          "complete": false
+        },
+        "lock": {
+          "phase": "search",
+          "locked": false
+        },
+        "menus": [],
+        "localStorageMoss": {
+          "dsh-startup-moss2:day": "2026-11-06",
+          "dsh-startup-moss2:rev": "v0.3-r1"
+        },
+        "eyeAnim": {
+          "name": "moss-eye-ring-breath, moss-eye-ring-signal",
+          "dur": "3.2s, 7.5s"
+        },
+        "cornerAnim": {
+          "name": "moss-corner-breath",
+          "dur": "10.8s"
+        },
+        "composer": true
+      }
+    },
+    {
+      "step": "upgrade-reload-mid",
+      "snap": {
+        "docH": 1020,
+        "y": 0,
+        "innerH": 1020,
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--immersive dsh-moss-motion-hint moss-lock",
+        "splashRoot": true,
+        "splashState": "playing",
+        "upgradeReplay": true,
+        "api": true,
+        "replayFn": "function",
+        "progress": {
+          "t": 6.445199999988079,
+          "pct": 56,
+          "complete": false
+        },
+        "lock": {
+          "phase": "converge",
+          "locked": false
+        },
+        "menus": [],
+        "localStorageMoss": {
+          "dsh-startup-moss2:day": "2026-11-06",
+          "dsh-startup-moss2:rev": "v0.3-r1"
+        },
+        "eyeAnim": {
+          "name": "moss-eye-ring-breath, moss-eye-ring-signal",
+          "dur": "3.2s, 7.5s"
+        },
+        "cornerAnim": {
+          "name": "moss-corner-breath",
+          "dur": "10.8s"
+        },
+        "composer": true
+      }
+    },
+    {
+      "step": "upgrade-reload-done",
+      "snap": {
+        "docH": 1020,
+        "y": 0,
+        "innerH": 1020,
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--immersive dsh-moss-motion-hint",
+        "splashRoot": false,
+        "splashState": "done",
+        "upgradeReplay": true,
+        "api": true,
+        "replayFn": "function",
+        "progress": {
+          "t": 11.799399999976158,
+          "pct": 100,
+          "complete": true
+        },
+        "lock": {
+          "phase": "maintain",
+          "locked": true
+        },
+        "menus": [],
+        "localStorageMoss": {
+          "dsh-startup-moss2:day": "2026-11-06",
+          "dsh-startup-moss2:rev": "v0.3-r1"
+        },
+        "eyeAnim": {
+          "name": "moss-eye-ring-breath, moss-eye-ring-signal",
+          "dur": "3.2s, 7.5s"
+        },
+        "cornerAnim": {
+          "name": "moss-corner-breath",
+          "dur": "10.8s"
+        },
+        "composer": true
+      }
+    },
+    {
+      "step": "menu",
+      "text": "完全权限",
+      "found": false
+    },
+    {
+      "step": "third-load",
+      "snap": {
+        "splashRoot": false,
+        "upgradeReplay": false,
+        "localStorageMoss": {
+          "dsh-startup-moss2:day": "2026-11-06",
+          "dsh-startup-moss2:rev": "v0.3-r1"
+        }
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "name": "upgrade-replay-triggered",
+      "pass": true,
+      "detail": {
+        "splashRoot": true,
+        "state": "playing",
+        "upgradeReplay": true
+      }
+    },
+    {
+      "name": "upgrade-rev-written",
+      "pass": true,
+      "detail": {
+        "dsh-startup-moss2:day": "2026-11-06",
+        "dsh-startup-moss2:rev": "v0.3-r1"
+      }
+    },
+    {
+      "name": "live-menu-fixed-工作区内修改",
+      "pass": true,
+      "detail": {
+        "text": "工作区内修改",
+        "menu": {
+          "pos": "fixed",
+          "rect": {
+            "x": 669,
+            "y": 433,
+            "w": 144,
+            "h": 144
+          }
+        },
+        "docH": 1020,
+        "baseDocH": 1020
+      }
+    },
+    {
+      "name": "live-menu-fixed-标准模式",
+      "pass": true,
+      "detail": {
+        "text": "标准模式",
+        "menu": {
+          "pos": "fixed",
+          "rect": {
+            "x": 796,
+            "y": 500,
+            "w": 324,
+            "h": 272
+          }
+        },
+        "docH": 1020,
+        "baseDocH": 1020
+      }
+    },
+    {
+      "name": "live-eye-breathing",
+      "pass": true,
+      "detail": {
+        "name": "moss-eye-ring-breath, moss-eye-ring-signal",
+        "dur": "3.2s, 7.5s"
+      }
+    },
+    {
+      "name": "live-corner-breathing",
+      "pass": true,
+      "detail": {
+        "name": "moss-corner-breath",
+        "dur": "10.8s"
+      }
+    },
+    {
+      "name": "no-replay-after-rev-written",
+      "pass": true,
+      "detail": {
+        "splashRoot": false,
+        "upgradeReplay": false
+      }
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "pass": 7,
+    "fail": 0
+  }
+}

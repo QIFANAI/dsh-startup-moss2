@@ -1,0 +1,86 @@
+{
+  "host": "http://127.0.0.1:57123",
+  "rev": "v0.3-r1",
+  "rows": [
+    {
+      "label": "session#1 首次加载（应播放）",
+      "sawSplash": true,
+      "store": {
+        "rev": null,
+        "shown": "1",
+        "day": null
+      }
+    },
+    {
+      "label": "session#2 刷新（应跳过：shown=1 + rev 相同）",
+      "sawSplash": false,
+      "store": {
+        "rev": "v0.3-r1",
+        "shown": "1",
+        "day": null
+      }
+    },
+    {
+      "label": "session#3 rev=旧值（升级后刷新，应重播）",
+      "sawSplash": true,
+      "store": {
+        "rev": "v0.3-r1",
+        "shown": "1",
+        "day": null
+      }
+    },
+    {
+      "label": "session#4 再刷新（rev 已写回，应跳过）",
+      "sawSplash": false,
+      "store": {
+        "rev": "v0.3-r1",
+        "shown": "1",
+        "day": null
+      }
+    },
+    {
+      "label": "daily#1 当天已播+rev 相同（应跳过）",
+      "sawSplash": false,
+      "store": {
+        "rev": "v0.3-r1",
+        "shown": "1",
+        "day": "2026-11-06"
+      }
+    },
+    {
+      "label": "daily#2 当天已播但 rev=旧值（升级后当天应再播）",
+      "sawSplash": true,
+      "store": {
+        "rev": "v0.3-r1",
+        "shown": "1",
+        "day": "2026-11-06"
+      }
+    },
+    {
+      "label": "daily#3 同一天再刷新（rev 已写回，应跳过）",
+      "sawSplash": false,
+      "store": {
+        "rev": "v0.3-r1",
+        "shown": "1",
+        "day": "2026-11-06"
+      }
+    },
+    {
+      "label": "restore config",
+      "config": {
+        "enabled": true,
+        "mode": "always",
+        "skin": "glass",
+        "quality": "standard",
+        "veil": 58,
+        "blur": 16,
+        "hud": "normal",
+        "sound": true,
+        "volume": 50,
+        "allowSkip": true,
+        "reducedMotion": false
+      }
+    }
+  ],
+  "exceptions": []
+}

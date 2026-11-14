@@ -1,0 +1,2019 @@
+{
+  "generatedAt": "2026-11-06T11:57:47.302Z",
+  "host": "http://127.0.0.1:57123",
+  "scenarios": [
+    {
+      "scenario": "normal",
+      "summary": {
+        "total": 30,
+        "pass": 30,
+        "fail": 0,
+        "conclusion": "PASS"
+      },
+      "finishRel": 12216,
+      "assertions": [
+        {
+          "id": "exceptions",
+          "name": "真宿主无未捕获异常（Runtime.exceptionThrown=0）",
+          "pass": true,
+          "detail": {
+            "count": 0,
+            "texts": []
+          }
+        },
+        {
+          "id": "brand-slot",
+          "name": "sidebar.brand.mark 品牌位冲突已消失",
+          "pass": true,
+          "detail": {
+            "count": 0
+          }
+        },
+        {
+          "id": "boot",
+          "name": "#dsh-moss-root 首屏出现（<1.5s）",
+          "pass": true,
+          "detail": {
+            "rootSeen": 202
+          }
+        },
+        {
+          "id": "lock",
+          "name": "启动中 html.moss-lock 锁定滚动",
+          "pass": true,
+          "detail": {
+            "at": 202
+          }
+        },
+        {
+          "id": "zindex",
+          "name": "启动层 z-index=2147483000",
+          "pass": true,
+          "detail": {
+            "values": [
+              "2147483000"
+            ]
+          }
+        },
+        {
+          "id": "dom-contract",
+          "name": "DOM 契约：.ms-stage + 分割层节点存在",
+          "pass": true,
+          "detail": {
+            "stage": true,
+            "split": true
+          }
+        },
+        {
+          "id": "act1-window",
+          "name": "幕 I 神经接口（0.50–3.90s）可见",
+          "pass": true,
+          "detail": {
+            "act1": {
+              "first": 202,
+              "last": 4243,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "act2-window",
+          "name": "幕 II MOSS（3.90–8.10s）可见",
+          "pass": true,
+          "detail": {
+            "act2": {
+              "first": 4243,
+              "last": 10306,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "act3-window",
+          "name": "幕 III/IV 地球（8.10s 起）可见",
+          "pass": true,
+          "detail": {
+            "act3": {
+              "first": 8466,
+              "last": 11529,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "split-dom",
+          "name": ".ms-split 分割层（moss/earth/seam）节点出现",
+          "pass": true,
+          "detail": {
+            "parts": [
+              "moss",
+              "earth",
+              "seam"
+            ]
+          }
+        },
+        {
+          "id": "api",
+          "name": "window.__DSH_MOSS2_API__ 暴露 armHandoff()",
+          "pass": true,
+          "detail": {
+            "apiKeys": [
+              "skip",
+              "finish",
+              "replay",
+              "freeze",
+              "dispose",
+              "state",
+              "progress",
+              "reduced",
+              "duration",
+              "version",
+              "facts",
+              "config",
+              "phase",
+              "phases",
+              "media",
+              "skipAvailable",
+              "apply",
+              "preview",
+              "refresh",
+              "armHandoff",
+              "handoffState"
+            ]
+          }
+        },
+        {
+          "id": "api-state",
+          "name": "API.state() 最终为 done",
+          "pass": true,
+          "detail": {
+            "at": 12216,
+            "states": [
+              "null",
+              "playing",
+              "handoff",
+              "done"
+            ]
+          }
+        },
+        {
+          "id": "lock-release",
+          "name": "交接后 moss-lock 解除",
+          "pass": true,
+          "detail": null
+        },
+        {
+          "id": "veil-default",
+          "name": "默认 veil=58 / blur=16px 已应用",
+          "pass": true,
+          "detail": {
+            "cssVars": {
+              "veil": "58",
+              "blur": "16px"
+            },
+            "cfg": {
+              "enabled": true,
+              "mode": "session",
+              "skin": "glass",
+              "quality": "standard",
+              "veil": 58,
+              "blur": 16,
+              "hud": "normal",
+              "version": "0.2.0"
+            }
+          }
+        },
+        {
+          "id": "no-static-class",
+          "name": "未因系统 reduced-motion 加 --static 类（运动策略根因）",
+          "pass": true,
+          "detail": {
+            "hintClasses": [
+              "dsh-moss-skin--handoff"
+            ]
+          }
+        },
+        {
+          "id": "duration",
+          "name": "启动动画 ≈11.80s 完成交接",
+          "pass": true,
+          "detail": {
+            "measuredDuration": 12014,
+            "finishRel": 12216,
+            "rootSeen": 202,
+            "tolerance": "11.4–12.6s"
+          }
+        },
+        {
+          "id": "video-neuro",
+          "name": "幕 I neuro 视频在播放（paused=false、currentTime 递增）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "advances": 28,
+            "maxCt": 2.79,
+            "unpaused": 29,
+            "samples": 118
+          }
+        },
+        {
+          "id": "video-moss",
+          "name": "幕 II moss 视频在播放（paused=false、currentTime 递增）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "advances": 163,
+            "maxCt": 5,
+            "unpaused": 127,
+            "samples": 354
+          }
+        },
+        {
+          "id": "video-earth",
+          "name": "幕 III/IV earth 视频在播放（paused=false、currentTime 递增）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "advances": 42,
+            "maxCt": 3.68,
+            "unpaused": 43,
+            "samples": 118
+          }
+        },
+        {
+          "id": "ambient-play",
+          "name": "交接后 ambient 地球视频在播放（paused=false、currentTime 递增）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "advances": 11,
+            "maxCt": 4.65,
+            "unpaused": 12,
+            "samples": 12
+          }
+        },
+        {
+          "id": "ambient-src",
+          "name": "ambient 加载的是 earth 视频（非海报占位）",
+          "pass": true,
+          "detail": {
+            "srcs": [
+              "http://127.0.0.1:57123/dsh-moss2/asset/earth/earth-720.mp4?v=0.2.0"
+            ]
+          }
+        },
+        {
+          "id": "handoff-published",
+          "name": "client 发布 handoff 状态（__DSH_MOSS2_HANDOFF__.ok，页面内采样器）",
+          "pass": true,
+          "detail": {
+            "source": "in-page sampler",
+            "samplerCount": 305,
+            "handoff": {
+              "ok": true,
+              "pending": false,
+              "at": 1793966016958,
+              "applied": 2.4943,
+              "requested": 2.4943000000000026
+            }
+          }
+        },
+        {
+          "id": "handoff-geometry",
+          "name": "交接后 1.5s 内启动层地球与 ambient 同裁切/同缩放（rect≤2px、transform 相同）",
+          "pass": true,
+          "detail": {
+            "source": "in-page sampler",
+            "handoffAt": 1793966016958,
+            "windowSamples": 27,
+            "checked": 22,
+            "reason": null,
+            "first": [
+              {
+                "wall": 1793966017089,
+                "splashT": 10.73,
+                "ok": true,
+                "rectClose": true,
+                "tfClose": true,
+                "ctDiff": 0.115,
+                "earth": {
+                  "ct": 2.626,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                },
+                "ambient": {
+                  "ct": 2.511,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                }
+              },
+              {
+                "wall": 1793966017137,
+                "splashT": 10.779,
+                "ok": true,
+                "rectClose": true,
+                "tfClose": true,
+                "ctDiff": 0.114,
+                "earth": {
+                  "ct": 2.674,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                },
+                "ambient": {
+                  "ct": 2.56,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                }
+              }
+            ],
+            "bad": []
+          }
+        },
+        {
+          "id": "handoff-class",
+          "name": "交接瞬间 html 挂 dsh-moss-skin--handoff（镜头漂移锁回基准帧）",
+          "pass": true,
+          "detail": {
+            "source": "in-page sampler",
+            "handoffAt": 1793966016958
+          }
+        },
+        {
+          "id": "handoff-frame-sync",
+          "name": "交接后连续三帧（splash t=10.6/11.0/11.4，±0.15s）currentTime 差 ≤0.3s 且 rect/transform 一致",
+          "pass": true,
+          "detail": {
+            "source": "in-page sampler（handoff 后用墙钟估算时间线）",
+            "checks": [
+              {
+                "target": 10.6,
+                "ok": true,
+                "estT": 10.626,
+                "splashT": 10.626,
+                "wall": 1793966016985,
+                "rectClose": true,
+                "tfClose": true,
+                "ctDiff": 0.028,
+                "earth": {
+                  "ct": 2.522,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                },
+                "ambient": {
+                  "ct": 2.494,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                }
+              },
+              {
+                "target": 11,
+                "ok": true,
+                "estT": 10.98,
+                "splashT": 10.98,
+                "wall": 1793966017339,
+                "rectClose": true,
+                "tfClose": true,
+                "ctDiff": 0.115,
+                "earth": {
+                  "ct": 2.876,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                },
+                "ambient": {
+                  "ct": 2.761,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                }
+              },
+              {
+                "target": 11.4,
+                "ok": true,
+                "estT": 11.375,
+                "splashT": 11.38,
+                "wall": 1793966017734,
+                "rectClose": true,
+                "tfClose": true,
+                "ctDiff": 0.114,
+                "earth": {
+                  "ct": 3.271,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                },
+                "ambient": {
+                  "ct": 3.157,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                }
+              }
+            ],
+            "splashTRange": [
+              0.168,
+              11.8
+            ]
+          }
+        },
+        {
+          "id": "bg-motion-canvas",
+          "name": "ambient 视频两帧像素差 > 0（canvas 采样）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "paused": false,
+            "ct0": 7.527,
+            "ct1": 7.892,
+            "dt": 0.365,
+            "changed": 356,
+            "ratio": 0.0687,
+            "meanAbs": 1.78
+          }
+        },
+        {
+          "id": "bg-motion-shot",
+          "name": "交接后间隔 2s 两帧截图像素差 > 0（真截图）",
+          "pass": true,
+          "detail": {
+            "ratio": 0.14325535726023794,
+            "changed": 69739,
+            "pixels": 486816,
+            "meanAbs": 4.209687642970677,
+            "files": [
+              "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify2\\shots\\normal\\normal-motion-a.png",
+              "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify2\\shots\\normal\\normal-motion-b.png"
+            ]
+          }
+        },
+        {
+          "id": "handoff-no-jump",
+          "name": "交接后背景连续（两帧均差 < 20，无突变/黑场）",
+          "pass": true,
+          "detail": {
+            "meanAbs": 4.209687642970677,
+            "ratio": 0.14325535726023794,
+            "frames": [
+              "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify2\\shots\\normal\\normal-motion-a.png",
+              "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify2\\shots\\normal\\normal-motion-b.png"
+            ],
+            "splashEarthRect11_2": {
+              "x": -92.2,
+              "y": -57.6,
+              "w": 1720.3,
+              "h": 1075.2
+            },
+            "uiAmbientRect12_5": {
+              "x": -92.2,
+              "y": -57.6,
+              "w": 1720.4,
+              "h": 1075.2
+            }
+          }
+        },
+        {
+          "id": "media",
+          "name": "媒体条件 = prefers-reduced-motion:no-preference",
+          "pass": true,
+          "detail": {
+            "mql": false
+          }
+        },
+        {
+          "id": "quality-720",
+          "name": "默认 standard 档加载 720 资产",
+          "pass": true,
+          "detail": {
+            "mp4": [
+              "http://127.0.0.1:57123/dsh-moss2/asset/earth/earth-720.mp4?v=0.2.0",
+              "http://127.0.0.1:57123/dsh-moss2/asset/neuro/neuro-boot-720.mp4?v=0.2.0",
+              "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "system-reduce",
+      "summary": {
+        "total": 34,
+        "pass": 34,
+        "fail": 0,
+        "conclusion": "PASS"
+      },
+      "finishRel": 12125,
+      "assertions": [
+        {
+          "id": "exceptions",
+          "name": "真宿主无未捕获异常（Runtime.exceptionThrown=0）",
+          "pass": true,
+          "detail": {
+            "count": 0,
+            "texts": []
+          }
+        },
+        {
+          "id": "brand-slot",
+          "name": "sidebar.brand.mark 品牌位冲突已消失",
+          "pass": true,
+          "detail": {
+            "count": 0
+          }
+        },
+        {
+          "id": "boot",
+          "name": "#dsh-moss-root 首屏出现（<1.5s）",
+          "pass": true,
+          "detail": {
+            "rootSeen": 113
+          }
+        },
+        {
+          "id": "lock",
+          "name": "启动中 html.moss-lock 锁定滚动",
+          "pass": true,
+          "detail": {
+            "at": 113
+          }
+        },
+        {
+          "id": "zindex",
+          "name": "启动层 z-index=2147483000",
+          "pass": true,
+          "detail": {
+            "values": [
+              "2147483000"
+            ]
+          }
+        },
+        {
+          "id": "dom-contract",
+          "name": "DOM 契约：.ms-stage + 分割层节点存在",
+          "pass": true,
+          "detail": {
+            "stage": true,
+            "split": true
+          }
+        },
+        {
+          "id": "act1-window",
+          "name": "幕 I 神经接口（0.50–3.90s）可见",
+          "pass": true,
+          "detail": {
+            "act1": {
+              "first": 113,
+              "last": 4184,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "act2-window",
+          "name": "幕 II MOSS（3.90–8.10s）可见",
+          "pass": true,
+          "detail": {
+            "act2": {
+              "first": 4184,
+              "last": 10258,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "act3-window",
+          "name": "幕 III/IV 地球（8.10s 起）可见",
+          "pass": true,
+          "detail": {
+            "act3": {
+              "first": 8426,
+              "last": 11425,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "split-dom",
+          "name": ".ms-split 分割层（moss/earth/seam）节点出现",
+          "pass": true,
+          "detail": {
+            "parts": [
+              "moss",
+              "earth",
+              "seam"
+            ]
+          }
+        },
+        {
+          "id": "api",
+          "name": "window.__DSH_MOSS2_API__ 暴露 armHandoff()",
+          "pass": true,
+          "detail": {
+            "apiKeys": [
+              "skip",
+              "finish",
+              "replay",
+              "freeze",
+              "dispose",
+              "state",
+              "progress",
+              "reduced",
+              "duration",
+              "version",
+              "facts",
+              "config",
+              "phase",
+              "phases",
+              "media",
+              "skipAvailable",
+              "apply",
+              "preview",
+              "refresh",
+              "armHandoff",
+              "handoffState"
+            ]
+          }
+        },
+        {
+          "id": "api-state",
+          "name": "API.state() 最终为 done",
+          "pass": true,
+          "detail": {
+            "at": 12125,
+            "states": [
+              "null",
+              "playing",
+              "handoff",
+              "done"
+            ]
+          }
+        },
+        {
+          "id": "lock-release",
+          "name": "交接后 moss-lock 解除",
+          "pass": true,
+          "detail": null
+        },
+        {
+          "id": "veil-default",
+          "name": "默认 veil=58 / blur=16px 已应用",
+          "pass": true,
+          "detail": {
+            "cssVars": {
+              "veil": "58",
+              "blur": "16px"
+            },
+            "cfg": {
+              "enabled": true,
+              "mode": "session",
+              "skin": "glass",
+              "quality": "standard",
+              "veil": 58,
+              "blur": 16,
+              "hud": "normal",
+              "version": "0.2.0"
+            }
+          }
+        },
+        {
+          "id": "no-static-class",
+          "name": "未因系统 reduced-motion 加 --static 类（运动策略根因）",
+          "pass": true,
+          "detail": {
+            "hintClasses": [
+              "dsh-moss-motion-hint",
+              "dsh-moss-skin--handoff"
+            ]
+          }
+        },
+        {
+          "id": "duration",
+          "name": "启动动画 ≈11.80s 完成交接",
+          "pass": true,
+          "detail": {
+            "measuredDuration": 12012,
+            "finishRel": 12125,
+            "rootSeen": 113,
+            "tolerance": "11.4–12.6s"
+          }
+        },
+        {
+          "id": "video-neuro",
+          "name": "幕 I neuro 视频在播放（paused=false、currentTime 递增）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "advances": 31,
+            "maxCt": 2.98,
+            "unpaused": 33,
+            "samples": 123
+          }
+        },
+        {
+          "id": "video-moss",
+          "name": "幕 II moss 视频在播放（paused=false、currentTime 递增）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "advances": 166,
+            "maxCt": 5,
+            "unpaused": 130,
+            "samples": 369
+          }
+        },
+        {
+          "id": "video-earth",
+          "name": "幕 III/IV earth 视频在播放（paused=false、currentTime 递增）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "advances": 42,
+            "maxCt": 3.66,
+            "unpaused": 42,
+            "samples": 123
+          }
+        },
+        {
+          "id": "ambient-play",
+          "name": "交接后 ambient 地球视频在播放（paused=false、currentTime 递增）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "advances": 12,
+            "maxCt": 4.73,
+            "unpaused": 13,
+            "samples": 13
+          }
+        },
+        {
+          "id": "ambient-src",
+          "name": "ambient 加载的是 earth 视频（非海报占位）",
+          "pass": true,
+          "detail": {
+            "srcs": [
+              "http://127.0.0.1:57123/dsh-moss2/asset/earth/earth-720.mp4?v=0.2.0"
+            ]
+          }
+        },
+        {
+          "id": "handoff-published",
+          "name": "client 发布 handoff 状态（__DSH_MOSS2_HANDOFF__.ok，页面内采样器）",
+          "pass": true,
+          "detail": {
+            "source": "in-page sampler",
+            "samplerCount": 311,
+            "handoff": {
+              "ok": true,
+              "pending": false,
+              "at": 1793966046082,
+              "applied": 2.499,
+              "requested": 2.4990000000000023
+            }
+          }
+        },
+        {
+          "id": "handoff-geometry",
+          "name": "交接后 1.5s 内启动层地球与 ambient 同裁切/同缩放（rect≤2px、transform 相同）",
+          "pass": true,
+          "detail": {
+            "source": "in-page sampler",
+            "handoffAt": 1793966046082,
+            "windowSamples": 27,
+            "checked": 22,
+            "reason": null,
+            "first": [
+              {
+                "wall": 1793966046229,
+                "splashT": 10.748,
+                "ok": true,
+                "rectClose": true,
+                "tfClose": true,
+                "ctDiff": 0.112,
+                "earth": {
+                  "ct": 2.646,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                },
+                "ambient": {
+                  "ct": 2.534,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                }
+              },
+              {
+                "wall": 1793966046284,
+                "splashT": 10.803,
+                "ok": true,
+                "rectClose": true,
+                "tfClose": true,
+                "ctDiff": 0.112,
+                "earth": {
+                  "ct": 2.701,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                },
+                "ambient": {
+                  "ct": 2.589,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                }
+              }
+            ],
+            "bad": []
+          }
+        },
+        {
+          "id": "handoff-class",
+          "name": "交接瞬间 html 挂 dsh-moss-skin--handoff（镜头漂移锁回基准帧）",
+          "pass": true,
+          "detail": {
+            "source": "in-page sampler",
+            "handoffAt": 1793966046082
+          }
+        },
+        {
+          "id": "handoff-frame-sync",
+          "name": "交接后连续三帧（splash t=10.6/11.0/11.4，±0.15s）currentTime 差 ≤0.3s 且 rect/transform 一致",
+          "pass": true,
+          "detail": {
+            "source": "in-page sampler（handoff 后用墙钟估算时间线）",
+            "checks": [
+              {
+                "target": 10.6,
+                "ok": true,
+                "estT": 10.643,
+                "splashT": 10.643,
+                "wall": 1793966046130,
+                "rectClose": true,
+                "tfClose": true,
+                "ctDiff": 0.049,
+                "earth": {
+                  "ct": 2.548,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                },
+                "ambient": {
+                  "ct": 2.499,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                }
+              },
+              {
+                "target": 11,
+                "ok": true,
+                "estT": 10.997,
+                "splashT": 10.997,
+                "wall": 1793966046478,
+                "rectClose": true,
+                "tfClose": true,
+                "ctDiff": 0.111,
+                "earth": {
+                  "ct": 2.895,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                },
+                "ambient": {
+                  "ct": 2.784,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                }
+              },
+              {
+                "target": 11.4,
+                "ok": true,
+                "estT": 11.4,
+                "splashT": 11.4,
+                "wall": 1793966046881,
+                "rectClose": true,
+                "tfClose": true,
+                "ctDiff": 0.111,
+                "earth": {
+                  "ct": 3.298,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                },
+                "ambient": {
+                  "ct": 3.187,
+                  "tf": "matrix(1.12, 0, 0, 1.12, 0, 0)",
+                  "rect": {
+                    "x": -92.16,
+                    "y": -57.6,
+                    "w": 1720.32,
+                    "h": 1075.2
+                  }
+                }
+              }
+            ],
+            "splashTRange": [
+              0.172,
+              11.8
+            ]
+          }
+        },
+        {
+          "id": "bg-motion-canvas",
+          "name": "ambient 视频两帧像素差 > 0（canvas 采样）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "paused": false,
+            "ct0": 7.616,
+            "ct1": 7.959,
+            "dt": 0.343,
+            "changed": 342,
+            "ratio": 0.066,
+            "meanAbs": 1.82
+          }
+        },
+        {
+          "id": "bg-motion-shot",
+          "name": "交接后间隔 2s 两帧截图像素差 > 0（真截图）",
+          "pass": true,
+          "detail": {
+            "ratio": 0.1429143660027608,
+            "changed": 69573,
+            "pixels": 486816,
+            "meanAbs": 4.186133445080609,
+            "files": [
+              "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify2\\shots\\system-reduce\\system-reduce-motion-a.png",
+              "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify2\\shots\\system-reduce\\system-reduce-motion-b.png"
+            ]
+          }
+        },
+        {
+          "id": "handoff-no-jump",
+          "name": "交接后背景连续（两帧均差 < 20，无突变/黑场）",
+          "pass": true,
+          "detail": {
+            "meanAbs": 4.186133445080609,
+            "ratio": 0.1429143660027608,
+            "frames": [
+              "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify2\\shots\\system-reduce\\system-reduce-motion-a.png",
+              "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify2\\shots\\system-reduce\\system-reduce-motion-b.png"
+            ],
+            "splashEarthRect11_2": {
+              "x": -92.2,
+              "y": -57.6,
+              "w": 1720.3,
+              "h": 1075.2
+            },
+            "uiAmbientRect12_5": {
+              "x": -92.2,
+              "y": -57.6,
+              "w": 1720.4,
+              "h": 1075.2
+            }
+          }
+        },
+        {
+          "id": "media",
+          "name": "媒体条件 = prefers-reduced-motion:reduce（模拟系统关闭动画）",
+          "pass": true,
+          "detail": {
+            "mql": true
+          }
+        },
+        {
+          "id": "reduce-full",
+          "name": "系统 reduce 下启动动画仍完整 11.8s（未走降级短版）",
+          "pass": true,
+          "detail": {
+            "measuredDuration": 12012,
+            "finishRel": 12125
+          }
+        },
+        {
+          "id": "reduce-moss-visible",
+          "name": "系统 reduce 下 MOSS 幕可见",
+          "pass": true,
+          "detail": {
+            "act2": {
+              "first": 4184,
+              "last": 10258,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "reduce-earth-visible",
+          "name": "系统 reduce 下地球幕可见",
+          "pass": true,
+          "detail": {
+            "act3": {
+              "first": 8426,
+              "last": 11425,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "reduce-3videos",
+          "name": "系统 reduce 下三支视频仍全部播放",
+          "pass": true,
+          "detail": {
+            "neuro": {
+              "ok": true,
+              "advances": 31,
+              "maxCt": 2.98,
+              "unpaused": 33,
+              "samples": 123
+            },
+            "moss": {
+              "ok": true,
+              "advances": 166,
+              "maxCt": 5,
+              "unpaused": 130,
+              "samples": 369
+            },
+            "earth": {
+              "ok": true,
+              "advances": 42,
+              "maxCt": 3.66,
+              "unpaused": 42,
+              "samples": 123
+            }
+          }
+        },
+        {
+          "id": "quality-720",
+          "name": "默认 standard 档加载 720 资产",
+          "pass": true,
+          "detail": {
+            "mp4": [
+              "http://127.0.0.1:57123/dsh-moss2/asset/earth/earth-720.mp4?v=0.2.0",
+              "http://127.0.0.1:57123/dsh-moss2/asset/neuro/neuro-boot-720.mp4?v=0.2.0",
+              "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "skip",
+      "summary": {
+        "total": 20,
+        "pass": 20,
+        "fail": 0,
+        "conclusion": "PASS"
+      },
+      "finishRel": 6897,
+      "assertions": [
+        {
+          "id": "exceptions",
+          "name": "真宿主无未捕获异常（Runtime.exceptionThrown=0）",
+          "pass": true,
+          "detail": {
+            "count": 0,
+            "texts": []
+          }
+        },
+        {
+          "id": "brand-slot",
+          "name": "sidebar.brand.mark 品牌位冲突已消失",
+          "pass": true,
+          "detail": {
+            "count": 0
+          }
+        },
+        {
+          "id": "boot",
+          "name": "#dsh-moss-root 首屏出现（<1.5s）",
+          "pass": true,
+          "detail": {
+            "rootSeen": 117
+          }
+        },
+        {
+          "id": "lock",
+          "name": "启动中 html.moss-lock 锁定滚动",
+          "pass": true,
+          "detail": {
+            "at": 117
+          }
+        },
+        {
+          "id": "zindex",
+          "name": "启动层 z-index=2147483000",
+          "pass": true,
+          "detail": {
+            "values": [
+              "2147483000"
+            ]
+          }
+        },
+        {
+          "id": "dom-contract",
+          "name": "DOM 契约：.ms-stage + 分割层节点存在",
+          "pass": true,
+          "detail": {
+            "stage": true,
+            "split": true
+          }
+        },
+        {
+          "id": "act1-window",
+          "name": "幕 I 神经接口（0.50–3.90s）可见",
+          "pass": true,
+          "detail": {
+            "act1": {
+              "first": 203,
+              "last": 4210,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "split-dom",
+          "name": ".ms-split 分割层（moss/earth/seam）节点出现",
+          "pass": true,
+          "detail": {
+            "parts": [
+              "moss",
+              "earth",
+              "seam"
+            ]
+          }
+        },
+        {
+          "id": "api",
+          "name": "window.__DSH_MOSS2_API__ 暴露 armHandoff()",
+          "pass": true,
+          "detail": {
+            "apiKeys": [
+              "skip",
+              "finish",
+              "replay",
+              "freeze",
+              "dispose",
+              "state",
+              "progress",
+              "reduced",
+              "duration",
+              "version",
+              "facts",
+              "config",
+              "phase",
+              "phases",
+              "media",
+              "skipAvailable",
+              "apply",
+              "preview",
+              "refresh",
+              "armHandoff",
+              "handoffState"
+            ]
+          }
+        },
+        {
+          "id": "api-state",
+          "name": "API.state() 最终为 done",
+          "pass": true,
+          "detail": {
+            "at": 6897,
+            "states": [
+              "null",
+              "playing",
+              "handoff",
+              "done"
+            ]
+          }
+        },
+        {
+          "id": "lock-release",
+          "name": "交接后 moss-lock 解除",
+          "pass": true,
+          "detail": null
+        },
+        {
+          "id": "veil-default",
+          "name": "默认 veil=58 / blur=16px 已应用",
+          "pass": true,
+          "detail": {
+            "cssVars": {
+              "veil": "58",
+              "blur": "16px"
+            },
+            "cfg": {
+              "enabled": true,
+              "mode": "session",
+              "skin": "glass",
+              "quality": "standard",
+              "veil": 58,
+              "blur": 16,
+              "hud": "normal",
+              "version": "0.2.0"
+            }
+          }
+        },
+        {
+          "id": "skip-earth",
+          "name": "Esc 后 ≤1.2s 进入地球幕",
+          "pass": true,
+          "detail": {
+            "escRel": 5002,
+            "enterEarthMs": 12
+          }
+        },
+        {
+          "id": "skip-handoff",
+          "name": "Esc 后 ≤1.2s 完成交接（armHandoff ok=true）",
+          "pass": true,
+          "detail": {
+            "escRel": 5002,
+            "handoffMs": 666,
+            "handoff": {
+              "ok": true,
+              "at": 1793966069952,
+              "requested": 0.6016000000000012,
+              "applied": 0.6016,
+              "duration": 30,
+              "pending": false,
+              "error": null
+            }
+          }
+        },
+        {
+          "id": "skip-finished",
+          "name": "Esc 后启动层撤除（跳过路径 10.0–11.8，≤2.6s）",
+          "pass": true,
+          "detail": {
+            "escRel": 5002,
+            "finishAfterEsc": 1895
+          }
+        },
+        {
+          "id": "skip-no-moss",
+          "name": "Esc 跳过后不再出现 MOSS 幕",
+          "pass": true,
+          "detail": {
+            "checkedAfter": 5002
+          }
+        },
+        {
+          "id": "skip-earth-play",
+          "name": "Esc 跳过后地球视频在播",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "advances": 97,
+            "maxCt": 8.5,
+            "unpaused": 119,
+            "samples": 119
+          }
+        },
+        {
+          "id": "skip-ambient",
+          "name": "Esc 交接后 ambient 地球视频在播",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "advances": 75,
+            "maxCt": 8.5,
+            "unpaused": 76,
+            "samples": 76
+          }
+        },
+        {
+          "id": "bg-motion-canvas",
+          "name": "ambient 视频两帧像素差 > 0（canvas 采样）",
+          "pass": true,
+          "detail": {
+            "ok": true,
+            "paused": false,
+            "ct0": 11.389,
+            "ct1": 11.732,
+            "dt": 0.344,
+            "changed": 372,
+            "ratio": 0.0718,
+            "meanAbs": 1.85
+          }
+        },
+        {
+          "id": "bg-motion-shot",
+          "name": "交接后间隔 2s 两帧截图像素差 > 0（真截图）",
+          "pass": true,
+          "detail": {
+            "ratio": 0.1262797442976402,
+            "changed": 61475,
+            "pixels": 486816,
+            "meanAbs": 3.5657775122433293,
+            "files": [
+              "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify2\\shots\\skip\\skip-motion-a.png",
+              "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify2\\shots\\skip\\skip-motion-b.png"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "missing-video",
+      "summary": {
+        "total": 23,
+        "pass": 23,
+        "fail": 0,
+        "conclusion": "PASS"
+      },
+      "finishRel": 12161,
+      "assertions": [
+        {
+          "id": "exceptions",
+          "name": "真宿主无未捕获异常（Runtime.exceptionThrown=0）",
+          "pass": true,
+          "detail": {
+            "count": 0,
+            "texts": []
+          }
+        },
+        {
+          "id": "brand-slot",
+          "name": "sidebar.brand.mark 品牌位冲突已消失",
+          "pass": true,
+          "detail": {
+            "count": 0
+          }
+        },
+        {
+          "id": "boot",
+          "name": "#dsh-moss-root 首屏出现（<1.5s）",
+          "pass": true,
+          "detail": {
+            "rootSeen": 118
+          }
+        },
+        {
+          "id": "lock",
+          "name": "启动中 html.moss-lock 锁定滚动",
+          "pass": true,
+          "detail": {
+            "at": 118
+          }
+        },
+        {
+          "id": "zindex",
+          "name": "启动层 z-index=2147483000",
+          "pass": true,
+          "detail": {
+            "values": [
+              "2147483000"
+            ]
+          }
+        },
+        {
+          "id": "dom-contract",
+          "name": "DOM 契约：.ms-stage + 分割层节点存在",
+          "pass": true,
+          "detail": {
+            "stage": true,
+            "split": true
+          }
+        },
+        {
+          "id": "act1-window",
+          "name": "幕 I 神经接口（0.50–3.90s）可见",
+          "pass": true,
+          "detail": {
+            "act1": {
+              "first": 118,
+              "last": 4161,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "act2-window",
+          "name": "幕 II MOSS（3.90–8.10s）可见",
+          "pass": true,
+          "detail": {
+            "act2": {
+              "first": 4245,
+              "last": 10248,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "act3-window",
+          "name": "幕 III/IV 地球（8.10s 起）可见",
+          "pass": true,
+          "detail": {
+            "act3": {
+              "first": 8432,
+              "last": 11474,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "split-dom",
+          "name": ".ms-split 分割层（moss/earth/seam）节点出现",
+          "pass": true,
+          "detail": {
+            "parts": [
+              "moss",
+              "earth",
+              "seam"
+            ]
+          }
+        },
+        {
+          "id": "api",
+          "name": "window.__DSH_MOSS2_API__ 暴露 armHandoff()",
+          "pass": true,
+          "detail": {
+            "apiKeys": [
+              "skip",
+              "finish",
+              "replay",
+              "freeze",
+              "dispose",
+              "state",
+              "progress",
+              "reduced",
+              "duration",
+              "version",
+              "facts",
+              "config",
+              "phase",
+              "phases",
+              "media",
+              "skipAvailable",
+              "apply",
+              "preview",
+              "refresh",
+              "armHandoff",
+              "handoffState"
+            ]
+          }
+        },
+        {
+          "id": "api-state",
+          "name": "API.state() 最终为 done",
+          "pass": true,
+          "detail": {
+            "at": 12161,
+            "states": [
+              "null",
+              "playing",
+              "handoff",
+              "done"
+            ]
+          }
+        },
+        {
+          "id": "lock-release",
+          "name": "交接后 moss-lock 解除",
+          "pass": true,
+          "detail": null
+        },
+        {
+          "id": "veil-default",
+          "name": "默认 veil=58 / blur=16px 已应用",
+          "pass": true,
+          "detail": {
+            "cssVars": {
+              "veil": "58",
+              "blur": "16px"
+            },
+            "cfg": {
+              "enabled": true,
+              "mode": "session",
+              "skin": "glass",
+              "quality": "standard",
+              "veil": 58,
+              "blur": 16,
+              "hud": "normal",
+              "version": "0.2.0"
+            }
+          }
+        },
+        {
+          "id": "static-cause",
+          "name": "--static 仅由视频不可用降级引起（预期行为，非系统 reduce）",
+          "pass": true,
+          "detail": {
+            "staticSeen": true,
+            "videoErr": true,
+            "reduceMatched": false
+          }
+        },
+        {
+          "id": "duration",
+          "name": "启动动画 ≈11.80s 完成交接（资源缺失下 ≤13s）",
+          "pass": true,
+          "detail": {
+            "measuredDuration": 12043,
+            "finishRel": 12161,
+            "rootSeen": 118,
+            "tolerance": "11.4s–13.3s"
+          }
+        },
+        {
+          "id": "missing-sim",
+          "name": "已拦截并 abort 所有 .mp4 请求（模拟资源缺失）",
+          "pass": true,
+          "detail": {
+            "intercepts": 7
+          }
+        },
+        {
+          "id": "missing-duration",
+          "name": "资源 404 下仍在 13s 内完成交接（目标 11.8s）",
+          "pass": true,
+          "detail": {
+            "measuredDuration": 12043,
+            "finishRel": 12161
+          }
+        },
+        {
+          "id": "missing-netfail",
+          "name": "网络层记录到视频加载失败",
+          "pass": true,
+          "detail": {
+            "failCount": 7,
+            "failed": [
+              {
+                "at": 1793966090938,
+                "errorText": "net::ERR_ABORTED",
+                "type": "Media"
+              },
+              {
+                "at": 1793966091698,
+                "errorText": "net::ERR_ABORTED",
+                "type": "Media"
+              },
+              {
+                "at": 1793966091698,
+                "errorText": "net::ERR_ABORTED",
+                "type": "Media"
+              },
+              {
+                "at": 1793966091698,
+                "errorText": "net::ERR_ABORTED",
+                "type": "Media"
+              },
+              {
+                "at": 1793966107295,
+                "errorText": "net::ERR_ABORTED",
+                "type": "Media"
+              }
+            ]
+          }
+        },
+        {
+          "id": "missing-fallback",
+          "name": "视频加载失败被捕获（video.error 非空，未抛异常）",
+          "pass": true,
+          "detail": {
+            "anyVideoErr": true
+          }
+        },
+        {
+          "id": "missing-poster",
+          "name": "海报兜底可见（ma-still 解码成功）",
+          "pass": true,
+          "detail": {
+            "naturalWidth": 1920
+          }
+        },
+        {
+          "id": "missing-ui",
+          "name": "资源缺失后页面可用（交接完成、锁解除）",
+          "pass": true,
+          "detail": {
+            "finishRel": 12161
+          }
+        },
+        {
+          "id": "bg-fallback-static",
+          "name": "无视频时背景以海报静态兜底（video 未播放/无源）",
+          "pass": true,
+          "detail": {
+            "ambientVideo": {
+              "paused": true,
+              "src": ":57123/dsh-moss2/asset/earth/earth-720.mp4?v=0.2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "saver",
+      "summary": {
+        "total": 22,
+        "pass": 22,
+        "fail": 0,
+        "conclusion": "PASS"
+      },
+      "finishRel": 12139,
+      "assertions": [
+        {
+          "id": "exceptions",
+          "name": "真宿主无未捕获异常（Runtime.exceptionThrown=0）",
+          "pass": true,
+          "detail": {
+            "count": 0,
+            "texts": []
+          }
+        },
+        {
+          "id": "brand-slot",
+          "name": "sidebar.brand.mark 品牌位冲突已消失",
+          "pass": true,
+          "detail": {
+            "count": 0
+          }
+        },
+        {
+          "id": "boot",
+          "name": "#dsh-moss-root 首屏出现（<1.5s）",
+          "pass": true,
+          "detail": {
+            "rootSeen": 117
+          }
+        },
+        {
+          "id": "lock",
+          "name": "启动中 html.moss-lock 锁定滚动",
+          "pass": true,
+          "detail": {
+            "at": 117
+          }
+        },
+        {
+          "id": "zindex",
+          "name": "启动层 z-index=2147483000",
+          "pass": true,
+          "detail": {
+            "values": [
+              "2147483000"
+            ]
+          }
+        },
+        {
+          "id": "dom-contract",
+          "name": "DOM 契约：.ms-stage + 分割层节点存在",
+          "pass": true,
+          "detail": {
+            "stage": true,
+            "split": true
+          }
+        },
+        {
+          "id": "act1-window",
+          "name": "幕 I 神经接口（0.50–3.90s）可见",
+          "pass": true,
+          "detail": {
+            "act1": {
+              "first": 117,
+              "last": 4117,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "act2-window",
+          "name": "幕 II MOSS（3.90–8.10s）可见",
+          "pass": true,
+          "detail": {
+            "act2": {
+              "first": 4207,
+              "last": 10254,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "act3-window",
+          "name": "幕 III/IV 地球（8.10s 起）可见",
+          "pass": true,
+          "detail": {
+            "act3": {
+              "first": 8384,
+              "last": 11458,
+              "max": 1
+            }
+          }
+        },
+        {
+          "id": "split-dom",
+          "name": ".ms-split 分割层（moss/earth/seam）节点出现",
+          "pass": true,
+          "detail": {
+            "parts": [
+              "moss",
+              "earth",
+              "seam"
+            ]
+          }
+        },
+        {
+          "id": "api",
+          "name": "window.__DSH_MOSS2_API__ 暴露 armHandoff()",
+          "pass": true,
+          "detail": {
+            "apiKeys": [
+              "skip",
+              "finish",
+              "replay",
+              "freeze",
+              "dispose",
+              "state",
+              "progress",
+              "reduced",
+              "duration",
+              "version",
+              "facts",
+              "config",
+              "phase",
+              "phases",
+              "media",
+              "skipAvailable",
+              "apply",
+              "preview",
+              "refresh",
+              "armHandoff",
+              "handoffState"
+            ]
+          }
+        },
+        {
+          "id": "api-state",
+          "name": "API.state() 最终为 done",
+          "pass": true,
+          "detail": {
+            "at": 12139,
+            "states": [
+              "null",
+              "playing",
+              "handoff",
+              "done"
+            ]
+          }
+        },
+        {
+          "id": "lock-release",
+          "name": "交接后 moss-lock 解除",
+          "pass": true,
+          "detail": null
+        },
+        {
+          "id": "veil-default",
+          "name": "默认 veil=58 / blur=16px 已应用",
+          "pass": true,
+          "detail": {
+            "cssVars": {
+              "veil": "58",
+              "blur": "16px"
+            },
+            "cfg": {
+              "enabled": true,
+              "mode": "session",
+              "skin": "glass",
+              "quality": "saver",
+              "veil": 58,
+              "blur": 16,
+              "hud": "normal",
+              "version": "0.2.0"
+            }
+          }
+        },
+        {
+          "id": "static-cause",
+          "name": "--static 仅由 quality=saver 降级引起（预期行为）",
+          "pass": true,
+          "detail": {
+            "staticSeen": true,
+            "quality": "saver"
+          }
+        },
+        {
+          "id": "duration",
+          "name": "启动动画 ≈11.80s 完成交接",
+          "pass": true,
+          "detail": {
+            "measuredDuration": 12022,
+            "finishRel": 12139,
+            "rootSeen": 117,
+            "tolerance": "11.4–12.6s"
+          }
+        },
+        {
+          "id": "saver-config",
+          "name": "quality=saver 已生效（config API 返回 saver）",
+          "pass": true,
+          "detail": {
+            "configAfter": {
+              "enabled": true,
+              "mode": "session",
+              "skin": "glass",
+              "quality": "saver",
+              "veil": 58,
+              "blur": 16,
+              "hud": "normal",
+              "sound": true,
+              "volume": 50,
+              "allowSkip": true,
+              "reducedMotion": false
+            }
+          }
+        },
+        {
+          "id": "saver-no-video-request",
+          "name": "quality=saver 下不发起任何视频请求（Network 断言）",
+          "pass": true,
+          "detail": {
+            "count": 0,
+            "sample": []
+          }
+        },
+        {
+          "id": "saver-no-splash-video",
+          "name": "saver 下启动层视频无 src（不加载）",
+          "pass": true,
+          "detail": {
+            "count": 0,
+            "peek": []
+          }
+        },
+        {
+          "id": "saver-poster",
+          "name": "saver 档显示海报（ma-still 加载成功）",
+          "pass": true,
+          "detail": {
+            "naturalWidth": 1920
+          }
+        },
+        {
+          "id": "saver-duration",
+          "name": "saver 下启动动画仍完整走完并交接",
+          "pass": true,
+          "detail": {
+            "measuredDuration": 12022,
+            "finishRel": 12139
+          }
+        },
+        {
+          "id": "bg-fallback-static",
+          "name": "无视频时背景以海报静态兜底（video 未播放/无源）",
+          "pass": true,
+          "detail": {
+            "ambientVideo": {
+              "paused": true,
+              "src": ""
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "demo": {
+    "moss2-boot-demo.mp4": "docs/verify/splash-v2/moss2-boot-demo.mp4",
+    "act1.png": "docs/verify/splash-v2/act1.png",
+    "act2.png": "docs/verify/splash-v2/act2.png",
+    "act3.png": "docs/verify/splash-v2/act3.png",
+    "act4.png": "docs/verify/splash-v2/act4.png"
+  },
+  "evidence": {
+    "generatedAt": "2026-11-06T11:57:42.762Z",
+    "scenarios": [
+      {
+        "scenario": "normal",
+        "screenshots": 15,
+        "dir": "docs/verify/splash-v2/normal",
+        "sheet": "docs/verify/splash-v2/sheet-normal.png"
+      },
+      {
+        "scenario": "system-reduce",
+        "screenshots": 15,
+        "dir": "docs/verify/splash-v2/system-reduce",
+        "sheet": "docs/verify/splash-v2/sheet-system-reduce.png"
+      },
+      {
+        "scenario": "skip",
+        "screenshots": 8,
+        "dir": "docs/verify/splash-v2/skip",
+        "sheet": "docs/verify/splash-v2/sheet-skip.png"
+      },
+      {
+        "scenario": "missing-video",
+        "screenshots": 15,
+        "dir": "docs/verify/splash-v2/missing-video",
+        "sheet": "docs/verify/splash-v2/sheet-missing-video.png"
+      },
+      {
+        "scenario": "saver",
+        "screenshots": 15,
+        "dir": "docs/verify/splash-v2/saver",
+        "sheet": "docs/verify/splash-v2/sheet-saver.png"
+      },
+      {
+        "scenario": "glass",
+        "screenshots": 9,
+        "dir": "docs/verify/skin-v2/glass",
+        "sheet": "docs/verify/skin-v2/sheet-glass.png"
+      },
+      {
+        "scenario": "immersive",
+        "screenshots": 7,
+        "dir": "docs/verify/skin-v2/immersive",
+        "sheet": "docs/verify/skin-v2/sheet-immersive.png"
+      },
+      {
+        "scenario": "preview",
+        "screenshots": 8,
+        "dir": "docs/verify/skin-v2/preview",
+        "sheet": "docs/verify/skin-v2/sheet-preview.png"
+      }
+    ]
+  }
+}

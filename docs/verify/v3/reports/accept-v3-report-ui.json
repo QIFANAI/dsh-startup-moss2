@@ -1,0 +1,273 @@
+{
+  "scenario": "ui",
+  "host": "http://127.0.0.1:57123",
+  "reduce": false,
+  "at": "2026-11-06T17:30:53.764Z",
+  "assertions": [
+    {
+      "name": "ui-ready",
+      "pass": true,
+      "detail": {
+        "hasComposer": true,
+        "splashRoot": false,
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--immersive dsh-moss-motion-hint dsh-moss-enter",
+        "workspaceSelected": true
+      }
+    },
+    {
+      "name": "ui-workspace-selected",
+      "pass": true,
+      "detail": {
+        "wsOk": true
+      }
+    },
+    {
+      "name": "menu-immersive-权限-fixed-and-no-layout-growth",
+      "pass": true,
+      "detail": {
+        "pos": "fixed",
+        "rect": {
+          "x": 669,
+          "y": 467,
+          "w": 144,
+          "h": 110,
+          "bottom": 577
+        },
+        "docH": 1020,
+        "baseDocH": 1020
+      }
+    },
+    {
+      "name": "menu-immersive-模式-fixed-and-no-layout-growth",
+      "pass": true,
+      "detail": {
+        "pos": "fixed",
+        "rect": {
+          "x": 746,
+          "y": 500,
+          "w": 324,
+          "h": 272,
+          "bottom": 772
+        },
+        "docH": 1020,
+        "baseDocH": 1020
+      }
+    },
+    {
+      "name": "menu-+-visible-and-no-layout-growth",
+      "pass": true,
+      "detail": {
+        "menus": [
+          {
+            "pos": "static",
+            "rect": {
+              "x": 625,
+              "y": 161,
+              "w": 944,
+              "h": 335,
+              "bottom": 496
+            }
+          }
+        ],
+        "docH": 1020
+      }
+    },
+    {
+      "name": "menu-permission-has-full-access-item",
+      "pass": true,
+      "detail": {
+        "x": 656,
+        "y": 479,
+        "w": 48,
+        "h": 24,
+        "els": 2
+      }
+    },
+    {
+      "name": "permission-selected",
+      "pass": true,
+      "detail": {
+        "docH": 1020,
+        "y": 0
+      }
+    },
+    {
+      "name": "brand-eye-breathing-animation",
+      "pass": true,
+      "detail": {
+        "name": "moss-eye-ring-breath, moss-eye-ring-signal",
+        "dur": "3.2s, 7.5s",
+        "op": "0.683386"
+      }
+    },
+    {
+      "name": "brand-eye-core-animation",
+      "pass": true,
+      "detail": {
+        "name": "moss-eye-core-breath, moss-eye-core-signal",
+        "dur": "2.6s, 7.5s",
+        "op": "0.714847"
+      }
+    },
+    {
+      "name": "composer-corner-breathing-animation",
+      "pass": true,
+      "detail": {
+        "name": "moss-corner-breath",
+        "dur": "10.8s",
+        "op": "0.763145"
+      }
+    },
+    {
+      "name": "brand-eye-visible-modulation",
+      "pass": true,
+      "detail": {
+        "meanAbsDiff": 2.43
+      }
+    },
+    {
+      "name": "composer-corners-visible-modulation",
+      "pass": true,
+      "detail": {
+        "meanAbsDiff": 4.07
+      }
+    },
+    {
+      "name": "no-uncaught-exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "shots": [
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\ui\\01-ui-base.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\ui\\02-menu-immersive-权限.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\ui\\03-menu-immersive-模式.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\ui\\04-menu-plus.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\ui\\05-menu-permission.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\ui\\06-after-select-quanquan.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\ui\\07-after-enable-quanquan.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\ui\\08-ui-final.png"
+  ],
+  "probes": {
+    "permConfirm": {
+      "texts": [
+        "取消",
+        "启用完全权限"
+      ],
+      "dialog": true
+    },
+    "menus": [
+      {
+        "label": "工作区",
+        "found": false,
+        "skipped": true
+      },
+      {
+        "label": "权限",
+        "found": true,
+        "base": {
+          "docH": 1020,
+          "y": 0
+        },
+        "after": {
+          "docH": 1020,
+          "y": 0,
+          "menus": [
+            {
+              "pos": "fixed",
+              "z": "1100",
+              "rect": {
+                "x": 669,
+                "y": 467,
+                "w": 144,
+                "h": 110,
+                "bottom": 577
+              },
+              "txt": "仅可查看工作区内修改完全权限"
+            }
+          ]
+        }
+      },
+      {
+        "label": "模式",
+        "found": true,
+        "base": {
+          "docH": 1020,
+          "y": 0
+        },
+        "after": {
+          "docH": 1020,
+          "y": 0,
+          "menus": [
+            {
+              "pos": "fixed",
+              "z": "1100",
+              "rect": {
+                "x": 746,
+                "y": 500,
+                "w": 324,
+                "h": 272,
+                "bottom": 772
+              },
+              "txt": "标准模式处理代码、文件和资料，适合大多数任务。Agent 会按需使用检索、编辑和终端等工具。PTC 模式包含标准模式的所"
+            }
+          ]
+        }
+      },
+      {
+        "label": "模型",
+        "found": false,
+        "skipped": true
+      }
+    ],
+    "anim": {
+      "brandCount": 2,
+      "eyeClasses": "<svg viewBox=\"0 0 32 32\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" width=\"34\" height=\"34\" class=\"dsh-moss-brandmark\" aria-hidden=\"true\" style=\"display: block; filter: drop-shadow(rgba(255, 61, 31, 0.55) 0px 0px 6px);\"><circle cx=\"16\" cy=\"16\" r=\"14.5\" class=\"dsh-moss-eye__halo\" stroke=\"rgba(180,",
+      "ringAnim": {
+        "name": "moss-eye-ring-breath, moss-eye-ring-signal",
+        "dur": "3.2s, 7.5s",
+        "op": "0.683386"
+      },
+      "coreAnim": {
+        "name": "moss-eye-core-breath, moss-eye-core-signal",
+        "dur": "2.6s, 7.5s",
+        "op": "0.714847"
+      },
+      "cornerAnim": {
+        "name": "moss-corner-breath",
+        "dur": "10.8s",
+        "op": "0.763145"
+      },
+      "eyeRect": {
+        "x": 967,
+        "y": 410,
+        "w": 34,
+        "h": 34
+      },
+      "cardRect": {
+        "x": 621,
+        "y": 504,
+        "w": 952,
+        "h": 114
+      }
+    },
+    "animDiff": {
+      "eye": 2.43,
+      "corners": 4.07
+    }
+  },
+  "errors": [],
+  "console": [
+    {
+      "at": 1793986255452,
+      "type": "warning",
+      "text": "[dsh-startup-moss2] 检测到新构建 v0.3-r1，宿主本次已播启动层（升级即重播，无需重启宿主）。"
+    }
+  ],
+  "exceptions": [],
+  "summary": {
+    "total": 13,
+    "pass": 13,
+    "fail": 0
+  }
+}

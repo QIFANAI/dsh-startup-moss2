@@ -1,0 +1,670 @@
+{
+  "scenario": "splash",
+  "host": "http://127.0.0.1:57123",
+  "reduce": false,
+  "at": "2026-11-06T17:30:38.708Z",
+  "assertions": [
+    {
+      "name": "splash-api-freeze",
+      "pass": true,
+      "detail": {
+        "hasApi": true
+      }
+    },
+    {
+      "name": "progress-probe-present",
+      "pass": true,
+      "detail": {
+        "count": 10
+      }
+    },
+    {
+      "name": "progress-monotonic",
+      "pass": true,
+      "detail": [
+        {
+          "t": 3.2,
+          "p": 0.25
+        },
+        {
+          "t": 4.6,
+          "p": 0.37
+        },
+        {
+          "t": 5.6,
+          "p": 0.47
+        },
+        {
+          "t": 6.8,
+          "p": 0.59
+        },
+        {
+          "t": 7.42,
+          "p": 0.65
+        },
+        {
+          "t": 7.9,
+          "p": 0.69
+        },
+        {
+          "t": 8.6,
+          "p": 0.75
+        },
+        {
+          "t": 9.4,
+          "p": 0.82
+        },
+        {
+          "t": 10.2,
+          "p": 0.89
+        },
+        {
+          "t": 11.2,
+          "p": 1
+        }
+      ]
+    },
+    {
+      "name": "progress-pct-fill-spark-synced",
+      "pass": true,
+      "detail": {
+        "worst": 0,
+        "sync": [
+          {
+            "t": 3.2,
+            "pct": 25,
+            "p": 0.25,
+            "fill": 0.25,
+            "spark": 450.25,
+            "trackWidth": 1801,
+            "dPct": 0,
+            "dFill": 0
+          },
+          {
+            "t": 4.6,
+            "pct": 37,
+            "p": 0.37,
+            "fill": 0.37,
+            "spark": 666.37,
+            "trackWidth": 1801,
+            "dPct": 0,
+            "dFill": 0
+          },
+          {
+            "t": 5.6,
+            "pct": 47,
+            "p": 0.47,
+            "fill": 0.47,
+            "spark": 846.4699999999999,
+            "trackWidth": 1801,
+            "dPct": 0,
+            "dFill": 0
+          },
+          {
+            "t": 6.8,
+            "pct": 59,
+            "p": 0.59,
+            "fill": 0.59,
+            "spark": 1062.59,
+            "trackWidth": 1801,
+            "dPct": 0,
+            "dFill": 0
+          },
+          {
+            "t": 7.42,
+            "pct": 65,
+            "p": 0.65,
+            "fill": 0.65,
+            "spark": 1170.65,
+            "trackWidth": 1801,
+            "dPct": 0,
+            "dFill": 0
+          },
+          {
+            "t": 7.9,
+            "pct": 69,
+            "p": 0.69,
+            "fill": 0.69,
+            "spark": 1242.6899999999998,
+            "trackWidth": 1801,
+            "dPct": 0,
+            "dFill": 0
+          },
+          {
+            "t": 8.6,
+            "pct": 75,
+            "p": 0.75,
+            "fill": 0.75,
+            "spark": 1350.75,
+            "trackWidth": 1801,
+            "dPct": 0,
+            "dFill": 0
+          },
+          {
+            "t": 9.4,
+            "pct": 82,
+            "p": 0.82,
+            "fill": 0.82,
+            "spark": 1476.82,
+            "trackWidth": 1801,
+            "dPct": 0,
+            "dFill": 0
+          },
+          {
+            "t": 10.2,
+            "pct": 89,
+            "p": 0.89,
+            "fill": 0.89,
+            "spark": 1602.89,
+            "trackWidth": 1801,
+            "dPct": 0,
+            "dFill": 0
+          },
+          {
+            "t": 11.2,
+            "pct": 100,
+            "p": 1,
+            "fill": 1,
+            "spark": 1801,
+            "trackWidth": 1801,
+            "dPct": 0,
+            "dFill": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "progress-100-at-11s",
+      "pass": true,
+      "detail": {
+        "t": 11.2,
+        "pct": 100,
+        "p": 1,
+        "fill": 1,
+        "spark": 1801,
+        "trackWidth": 1801,
+        "dPct": 0,
+        "dFill": 0
+      }
+    },
+    {
+      "name": "lock-reticle-near-eye",
+      "pass": true,
+      "detail": [
+        {
+          "t": 7.42,
+          "lock": {
+            "phase": "maintain",
+            "reticle": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "eye": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "locked": true,
+            "lockedAt": 7.42,
+            "t": 7.42
+          }
+        },
+        {
+          "t": 7.9,
+          "lock": {
+            "phase": "maintain",
+            "reticle": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "eye": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "locked": true,
+            "lockedAt": 7.42,
+            "t": 7.9
+          }
+        },
+        {
+          "t": 8.6,
+          "lock": {
+            "phase": "maintain",
+            "reticle": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "eye": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "locked": true,
+            "lockedAt": 7.42,
+            "t": 8.6
+          }
+        },
+        {
+          "t": 9.4,
+          "lock": {
+            "phase": "maintain",
+            "reticle": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "eye": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "locked": true,
+            "lockedAt": 7.42,
+            "t": 9.4
+          }
+        },
+        {
+          "t": 10.2,
+          "lock": {
+            "phase": "maintain",
+            "reticle": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "eye": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "locked": true,
+            "lockedAt": 7.42,
+            "t": 9.4
+          }
+        },
+        {
+          "t": 11.2,
+          "lock": {
+            "phase": "maintain",
+            "reticle": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "eye": {
+              "x": 718.08,
+              "y": 551.0400000000001
+            },
+            "locked": true,
+            "lockedAt": 7.42,
+            "t": 9.4
+          }
+        }
+      ]
+    },
+    {
+      "name": "act2-lock-phases-ordered",
+      "pass": true,
+      "detail": [
+        "search",
+        "capture",
+        "track",
+        "converge",
+        "maintain",
+        "maintain",
+        "maintain",
+        "maintain",
+        "maintain",
+        "maintain"
+      ]
+    },
+    {
+      "name": "moss-video-untouched",
+      "pass": true,
+      "detail": {
+        "filter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "transform": "none",
+        "playbackRate": 1,
+        "paused": true,
+        "currentTime": 4.96,
+        "src": "/asset/moss/moss-cinema-1080.mp4?v=0.2.0"
+      }
+    },
+    {
+      "name": "splash-root-removed",
+      "pass": true,
+      "detail": {
+        "root": false,
+        "state": "dsh-moss-skin dsh-moss-skin--immersive dsh-moss-motion-hint dsh-moss-enter"
+      }
+    },
+    {
+      "name": "no-uncaught-exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "shots": [
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\01-t3_2.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\02-t4_6.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\03-t5_6.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\04-t6_8.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\05-t7_42.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\06-t7_9.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\07-t8_6.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\08-t9_4.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\09-t10_2.png",
+    "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\10-t11_2.png"
+  ],
+  "probes": {
+    "splashFrames": [
+      {
+        "t": 3.2,
+        "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\01-t3_2.png",
+        "progress": {
+          "t": 3.2,
+          "progress": 0.25,
+          "pct": 25,
+          "trackWidth": 1801,
+          "fill": 0.25,
+          "spark": 450.25,
+          "complete": false
+        },
+        "lock": {
+          "phase": "search",
+          "reticle": {
+            "x": 0,
+            "y": 0
+          },
+          "eye": {
+            "x": 0,
+            "y": 0
+          },
+          "locked": false,
+          "lockedAt": 7.42,
+          "t": 0
+        },
+        "splashRoot": true
+      },
+      {
+        "t": 4.6,
+        "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\02-t4_6.png",
+        "progress": {
+          "t": 4.6,
+          "progress": 0.37,
+          "pct": 37,
+          "trackWidth": 1801,
+          "fill": 0.37,
+          "spark": 666.37,
+          "complete": false
+        },
+        "lock": {
+          "phase": "capture",
+          "reticle": {
+            "x": 1294.08,
+            "y": 897.8400000000001
+          },
+          "eye": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "locked": false,
+          "lockedAt": 7.42,
+          "t": 4.6
+        },
+        "splashRoot": true
+      },
+      {
+        "t": 5.6,
+        "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\03-t5_6.png",
+        "progress": {
+          "t": 5.6,
+          "progress": 0.47,
+          "pct": 47,
+          "trackWidth": 1801,
+          "fill": 0.47,
+          "spark": 846.4699999999999,
+          "complete": false
+        },
+        "lock": {
+          "phase": "track",
+          "reticle": {
+            "x": 1277.692277619129,
+            "y": 874.2332355582126
+          },
+          "eye": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "locked": false,
+          "lockedAt": 7.42,
+          "t": 5.6
+        },
+        "splashRoot": true
+      },
+      {
+        "t": 6.8,
+        "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\04-t6_8.png",
+        "progress": {
+          "t": 6.8,
+          "progress": 0.59,
+          "pct": 59,
+          "trackWidth": 1801,
+          "fill": 0.59,
+          "spark": 1062.59,
+          "complete": false
+        },
+        "lock": {
+          "phase": "converge",
+          "reticle": {
+            "x": 748.5298356881528,
+            "y": 546.9948245869297
+          },
+          "eye": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "locked": false,
+          "lockedAt": 7.42,
+          "t": 6.8
+        },
+        "splashRoot": true
+      },
+      {
+        "t": 7.42,
+        "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\05-t7_42.png",
+        "progress": {
+          "t": 7.42,
+          "progress": 0.65,
+          "pct": 65,
+          "trackWidth": 1801,
+          "fill": 0.65,
+          "spark": 1170.65,
+          "complete": false
+        },
+        "lock": {
+          "phase": "maintain",
+          "reticle": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "eye": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "locked": true,
+          "lockedAt": 7.42,
+          "t": 7.42
+        },
+        "splashRoot": true
+      },
+      {
+        "t": 7.9,
+        "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\06-t7_9.png",
+        "progress": {
+          "t": 7.9,
+          "progress": 0.69,
+          "pct": 69,
+          "trackWidth": 1801,
+          "fill": 0.69,
+          "spark": 1242.6899999999998,
+          "complete": false
+        },
+        "lock": {
+          "phase": "maintain",
+          "reticle": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "eye": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "locked": true,
+          "lockedAt": 7.42,
+          "t": 7.9
+        },
+        "splashRoot": true
+      },
+      {
+        "t": 8.6,
+        "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\07-t8_6.png",
+        "progress": {
+          "t": 8.6,
+          "progress": 0.75,
+          "pct": 75,
+          "trackWidth": 1801,
+          "fill": 0.75,
+          "spark": 1350.75,
+          "complete": false
+        },
+        "lock": {
+          "phase": "maintain",
+          "reticle": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "eye": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "locked": true,
+          "lockedAt": 7.42,
+          "t": 8.6
+        },
+        "splashRoot": true
+      },
+      {
+        "t": 9.4,
+        "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\08-t9_4.png",
+        "progress": {
+          "t": 9.4,
+          "progress": 0.82,
+          "pct": 82,
+          "trackWidth": 1801,
+          "fill": 0.82,
+          "spark": 1476.82,
+          "complete": false
+        },
+        "lock": {
+          "phase": "maintain",
+          "reticle": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "eye": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "locked": true,
+          "lockedAt": 7.42,
+          "t": 9.4
+        },
+        "splashRoot": true
+      },
+      {
+        "t": 10.2,
+        "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\09-t10_2.png",
+        "progress": {
+          "t": 10.2,
+          "progress": 0.89,
+          "pct": 89,
+          "trackWidth": 1801,
+          "fill": 0.89,
+          "spark": 1602.89,
+          "complete": false
+        },
+        "lock": {
+          "phase": "maintain",
+          "reticle": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "eye": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "locked": true,
+          "lockedAt": 7.42,
+          "t": 9.4
+        },
+        "splashRoot": true
+      },
+      {
+        "t": 11.2,
+        "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\verify3\\splash\\10-t11_2.png",
+        "progress": {
+          "t": 11.2,
+          "progress": 1,
+          "pct": 100,
+          "trackWidth": 1801,
+          "fill": 1,
+          "spark": 1801,
+          "complete": true
+        },
+        "lock": {
+          "phase": "maintain",
+          "reticle": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "eye": {
+            "x": 718.08,
+            "y": 551.0400000000001
+          },
+          "locked": true,
+          "lockedAt": 7.42,
+          "t": 9.4
+        },
+        "splashRoot": true
+      }
+    ],
+    "pct100Frames": [
+      {
+        "t": 11.2,
+        "pct": 100,
+        "p": 1,
+        "fill": 1,
+        "spark": 1801,
+        "trackWidth": 1801,
+        "dPct": 0,
+        "dFill": 0
+      }
+    ],
+    "mossVideo": {
+      "filter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+      "transform": "none",
+      "playbackRate": 1,
+      "paused": true,
+      "currentTime": 4.96,
+      "src": "/asset/moss/moss-cinema-1080.mp4?v=0.2.0"
+    }
+  },
+  "errors": [],
+  "console": [
+    {
+      "at": 1793986240600,
+      "type": "warning",
+      "text": "[dsh-startup-moss2] 检测到新构建 v0.3-r1，宿主本次已播启动层（升级即重播，无需重启宿主）。"
+    }
+  ],
+  "exceptions": [],
+  "summary": {
+    "total": 10,
+    "pass": 10,
+    "fail": 0
+  }
+}

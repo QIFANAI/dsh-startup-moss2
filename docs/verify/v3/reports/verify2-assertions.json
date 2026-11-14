@@ -1,0 +1,121 @@
+{
+  "generatedAt": "2026-11-06T17:26:41.322Z",
+  "startedAt": "2026-11-06T17:23:06.700Z",
+  "host": "http://127.0.0.1:57123",
+  "hostTokenUrl": "http://127.0.0.1:57123/?token=***",
+  "libHashes": {
+    "lib/index.js": {
+      "bytes": 23277,
+      "sha256": "cc621117fc4c40a20b23ec32b0261ccadba18ffa6e7ef002e2f873bfc518561c"
+    },
+    "lib/splash.js": {
+      "bytes": 135096,
+      "sha256": "24e0fd4582121ca51592d7803fc6ec1342b96217026cb461950c644e07e3cf2a"
+    },
+    "lib/splash.css": {
+      "bytes": 59908,
+      "sha256": "d49bf551b1e2276b5c23a3fb073bb6b1a8d5f7d0617b9314671ea4614e5d7655"
+    },
+    "lib/client.js": {
+      "bytes": 60682,
+      "sha256": "306da521db23c119d6a8e53087c2e7c0782e0d6a74527ddfdb7a0bf80ba6b061"
+    },
+    "lib/skin.css": {
+      "bytes": 86179,
+      "sha256": "51a4ce3bc2c66461b9b7d38573630800ddb6ce64ecdc9f76e769dd0fafd3997f"
+    },
+    "lib/assets/manifest.json": {
+      "bytes": 14977,
+      "sha256": "d9a8490324fefdb5f0991393beeda05071c762f9b36fcd9ec44b427233959092"
+    },
+    "package.json": {
+      "bytes": 1825,
+      "sha256": "a5dcc4a7c588e4fd44976de5d72f62e861486547bb06b66a497e2e7db1dcb6fc"
+    },
+    "preview/index.html": {
+      "bytes": 71214,
+      "sha256": "1f3fe16924e7f6a0b419a22da284c6dbc2a50f0455aa3d21edecdf6b7d7567b1"
+    }
+  },
+  "chrome": {
+    "port": 9344,
+    "reused": true,
+    "version": "Chrome/157.0.8103.26"
+  },
+  "scenarios": [
+    {
+      "scenario": "normal",
+      "conclusion": "PASS",
+      "pass": 30,
+      "fail": 0,
+      "finishRel": 12198,
+      "exceptions": 0,
+      "failures": []
+    },
+    {
+      "scenario": "system-reduce",
+      "conclusion": "PASS",
+      "pass": 34,
+      "fail": 0,
+      "finishRel": 12233,
+      "exceptions": 0,
+      "failures": []
+    },
+    {
+      "scenario": "skip",
+      "conclusion": "PASS",
+      "pass": 20,
+      "fail": 0,
+      "finishRel": 6827,
+      "exceptions": 0,
+      "failures": []
+    },
+    {
+      "scenario": "missing-video",
+      "conclusion": "PASS",
+      "pass": 23,
+      "fail": 0,
+      "finishRel": 12098,
+      "exceptions": 0,
+      "failures": []
+    },
+    {
+      "scenario": "saver",
+      "conclusion": "PASS",
+      "pass": 22,
+      "fail": 0,
+      "finishRel": 12067,
+      "exceptions": 0,
+      "failures": []
+    },
+    {
+      "scenario": "immersive",
+      "conclusion": "PASS",
+      "pass": 20,
+      "fail": 0,
+      "finishRel": 12187,
+      "exceptions": 0,
+      "failures": []
+    },
+    {
+      "scenario": "glass",
+      "conclusion": "PASS",
+      "pass": 21,
+      "fail": 0,
+      "finishRel": 12134,
+      "exceptions": 0,
+      "failures": []
+    },
+    {
+      "scenario": "preview",
+      "conclusion": "PASS",
+      "pass": 20,
+      "fail": 0,
+      "finishRel": null,
+      "exceptions": 0,
+      "failures": []
+    }
+  ],
+  "totalPass": 190,
+  "totalFail": 0
+}

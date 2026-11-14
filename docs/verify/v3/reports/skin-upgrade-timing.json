@@ -1,0 +1,133 @@
+{
+  "host": "http://127.0.0.1:64819",
+  "runs": [
+    {
+      "run": 1,
+      "t0Wall": 1793985516105,
+      "tl": [
+        {
+          "t": 56,
+          "st": false,
+          "skip": true,
+          "boot": "index",
+          "replay": "undefined",
+          "api": false,
+          "root": false,
+          "up": false,
+          "rev": null
+        },
+        {
+          "t": 564,
+          "st": "disabled",
+          "skip": true,
+          "boot": "index",
+          "replay": "function",
+          "api": true,
+          "root": false,
+          "up": false,
+          "rev": null
+        },
+        {
+          "t": 808,
+          "st": "playing",
+          "skip": false,
+          "boot": "index",
+          "replay": "function",
+          "api": true,
+          "root": true,
+          "up": true,
+          "rev": "v0.3-r1"
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "t0Wall": 1793985521293,
+      "tl": [
+        {
+          "t": 425,
+          "st": "disabled",
+          "skip": true,
+          "boot": "index",
+          "replay": "function",
+          "api": true,
+          "root": false,
+          "up": false,
+          "rev": null
+        },
+        {
+          "t": 552,
+          "st": "playing",
+          "skip": false,
+          "boot": "index",
+          "replay": "function",
+          "api": true,
+          "root": true,
+          "up": true,
+          "rev": "v0.3-r1"
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "t0Wall": 1793985526454,
+      "tl": [
+        {
+          "t": 487,
+          "st": "disabled",
+          "skip": true,
+          "boot": "index",
+          "replay": "function",
+          "api": true,
+          "root": false,
+          "up": false,
+          "rev": null
+        },
+        {
+          "t": 596,
+          "st": "playing",
+          "skip": false,
+          "boot": "index",
+          "replay": "function",
+          "api": true,
+          "root": true,
+          "up": true,
+          "rev": "v0.3-r1"
+        }
+      ]
+    }
+  ],
+  "console": [
+    {
+      "at": 1793985514747,
+      "type": "warning",
+      "text": "[dsh-startup-moss2] 检测到新构建 v0.3-r1，宿主本次已播启动层（升级即重播，无需重启宿主）。"
+    },
+    {
+      "at": 1793985516796,
+      "type": "warning",
+      "text": "[dsh-startup-moss2] 检测到新构建 v0.3-r1，已补播一次启动动画（升级即重播，无需重启宿主）。"
+    },
+    {
+      "at": 1793985519351,
+      "type": "warning",
+      "text": "[dsh-startup-moss2] 检测到新构建 v0.3-r1，宿主本次已播启动层（升级即重播，无需重启宿主）。"
+    },
+    {
+      "at": 1793985521788,
+      "type": "warning",
+      "text": "[dsh-startup-moss2] 检测到新构建 v0.3-r1，已补播一次启动动画（升级即重播，无需重启宿主）。"
+    },
+    {
+      "at": 1793985524470,
+      "type": "warning",
+      "text": "[dsh-startup-moss2] 检测到新构建 v0.3-r1，宿主本次已播启动层（升级即重播，无需重启宿主）。"
+    },
+    {
+      "at": 1793985527005,
+      "type": "warning",
+      "text": "[dsh-startup-moss2] 检测到新构建 v0.3-r1，已补播一次启动动画（升级即重播，无需重启宿主）。"
+    }
+  ],
+  "exceptions": []
+}

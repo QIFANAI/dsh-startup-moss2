@@ -1,0 +1,507 @@
+{
+  "generatedAt": "2026-11-06T21:22:29.001Z",
+  "spec": "docs/design-spec-v4.md",
+  "conclusion": "PASS",
+  "totals": {
+    "checks": 77,
+    "pass": 77,
+    "fail": 0
+  },
+  "npmTest": {
+    "suites": [
+      {
+        "pass": 35,
+        "total": 35,
+        "name": "host"
+      },
+      {
+        "pass": 24,
+        "total": 24,
+        "name": "asset"
+      },
+      {
+        "pass": 61,
+        "total": 61,
+        "name": "splash"
+      },
+      {
+        "pass": 27,
+        "total": 27,
+        "name": "client/skin"
+      },
+      {
+        "pass": 18,
+        "total": 18,
+        "name": "v0.3 css/js regression"
+      }
+    ],
+    "allPass": true
+  },
+  "matrix": {
+    "totalPass": 200,
+    "totalFail": 0,
+    "totalSkip": 2
+  },
+  "accept": {
+    "total": 50,
+    "pass": 50,
+    "fail": 0,
+    "conclusion": "PASS"
+  },
+  "audio": {
+    "conclusion": "PASS",
+    "metrics": {
+      "durationSec": "12.800000",
+      "truePeakDb": -1.5,
+      "jointPeaks": 7,
+      "jointPeakTimes": [
+        4.26,
+        5.22,
+        5.58,
+        5.92,
+        6.24,
+        6.66,
+        6.9
+      ],
+      "lockAnchor": {
+        "t": 7.5,
+        "energyDb": -7.75
+      },
+      "volume4to8": {
+        "meanVolumeDbfs": -16.73,
+        "maxVolumeDbfs": -1.81,
+        "samples": 352800
+      },
+      "baseline4to8": {
+        "meanVolumeDbfs": -19.08,
+        "maxVolumeDbfs": -1.86,
+        "samples": 352800
+      }
+    }
+  },
+  "demo": {
+    "durationSec": 12.980227,
+    "bytes": 3336832,
+    "streams": [
+      {
+        "type": "video",
+        "codec": "h264",
+        "w": 1600,
+        "h": 1000,
+        "rate": "30/1"
+      },
+      {
+        "type": "audio",
+        "codec": "aac",
+        "rate": "0/0",
+        "sr": "44100",
+        "ch": 2
+      }
+    ]
+  },
+  "libHashes": {
+    "lib/index.js": "2fc853e0e2e9b45cfbd4cdeca3fde9d93ee0e94b2676f681359271cf863345c4",
+    "lib/splash.js": "d093461008d1338c8b73e4bcf9edfbf2feeb8f3523519c75ecf6acdfda19c863",
+    "lib/splash.css": "5c03a661b7c2461f8faa460e76dbb738d0ecbd392dfb5f10369e619cd8387a6a",
+    "lib/client.js": "03fe0f035ccd7287c0bf49c284d3ba9a445d775981b128f33b74eed78812ea8b",
+    "lib/skin.css": "93f4f376d873f336a7defa26d7955279432567f9b6fc1fa17673d6d3cdee03b2",
+    "package.json": "0ff9d2a0ee9b5e8610cbfd807014effbb8e5fcce11472645fb4821a7cc3674d2",
+    "preview/index.html": "c61ec697727242d2404f379bc8ea5b2025b2f7e1b496acd669cad790bac4aafb"
+  },
+  "environment": {
+    "host": "http://127.0.0.1:57123",
+    "chrome": {
+      "port": 9381,
+      "reused": true,
+      "version": "Chrome/157.0.8103.26"
+    },
+    "node": "v24.21.0",
+    "ffmpeg": "E:\\douy\\_tools\\ffmpeg\\ffmpeg.exe"
+  },
+  "artifacts": {
+    "matrixSummary": "_work/verify4/assertions.json",
+    "sceneReports": {
+      "normal": "_work/verify4/report-normal.json",
+      "system-reduce": "_work/verify4/report-system-reduce.json",
+      "skip": "_work/verify4/report-skip.json",
+      "missing-video": "_work/verify4/report-missing-video.json",
+      "saver": "_work/verify4/report-saver.json",
+      "immersive": "_work/verify4/report-immersive.json",
+      "glass": "_work/verify4/report-glass.json",
+      "preview": "_work/verify4/report-preview.json"
+    },
+    "acceptReport": "_work/verify4/accept-v4.json",
+    "audioReport": "_work/verify4/audio-report.json",
+    "audioSpectrum": "_work/verify4/audio-spectrum.png",
+    "demoVideo": "_work/demo/moss2-boot-demo-v4.mp4",
+    "demoStills": [
+      "_work/demo/demo-v4-t7.45.png",
+      "_work/demo/demo-v4-t10.9.png",
+      "_work/demo/demo-v4-t11.2.png",
+      "_work/demo/demo-v4-t12.75.png"
+    ],
+    "wav": "_work/demo/moss2-boot-audio.wav",
+    "baselineWav": "_work/verify4/baseline/moss2-boot-audio-v03.wav",
+    "acceptShots": {
+      "focus": [
+        "_work/verify4/accept/focus-t7_42.png",
+        "_work/verify4/accept/focus-t7_6.png",
+        "_work/verify4/accept/focus-t7_78.png",
+        "_work/verify4/accept/focus-t7_95.png",
+        "_work/verify4/accept/focus-t8_05.png"
+      ],
+      "transition": [
+        "_work/verify4/accept/trans-t8_06.png",
+        "_work/verify4/accept/trans-t8_1.png",
+        "_work/verify4/accept/trans-t8_14.png",
+        "_work/verify4/accept/trans-t8_18.png",
+        "_work/verify4/accept/trans-t8_22.png",
+        "_work/verify4/accept/trans-t8_26.png",
+        "_work/verify4/accept/trans-t8_3.png",
+        "_work/verify4/accept/trans-t8_34.png",
+        "_work/verify4/accept/trans-t8_38.png",
+        "_work/verify4/accept/trans-t8_42.png",
+        "_work/verify4/accept/trans-t8_46.png",
+        "_work/verify4/accept/trans-t8_5.png",
+        "_work/verify4/accept/trans-t8_54.png",
+        "_work/verify4/accept/trans-t8_58.png",
+        "_work/verify4/accept/trans-t8_62.png"
+      ],
+      "earth": [
+        "_work/verify4/accept/earth-t10_2.png",
+        "_work/verify4/accept/earth-t10_6.png",
+        "_work/verify4/accept/earth-t10_9.png",
+        "_work/verify4/accept/earth-t9_4.png"
+      ],
+      "handoffFlash": [
+        "_work/verify4/accept/handoff-flash-t12_26.png",
+        "_work/verify4/accept/handoff-flash-t12_3.png",
+        "_work/verify4/accept/handoff-flash-t12_34.png",
+        "_work/verify4/accept/handoff-flash-t12_38.png",
+        "_work/verify4/accept/handoff-flash-t12_42.png",
+        "_work/verify4/accept/handoff-flash-t12_46.png",
+        "_work/verify4/accept/handoff-flash-t12_5.png"
+      ],
+      "handoffUi": [
+        "_work/verify4/accept/handoff-ui-100.png",
+        "_work/verify4/accept/handoff-ui-450.png",
+        "_work/verify4/accept/handoff-ui-900.png"
+      ]
+    },
+    "sceneShots": {
+      "normal": {
+        "dir": "_work/verify4/shots/normal",
+        "count": 21,
+        "sample": [
+          "_work/verify4/shots/normal/normal-t0_60.png",
+          "_work/verify4/shots/normal/normal-t10_20.png",
+          "_work/verify4/shots/normal/normal-t10_60.png",
+          "_work/verify4/shots/normal/normal-t10_90.png",
+          "_work/verify4/shots/normal/normal-t11_20.png",
+          "_work/verify4/shots/normal/normal-t11_80.png",
+          "_work/verify4/shots/normal/normal-t12_30.png",
+          "_work/verify4/shots/normal/normal-t2_20.png",
+          "_work/verify4/shots/normal/normal-t3_60.png",
+          "_work/verify4/shots/normal/normal-t4_20.png",
+          "_work/verify4/shots/normal/normal-t5_20.png",
+          "_work/verify4/shots/normal/normal-t6_80.png",
+          "_work/verify4/shots/normal/normal-t7_42.png",
+          "_work/verify4/shots/normal/normal-t7_78.png",
+          "_work/verify4/shots/normal/normal-t8_05.png",
+          "_work/verify4/shots/normal/normal-t8_30.png",
+          "_work/verify4/shots/normal/normal-t8_62.png",
+          "_work/verify4/shots/normal/normal-t9_40.png",
+          "_work/verify4/shots/normal/normal-ui-1.png",
+          "_work/verify4/shots/normal/normal-ui-2.png",
+          "_work/verify4/shots/normal/normal-ui-3.png"
+        ],
+        "all": [
+          "_work/verify4/shots/normal/normal-t0_60.png",
+          "_work/verify4/shots/normal/normal-t10_20.png",
+          "_work/verify4/shots/normal/normal-t10_60.png",
+          "_work/verify4/shots/normal/normal-t10_90.png",
+          "_work/verify4/shots/normal/normal-t11_20.png",
+          "_work/verify4/shots/normal/normal-t11_80.png",
+          "_work/verify4/shots/normal/normal-t12_30.png",
+          "_work/verify4/shots/normal/normal-t2_20.png",
+          "_work/verify4/shots/normal/normal-t3_60.png",
+          "_work/verify4/shots/normal/normal-t4_20.png",
+          "_work/verify4/shots/normal/normal-t5_20.png",
+          "_work/verify4/shots/normal/normal-t6_80.png",
+          "_work/verify4/shots/normal/normal-t7_42.png",
+          "_work/verify4/shots/normal/normal-t7_78.png",
+          "_work/verify4/shots/normal/normal-t8_05.png",
+          "_work/verify4/shots/normal/normal-t8_30.png",
+          "_work/verify4/shots/normal/normal-t8_62.png",
+          "_work/verify4/shots/normal/normal-t9_40.png",
+          "_work/verify4/shots/normal/normal-ui-1.png",
+          "_work/verify4/shots/normal/normal-ui-2.png",
+          "_work/verify4/shots/normal/normal-ui-3.png"
+        ]
+      },
+      "system-reduce": {
+        "dir": "_work/verify4/shots/system-reduce",
+        "count": 9,
+        "sample": [
+          "_work/verify4/shots/system-reduce/system-reduce-t10_90.png",
+          "_work/verify4/shots/system-reduce/system-reduce-t12_30.png",
+          "_work/verify4/shots/system-reduce/system-reduce-t2_20.png",
+          "_work/verify4/shots/system-reduce/system-reduce-t5_20.png",
+          "_work/verify4/shots/system-reduce/system-reduce-t7_78.png",
+          "_work/verify4/shots/system-reduce/system-reduce-t9_40.png",
+          "_work/verify4/shots/system-reduce/system-reduce-ui-1.png",
+          "_work/verify4/shots/system-reduce/system-reduce-ui-2.png",
+          "_work/verify4/shots/system-reduce/system-reduce-ui-3.png"
+        ],
+        "all": [
+          "_work/verify4/shots/system-reduce/system-reduce-t10_90.png",
+          "_work/verify4/shots/system-reduce/system-reduce-t12_30.png",
+          "_work/verify4/shots/system-reduce/system-reduce-t2_20.png",
+          "_work/verify4/shots/system-reduce/system-reduce-t5_20.png",
+          "_work/verify4/shots/system-reduce/system-reduce-t7_78.png",
+          "_work/verify4/shots/system-reduce/system-reduce-t9_40.png",
+          "_work/verify4/shots/system-reduce/system-reduce-ui-1.png",
+          "_work/verify4/shots/system-reduce/system-reduce-ui-2.png",
+          "_work/verify4/shots/system-reduce/system-reduce-ui-3.png"
+        ]
+      },
+      "skip": {
+        "dir": "_work/verify4/shots/skip",
+        "count": 23,
+        "sample": [
+          "_work/verify4/shots/skip/skip-post-esc.png",
+          "_work/verify4/shots/skip/skip-pre-esc.png",
+          "_work/verify4/shots/skip/skip-t0_60.png",
+          "_work/verify4/shots/skip/skip-t10_20.png",
+          "_work/verify4/shots/skip/skip-t10_60.png",
+          "_work/verify4/shots/skip/skip-t10_90.png",
+          "_work/verify4/shots/skip/skip-t11_20.png",
+          "_work/verify4/shots/skip/skip-t11_80.png",
+          "_work/verify4/shots/skip/skip-t12_30.png",
+          "_work/verify4/shots/skip/skip-t2_20.png",
+          "_work/verify4/shots/skip/skip-t3_60.png",
+          "_work/verify4/shots/skip/skip-t4_20.png",
+          "_work/verify4/shots/skip/skip-t5_20.png",
+          "_work/verify4/shots/skip/skip-t6_80.png",
+          "_work/verify4/shots/skip/skip-t7_42.png",
+          "_work/verify4/shots/skip/skip-t7_78.png",
+          "_work/verify4/shots/skip/skip-t8_05.png",
+          "_work/verify4/shots/skip/skip-t8_30.png",
+          "_work/verify4/shots/skip/skip-t8_62.png",
+          "_work/verify4/shots/skip/skip-t9_40.png",
+          "_work/verify4/shots/skip/skip-ui-1.png",
+          "_work/verify4/shots/skip/skip-ui-2.png",
+          "_work/verify4/shots/skip/skip-ui-3.png"
+        ],
+        "all": [
+          "_work/verify4/shots/skip/skip-post-esc.png",
+          "_work/verify4/shots/skip/skip-pre-esc.png",
+          "_work/verify4/shots/skip/skip-t0_60.png",
+          "_work/verify4/shots/skip/skip-t10_20.png",
+          "_work/verify4/shots/skip/skip-t10_60.png",
+          "_work/verify4/shots/skip/skip-t10_90.png",
+          "_work/verify4/shots/skip/skip-t11_20.png",
+          "_work/verify4/shots/skip/skip-t11_80.png",
+          "_work/verify4/shots/skip/skip-t12_30.png",
+          "_work/verify4/shots/skip/skip-t2_20.png",
+          "_work/verify4/shots/skip/skip-t3_60.png",
+          "_work/verify4/shots/skip/skip-t4_20.png",
+          "_work/verify4/shots/skip/skip-t5_20.png",
+          "_work/verify4/shots/skip/skip-t6_80.png",
+          "_work/verify4/shots/skip/skip-t7_42.png",
+          "_work/verify4/shots/skip/skip-t7_78.png",
+          "_work/verify4/shots/skip/skip-t8_05.png",
+          "_work/verify4/shots/skip/skip-t8_30.png",
+          "_work/verify4/shots/skip/skip-t8_62.png",
+          "_work/verify4/shots/skip/skip-t9_40.png",
+          "_work/verify4/shots/skip/skip-ui-1.png",
+          "_work/verify4/shots/skip/skip-ui-2.png",
+          "_work/verify4/shots/skip/skip-ui-3.png"
+        ]
+      },
+      "missing-video": {
+        "dir": "_work/verify4/shots/missing-video",
+        "count": 21,
+        "sample": [
+          "_work/verify4/shots/missing-video/missing-video-t0_60.png",
+          "_work/verify4/shots/missing-video/missing-video-t10_20.png",
+          "_work/verify4/shots/missing-video/missing-video-t10_60.png",
+          "_work/verify4/shots/missing-video/missing-video-t10_90.png",
+          "_work/verify4/shots/missing-video/missing-video-t11_20.png",
+          "_work/verify4/shots/missing-video/missing-video-t11_80.png",
+          "_work/verify4/shots/missing-video/missing-video-t12_30.png",
+          "_work/verify4/shots/missing-video/missing-video-t2_20.png",
+          "_work/verify4/shots/missing-video/missing-video-t3_60.png",
+          "_work/verify4/shots/missing-video/missing-video-t4_20.png",
+          "_work/verify4/shots/missing-video/missing-video-t5_20.png",
+          "_work/verify4/shots/missing-video/missing-video-t6_80.png",
+          "_work/verify4/shots/missing-video/missing-video-t7_42.png",
+          "_work/verify4/shots/missing-video/missing-video-t7_78.png",
+          "_work/verify4/shots/missing-video/missing-video-t8_05.png",
+          "_work/verify4/shots/missing-video/missing-video-t8_30.png",
+          "_work/verify4/shots/missing-video/missing-video-t8_62.png",
+          "_work/verify4/shots/missing-video/missing-video-t9_40.png",
+          "_work/verify4/shots/missing-video/missing-video-ui-1.png",
+          "_work/verify4/shots/missing-video/missing-video-ui-2.png",
+          "_work/verify4/shots/missing-video/missing-video-ui-3.png"
+        ],
+        "all": [
+          "_work/verify4/shots/missing-video/missing-video-t0_60.png",
+          "_work/verify4/shots/missing-video/missing-video-t10_20.png",
+          "_work/verify4/shots/missing-video/missing-video-t10_60.png",
+          "_work/verify4/shots/missing-video/missing-video-t10_90.png",
+          "_work/verify4/shots/missing-video/missing-video-t11_20.png",
+          "_work/verify4/shots/missing-video/missing-video-t11_80.png",
+          "_work/verify4/shots/missing-video/missing-video-t12_30.png",
+          "_work/verify4/shots/missing-video/missing-video-t2_20.png",
+          "_work/verify4/shots/missing-video/missing-video-t3_60.png",
+          "_work/verify4/shots/missing-video/missing-video-t4_20.png",
+          "_work/verify4/shots/missing-video/missing-video-t5_20.png",
+          "_work/verify4/shots/missing-video/missing-video-t6_80.png",
+          "_work/verify4/shots/missing-video/missing-video-t7_42.png",
+          "_work/verify4/shots/missing-video/missing-video-t7_78.png",
+          "_work/verify4/shots/missing-video/missing-video-t8_05.png",
+          "_work/verify4/shots/missing-video/missing-video-t8_30.png",
+          "_work/verify4/shots/missing-video/missing-video-t8_62.png",
+          "_work/verify4/shots/missing-video/missing-video-t9_40.png",
+          "_work/verify4/shots/missing-video/missing-video-ui-1.png",
+          "_work/verify4/shots/missing-video/missing-video-ui-2.png",
+          "_work/verify4/shots/missing-video/missing-video-ui-3.png"
+        ]
+      },
+      "saver": {
+        "dir": "_work/verify4/shots/saver",
+        "count": 21,
+        "sample": [
+          "_work/verify4/shots/saver/saver-t0_60.png",
+          "_work/verify4/shots/saver/saver-t10_20.png",
+          "_work/verify4/shots/saver/saver-t10_60.png",
+          "_work/verify4/shots/saver/saver-t10_90.png",
+          "_work/verify4/shots/saver/saver-t11_20.png",
+          "_work/verify4/shots/saver/saver-t11_80.png",
+          "_work/verify4/shots/saver/saver-t12_30.png",
+          "_work/verify4/shots/saver/saver-t2_20.png",
+          "_work/verify4/shots/saver/saver-t3_60.png",
+          "_work/verify4/shots/saver/saver-t4_20.png",
+          "_work/verify4/shots/saver/saver-t5_20.png",
+          "_work/verify4/shots/saver/saver-t6_80.png",
+          "_work/verify4/shots/saver/saver-t7_42.png",
+          "_work/verify4/shots/saver/saver-t7_78.png",
+          "_work/verify4/shots/saver/saver-t8_05.png",
+          "_work/verify4/shots/saver/saver-t8_30.png",
+          "_work/verify4/shots/saver/saver-t8_62.png",
+          "_work/verify4/shots/saver/saver-t9_40.png",
+          "_work/verify4/shots/saver/saver-ui-1.png",
+          "_work/verify4/shots/saver/saver-ui-2.png",
+          "_work/verify4/shots/saver/saver-ui-3.png"
+        ],
+        "all": [
+          "_work/verify4/shots/saver/saver-t0_60.png",
+          "_work/verify4/shots/saver/saver-t10_20.png",
+          "_work/verify4/shots/saver/saver-t10_60.png",
+          "_work/verify4/shots/saver/saver-t10_90.png",
+          "_work/verify4/shots/saver/saver-t11_20.png",
+          "_work/verify4/shots/saver/saver-t11_80.png",
+          "_work/verify4/shots/saver/saver-t12_30.png",
+          "_work/verify4/shots/saver/saver-t2_20.png",
+          "_work/verify4/shots/saver/saver-t3_60.png",
+          "_work/verify4/shots/saver/saver-t4_20.png",
+          "_work/verify4/shots/saver/saver-t5_20.png",
+          "_work/verify4/shots/saver/saver-t6_80.png",
+          "_work/verify4/shots/saver/saver-t7_42.png",
+          "_work/verify4/shots/saver/saver-t7_78.png",
+          "_work/verify4/shots/saver/saver-t8_05.png",
+          "_work/verify4/shots/saver/saver-t8_30.png",
+          "_work/verify4/shots/saver/saver-t8_62.png",
+          "_work/verify4/shots/saver/saver-t9_40.png",
+          "_work/verify4/shots/saver/saver-ui-1.png",
+          "_work/verify4/shots/saver/saver-ui-2.png",
+          "_work/verify4/shots/saver/saver-ui-3.png"
+        ]
+      },
+      "immersive": {
+        "dir": "_work/verify4/shots/immersive",
+        "count": 3,
+        "sample": [
+          "_work/verify4/shots/immersive/immersive-ui-1.png",
+          "_work/verify4/shots/immersive/immersive-ui-2.png",
+          "_work/verify4/shots/immersive/immersive-ui-3.png"
+        ],
+        "all": [
+          "_work/verify4/shots/immersive/immersive-ui-1.png",
+          "_work/verify4/shots/immersive/immersive-ui-2.png",
+          "_work/verify4/shots/immersive/immersive-ui-3.png"
+        ]
+      },
+      "glass": {
+        "dir": "_work/verify4/shots/glass",
+        "count": 3,
+        "sample": [
+          "_work/verify4/shots/glass/glass-ui-1.png",
+          "_work/verify4/shots/glass/glass-ui-2.png",
+          "_work/verify4/shots/glass/glass-ui-3.png"
+        ],
+        "all": [
+          "_work/verify4/shots/glass/glass-ui-1.png",
+          "_work/verify4/shots/glass/glass-ui-2.png",
+          "_work/verify4/shots/glass/glass-ui-3.png"
+        ]
+      },
+      "preview": {
+        "dir": "_work/verify4/shots/preview",
+        "count": 14,
+        "sample": [
+          "_work/verify4/shots/preview/preview-01-loaded.png",
+          "_work/verify4/shots/preview/preview-02-act1.png",
+          "_work/verify4/shots/preview/preview-03-act-I.png",
+          "_work/verify4/shots/preview/preview-03-act-II.png",
+          "_work/verify4/shots/preview/preview-03-act-III.png",
+          "_work/verify4/shots/preview/preview-03-act-IV.png",
+          "_work/verify4/shots/preview/preview-04-jump-t10_2.png",
+          "_work/verify4/shots/preview/preview-04-jump-t10_9.png",
+          "_work/verify4/shots/preview/preview-04-jump-t12_3.png",
+          "_work/verify4/shots/preview/preview-04-jump-t12_45.png",
+          "_work/verify4/shots/preview/preview-04-jump-t12_7.png",
+          "_work/verify4/shots/preview/preview-04-jump-t7_78.png",
+          "_work/verify4/shots/preview/preview-04-jump-t9_4.png",
+          "_work/verify4/shots/preview/preview-05-sliders.png"
+        ],
+        "all": [
+          "_work/verify4/shots/preview/preview-01-loaded.png",
+          "_work/verify4/shots/preview/preview-02-act1.png",
+          "_work/verify4/shots/preview/preview-03-act-I.png",
+          "_work/verify4/shots/preview/preview-03-act-II.png",
+          "_work/verify4/shots/preview/preview-03-act-III.png",
+          "_work/verify4/shots/preview/preview-03-act-IV.png",
+          "_work/verify4/shots/preview/preview-04-jump-t10_2.png",
+          "_work/verify4/shots/preview/preview-04-jump-t10_9.png",
+          "_work/verify4/shots/preview/preview-04-jump-t12_3.png",
+          "_work/verify4/shots/preview/preview-04-jump-t12_45.png",
+          "_work/verify4/shots/preview/preview-04-jump-t12_7.png",
+          "_work/verify4/shots/preview/preview-04-jump-t7_78.png",
+          "_work/verify4/shots/preview/preview-04-jump-t9_4.png",
+          "_work/verify4/shots/preview/preview-05-sliders.png"
+        ]
+      }
+    }
+  },
+  "unverified": [
+    {
+      "item": "matrix-skip:missing-video/[object Object]",
+      "detail": "无视频场景不适用 MOSS 视频红线；由「无视频请求/无 src」断言覆盖"
+    },
+    {
+      "item": "matrix-skip:saver/[object Object]",
+      "detail": "无视频场景不适用 MOSS 视频红线；由「无视频请求/无 src」断言覆盖"
+    },
+    {
+      "item": "real-user-host-50022",
+      "detail": "用户正在使用的真实宿主 50022 按纪律全程未触碰；真宿主验收在隔离 verify profile 57123 完成"
+    },
+    {
+      "item": "lib/index.js-host-fallback-13000",
+      "detail": "宿主 13.0s 兜底按 spec 不改；隔离宿主已重启为 14000 兜底并实测（Lead 维护）"
+    }
+  ],
+  "failures": []
+}

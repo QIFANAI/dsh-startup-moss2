@@ -1,0 +1,63 @@
+{
+  "wav": "E:\\dshdesign\\dsh-startup-moss2\\_work\\demo\\moss2-boot-audio.wav",
+  "durationSec": 11.8,
+  "sampleRate": 44100,
+  "channels": 2,
+  "bits": 16,
+  "windows": {
+    "actI_tail": {
+      "from": 3.6,
+      "to": 3.8,
+      "rmsDb": -20.98,
+      "peakDb": -11.98
+    },
+    "cut_impact": {
+      "from": 3.85,
+      "to": 4.1,
+      "rmsDb": -16.97,
+      "peakDb": -3.69
+    },
+    "actII_bed": {
+      "from": 5,
+      "to": 6.6,
+      "rmsDb": -19.21,
+      "peakDb": -10
+    },
+    "lock_accent": {
+      "from": 7.35,
+      "to": 7.6,
+      "rmsDb": -13.09,
+      "peakDb": -1.86
+    },
+    "lock_after": {
+      "from": 7.6,
+      "to": 8.1,
+      "rmsDb": -19.78,
+      "peakDb": -11.13
+    },
+    "actIV_bed": {
+      "from": 10.4,
+      "to": 11,
+      "rmsDb": -19.34,
+      "peakDb": -8.09
+    },
+    "fade_after_11_1": {
+      "from": 11.1,
+      "to": 11.4,
+      "rmsDb": -36.83,
+      "peakDb": -19.15
+    },
+    "tail": {
+      "from": 11.4,
+      "to": 11.8,
+      "rmsDb": -84.48,
+      "peakDb": -68.73
+    }
+  },
+  "ebur128": {
+    "ok": true,
+    "integratedLufs": -20,
+    "lraLu": 3.8,
+    "truePeakDb": -1.3
+  }
+}

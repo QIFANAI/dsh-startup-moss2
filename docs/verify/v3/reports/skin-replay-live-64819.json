@@ -1,0 +1,43 @@
+{
+  "host": "http://127.0.0.1:64819",
+  "rev": "v0.3-r1",
+  "rows": [
+    {
+      "label": "live#1 首次加载（宿主注入启动层，应播放）",
+      "sawSplash": true,
+      "upgradeReplay": false,
+      "store": {
+        "rev": null,
+        "shown": null
+      }
+    },
+    {
+      "label": "live#2 刷新（session 已标记，应跳过）",
+      "sawSplash": false,
+      "upgradeReplay": false,
+      "store": {
+        "rev": "v0.3-r1",
+        "shown": null
+      }
+    },
+    {
+      "label": "live#3 rev=旧值（模拟 v0.2 老用户刷新，应补播一次）",
+      "sawSplash": true,
+      "upgradeReplay": true,
+      "store": {
+        "rev": "v0.3-r1",
+        "shown": null
+      }
+    },
+    {
+      "label": "live#4 再刷新（rev 已写回，应跳过）",
+      "sawSplash": false,
+      "upgradeReplay": false,
+      "store": {
+        "rev": "v0.3-r1",
+        "shown": null
+      }
+    }
+  ],
+  "exceptions": []
+}

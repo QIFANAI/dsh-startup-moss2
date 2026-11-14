@@ -1,0 +1,796 @@
+{
+  "generatedAt": "2026-11-06T17:32:16.360Z",
+  "root": "E:\\dshdesign\\dsh-startup-moss2\\docs\\verify\\v3",
+  "entries": [
+    {
+      "src": "_work/verify3/splash/01-t3_2.png",
+      "dest": "docs/verify/v3/splash/01-t3_2.png",
+      "role": "accept-v3 splash 逐帧（freeze 定格）",
+      "bytes": 2486100,
+      "sha256": "c5b031f6136f871bd779317f687fd5e0c11fae99793147891b49d0e2c508b5b7"
+    },
+    {
+      "src": "_work/verify3/splash/02-t4_6.png",
+      "dest": "docs/verify/v3/splash/02-t4_6.png",
+      "role": "accept-v3 splash 逐帧（freeze 定格）",
+      "bytes": 2818015,
+      "sha256": "f80110dde834ee3804b79c646d7cc58c2437e14be0dcf2afc3a4c8be714e756b"
+    },
+    {
+      "src": "_work/verify3/splash/03-t5_6.png",
+      "dest": "docs/verify/v3/splash/03-t5_6.png",
+      "role": "accept-v3 splash 逐帧（freeze 定格）",
+      "bytes": 2495672,
+      "sha256": "1510787484dcfa6a2e2e9408b1261884c8d1e2f22f18538efc20274275f84a2b"
+    },
+    {
+      "src": "_work/verify3/splash/04-t6_8.png",
+      "dest": "docs/verify/v3/splash/04-t6_8.png",
+      "role": "accept-v3 splash 逐帧（freeze 定格）",
+      "bytes": 2439844,
+      "sha256": "a1212c0baefba26d64143c5fc8cf71f9ca88af2b0f216258d7692834c4f14834"
+    },
+    {
+      "src": "_work/verify3/splash/05-t7_42.png",
+      "dest": "docs/verify/v3/splash/05-t7_42.png",
+      "role": "accept-v3 splash 逐帧（freeze 定格）",
+      "bytes": 2351562,
+      "sha256": "47d08e1b90161931244fb83a9fb332723d067caabf7d014240a299078086bf1a"
+    },
+    {
+      "src": "_work/verify3/splash/06-t7_9.png",
+      "dest": "docs/verify/v3/splash/06-t7_9.png",
+      "role": "accept-v3 splash 逐帧（freeze 定格）",
+      "bytes": 2451992,
+      "sha256": "eb09a2227ddcbbd743cc2aa254c1d24816105abb2722b4b792b114fa1e3a71cc"
+    },
+    {
+      "src": "_work/verify3/splash/07-t8_6.png",
+      "dest": "docs/verify/v3/splash/07-t8_6.png",
+      "role": "accept-v3 splash 逐帧（freeze 定格）",
+      "bytes": 2243976,
+      "sha256": "03cc32997901d1a95652f3ffddcd34e8d32790ffdc3cb7480d0dd60c1cd8d83b"
+    },
+    {
+      "src": "_work/verify3/splash/08-t9_4.png",
+      "dest": "docs/verify/v3/splash/08-t9_4.png",
+      "role": "accept-v3 splash 逐帧（freeze 定格）",
+      "bytes": 2229269,
+      "sha256": "d26f54332a6be141846b1f77d73f9e8e4256c079bc9e998f875bc765acb27b2c"
+    },
+    {
+      "src": "_work/verify3/splash/09-t10_2.png",
+      "dest": "docs/verify/v3/splash/09-t10_2.png",
+      "role": "accept-v3 splash 逐帧（freeze 定格）",
+      "bytes": 1566065,
+      "sha256": "6b43098b96fb8aa068e78497428b9cb415c00a424439cec629b0d3f20a12f356"
+    },
+    {
+      "src": "_work/verify3/splash/10-t11_2.png",
+      "dest": "docs/verify/v3/splash/10-t11_2.png",
+      "role": "accept-v3 splash 逐帧（freeze 定格）",
+      "bytes": 1598702,
+      "sha256": "d8c27bf616d28d7cff68ac6ffd30f4cbbeea66e4908ba8bef62a0c7de2c6ad6f"
+    },
+    {
+      "src": "_work/verify3/ui/01-ui-base.png",
+      "dest": "docs/verify/v3/ui/01-ui-base.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1602954,
+      "sha256": "ab01137875dd5e0a7268429ab4d4f378b230ef7b01273b440f95fdfa1995843d"
+    },
+    {
+      "src": "_work/verify3/ui/02-menu-immersive-权限.png",
+      "dest": "docs/verify/v3/ui/02-menu-immersive-权限.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1597494,
+      "sha256": "aea439e8ea2b47532787bbfbfb4a245d1f92f894ef74bd7b240d0bf668e3bcbd"
+    },
+    {
+      "src": "_work/verify3/ui/02-menu-immersive-模式.png",
+      "dest": "docs/verify/v3/ui/02-menu-immersive-模式.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1547964,
+      "sha256": "1bd3372a8404eda6f71efdec23d946b18d332cc96fd07b2bebffffd55bfd25c6"
+    },
+    {
+      "src": "_work/verify3/ui/02-menu-plus.png",
+      "dest": "docs/verify/v3/ui/02-menu-plus.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1577100,
+      "sha256": "068ea659bcd3c99c929e3c841e6b4faec8eaddf46dcf04f057eba94751ed1820"
+    },
+    {
+      "src": "_work/verify3/ui/03-menu-immersive-模式.png",
+      "dest": "docs/verify/v3/ui/03-menu-immersive-模式.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1558242,
+      "sha256": "2c367abd81ba00ce3743bbc875f312d6ab6154842bdab8d0c82de9c7c1900d80"
+    },
+    {
+      "src": "_work/verify3/ui/03-menu-plus.png",
+      "dest": "docs/verify/v3/ui/03-menu-plus.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1361414,
+      "sha256": "1101e720bc418368ab4012fff3476ce2dea29bac55d729743b64eb3de13846ed"
+    },
+    {
+      "src": "_work/verify3/ui/03-ui-final.png",
+      "dest": "docs/verify/v3/ui/03-ui-final.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1575261,
+      "sha256": "aa97dc34813fba22e764a2fc5378e153bd11292dc15f07cbe0b19aaa94483610"
+    },
+    {
+      "src": "_work/verify3/ui/04-menu-permission.png",
+      "dest": "docs/verify/v3/ui/04-menu-permission.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1398262,
+      "sha256": "7debc660a675e453d6df08995741bbaa5ebca27915a402801d1aa1377b105086"
+    },
+    {
+      "src": "_work/verify3/ui/04-menu-plus.png",
+      "dest": "docs/verify/v3/ui/04-menu-plus.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1349011,
+      "sha256": "65afc2d5fa6fee3ba16b5bb349add1fb35c57eeee4b760b05c3dbed0fc24a2d6"
+    },
+    {
+      "src": "_work/verify3/ui/05-after-select-quanquan.png",
+      "dest": "docs/verify/v3/ui/05-after-select-quanquan.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 893869,
+      "sha256": "cfcf9ae02e79387d9a5493e1527ab9105603c2cca9bdf83f68c348ffe033fb25"
+    },
+    {
+      "src": "_work/verify3/ui/05-menu-permission.png",
+      "dest": "docs/verify/v3/ui/05-menu-permission.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1429972,
+      "sha256": "f0e29f6914254ed41f36b35d718818b79cda3a7c6c2419da7ca9d9f6ed25b566"
+    },
+    {
+      "src": "_work/verify3/ui/06-after-select-quanquan.png",
+      "dest": "docs/verify/v3/ui/06-after-select-quanquan.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 898526,
+      "sha256": "f8303750470720330408384ff8b5c08353e59c01e68d03337620f54af197aa4a"
+    },
+    {
+      "src": "_work/verify3/ui/06-ui-final.png",
+      "dest": "docs/verify/v3/ui/06-ui-final.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1544801,
+      "sha256": "e935fa74d40374c5459549839c99d36be4d8e87d12462415b4beea6383914124"
+    },
+    {
+      "src": "_work/verify3/ui/07-after-enable-quanquan.png",
+      "dest": "docs/verify/v3/ui/07-after-enable-quanquan.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 905748,
+      "sha256": "78d226f562796600d1dec2b90ca9a293bda10b0866e9e2b260a72f498494b800"
+    },
+    {
+      "src": "_work/verify3/ui/08-ui-final.png",
+      "dest": "docs/verify/v3/ui/08-ui-final.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1568997,
+      "sha256": "10e8f570665f05b96c15334691fa000617d42763839cdc88cd9a9a699077958e"
+    },
+    {
+      "src": "_work/verify3/ui/11-ui-base.png",
+      "dest": "docs/verify/v3/ui/11-ui-base.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1609824,
+      "sha256": "4a635749dc6e47b6a908c41a2753969adc0b02784f9d863f7f9d21190f45e877"
+    },
+    {
+      "src": "_work/verify3/ui/12-menu-immersive-权限.png",
+      "dest": "docs/verify/v3/ui/12-menu-immersive-权限.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1606200,
+      "sha256": "b1f9391291a0fc2976f732409f1e093bab1b0b6205865d885b2e001022c6ac6e"
+    },
+    {
+      "src": "_work/verify3/ui/13-menu-immersive-模式.png",
+      "dest": "docs/verify/v3/ui/13-menu-immersive-模式.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1513476,
+      "sha256": "495fa86895b671259d83f95b25e57874f515158408001f923248317c2a1edddb"
+    },
+    {
+      "src": "_work/verify3/ui/14-menu-plus.png",
+      "dest": "docs/verify/v3/ui/14-menu-plus.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1331770,
+      "sha256": "f8840737a1ec05f99c111b37f354f816ce076af21731333426247cad32efa73a"
+    },
+    {
+      "src": "_work/verify3/ui/15-menu-permission.png",
+      "dest": "docs/verify/v3/ui/15-menu-permission.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1394654,
+      "sha256": "541b2f7c395a1fea2e78f50f970b42367dd9d7a0fc370dc7a1effa6153a23592"
+    },
+    {
+      "src": "_work/verify3/ui/16-after-select-quanquan.png",
+      "dest": "docs/verify/v3/ui/16-after-select-quanquan.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 906467,
+      "sha256": "6bc06c32ebb039e009c2ae25a2c6fd8a36d441fada61a3d3e9e0bbdc116ca137"
+    },
+    {
+      "src": "_work/verify3/ui/17-after-enable-quanquan.png",
+      "dest": "docs/verify/v3/ui/17-after-enable-quanquan.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 903299,
+      "sha256": "f7e5b48d64ca5bdc30cd12f72556413b95f4210c684bd0d5a25d244f1b70e729"
+    },
+    {
+      "src": "_work/verify3/ui/18-ui-final.png",
+      "dest": "docs/verify/v3/ui/18-ui-final.png",
+      "role": "accept-v3 UI：immersive 菜单/权限点选/红眼与四角呼吸",
+      "bytes": 1572083,
+      "sha256": "892278a5c6821edc96b7dcb899798cd5e93bfb8120809ba1dccfbd3fef2963e8"
+    },
+    {
+      "src": "_work/verify3/report-all.json",
+      "dest": "docs/verify/v3/reports/accept-v3-report-all.json",
+      "role": "accept-v3 全场景断言",
+      "bytes": 21570,
+      "sha256": "6f61d25937f0d807c53ef91676068c177415f39eea72d7c2ecedeeaa0704d81a"
+    },
+    {
+      "src": "_work/verify3/report-splash.json",
+      "dest": "docs/verify/v3/reports/accept-v3-report-splash.json",
+      "role": "accept-v3 splash 断言",
+      "bytes": 15595,
+      "sha256": "f93c758058c29ae5554305a4b7e840c982d7006174e9253e123e8e01c1439283"
+    },
+    {
+      "src": "_work/verify3/report-ui.json",
+      "dest": "docs/verify/v3/reports/accept-v3-report-ui.json",
+      "role": "accept-v3 UI 断言",
+      "bytes": 6580,
+      "sha256": "8700d2aeb15cd2af995e82a2a9fd3a50fb5fadf9e22e4a56d0a300ad8845ec6b"
+    },
+    {
+      "src": "_work/verify3/report-ui-reduce.json",
+      "dest": "docs/verify/v3/reports/accept-v3-report-ui-reduce.json",
+      "role": "accept-v3 UI 系统 reduce 断言",
+      "bytes": 6579,
+      "sha256": "0606390e0daf7ac9b0482f29bdcc69194f11266164e6dca9dd3c3db939fab5b2"
+    },
+    {
+      "src": "_work/verify2/assertions.json",
+      "dest": "docs/verify/v3/reports/verify2-assertions.json",
+      "role": "verify2 8 场景矩阵汇总",
+      "bytes": 2854,
+      "sha256": "c1860cd6f0e688a0849c05a7bef1785b056f9d26e01de0b5c87e031bdf733350"
+    },
+    {
+      "src": "_work/verify2/report-normal.json",
+      "dest": "docs/verify/v3/reports/verify2-report-normal.json",
+      "role": "verify2 normal 断言",
+      "bytes": 451980,
+      "sha256": "8ff33e0aa5fe1f3ea03cf8b585d0fac0617dc0e70cc8b210ebbb90753bfe0f44"
+    },
+    {
+      "src": "_work/verify2/report-system-reduce.json",
+      "dest": "docs/verify/v3/reports/verify2-report-system-reduce.json",
+      "role": "verify2 system-reduce 断言",
+      "bytes": 497170,
+      "sha256": "b4fe9542ba52ea2bf8b2bb6437148d8fc514c16f8344e5bf0d764ca5e336b7bd"
+    },
+    {
+      "src": "_work/verify2/report-skip.json",
+      "dest": "docs/verify/v3/reports/verify2-report-skip.json",
+      "role": "verify2 skip 断言",
+      "bytes": 463458,
+      "sha256": "0793212bfca49bbd5fa0b91a91144ea26e852810fafad0f4461170dfd999a73e"
+    },
+    {
+      "src": "_work/verify2/report-missing-video.json",
+      "dest": "docs/verify/v3/reports/verify2-report-missing-video.json",
+      "role": "verify2 missing-video 断言",
+      "bytes": 524999,
+      "sha256": "b57632b45b0189aabbc96e38eb0522dccefa4f22e3964159a0b81d05c22e8c4b"
+    },
+    {
+      "src": "_work/verify2/report-saver.json",
+      "dest": "docs/verify/v3/reports/verify2-report-saver.json",
+      "role": "verify2 saver 断言",
+      "bytes": 475664,
+      "sha256": "033da4d72c8497fa6b66c7c5b2041ff3bf7d6531c56c222f05d8d39627d2fc4e"
+    },
+    {
+      "src": "_work/verify2/report-immersive.json",
+      "dest": "docs/verify/v3/reports/verify2-report-immersive.json",
+      "role": "verify2 immersive 断言",
+      "bytes": 482956,
+      "sha256": "c78ee210383aad87b99ec6a8f88736637844ec35794c707c562a998def62dd59"
+    },
+    {
+      "src": "_work/verify2/report-glass.json",
+      "dest": "docs/verify/v3/reports/verify2-report-glass.json",
+      "role": "verify2 glass 断言",
+      "bytes": 519302,
+      "sha256": "4c02b734d356d68e4eb74759eebdade258b23b20fe72fb009349a2f4368a57af"
+    },
+    {
+      "src": "_work/verify2/report-preview.json",
+      "dest": "docs/verify/v3/reports/verify2-report-preview.json",
+      "role": "verify2 preview 断言",
+      "bytes": 34423,
+      "sha256": "028f72cf9b6729b88d976a21db19dc10e0f045a6ec0a9d15654b6c9ac15465f7"
+    },
+    {
+      "src": "_work/verify2/shots/normal/normal-t10.2.png",
+      "dest": "docs/verify/v3/splash/verify2-normal/normal-t10.2.png",
+      "role": "verify2 normal 关键帧",
+      "bytes": 1202739,
+      "sha256": "93dfe456a931f5f598c43ed33fd1a635f356f50b894ceaaab4d55f0841a0ee70"
+    },
+    {
+      "src": "_work/verify2/shots/normal/normal-t11.2.png",
+      "dest": "docs/verify/v3/splash/verify2-normal/normal-t11.2.png",
+      "role": "verify2 normal 关键帧",
+      "bytes": 1229279,
+      "sha256": "b8ae0260e4de117e492be8b58e0c20beea7967307daa2959cb3e9eba513c19dd"
+    },
+    {
+      "src": "_work/verify2/shots/normal/normal-t12.5.png",
+      "dest": "docs/verify/v3/splash/verify2-normal/normal-t12.5.png",
+      "role": "verify2 normal 关键帧",
+      "bytes": 349856,
+      "sha256": "af4b3584b950a5fad540d84a0deece1f253410c44a2c66483ff17c40f0772c3c"
+    },
+    {
+      "src": "_work/verify2/shots/normal/normal-t5.2.png",
+      "dest": "docs/verify/v3/splash/verify2-normal/normal-t5.2.png",
+      "role": "verify2 normal 关键帧",
+      "bytes": 1978641,
+      "sha256": "a56fe57ba8af5c0f1bccfc72c57bf9fb4c4a08d1e4c83f42aef37d9071cd94ef"
+    },
+    {
+      "src": "_work/verify2/shots/normal/normal-t6.8.png",
+      "dest": "docs/verify/v3/splash/verify2-normal/normal-t6.8.png",
+      "role": "verify2 normal 关键帧",
+      "bytes": 1861255,
+      "sha256": "5546293be22add07b2929d0baf2bb12feba4597859e38d4d9fb8dc42a051de32"
+    },
+    {
+      "src": "_work/verify2/shots/normal/normal-t7.4.png",
+      "dest": "docs/verify/v3/splash/verify2-normal/normal-t7.4.png",
+      "role": "verify2 normal 关键帧",
+      "bytes": 1791988,
+      "sha256": "8197196d39a971272434aa3687d885c41930559628bb37add8cb707cd4017e93"
+    },
+    {
+      "src": "_work/verify2/shots/normal/normal-t8.3.png",
+      "dest": "docs/verify/v3/splash/verify2-normal/normal-t8.3.png",
+      "role": "verify2 normal 关键帧",
+      "bytes": 1727583,
+      "sha256": "b3b9502c5f2c1633d49385d3390057fba320abea15a52814c437ef9a9aad711b"
+    },
+    {
+      "src": "_work/verify2/shots/normal/normal-t9.4.png",
+      "dest": "docs/verify/v3/splash/verify2-normal/normal-t9.4.png",
+      "role": "verify2 normal 关键帧",
+      "bytes": 1708345,
+      "sha256": "eab4809daf164ad45eb917b7020fa80e98ab6456a1a3695f7aa37fdc6879c417"
+    },
+    {
+      "src": "_work/verify2/shots/system-reduce/system-reduce-t11.2.png",
+      "dest": "docs/verify/v3/splash/verify2-system-reduce/system-reduce-t11.2.png",
+      "role": "verify2 system-reduce 关键帧",
+      "bytes": 1229279,
+      "sha256": "b8ae0260e4de117e492be8b58e0c20beea7967307daa2959cb3e9eba513c19dd"
+    },
+    {
+      "src": "_work/verify2/shots/system-reduce/system-reduce-t5.2.png",
+      "dest": "docs/verify/v3/splash/verify2-system-reduce/system-reduce-t5.2.png",
+      "role": "verify2 system-reduce 关键帧",
+      "bytes": 1978641,
+      "sha256": "a56fe57ba8af5c0f1bccfc72c57bf9fb4c4a08d1e4c83f42aef37d9071cd94ef"
+    },
+    {
+      "src": "_work/verify2/shots/system-reduce/system-reduce-t7.4.png",
+      "dest": "docs/verify/v3/splash/verify2-system-reduce/system-reduce-t7.4.png",
+      "role": "verify2 system-reduce 关键帧",
+      "bytes": 1791988,
+      "sha256": "8197196d39a971272434aa3687d885c41930559628bb37add8cb707cd4017e93"
+    },
+    {
+      "src": "_work/verify2/shots/skip/skip-post-esc-0.6s.png",
+      "dest": "docs/verify/v3/splash/verify2-skip/skip-post-esc-0.6s.png",
+      "role": "verify2 skip 关键帧",
+      "bytes": 1208803,
+      "sha256": "539df5c9be9241348d15cc57bf40b39bc844b823a571071b5eecb6d3236ac686"
+    },
+    {
+      "src": "_work/verify2/shots/skip/skip-post-esc-2.1s.png",
+      "dest": "docs/verify/v3/splash/verify2-skip/skip-post-esc-2.1s.png",
+      "role": "verify2 skip 关键帧",
+      "bytes": 368223,
+      "sha256": "fa8eeb5ebc6f7f844240a930d932abcc1172b24c4bec7ef55f368c2fc152b5c5"
+    },
+    {
+      "src": "_work/verify2/shots/missing-video/missing-video-t11.2.png",
+      "dest": "docs/verify/v3/splash/verify2-missing-video/missing-video-t11.2.png",
+      "role": "verify2 missing-video 关键帧",
+      "bytes": 1284812,
+      "sha256": "11172f8cb152bfbab77532eb901b865131ec93801c62df7624565058ae3c98c0"
+    },
+    {
+      "src": "_work/verify2/shots/missing-video/missing-video-t5.2.png",
+      "dest": "docs/verify/v3/splash/verify2-missing-video/missing-video-t5.2.png",
+      "role": "verify2 missing-video 关键帧",
+      "bytes": 1882192,
+      "sha256": "7bfcef42bbe6ad416f145b93b0cbe863f8f3a9de18c616fbb5cccaa821832105"
+    },
+    {
+      "src": "_work/verify2/shots/saver/saver-t11.2.png",
+      "dest": "docs/verify/v3/splash/verify2-saver/saver-t11.2.png",
+      "role": "verify2 saver 关键帧",
+      "bytes": 1163574,
+      "sha256": "ff3ae818657c28f2f5457711d6aa695de04726c52f6dc52d13ba4be3f0ca775d"
+    },
+    {
+      "src": "_work/verify2/shots/saver/saver-t5.2.png",
+      "dest": "docs/verify/v3/splash/verify2-saver/saver-t5.2.png",
+      "role": "verify2 saver 关键帧",
+      "bytes": 1963619,
+      "sha256": "69425a74f36dc14961705275d4295b0ab70d2ee87e416441051d3092c83fda08"
+    },
+    {
+      "src": "_work/verify2/shots/immersive/immersive-t10.2.png",
+      "dest": "docs/verify/v3/splash/verify2-immersive/immersive-t10.2.png",
+      "role": "verify2 immersive 关键帧",
+      "bytes": 1219139,
+      "sha256": "0ac3f29e11bb14d5d98c6658bcd92a4ec4d67f189b5adbe82c63186dcf661db2"
+    },
+    {
+      "src": "_work/verify2/shots/immersive/immersive-t5.2.png",
+      "dest": "docs/verify/v3/splash/verify2-immersive/immersive-t5.2.png",
+      "role": "verify2 immersive 关键帧",
+      "bytes": 1958153,
+      "sha256": "0237fc0d52341e0b229a331b570585cbfe4e9816d03a49c01aa1b7113aac0b8d"
+    },
+    {
+      "src": "_work/verify2/shots/glass/glass-t10.2.png",
+      "dest": "docs/verify/v3/splash/verify2-glass/glass-t10.2.png",
+      "role": "verify2 glass 关键帧",
+      "bytes": 1219139,
+      "sha256": "0ac3f29e11bb14d5d98c6658bcd92a4ec4d67f189b5adbe82c63186dcf661db2"
+    },
+    {
+      "src": "_work/verify2/shots/glass/glass-t5.2.png",
+      "dest": "docs/verify/v3/splash/verify2-glass/glass-t5.2.png",
+      "role": "verify2 glass 关键帧",
+      "bytes": 1958153,
+      "sha256": "0237fc0d52341e0b229a331b570585cbfe4e9816d03a49c01aa1b7113aac0b8d"
+    },
+    {
+      "src": "_work/verify2/shots/preview/preview-01-loaded.png",
+      "dest": "docs/verify/v3/ui/preview/preview-01-loaded.png",
+      "role": "preview 页 v0.3 探针截图",
+      "bytes": 393271,
+      "sha256": "b490a899fee66bf429db9fed2cf7e16be4704456ace4f904b6dc91dd5b0b1a19"
+    },
+    {
+      "src": "_work/verify2/shots/preview/preview-02-act1.png",
+      "dest": "docs/verify/v3/ui/preview/preview-02-act1.png",
+      "role": "preview 页 v0.3 探针截图",
+      "bytes": 1880565,
+      "sha256": "0dc340bd10d7b91d4039394873a8f4b2e49e2d207d9d93b32c062bb2ff8c2a62"
+    },
+    {
+      "src": "_work/verify2/shots/preview/preview-03-act-I.png",
+      "dest": "docs/verify/v3/ui/preview/preview-03-act-I.png",
+      "role": "preview 页 v0.3 探针截图",
+      "bytes": 1877317,
+      "sha256": "49dec7377126ef693ee225a1ae9d3f4f2a4cb7d6d967c599439be2581a0d1d64"
+    },
+    {
+      "src": "_work/verify2/shots/preview/preview-03-act-II.png",
+      "dest": "docs/verify/v3/ui/preview/preview-03-act-II.png",
+      "role": "preview 页 v0.3 探针截图",
+      "bytes": 1962925,
+      "sha256": "1036b152febc6b50a3b7e39f8ac51ae8102be046ee486b20574cf458e7bdc339"
+    },
+    {
+      "src": "_work/verify2/shots/preview/preview-03-act-III.png",
+      "dest": "docs/verify/v3/ui/preview/preview-03-act-III.png",
+      "role": "preview 页 v0.3 探针截图",
+      "bytes": 1715588,
+      "sha256": "79a403e651bc984949a4c4b07636b1ef73e145157988c726c2240252c916b9f1"
+    },
+    {
+      "src": "_work/verify2/shots/preview/preview-03-act-IV.png",
+      "dest": "docs/verify/v3/ui/preview/preview-03-act-IV.png",
+      "role": "preview 页 v0.3 探针截图",
+      "bytes": 1219211,
+      "sha256": "440e1b11802eec7f04cea3893a4375168cf082158c4c9ad7573bc5675a71cd3f"
+    },
+    {
+      "src": "_work/verify2/shots/preview/preview-03b-lock-frame.png",
+      "dest": "docs/verify/v3/ui/preview/preview-03b-lock-frame.png",
+      "role": "preview 页 v0.3 探针截图",
+      "bytes": 1559426,
+      "sha256": "07e16eda565f19495b00f0864b91b37617da347d53960f278decb86aef699027"
+    },
+    {
+      "src": "_work/verify2/shots/preview/preview-04-sliders.png",
+      "dest": "docs/verify/v3/ui/preview/preview-04-sliders.png",
+      "role": "preview 页 v0.3 探针截图",
+      "bytes": 376335,
+      "sha256": "e66151f152d42d0ab40d033540ff58517132e32760ad3490ad77f18d46d0d4b5"
+    },
+    {
+      "src": "_work/verify2/shots/preview/preview-05-motion.png",
+      "dest": "docs/verify/v3/ui/preview/preview-05-motion.png",
+      "role": "preview 页 v0.3 探针截图",
+      "bytes": 375651,
+      "sha256": "678b9c6bec5b400c70970b48198b6894863758dc0c32954d08fa987bd959450c"
+    },
+    {
+      "src": "_work/verify3/live/menu-_.png",
+      "dest": "docs/verify/v3/ui/live-64819/menu-_.png",
+      "role": "真实宿主 64819：升级补播/菜单/呼吸截图",
+      "bytes": 1519354,
+      "sha256": "7b0be2f0f690ebf4cc8565c32cb699134444bfecdca6d077bc301196fd8bfe62"
+    },
+    {
+      "src": "_work/verify3/live/ui-final.png",
+      "dest": "docs/verify/v3/ui/live-64819/ui-final.png",
+      "role": "真实宿主 64819：升级补播/菜单/呼吸截图",
+      "bytes": 1566306,
+      "sha256": "dc980fbf2694dc36ee53e12f4c61106404b5107f1c82de05afab4c5d16dbdde9"
+    },
+    {
+      "src": "_work/verify3/live/upgrade-after.png",
+      "dest": "docs/verify/v3/ui/live-64819/upgrade-after.png",
+      "role": "真实宿主 64819：升级补播/菜单/呼吸截图",
+      "bytes": 1632259,
+      "sha256": "363004ddc389fee3f9d7d1f5283a40104d80ae6bcebac49842424fee17b6b185"
+    },
+    {
+      "src": "_work/verify3/live/upgrade-replay-t1.2s.png",
+      "dest": "docs/verify/v3/ui/live-64819/upgrade-replay-t1.2s.png",
+      "role": "真实宿主 64819：升级补播/菜单/呼吸截图",
+      "bytes": 13572,
+      "sha256": "4223df51aead1aae46bc48f05932f870a362afd91e79dba10b38723d030243ed"
+    },
+    {
+      "src": "_work/verify3/live/upgrade-replay-t7.2s.png",
+      "dest": "docs/verify/v3/ui/live-64819/upgrade-replay-t7.2s.png",
+      "role": "真实宿主 64819：升级补播/菜单/呼吸截图",
+      "bytes": 2464060,
+      "sha256": "1c634fc04bba49b8b91991f51f83f50a476887430b5054e2d74120987dd445c5"
+    },
+    {
+      "src": "_work/verify3/live/report-live-final.json",
+      "dest": "docs/verify/v3/reports/live-final-report.json",
+      "role": "live-final 7 项终验断言",
+      "bytes": 5313,
+      "sha256": "69edc9b8750846f859ee8c6441b05c22a35ba548f8c5f6f2b50fcea5f6cff1cd"
+    },
+    {
+      "src": "_work/skin/v03/out/anim/anim-normal-eye-t0.png",
+      "dest": "docs/verify/v3/skin/eye-breath-t0.png",
+      "role": "红眼呼吸：t0 帧",
+      "bytes": 84277,
+      "sha256": "4dfd01e0bdf15f3430a579d3a2900e96d98a261077622aa4519957c190013baa"
+    },
+    {
+      "src": "_work/skin/v03/out/anim/anim-normal-eye-t1600.png",
+      "dest": "docs/verify/v3/skin/eye-breath-t1600.png",
+      "role": "红眼呼吸：t+1.6s 帧",
+      "bytes": 84074,
+      "sha256": "193a799700405d471931a880436a6b568f87b30df80652b8c351b7a1d1a548dc"
+    },
+    {
+      "src": "_work/skin/v03/out/anim/anim-normal-corner-t0.png",
+      "dest": "docs/verify/v3/skin/corner-breath-t0.png",
+      "role": "四角呼吸：t0 帧",
+      "bytes": 45574,
+      "sha256": "14006f20d7a4f17a874065d117f67cf263cfa7fb217e9f720cc8c30f4d135c57"
+    },
+    {
+      "src": "_work/skin/v03/out/anim/anim-normal-corner-t1600.png",
+      "dest": "docs/verify/v3/skin/corner-breath-t1600.png",
+      "role": "四角呼吸：t+1.6s 帧",
+      "bytes": 44466,
+      "sha256": "2a3f50ca6e208395de1b3e8b90f482d0a6066b9bc0947e3d0fada4ca91e3db1e"
+    },
+    {
+      "src": "_work/skin/v03/out/anim/anim-calm-full.png",
+      "dest": "docs/verify/v3/skin/calm-full.png",
+      "role": "--calm 下红眼/四角静止",
+      "bytes": 1602771,
+      "sha256": "6703a15350a3e759b8eebc4701753a829419730c3da6e9550a88918a8e6d423e"
+    },
+    {
+      "src": "_work/skin/v03/out/anim/anim-reduce-full.png",
+      "dest": "docs/verify/v3/skin/system-reduce-full.png",
+      "role": "系统 reduce 下红眼/四角仍在动",
+      "bytes": 1567702,
+      "sha256": "e845b85807144cdff7d265b2f708be54279c1139f078ee322e8b7571a24af4eb"
+    },
+    {
+      "src": "_work/skin/v03/out/blink/eye-6750.png",
+      "dest": "docs/verify/v3/skin/eye-blink-normal.png",
+      "role": "红眼双击：正常相位",
+      "bytes": 22278,
+      "sha256": "010dd6c64b5b948e75996d969d2a4944e2e31daf4e1d55a686e2d890d8fe9050"
+    },
+    {
+      "src": "_work/skin/v03/out/blink/eye-6780.png",
+      "dest": "docs/verify/v3/skin/eye-blink-valley.png",
+      "role": "红眼双击：谷相位（~30% 亮度）",
+      "bytes": 18784,
+      "sha256": "e796d113aea8746a1301cfc8f4e22142bdcb66b6226f2bdb23f3049e7a8be232"
+    },
+    {
+      "src": "_work/skin/v03/out/full-57123/picked-perm.png",
+      "dest": "docs/verify/v3/skin/picked-permission.png",
+      "role": "immersive 下真实点选「完全权限」",
+      "bytes": 1543265,
+      "sha256": "1352ed922343b69308cfd623d541d6946d92333a0a9e4b2b31167026fc2158f0"
+    },
+    {
+      "src": "_work/skin/v03/out/full-57123/picked-mode.png",
+      "dest": "docs/verify/v3/skin/picked-mode.png",
+      "role": "immersive 下真实点选「创造模式」",
+      "bytes": 1574775,
+      "sha256": "b80b4611e1a6dcd5e2e9eca4e0a7511cb3e7a5660074c6e4f8b7f941a3630e22"
+    },
+    {
+      "src": "_work/skin/v03/out/full-57123/perm-confirm.png",
+      "dest": "docs/verify/v3/ui/perm-confirm-dialog.png",
+      "role": "「完全权限」安全确认框（dialog 布局回归）",
+      "bytes": 903650,
+      "sha256": "2daf9f7d0927e06c874e43496f9af905321dd055837f4243ff47167df8b6302b"
+    },
+    {
+      "src": "_work/skin/v03/out/final-64819/menu-mode.png",
+      "dest": "docs/verify/v3/skin/menu-mode-live.png",
+      "role": "真实宿主 64819：immersive 下模式菜单定位正确",
+      "bytes": 1509424,
+      "sha256": "51224beb848677086cd33b5ebb9e89a6baba61c3fa34fda053a5dc5892689fa6"
+    },
+    {
+      "src": "_work/skin/v03/out/final-64819/menu-perm-crop-tl-zoom.png",
+      "dest": "docs/verify/v3/skin/menu-corner-zoom.png",
+      "role": "§5.10 菜单角括号放大图",
+      "bytes": 14361,
+      "sha256": "84669c85ad90700369d9dc53194965d659b08222ed7c2f1144f77c90e113e015"
+    },
+    {
+      "src": "_work/demo/audio-render-report.json",
+      "dest": "docs/verify/v3/reports/audio-render-report.json",
+      "role": "离线渲染 WAV 的 ffprobe/响度/峰值报告",
+      "bytes": 3347,
+      "sha256": "a4aacb471c715d877397637140b4c280b3f4be005cad0d73d1a0f0bda807a725"
+    },
+    {
+      "src": "_work/demo/audio-analysis.json",
+      "dest": "docs/verify/v3/reports/audio-analysis.json",
+      "role": "各幕音频窗口 RMS/峰值",
+      "bytes": 1149,
+      "sha256": "74a57a47c68d98b28ba0d35fddb9435bf52cacafd70d0fef9019bfe69c3be107"
+    },
+    {
+      "src": "_work/demo/moss2-boot-audio-spectrum.png",
+      "dest": "docs/verify/v3/splash/audio-spectrum.png",
+      "role": "启动音频频谱图",
+      "bytes": 747357,
+      "sha256": "27e44c54b0b63620b24b256dda5b44e76857267cce9af91a43c3997b86b4b97d"
+    },
+    {
+      "src": "_work/demo/moss2-boot-audio.wav",
+      "dest": "docs/verify/v3/splash/moss2-boot-audio.wav",
+      "role": "程序化 BGM/音效离线渲染 WAV（可听证据）",
+      "bytes": 2081568,
+      "sha256": "b20d92112f9d495194e8263efc4d710b2e9897b509e073c0a95b6a3cee00ce6b"
+    },
+    {
+      "src": "_work/splash/v03/shots/f-report.json",
+      "dest": "docs/verify/v3/reports/splash-f-report.json",
+      "role": "启动进度三真值逐帧数值（splash-smith）",
+      "bytes": 102036,
+      "sha256": "99c75225375bf3d46239eb56081d063f210d65b63ae07d26445ef716646f8132"
+    },
+    {
+      "src": "_work/splash/v03/shots/f-t8.6.png",
+      "dest": "docs/verify/v3/splash/splash-f-t8_6.png",
+      "role": "幕 III（8.6s）进度层仍可见（v0.2 此时已消失）",
+      "bytes": 1705212,
+      "sha256": "23672a807e569b74ac86ad15105a99a3bb0cc094b000a668feb331dee34dece6"
+    },
+    {
+      "src": "_work/splash/v03/shots/calm-t7.9.png",
+      "dest": "docs/verify/v3/splash/splash-calm-t7_9.png",
+      "role": "--calm 下第二幕维持阶段（只留核心锁定）",
+      "bytes": 1735903,
+      "sha256": "825f857acd8f9bc3492084728a22ec76342851e801cf694f9a83c9ff1a4b9d04"
+    },
+    {
+      "src": "_work/splash/v03/shots/reduce-t7.9.png",
+      "dest": "docs/verify/v3/splash/splash-reduce-t7_9.png",
+      "role": "系统 reduce 下第二幕维持阶段（叙事完整）",
+      "bytes": 1864709,
+      "sha256": "6bce47f80ada281bda31d2e177ae18ce381629d6b37e20af389ded50546da922"
+    },
+    {
+      "src": "_work/splash/v03/shots/calm-report.json",
+      "dest": "docs/verify/v3/reports/splash-calm-report.json",
+      "role": "--calm 对照逐帧数据",
+      "bytes": 66838,
+      "sha256": "a41aa9c7379538315346baefdb786b580a1efabc71088fc9d27e29a4445b7700"
+    },
+    {
+      "src": "_work/splash/v03/shots/reduce-report.json",
+      "dest": "docs/verify/v3/reports/splash-reduce-report.json",
+      "role": "系统 reduce 对照逐帧数据",
+      "bytes": 68844,
+      "sha256": "43ce435db888e18767139ef8044ab883cadf8ce708d0bdfa5823837e23cd7f1e"
+    },
+    {
+      "src": "_work/splash/v03/skip/skip-report.json",
+      "dest": "docs/verify/v3/reports/splash-skip-report.json",
+      "role": "跳过路径进度单调/交接数据",
+      "bytes": 12045,
+      "sha256": "4263a85db752430f60fb6ee83e2608602469326616de510d8b6fa99d5b07deb5"
+    },
+    {
+      "src": "_work/skin/v03/out/final-64819/report.json",
+      "dest": "docs/verify/v3/reports/skin-final-64819.json",
+      "role": "真实宿主 64819 九类浮层定位矩阵",
+      "bytes": 8555,
+      "sha256": "a98002c2fb3f75278aa6ade482744d9fec15d29e87c9eda1537303bc6b04b188"
+    },
+    {
+      "src": "_work/skin/v03/out/final-57123/report.json",
+      "dest": "docs/verify/v3/reports/skin-final-57123.json",
+      "role": "隔离宿主 57123 真实点选/浮层矩阵",
+      "bytes": 7451,
+      "sha256": "98aaac8b21fd2da2695741fefc8fe5040228d088788fa0c63cf237bd69ebd02a"
+    },
+    {
+      "src": "_work/skin/v03/out/calm-reduce/calm-reduce-report.json",
+      "dest": "docs/verify/v3/reports/skin-calm-reduce.json",
+      "role": "--calm vs 系统 reduce 动效对照",
+      "bytes": 6031,
+      "sha256": "f4f99ae90643defba0a5bd322c13d41947979c2284957d290c203310aeb02312"
+    },
+    {
+      "src": "_work/skin/v03/out/replay/replay-report.json",
+      "dest": "docs/verify/v3/reports/skin-replay-57123.json",
+      "role": "升级重播链路（57123 session+daily）",
+      "bytes": 1875,
+      "sha256": "e4f87321d5f272142e8a6f5ce748ebef12ad33e2ffe2640840a4ad70b6e2c543"
+    },
+    {
+      "src": "_work/skin/v03/out/replay-live/replay-live-report.json",
+      "dest": "docs/verify/v3/reports/skin-replay-live-64819.json",
+      "role": "升级重播链路（64819 只读）",
+      "bytes": 951,
+      "sha256": "a4004ff93dace3bdf87261e58dc7dc0bb1bcdd94e35ff40eff53fff8ebcb43b7"
+    },
+    {
+      "src": "_work/skin/v03/out/diag-upgrade/timing-runs.json",
+      "dest": "docs/verify/v3/reports/skin-upgrade-timing.json",
+      "role": "补播触发时刻采样（时序修复证据）",
+      "bytes": 3274,
+      "sha256": "d0b4ae21a6056cc911ca1f8dfe5f370828d7408d003dec6d7fc2f2fc32440cd4"
+    }
+  ],
+  "missing": [],
+  "summary": {
+    "copied": 112,
+    "totalBytes": 124900815,
+    "missing": 0
+  }
+}

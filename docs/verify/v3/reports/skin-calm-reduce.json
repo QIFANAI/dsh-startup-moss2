@@ -1,0 +1,244 @@
+{
+  "host": "http://127.0.0.1:57123",
+  "rows": [
+    {
+      "label": "calm",
+      "htmlClass": "dsh-moss-skin dsh-moss-skin--immersive dsh-moss-skin--calm dsh-moss-motion-hint dsh-moss-enter",
+      "reduce": true,
+      "eyes": [
+        {
+          "size": "20",
+          "ring": {
+            "anim": "none",
+            "anims": []
+          },
+          "core": {
+            "anim": "none",
+            "anims": []
+          },
+          "glint": {
+            "anim": "none"
+          }
+        },
+        {
+          "size": "34",
+          "ring": {
+            "anim": "none",
+            "anims": []
+          },
+          "core": {
+            "anim": "none",
+            "anims": []
+          },
+          "glint": {
+            "anim": "none"
+          }
+        }
+      ],
+      "cardBefore": {
+        "anim": "none",
+        "duration": "0s",
+        "anims": []
+      },
+      "eyeRedExcess": [
+        22.424,
+        22.424
+      ],
+      "cornerRedExcess": [
+        1.424,
+        1.424
+      ],
+      "eyeDelta": 0,
+      "cornerDelta": 0
+    },
+    {
+      "label": "system-reduce",
+      "htmlClass": "dsh-moss-skin dsh-moss-skin--immersive dsh-moss-motion-hint dsh-moss-enter",
+      "reduce": true,
+      "eyes": [
+        {
+          "size": "20",
+          "ring": {
+            "anim": "moss-eye-ring-breath, moss-eye-ring-signal",
+            "anims": [
+              {
+                "name": "moss-eye-ring-breath",
+                "playState": "running",
+                "duration": 3200
+              },
+              {
+                "name": "moss-eye-ring-signal",
+                "playState": "running",
+                "duration": 7500
+              }
+            ]
+          },
+          "core": {
+            "anim": "moss-eye-core-breath, moss-eye-core-signal",
+            "anims": [
+              {
+                "name": "moss-eye-core-breath",
+                "playState": "running",
+                "duration": 2600
+              },
+              {
+                "name": "moss-eye-core-signal",
+                "playState": "running",
+                "duration": 7500
+              }
+            ]
+          },
+          "glint": {
+            "anim": "none"
+          }
+        },
+        {
+          "size": "34",
+          "ring": {
+            "anim": "moss-eye-ring-breath, moss-eye-ring-signal",
+            "anims": [
+              {
+                "name": "moss-eye-ring-breath",
+                "playState": "running",
+                "duration": 3200
+              },
+              {
+                "name": "moss-eye-ring-signal",
+                "playState": "running",
+                "duration": 7500
+              }
+            ]
+          },
+          "core": {
+            "anim": "moss-eye-core-breath, moss-eye-core-signal",
+            "anims": [
+              {
+                "name": "moss-eye-core-breath",
+                "playState": "running",
+                "duration": 2600
+              },
+              {
+                "name": "moss-eye-core-signal",
+                "playState": "running",
+                "duration": 7500
+              }
+            ]
+          },
+          "glint": {
+            "anim": "none"
+          }
+        }
+      ],
+      "cardBefore": {
+        "anim": "moss-corner-breath",
+        "duration": "10.8s",
+        "anims": []
+      },
+      "eyeRedExcess": [
+        26.433,
+        21.769
+      ],
+      "cornerRedExcess": [
+        1.343,
+        1.259
+      ],
+      "eyeDelta": -4.664,
+      "cornerDelta": -0.084
+    },
+    {
+      "label": "normal",
+      "htmlClass": "dsh-moss-skin dsh-moss-skin--immersive dsh-moss-motion-hint dsh-moss-enter",
+      "reduce": true,
+      "eyes": [
+        {
+          "size": "20",
+          "ring": {
+            "anim": "moss-eye-ring-breath, moss-eye-ring-signal",
+            "anims": [
+              {
+                "name": "moss-eye-ring-breath",
+                "playState": "running",
+                "duration": 3200
+              },
+              {
+                "name": "moss-eye-ring-signal",
+                "playState": "running",
+                "duration": 7500
+              }
+            ]
+          },
+          "core": {
+            "anim": "moss-eye-core-breath, moss-eye-core-signal",
+            "anims": [
+              {
+                "name": "moss-eye-core-breath",
+                "playState": "running",
+                "duration": 2600
+              },
+              {
+                "name": "moss-eye-core-signal",
+                "playState": "running",
+                "duration": 7500
+              }
+            ]
+          },
+          "glint": {
+            "anim": "none"
+          }
+        },
+        {
+          "size": "34",
+          "ring": {
+            "anim": "moss-eye-ring-breath, moss-eye-ring-signal",
+            "anims": [
+              {
+                "name": "moss-eye-ring-breath",
+                "playState": "running",
+                "duration": 3200
+              },
+              {
+                "name": "moss-eye-ring-signal",
+                "playState": "running",
+                "duration": 7500
+              }
+            ]
+          },
+          "core": {
+            "anim": "moss-eye-core-breath, moss-eye-core-signal",
+            "anims": [
+              {
+                "name": "moss-eye-core-breath",
+                "playState": "running",
+                "duration": 2600
+              },
+              {
+                "name": "moss-eye-core-signal",
+                "playState": "running",
+                "duration": 7500
+              }
+            ]
+          },
+          "glint": {
+            "anim": "none"
+          }
+        }
+      ],
+      "cardBefore": {
+        "anim": "moss-corner-breath",
+        "duration": "10.8s",
+        "anims": []
+      },
+      "eyeRedExcess": [
+        26.4,
+        14.984
+      ],
+      "cornerRedExcess": [
+        1.408,
+        1.215
+      ],
+      "eyeDelta": -11.416,
+      "cornerDelta": -0.193
+    }
+  ],
+  "exceptions": []
+}

@@ -1,0 +1,573 @@
+{
+  "schema": "dsh-moss2/verify/v5@1",
+  "generatedAt": "2026-11-09T05:28:37.279Z",
+  "label": "安静窗口全量-最终",
+  "spec": "docs/design-spec-v0.5.md",
+  "contract": "_work/verify5/CONTRACT.md",
+  "report": "docs/verify/v5/REPORT.md",
+  "verdict": "PASS",
+  "totals": {
+    "static": {
+      "pass": 183,
+      "total": 183,
+      "fail": 0
+    },
+    "scenarios": {
+      "pass": 48,
+      "total": 48,
+      "fail": 0
+    },
+    "missing": []
+  },
+  "static": [
+    {
+      "suite": "smoke-host",
+      "cmd": "test/smoke-host.mjs",
+      "status": "PASS",
+      "pass": 37,
+      "total": 37,
+      "fails": []
+    },
+    {
+      "suite": "smoke-assets",
+      "cmd": "test/smoke-assets.mjs",
+      "status": "PASS",
+      "pass": 29,
+      "total": 29,
+      "fails": []
+    },
+    {
+      "suite": "smoke-splash",
+      "cmd": "test/smoke-splash.mjs",
+      "status": "PASS",
+      "pass": 67,
+      "total": 67,
+      "fails": []
+    },
+    {
+      "suite": "smoke-client",
+      "cmd": "test/smoke-client.mjs",
+      "status": "PASS",
+      "pass": 32,
+      "total": 32,
+      "fails": []
+    },
+    {
+      "suite": "smoke-css-regress",
+      "cmd": "test/smoke-css-regress.mjs",
+      "status": "PASS",
+      "pass": 18,
+      "total": 18,
+      "fails": []
+    }
+  ],
+  "scenarios": [
+    {
+      "matrix": "freeze",
+      "status": "PASS",
+      "pass": 15,
+      "total": 15,
+      "fails": [],
+      "json": "_work/verify5/json/freeze.json"
+    },
+    {
+      "matrix": "live",
+      "status": "PASS",
+      "pass": 9,
+      "total": 9,
+      "fails": [],
+      "json": "_work/verify5/json/live.json"
+    },
+    {
+      "matrix": "degrade",
+      "status": "PASS",
+      "pass": 8,
+      "total": 8,
+      "fails": [],
+      "json": "_work/verify5/json/degrade.json"
+    },
+    {
+      "matrix": "preview",
+      "status": "PASS",
+      "pass": 8,
+      "total": 8,
+      "fails": [],
+      "json": "_work/verify5/json/preview.json"
+    },
+    {
+      "matrix": "audio",
+      "status": "PASS",
+      "pass": 8,
+      "total": 8,
+      "fails": [],
+      "json": "_work/verify5/json/audio.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "contract",
+      "kind": "doc",
+      "path": "_work/verify5/CONTRACT.md",
+      "exists": true,
+      "sha256": "d6778abe1ecddba11aafb978fac60f77bb9c39eb46b5ca280d26ba1601d06bca",
+      "bytes": 15141
+    },
+    {
+      "id": "report",
+      "kind": "doc",
+      "path": "docs/verify/v5/REPORT.md",
+      "exists": true,
+      "sha256": "6fadb40e4c3854d3c6ce03de17f198a8b1fcecc17f52a9a2303d729a5ea46ec3",
+      "bytes": 9661
+    },
+    {
+      "id": "spec",
+      "kind": "doc",
+      "path": "docs/design-spec-v0.5.md",
+      "exists": true,
+      "sha256": "d3709f72b580f7491820031005ff62dd10874e1d82c1ca18b9bbffeaa5403099",
+      "bytes": 19585
+    },
+    {
+      "id": "static-smoke-host",
+      "kind": "static-log",
+      "path": "_work/verify5/logs/final-smoke-host.log",
+      "exists": true,
+      "sha256": "e16246f04050326cf9724d8c80102308821bc003a4a133db65767c27405e0324",
+      "bytes": 1635,
+      "suite": "smoke-host",
+      "cmd": "test/smoke-host.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "static-smoke-assets",
+      "kind": "static-log",
+      "path": "_work/verify5/logs/final-smoke-assets.log",
+      "exists": true,
+      "sha256": "fa8d37950e4d888308c46650a30d88a4a63a828c94bce2b63f3846f5b94b071d",
+      "bytes": 1599,
+      "suite": "smoke-assets",
+      "cmd": "test/smoke-assets.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "static-smoke-splash",
+      "kind": "static-log",
+      "path": "_work/verify5/logs/final-smoke-splash.log",
+      "exists": true,
+      "sha256": "db0df7ba0adbc68aae671f9481b045cc225c5ccdbe179317989fede94e72b00a",
+      "bytes": 5468,
+      "suite": "smoke-splash",
+      "cmd": "test/smoke-splash.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "static-smoke-client",
+      "kind": "static-log",
+      "path": "_work/verify5/logs/final-smoke-client.log",
+      "exists": true,
+      "sha256": "4c94ccaabdbdae5cec99e8555a70322237f4f29c24475b7c961f5a7f493eae08",
+      "bytes": 2209,
+      "suite": "smoke-client",
+      "cmd": "test/smoke-client.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "static-smoke-css-regress",
+      "kind": "static-log",
+      "path": "_work/verify5/logs/final-smoke-css-regress.log",
+      "exists": true,
+      "sha256": "a2ba3bed3b91fc4b93dcf3a43549eafcc29a91fcf12e60e89d6adf067e7bd57a",
+      "bytes": 1804,
+      "suite": "smoke-css-regress",
+      "cmd": "test/smoke-css-regress.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "matrix-freeze",
+      "kind": "json",
+      "path": "_work/verify5/json/freeze.json",
+      "exists": true,
+      "sha256": "7fc663fa82463b92dc7ca844418b1675a3b9573f2e2f762d7eb145a98c32310e",
+      "bytes": 23921,
+      "matrix": "freeze",
+      "status": "PASS"
+    },
+    {
+      "id": "matrix-live",
+      "kind": "json",
+      "path": "_work/verify5/json/live.json",
+      "exists": true,
+      "sha256": "b94de842613a30e07abd9ab862bea4f4c30ece450551bdfea69b41dd8aa900cf",
+      "bytes": 10766,
+      "matrix": "live",
+      "status": "PASS"
+    },
+    {
+      "id": "matrix-degrade",
+      "kind": "json",
+      "path": "_work/verify5/json/degrade.json",
+      "exists": true,
+      "sha256": "f5076cb36d177dd0c02210869d0e94bd46d043695f78b46f1ac0c1adf35e30b7",
+      "bytes": 17987,
+      "matrix": "degrade",
+      "status": "PASS"
+    },
+    {
+      "id": "matrix-preview",
+      "kind": "json",
+      "path": "_work/verify5/json/preview.json",
+      "exists": true,
+      "sha256": "64cae9ed38625d1d10a1a98ed8d09adc5747104f0fce81e50499c4bcfae3f122",
+      "bytes": 6786,
+      "matrix": "preview",
+      "status": "PASS"
+    },
+    {
+      "id": "matrix-audio",
+      "kind": "json",
+      "path": "_work/verify5/json/audio.json",
+      "exists": true,
+      "sha256": "11120b6e0d5cd6a1b601345f5edded571b1de2716ebe0008dea063464eca8231",
+      "bytes": 3796,
+      "matrix": "audio",
+      "status": "PASS"
+    },
+    {
+      "id": "freeze-shot-freeze-t10_35.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t10_35.png",
+      "exists": true,
+      "sha256": "8f86fc42dbbe337514a1fbda1f499de50aa7f9a011fe7f8c2f586e80ceb09488",
+      "bytes": 1467444
+    },
+    {
+      "id": "freeze-shot-freeze-t10_36.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t10_36.png",
+      "exists": true,
+      "sha256": "13c17c83b9aefbccd3b034610de29471e49de7503a3f802e4061ebc30d38dcfa",
+      "bytes": 1506799
+    },
+    {
+      "id": "freeze-shot-freeze-t10_46.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t10_46.png",
+      "exists": true,
+      "sha256": "d151a08423a03ecf641f55dc8f0a24067dac5ef76a053e83ed01e63c84c5cbbc",
+      "bytes": 1510521
+    },
+    {
+      "id": "freeze-shot-freeze-t10_7.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t10_7.png",
+      "exists": true,
+      "sha256": "c19feced6b3b44d6fb78912845e2b994180de49881b39318033bcc997259048d",
+      "bytes": 1558192
+    },
+    {
+      "id": "freeze-shot-freeze-t11.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t11.png",
+      "exists": true,
+      "sha256": "352cd7e8caca9ebf7511d2ca217212857500b9a28416b486fee38dc58a420cef",
+      "bytes": 1331113
+    },
+    {
+      "id": "freeze-shot-freeze-t11_2.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t11_2.png",
+      "exists": true,
+      "sha256": "c17e98171eb9a3eacab015be245dd67577d9e116a04275d3c00a4e7640a50375",
+      "bytes": 1239459
+    },
+    {
+      "id": "freeze-shot-freeze-t11_3.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t11_3.png",
+      "exists": true,
+      "sha256": "7385d9db3fc2667fad97a0b260503aef6b251ba67404dc321f72520c1cb863f3",
+      "bytes": 1223418
+    },
+    {
+      "id": "freeze-shot-freeze-t11_8.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t11_8.png",
+      "exists": true,
+      "sha256": "224b215fdf6f363f97df0995d4f9f1fe9374c452846793649c32a9872a34ebea",
+      "bytes": 1230785
+    },
+    {
+      "id": "freeze-shot-freeze-t11_86.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t11_86.png",
+      "exists": true,
+      "sha256": "ea38199c7bbf44ebfad5865e807e2db20f0424a7163afa5b4aaab08e35c5c6ca",
+      "bytes": 1177589
+    },
+    {
+      "id": "freeze-shot-freeze-t12_1.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t12_1.png",
+      "exists": true,
+      "sha256": "2dbcf74286cfd2493e5bb074f170faf3efab926000ef9a0eec1d6ebeb368fd28",
+      "bytes": 923747
+    },
+    {
+      "id": "freeze-shot-freeze-t12_7.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t12_7.png",
+      "exists": true,
+      "sha256": "e41e66187d7fa7b80af40b8a2877dacbfc091b163f5ad0027001afbaa879b548",
+      "bytes": 969015
+    },
+    {
+      "id": "freeze-shot-freeze-t13.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t13.png",
+      "exists": true,
+      "sha256": "7e119e3aca146861d406922da03904eaa364fcee8397c30d5b421d537cd529fc",
+      "bytes": 365215
+    },
+    {
+      "id": "freeze-shot-freeze-t13_4.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t13_4.png",
+      "exists": true,
+      "sha256": "07ec7afe8bb9d98df31fb5664f54c61de28add33010f180a992ce014bf2fde44",
+      "bytes": 792066
+    },
+    {
+      "id": "freeze-shot-freeze-t13_7.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t13_7.png",
+      "exists": true,
+      "sha256": "208b701bcb6d1a8e43c7db26753194caacb7f78fb4ad716682bdb9e1b2ed9f85",
+      "bytes": 659674
+    },
+    {
+      "id": "freeze-shot-freeze-t13_9.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t13_9.png",
+      "exists": true,
+      "sha256": "95302f1c622ddc1c6e06e1fe8698b53451e33bb0a59fc861c5744a62f21e4256",
+      "bytes": 622836
+    },
+    {
+      "id": "freeze-shot-freeze-t9_4.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/freeze/freeze-t9_4.png",
+      "exists": true,
+      "sha256": "08c678f88332d0a7be7b5d823504c262a61e156b008bc0bb390afbab209a0ac4",
+      "bytes": 1622317
+    },
+    {
+      "id": "live-shot-earth-10_90.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/live/earth-10_90.png",
+      "exists": true,
+      "sha256": "6274417e85d498555d7e145fd31e1e662d0da97477deaeb52bb7e4753a8c15b8",
+      "bytes": 1226181
+    },
+    {
+      "id": "live-shot-earth-11_05.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/live/earth-11_05.png",
+      "exists": true,
+      "sha256": "a77cf40ba79be39a40796698f72b3859607a627b9efd69ba614e4d855b2a79b9",
+      "bytes": 1238761
+    },
+    {
+      "id": "live-shot-earth-11_20.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/live/earth-11_20.png",
+      "exists": true,
+      "sha256": "1e7613163e186f9088839092acc27fec67c8aaedba13d28ca82be706207df958",
+      "bytes": 912098
+    },
+    {
+      "id": "live-shot-earth-11_30.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/live/earth-11_30.png",
+      "exists": true,
+      "sha256": "11fdf2a88a4f22b0558355ddb0338653db4aa2d071d1aa79d99cd265c9901181",
+      "bytes": 973795
+    },
+    {
+      "id": "live-shot-pct-100.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/live/pct-100.png",
+      "exists": true,
+      "sha256": "1882c13fca441cb51b740aa7001ab966134cb81c0fbbb462cb80ca42e970b325",
+      "bytes": 346234
+    },
+    {
+      "id": "live-shot-pct-84.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/live/pct-84.png",
+      "exists": true,
+      "sha256": "ca2eb9daf0123335fafd820ce5ea26ecea8c025da2232db0f37aeb2939f071f9",
+      "bytes": 1534975
+    },
+    {
+      "id": "live-shot-pct-91.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/live/pct-91.png",
+      "exists": true,
+      "sha256": "524d8266a2308126b66c886c1e63c3a7b02433b530704b2b0f71e26ba0fd1396",
+      "bytes": 730719
+    },
+    {
+      "id": "live-shot-pct-92.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/live/pct-92.png",
+      "exists": true,
+      "sha256": "f7b0ac097cade57923a9f16a3f7880426bd9ec2c00fc4fd4436b731d72873fc5",
+      "bytes": 415215
+    },
+    {
+      "id": "preview-shot-preview-v5-01-loaded.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/preview/preview-v5-01-loaded.png",
+      "exists": true,
+      "sha256": "c38425da65a2bf12ec0b1c1aa799c77675a7d007d603ed6ea1f0d4e6bde423a6",
+      "bytes": 1877544
+    },
+    {
+      "id": "preview-shot-preview-v5-jump-t13.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/preview/preview-v5-jump-t13.png",
+      "exists": true,
+      "sha256": "0a9b3d84dee046a516a4695983715a4bafe7c0627747acd35e2877316eb7e0f4",
+      "bytes": 365280
+    },
+    {
+      "id": "preview-shot-preview-v5-jump-t13_4.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/preview/preview-v5-jump-t13_4.png",
+      "exists": true,
+      "sha256": "6c432337cacc8a7e14e9f199394813f87fc8a9e47fce346e587d8c21fb993413",
+      "bytes": 961374
+    },
+    {
+      "id": "preview-shot-preview-v5-jump-t13_9.png",
+      "kind": "image",
+      "path": "_work/verify5/shots/preview/preview-v5-jump-t13_9.png",
+      "exists": true,
+      "sha256": "5e1f31e329991984c8ac3c7bdbe59948beb895d13a9a173fc27f432c88fcb1cf",
+      "bytes": 401249
+    },
+    {
+      "id": "audio-asset",
+      "kind": "asset",
+      "path": "lib/assets/audio/moss-arm-sfx.m4a",
+      "exists": true,
+      "sha256": "c3c0374b8b5881ae676309241455c494313c4eae63773de55f14a3e2030e561c",
+      "bytes": 72507
+    },
+    {
+      "id": "audio-render-wav",
+      "kind": "asset",
+      "path": "_work/v05/audio/moss2-boot-audio-v05.wav",
+      "exists": true,
+      "sha256": "87f5976d38c11e051c289b2beaeb35bb5759b92dbae7b36b276e5b468e8a741a",
+      "bytes": 2452004
+    },
+    {
+      "id": "user1",
+      "kind": "reference",
+      "path": "_work/v05/user1.png",
+      "exists": true,
+      "sha256": "57581ac10f62624a04d48e298e13c2dc91cac1aa6e184f7220d7f5533d95d719",
+      "bytes": 406526
+    },
+    {
+      "id": "user2",
+      "kind": "reference",
+      "path": "_work/v05/user2.png",
+      "exists": true,
+      "sha256": "ed7a41b7de36730221411bec8192f41aebdd1398486635c1c8f3c9863c0b967e",
+      "bytes": 382083
+    },
+    {
+      "id": "user3",
+      "kind": "reference",
+      "path": "_work/v05/user3.png",
+      "exists": true,
+      "sha256": "0185d1b2a2db64fdbfc75345fb860d0b53e0acf7ee4fd75901afd570cdf15138",
+      "bytes": 423631
+    },
+    {
+      "id": "user4",
+      "kind": "reference",
+      "path": "_work/v05/user4.png",
+      "exists": true,
+      "sha256": "9f17ad5ab24c07baf08063828f4b68f61157a82a5c49a5bd44ff3ae2003fbd88",
+      "bytes": 306455
+    },
+    {
+      "id": "preview-html",
+      "kind": "asset",
+      "path": "preview/index.html",
+      "exists": true,
+      "sha256": "ba8836dcb657e2ae9f72c9e609da632eb5c788f4b1b154c1172fc315c95f0f80",
+      "bytes": 77557
+    },
+    {
+      "id": "impl-lib-splash-js",
+      "kind": "impl",
+      "path": "lib/splash.js",
+      "exists": true,
+      "sha256": "fcbbd51da897436051253da40bd19a069a44497dc076b00f4af79882e3b68514",
+      "bytes": 205082
+    },
+    {
+      "id": "impl-lib-splash-css",
+      "kind": "impl",
+      "path": "lib/splash.css",
+      "exists": true,
+      "sha256": "2ecb6bf371b511aa6ed5ca55e6dbfce1fdbe23af9e8b42d6893b17ef914209c8",
+      "bytes": 75489
+    },
+    {
+      "id": "impl-lib-client-js",
+      "kind": "impl",
+      "path": "lib/client.js",
+      "exists": true,
+      "sha256": "7a5ab9ad7196689ccdba4ea31b366b5e8c86b8c7dd1b2be0814fd429a60378f4",
+      "bytes": 75887
+    },
+    {
+      "id": "impl-lib-skin-css",
+      "kind": "impl",
+      "path": "lib/skin.css",
+      "exists": true,
+      "sha256": "42df2243c24d8367e4eb220ab3ca79aec50ed8a19bde6054c3431e48c593bb9b",
+      "bytes": 95030
+    },
+    {
+      "id": "impl-lib-index-js",
+      "kind": "impl",
+      "path": "lib/index.js",
+      "exists": true,
+      "sha256": "2dcff941caa80da80377bee79befcafb823e98e5e1aeeb8e5b271d96b28f442c",
+      "bytes": 23503
+    },
+    {
+      "id": "impl-lib-assets-manifest-json",
+      "kind": "impl",
+      "path": "lib/assets/manifest.json",
+      "exists": true,
+      "sha256": "cfc5a63dcb77b82b4b28b0ee00acc743198badcd49aa6ad20123429e4548282e",
+      "bytes": 18247
+    },
+    {
+      "id": "impl-package-json",
+      "kind": "impl",
+      "path": "package.json",
+      "exists": true,
+      "sha256": "3187526c53b4ef66d34f04c8d94c0a1828d6b055c553aeec09c7ed717c48d981",
+      "bytes": 1863
+    }
+  ]
+}

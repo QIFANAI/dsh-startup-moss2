@@ -1,0 +1,1443 @@
+{
+  "scenario": "preview",
+  "generatedAt": "2026-11-06T17:26:41.299Z",
+  "host": "http://127.0.0.1:57123",
+  "hostTokenUrl": "http://127.0.0.1:57123/?token=***",
+  "viewport": {
+    "width": 1536,
+    "height": 960,
+    "dpr": 1
+  },
+  "media": "no-preference",
+  "config": {
+    "before": null,
+    "after": null
+  },
+  "sampler": null,
+  "libHashes": {
+    "lib/index.js": {
+      "bytes": 23277,
+      "sha256": "cc621117fc4c40a20b23ec32b0261ccadba18ffa6e7ef002e2f873bfc518561c"
+    },
+    "lib/splash.js": {
+      "bytes": 135096,
+      "sha256": "24e0fd4582121ca51592d7803fc6ec1342b96217026cb461950c644e07e3cf2a"
+    },
+    "lib/splash.css": {
+      "bytes": 59908,
+      "sha256": "d49bf551b1e2276b5c23a3fb073bb6b1a8d5f7d0617b9314671ea4614e5d7655"
+    },
+    "lib/client.js": {
+      "bytes": 60682,
+      "sha256": "306da521db23c119d6a8e53087c2e7c0782e0d6a74527ddfdb7a0bf80ba6b061"
+    },
+    "lib/skin.css": {
+      "bytes": 86179,
+      "sha256": "51a4ce3bc2c66461b9b7d38573630800ddb6ce64ecdc9f76e769dd0fafd3997f"
+    },
+    "lib/assets/manifest.json": {
+      "bytes": 14977,
+      "sha256": "d9a8490324fefdb5f0991393beeda05071c762f9b36fcd9ec44b427233959092"
+    },
+    "package.json": {
+      "bytes": 1825,
+      "sha256": "a5dcc4a7c588e4fd44976de5d72f62e861486547bb06b66a497e2e7db1dcb6fc"
+    },
+    "preview/index.html": {
+      "bytes": 71214,
+      "sha256": "1f3fe16924e7f6a0b419a22da284c6dbc2a50f0455aa3d21edecdf6b7d7567b1"
+    }
+  },
+  "intercepts": null,
+  "summary": {
+    "total": 20,
+    "pass": 20,
+    "fail": 0,
+    "conclusion": "PASS"
+  },
+  "finishRel": null,
+  "assertions": [
+    {
+      "id": "preview-open",
+      "name": "真宿主 /dsh-moss2/preview 可打开（控制条存在）",
+      "pass": true,
+      "detail": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=58&blur=16"
+      }
+    },
+    {
+      "id": "preview-buttons",
+      "name": "控制条含重播/四幕跳转/三档/veil/blur/动态背景演示",
+      "pass": true,
+      "detail": {
+        "replay": true,
+        "act1": true,
+        "act2": true,
+        "act3": true,
+        "act4": true,
+        "tiers": 3,
+        "veil": true,
+        "blur": true,
+        "motionDemo": true
+      }
+    },
+    {
+      "id": "preview-v3-probes",
+      "name": "v0.3 探针控件存在（锁定帧跳转 / 全局进度读数 / 第二幕锁定读数）",
+      "pass": true,
+      "detail": {
+        "lockFrame": true,
+        "progressReadout": true,
+        "lockReadout": true
+      }
+    },
+    {
+      "id": "preview-ambient",
+      "name": "预览页动态背景层存在 + 视频元素",
+      "pass": true,
+      "detail": {
+        "ambient": true,
+        "video": true
+      }
+    },
+    {
+      "id": "preview-no-exceptions",
+      "name": "预览页无未捕获异常",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "id": "preview-replay",
+      "name": "重播启动动画：启动层出现并进入播放",
+      "pass": true,
+      "detail": {
+        "root": {
+          "exists": true,
+          "opacity": 1,
+          "display": "block"
+        },
+        "splash": {
+          "state": "playing",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ]
+      }
+    },
+    {
+      "id": "preview-jump-I",
+      "name": "分幕跳转 I 幕可用（跳到 t≈2.2s 并显示对应画面）",
+      "pass": true,
+      "detail": {
+        "clicked": true,
+        "previewT": 2.2,
+        "acts": {
+          "neuro": {
+            "eff": 1
+          },
+          "moss": {
+            "eff": 1
+          },
+          "earth": {
+            "eff": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "preview-jump-II",
+      "name": "分幕跳转 II 幕可用（跳到 t≈5.2s 并显示对应画面）",
+      "pass": true,
+      "detail": {
+        "clicked": true,
+        "previewT": 5.2,
+        "acts": {
+          "neuro": {
+            "eff": 1
+          },
+          "moss": {
+            "eff": 1
+          },
+          "earth": {
+            "eff": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "preview-jump-III",
+      "name": "分幕跳转 III 幕可用（跳到 t≈9s 并显示对应画面）",
+      "pass": true,
+      "detail": {
+        "clicked": true,
+        "previewT": 9,
+        "acts": {
+          "neuro": {
+            "eff": 1
+          },
+          "moss": {
+            "eff": 1
+          },
+          "earth": {
+            "eff": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "preview-jump-IV",
+      "name": "分幕跳转 IV 幕可用（跳到 t≈10.4s 并显示对应画面）",
+      "pass": true,
+      "detail": {
+        "clicked": true,
+        "previewT": 10.4,
+        "acts": {
+          "neuro": {
+            "eff": 1
+          },
+          "moss": {
+            "eff": 1
+          },
+          "earth": {
+            "eff": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "preview-v3-global-progress-layer",
+      "name": "v0.3 进度层位于 .ms-global-hud（§4 单一真值固定层）",
+      "pass": true,
+      "detail": {
+        "globalProgressLayer": true,
+        "globalPctLayer": true
+      }
+    },
+    {
+      "id": "preview-v3-progress-sync",
+      "name": "锁定帧进度：pct 数字与 progress 同值（误差 ≤1%）",
+      "pass": true,
+      "detail": {
+        "t": 7.42,
+        "progress": 0.65,
+        "pct": 65,
+        "fill": 0.65,
+        "spark": 936.65,
+        "trackWidth": 1441,
+        "complete": false
+      }
+    },
+    {
+      "id": "preview-v3-tgt-layer",
+      "name": "第二幕特效层 DOM 完整（tgt 层 / 四角×4 / 假目标×3 / 冲击波×2 / vignette）",
+      "pass": true,
+      "detail": {
+        "phase": "maintain",
+        "corners": 4,
+        "ghosts": 3,
+        "shocks": 2,
+        "vignette": true,
+        "reticle": {
+          "x": 554,
+          "y": 516
+        },
+        "eye": {
+          "x": 553,
+          "y": 516
+        },
+        "locked": true,
+        "distToEye": 1
+      }
+    },
+    {
+      "id": "preview-v3-lock-phase",
+      "name": "t=7.42 锁定帧：相位 lock/maintain + 准心贴主眼（Δ≤8px）",
+      "pass": true,
+      "detail": {
+        "lockClicked": true,
+        "phase": "maintain",
+        "locked": true,
+        "distToEye": 1,
+        "reticle": {
+          "x": 554,
+          "y": 516
+        },
+        "eye": {
+          "x": 553,
+          "y": 516
+        }
+      }
+    },
+    {
+      "id": "preview-tier-immersive",
+      "name": "三档切换：immersive class 生效",
+      "pass": true,
+      "detail": {
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--immersive"
+      }
+    },
+    {
+      "id": "preview-tier-glass",
+      "name": "三档切换：glass class 生效",
+      "pass": true,
+      "detail": {
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass"
+      }
+    },
+    {
+      "id": "preview-tier-off",
+      "name": "三档切换：off 关闭皮肤",
+      "pass": true,
+      "detail": {
+        "htmlClass": ""
+      }
+    },
+    {
+      "id": "preview-veil",
+      "name": "veil 滑杆生效（--moss-veil=70）",
+      "pass": true,
+      "detail": {
+        "cssVars": {
+          "veil": "70",
+          "blur": "16px"
+        }
+      }
+    },
+    {
+      "id": "preview-blur",
+      "name": "blur 滑杆生效（--moss-blur=22px）",
+      "pass": true,
+      "detail": {
+        "cssVars": {
+          "veil": "70",
+          "blur": "22px"
+        }
+      }
+    },
+    {
+      "id": "preview-motion-demo",
+      "name": "动态背景演示读数 > 0（证明视频在动）",
+      "pass": true,
+      "detail": {
+        "readout": "Δ=1.64 · 播放中 / 视频 13.44s"
+      }
+    }
+  ],
+  "failures": [],
+  "exceptions": [],
+  "consoleErrors": [],
+  "network": {
+    "mediaRequests": [
+      "http://127.0.0.1:57123/dsh-moss2/asset/earth/earth-720.mp4",
+      "http://127.0.0.1:57123/dsh-moss2/asset/neuro/neuro-boot-720.mp4?v=0.3.0",
+      "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.3.0",
+      "http://127.0.0.1:57123/dsh-moss2/asset/earth/earth-720.mp4?v=0.3.0"
+    ],
+    "total": 16,
+    "failed": [
+      {
+        "at": 1793985996144,
+        "errorText": "net::ERR_ABORTED",
+        "type": "Media"
+      }
+    ]
+  },
+  "events": [],
+  "motion": null,
+  "screenshots": [
+    {
+      "t": "loaded",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "replay",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "jump:I",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "jump:II",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "jump:III",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "jump:IV",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "v3-lock",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "tier:immersive",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "tier:glass",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "tier:off",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "sliders",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    },
+    {
+      "t": "motion",
+      "actualMs": null,
+      "file": null,
+      "ui": false
+    }
+  ],
+  "timeline": [],
+  "steps": [
+    {
+      "step": "loaded",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=58&blur=16",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass",
+        "cssVars": {
+          "veil": "58",
+          "blur": "16px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": false
+        },
+        "acts": {},
+        "previewT": null,
+        "splash": {
+          "kind": "undefined"
+        },
+        "apiKeys": [],
+        "motionReadout": "Δ=--",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": false,
+          "globalProgressLayer": false,
+          "globalPctLayer": false,
+          "progress": null,
+          "tgtLayer": false,
+          "tgt": null
+        }
+      }
+    },
+    {
+      "step": "replay",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=58&blur=16",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass moss-lock",
+        "cssVars": {
+          "veil": "58",
+          "blur": "16px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": true,
+          "opacity": 1,
+          "display": "block"
+        },
+        "acts": {
+          "neuro": {
+            "eff": 1
+          },
+          "moss": {
+            "eff": 1
+          },
+          "earth": {
+            "eff": 0
+          }
+        },
+        "previewT": null,
+        "splash": {
+          "state": "playing",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=1.85 · 播放中 / 视频 0.91s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": true,
+          "globalProgressLayer": true,
+          "globalPctLayer": true,
+          "progress": {
+            "t": 0.867,
+            "progress": 0.06,
+            "pct": 6,
+            "fill": 0.06,
+            "spark": 86.46,
+            "trackWidth": 1441,
+            "complete": false
+          },
+          "tgtLayer": true,
+          "tgt": {
+            "phase": "search",
+            "corners": 4,
+            "ghosts": 3,
+            "shocks": 2,
+            "vignette": true,
+            "reticle": {
+              "x": 0,
+              "y": 0
+            },
+            "eye": {
+              "x": 0,
+              "y": 0
+            },
+            "locked": false,
+            "distToEye": 0
+          }
+        }
+      }
+    },
+    {
+      "step": "jump:I",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=58&blur=16",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass",
+        "cssVars": {
+          "veil": "58",
+          "blur": "16px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": true,
+          "opacity": 1,
+          "display": "block"
+        },
+        "acts": {
+          "neuro": {
+            "eff": 1
+          },
+          "moss": {
+            "eff": 1
+          },
+          "earth": {
+            "eff": 0
+          }
+        },
+        "previewT": 2.2,
+        "splash": {
+          "state": "preview",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=2.06 · 播放中 / 视频 2.64s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": true,
+          "globalProgressLayer": true,
+          "globalPctLayer": true,
+          "progress": {
+            "t": 1.77,
+            "progress": 0.13,
+            "pct": 13,
+            "fill": 0.13,
+            "spark": 187.33,
+            "trackWidth": 1441,
+            "complete": false
+          },
+          "tgtLayer": true,
+          "tgt": {
+            "phase": "search",
+            "corners": 4,
+            "ghosts": 3,
+            "shocks": 2,
+            "vignette": true,
+            "reticle": {
+              "x": 0,
+              "y": 0
+            },
+            "eye": {
+              "x": 0,
+              "y": 0
+            },
+            "locked": false,
+            "distToEye": 0
+          }
+        }
+      }
+    },
+    {
+      "step": "jump:II",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=58&blur=16",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass",
+        "cssVars": {
+          "veil": "58",
+          "blur": "16px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": true,
+          "opacity": 1,
+          "display": "block"
+        },
+        "acts": {
+          "neuro": {
+            "eff": 1
+          },
+          "moss": {
+            "eff": 1
+          },
+          "earth": {
+            "eff": 0
+          }
+        },
+        "previewT": 5.2,
+        "splash": {
+          "state": "preview",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=2.27 · 播放中 / 视频 3.54s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": true,
+          "globalProgressLayer": true,
+          "globalPctLayer": true,
+          "progress": {
+            "t": 5.2,
+            "progress": 0.43,
+            "pct": 43,
+            "fill": 0.43,
+            "spark": 619.63,
+            "trackWidth": 1441,
+            "complete": false
+          },
+          "tgtLayer": true,
+          "tgt": {
+            "phase": "track",
+            "corners": 4,
+            "ghosts": 3,
+            "shocks": 2,
+            "vignette": true,
+            "reticle": {
+              "x": 1012,
+              "y": 845
+            },
+            "eye": {
+              "x": 553,
+              "y": 516
+            },
+            "locked": false,
+            "distToEye": 565
+          }
+        }
+      }
+    },
+    {
+      "step": "jump:III",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=58&blur=16",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass",
+        "cssVars": {
+          "veil": "58",
+          "blur": "16px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": true,
+          "opacity": 1,
+          "display": "block"
+        },
+        "acts": {
+          "neuro": {
+            "eff": 1
+          },
+          "moss": {
+            "eff": 1
+          },
+          "earth": {
+            "eff": 1
+          }
+        },
+        "previewT": 9,
+        "splash": {
+          "state": "preview",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=2.18 · 播放中 / 视频 5.34s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": true,
+          "globalProgressLayer": true,
+          "globalPctLayer": true,
+          "progress": {
+            "t": 5.2,
+            "progress": 0.43,
+            "pct": 43,
+            "fill": 0.43,
+            "spark": 619.63,
+            "trackWidth": 1441,
+            "complete": false
+          },
+          "tgtLayer": true,
+          "tgt": {
+            "phase": "track",
+            "corners": 4,
+            "ghosts": 3,
+            "shocks": 2,
+            "vignette": true,
+            "reticle": {
+              "x": 1012,
+              "y": 845
+            },
+            "eye": {
+              "x": 553,
+              "y": 516
+            },
+            "locked": false,
+            "distToEye": 565
+          }
+        }
+      }
+    },
+    {
+      "step": "jump:IV",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=58&blur=16",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass",
+        "cssVars": {
+          "veil": "58",
+          "blur": "16px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": true,
+          "opacity": 1,
+          "display": "block"
+        },
+        "acts": {
+          "neuro": {
+            "eff": 1
+          },
+          "moss": {
+            "eff": 1
+          },
+          "earth": {
+            "eff": 1
+          }
+        },
+        "previewT": 10.4,
+        "splash": {
+          "state": "preview",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=1.72 · 播放中 / 视频 7.14s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": true,
+          "globalProgressLayer": true,
+          "globalPctLayer": true,
+          "progress": {
+            "t": 10.4,
+            "progress": 0.92,
+            "pct": 92,
+            "fill": 0.92,
+            "spark": 1325.72,
+            "trackWidth": 1441,
+            "complete": false
+          },
+          "tgtLayer": true,
+          "tgt": {
+            "phase": "maintain",
+            "corners": 4,
+            "ghosts": 3,
+            "shocks": 2,
+            "vignette": true,
+            "reticle": {
+              "x": 0,
+              "y": 0
+            },
+            "eye": {
+              "x": 553,
+              "y": 516
+            },
+            "locked": true,
+            "distToEye": 756
+          }
+        }
+      }
+    },
+    {
+      "step": "v3-lock",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=58&blur=16",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass",
+        "cssVars": {
+          "veil": "58",
+          "blur": "16px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": true,
+          "opacity": 1,
+          "display": "block"
+        },
+        "acts": {
+          "neuro": {
+            "eff": 1
+          },
+          "moss": {
+            "eff": 1
+          },
+          "earth": {
+            "eff": 0
+          }
+        },
+        "previewT": 7.42,
+        "splash": {
+          "state": "preview",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=1.72 · 播放中 / 视频 7.14s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": true,
+          "globalProgressLayer": true,
+          "globalPctLayer": true,
+          "progress": {
+            "t": 7.42,
+            "progress": 0.65,
+            "pct": 65,
+            "fill": 0.65,
+            "spark": 936.65,
+            "trackWidth": 1441,
+            "complete": false
+          },
+          "tgtLayer": true,
+          "tgt": {
+            "phase": "maintain",
+            "corners": 4,
+            "ghosts": 3,
+            "shocks": 2,
+            "vignette": true,
+            "reticle": {
+              "x": 554,
+              "y": 516
+            },
+            "eye": {
+              "x": 553,
+              "y": 516
+            },
+            "locked": true,
+            "distToEye": 1
+          }
+        }
+      }
+    },
+    {
+      "step": "tier:immersive",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=immersive&hud=normal&veil=58&blur=16",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--immersive",
+        "cssVars": {
+          "veil": "58",
+          "blur": "16px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": false
+        },
+        "acts": {},
+        "previewT": 7.42,
+        "splash": {
+          "state": "done",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=1.56 · 播放中 / 视频 9.83s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": false,
+          "globalProgressLayer": false,
+          "globalPctLayer": false,
+          "progress": null,
+          "tgtLayer": false,
+          "tgt": null
+        }
+      }
+    },
+    {
+      "step": "tier:glass",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=58&blur=16",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass",
+        "cssVars": {
+          "veil": "58",
+          "blur": "16px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": false
+        },
+        "acts": {},
+        "previewT": 7.42,
+        "splash": {
+          "state": "done",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=1.95 · 播放中 / 视频 10.74s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": false,
+          "globalProgressLayer": false,
+          "globalPctLayer": false,
+          "progress": null,
+          "tgtLayer": false,
+          "tgt": null
+        }
+      }
+    },
+    {
+      "step": "tier:off",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=off&hud=normal&veil=58&blur=16",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "",
+        "cssVars": {
+          "veil": "58",
+          "blur": "16px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": false
+        },
+        "acts": {},
+        "previewT": 7.42,
+        "splash": {
+          "state": "done",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=1.95 · 播放中 / 视频 10.74s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": false,
+          "globalProgressLayer": false,
+          "globalPctLayer": false,
+          "progress": null,
+          "tgtLayer": false,
+          "tgt": null
+        }
+      }
+    },
+    {
+      "step": "sliders",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=70&blur=22",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass",
+        "cssVars": {
+          "veil": "70",
+          "blur": "22px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": false
+        },
+        "acts": {},
+        "previewT": 7.42,
+        "splash": {
+          "state": "done",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=2.05 · 播放中 / 视频 11.63s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": false,
+          "globalProgressLayer": false,
+          "globalPctLayer": false,
+          "progress": null,
+          "tgtLayer": false,
+          "tgt": null
+        }
+      }
+    },
+    {
+      "step": "motion",
+      "probe": {
+        "title": "MOSS 550W · v0.3 四幕预览（第二幕锁定特效 + 全局进度层探针）",
+        "url": "http://127.0.0.1:57123/dsh-moss2/preview?tier=glass&hud=normal&veil=70&blur=22",
+        "bar": true,
+        "buttons": {
+          "replay": true,
+          "act1": true,
+          "act2": true,
+          "act3": true,
+          "act4": true,
+          "tiers": 3,
+          "veil": true,
+          "blur": true,
+          "motionDemo": true
+        },
+        "htmlClass": "dsh-moss-skin dsh-moss-skin--glass",
+        "cssVars": {
+          "veil": "70",
+          "blur": "22px"
+        },
+        "ambient": true,
+        "ambientVideo": true,
+        "root": {
+          "exists": false
+        },
+        "acts": {},
+        "previewT": 7.42,
+        "splash": {
+          "state": "done",
+          "duration": 11.8
+        },
+        "apiKeys": [
+          "skip",
+          "finish",
+          "replay",
+          "freeze",
+          "dispose",
+          "state",
+          "progress",
+          "reduced",
+          "duration",
+          "version",
+          "facts",
+          "config",
+          "phase",
+          "phases",
+          "media",
+          "skipAvailable"
+        ],
+        "motionReadout": "Δ=1.64 · 播放中 / 视频 13.44s",
+        "v3Buttons": {
+          "lockFrame": true,
+          "progressReadout": true,
+          "lockReadout": true
+        },
+        "v3": {
+          "root": false,
+          "globalProgressLayer": false,
+          "globalPctLayer": false,
+          "progress": null,
+          "tgtLayer": false,
+          "tgt": null
+        }
+      }
+    }
+  ]
+}

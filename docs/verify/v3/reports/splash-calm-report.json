@@ -1,0 +1,3058 @@
+{
+  "mode": "freeze",
+  "outDir": "E:\\dshdesign\\dsh-startup-moss2\\_work\\splash\\v03\\shots",
+  "url": "http://127.0.0.1:57123/?token=U9f3Z9HtEdcRuKmfe8YyiX5Nu_MbZlHJt_KFAEw1tdg",
+  "width": 1536,
+  "height": 960,
+  "emulateMedia": "",
+  "injectCfg": {
+    "reducedMotion": true
+  },
+  "shots": [
+    {
+      "t": 4.6,
+      "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\splash\\v03\\shots\\calm-t4.6.png",
+      "state": "preview",
+      "phase": "moss",
+      "elapsed": 1.4795999999940395,
+      "lastT": 4.6,
+      "reduced": true,
+      "dataPhase": "moss",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 4.6,
+        "progress": 0.37,
+        "pct": 37,
+        "trackWidth": 1441,
+        "fill": 0.37,
+        "spark": 533.17,
+        "complete": false
+      },
+      "lock": {
+        "phase": "capture",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": false,
+        "lockedAt": 7.42,
+        "t": 4.6
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": null,
+        "num": "37",
+        "cap": "INITIALIZING",
+        "opacity": "0.571",
+        "rect": {
+          "x": 1389.59,
+          "y": 808.7,
+          "w": 98.8,
+          "h": 56.67,
+          "cx": 1438.99,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(0.37, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 533.09,
+          "h": 1,
+          "cx": 314.15,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 533.2, 0)",
+        "rect": {
+          "x": 580.81,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 583.81,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "0.571",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 0.7,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "capture",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 553,
+            "y": 516.5,
+            "w": 0,
+            "h": 0,
+            "cx": 553,
+            "cy": 516.5
+          },
+          "opacity": "0",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "0",
+          "transform": "matrix(2.5, 0, 0, 2.5, -107, -107)"
+        },
+        "dot": "0",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "0"
+        },
+        "dist": "DIST 128.6m",
+        "dataState": "CAPTURE // 目标捕获",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0128.6m  ·  LOCK 00%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      }
+    },
+    {
+      "t": 5.6,
+      "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\splash\\v03\\shots\\calm-t5.6.png",
+      "state": "preview",
+      "phase": "moss",
+      "elapsed": 3.065,
+      "lastT": 5.6,
+      "reduced": true,
+      "dataPhase": "moss",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 5.6,
+        "progress": 0.47,
+        "pct": 47,
+        "trackWidth": 1441,
+        "fill": 0.47,
+        "spark": 677.27,
+        "complete": false
+      },
+      "lock": {
+        "phase": "track",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": false,
+        "lockedAt": 7.42,
+        "t": 5.6
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": null,
+        "num": "47",
+        "cap": "INITIALIZING",
+        "opacity": "1",
+        "rect": {
+          "x": 1389.59,
+          "y": 808.7,
+          "w": 98.8,
+          "h": 56.67,
+          "cx": 1438.99,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(0.47, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 677.17,
+          "h": 1,
+          "cx": 386.19,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 677.3, 0)",
+        "rect": {
+          "x": 724.91,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 727.91,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "1",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 1.7,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "track",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 553,
+            "y": 516.5,
+            "w": 0,
+            "h": 0,
+            "cx": 553,
+            "cy": 516.5
+          },
+          "opacity": "0",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "0",
+          "transform": "matrix(2.5, 0, 0, 2.5, -107, -107)"
+        },
+        "dot": "0",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "0"
+        },
+        "dist": "DIST 128.6m",
+        "dataState": "TRACKING // 跟踪中",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0128.6m  ·  LOCK 00%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      }
+    },
+    {
+      "t": 6.8,
+      "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\splash\\v03\\shots\\calm-t6.8.png",
+      "state": "preview",
+      "phase": "moss",
+      "elapsed": 4.29209999999404,
+      "lastT": 6.8,
+      "reduced": true,
+      "dataPhase": "moss",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 6.8,
+        "progress": 0.59,
+        "pct": 59,
+        "trackWidth": 1441,
+        "fill": 0.59,
+        "spark": 850.1899999999999,
+        "complete": false
+      },
+      "lock": {
+        "phase": "converge",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": false,
+        "lockedAt": 7.42,
+        "t": 6.8
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": null,
+        "num": "59",
+        "cap": "INITIALIZING",
+        "opacity": "1",
+        "rect": {
+          "x": 1389.59,
+          "y": 808.7,
+          "w": 98.8,
+          "h": 56.67,
+          "cx": 1438.99,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(0.59, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 850.06,
+          "h": 1,
+          "cx": 472.64,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 850.2, 0)",
+        "rect": {
+          "x": 897.81,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 900.81,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "1",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 2.9,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "converge",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 553,
+            "y": 516.5,
+            "w": 0,
+            "h": 0,
+            "cx": 553,
+            "cy": 516.5
+          },
+          "opacity": "0",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "0",
+          "transform": "matrix(2.5, 0, 0, 2.5, -107, -107)"
+        },
+        "dot": "0",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "0"
+        },
+        "dist": "DIST 128.6m",
+        "dataState": "ACQUIRING // 收敛中",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0128.6m  ·  LOCK 00%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      }
+    },
+    {
+      "t": 7.4,
+      "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\splash\\v03\\shots\\calm-t7.4.png",
+      "state": "preview",
+      "phase": "moss",
+      "elapsed": 5.6315,
+      "lastT": 7.4,
+      "reduced": true,
+      "dataPhase": "moss",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 7.4,
+        "progress": 0.65,
+        "pct": 65,
+        "trackWidth": 1441,
+        "fill": 0.65,
+        "spark": 936.65,
+        "complete": false
+      },
+      "lock": {
+        "phase": "lock",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": false,
+        "lockedAt": 7.42,
+        "t": 7.4
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": null,
+        "num": "65",
+        "cap": "INITIALIZING",
+        "opacity": "1",
+        "rect": {
+          "x": 1389.59,
+          "y": 808.7,
+          "w": 98.8,
+          "h": 56.67,
+          "cx": 1438.99,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(0.65, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 936.51,
+          "h": 1,
+          "cx": 515.86,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 936.6, 0)",
+        "rect": {
+          "x": 984.21,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 987.21,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "1",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 3.5,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "lock",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 553,
+            "y": 516.5,
+            "w": 0,
+            "h": 0,
+            "cx": 553,
+            "cy": 516.5
+          },
+          "opacity": "1",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, -107, -107)"
+        },
+        "dot": "1",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "0"
+        },
+        "dist": "DIST 007.1m",
+        "dataState": "LOCKED · 550W",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0007.1m  ·  LOCK 94%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "1",
+          "rect": {
+            "x": 486.95,
+            "y": 450.45,
+            "w": 132.09,
+            "h": 132.09,
+            "cx": 553,
+            "cy": 516.5
+          }
+        }
+      }
+    },
+    {
+      "t": 7.9,
+      "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\splash\\v03\\shots\\calm-t7.9.png",
+      "state": "preview",
+      "phase": "moss",
+      "elapsed": 6.772,
+      "lastT": 7.9,
+      "reduced": true,
+      "dataPhase": "moss",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 7.9,
+        "progress": 0.69,
+        "pct": 69,
+        "trackWidth": 1441,
+        "fill": 0.69,
+        "spark": 994.29,
+        "complete": false
+      },
+      "lock": {
+        "phase": "maintain",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": true,
+        "lockedAt": 7.42,
+        "t": 7.9
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": null,
+        "num": "69",
+        "cap": "INITIALIZING",
+        "opacity": "1",
+        "rect": {
+          "x": 1389.59,
+          "y": 808.7,
+          "w": 98.8,
+          "h": 56.67,
+          "cx": 1438.99,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(0.69, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 994.14,
+          "h": 1,
+          "cx": 544.68,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 994.3, 0)",
+        "rect": {
+          "x": 1041.91,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 1044.91,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "1",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 4,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "maintain",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 553,
+            "y": 516.5,
+            "w": 0,
+            "h": 0,
+            "cx": 553,
+            "cy": 516.5
+          },
+          "opacity": "1",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, -107, -107)"
+        },
+        "dot": "1",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "1"
+        },
+        "dist": "DIST 000.0m",
+        "dataState": "LOCKED · 550W",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0000.0m  ·  LOCK 100%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "1",
+          "rect": {
+            "x": 486.95,
+            "y": 450.45,
+            "w": 132.09,
+            "h": 132.09,
+            "cx": 553,
+            "cy": 516.5
+          }
+        }
+      }
+    },
+    {
+      "t": 11.2,
+      "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\splash\\v03\\shots\\calm-t11.2.png",
+      "state": "preview",
+      "phase": "handoff",
+      "elapsed": 8.17290000000596,
+      "lastT": 11.2,
+      "reduced": true,
+      "dataPhase": "handoff",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 11.2,
+        "progress": 1,
+        "pct": 100,
+        "trackWidth": 1441,
+        "fill": 1,
+        "spark": 1441,
+        "complete": true
+      },
+      "lock": {
+        "phase": "maintain",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": true,
+        "lockedAt": 7.42,
+        "t": 7.9
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": "1",
+        "num": "100",
+        "cap": "BOOT COMPLETE / 加载完成",
+        "opacity": "1",
+        "rect": {
+          "x": 1347.91,
+          "y": 808.7,
+          "w": 140.48,
+          "h": 56.67,
+          "cx": 1418.15,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 1440.78,
+          "h": 1,
+          "cx": 768,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 1441, 0)",
+        "rect": {
+          "x": 1488.61,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 1491.61,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "1",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 4.96,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "maintain",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          },
+          "opacity": "1",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "1",
+          "transform": "none"
+        },
+        "dot": "1",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "1"
+        },
+        "dist": "DIST 000.0m",
+        "dataState": "LOCKED · 550W",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0000.0m  ·  LOCK 100%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      }
+    }
+  ],
+  "samples": [
+    {
+      "t": 6,
+      "state": "preview",
+      "phase": "moss",
+      "elapsed": 9.020799999982119,
+      "lastT": 6,
+      "reduced": true,
+      "dataPhase": "moss",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 6,
+        "progress": 0.51,
+        "pct": 51,
+        "trackWidth": 1441,
+        "fill": 0.51,
+        "spark": 734.91,
+        "complete": false
+      },
+      "lock": {
+        "phase": "track",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": false,
+        "lockedAt": 7.42,
+        "t": 6
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": null,
+        "num": "51",
+        "cap": "INITIALIZING",
+        "opacity": "1",
+        "rect": {
+          "x": 1389.59,
+          "y": 808.7,
+          "w": 98.8,
+          "h": 56.67,
+          "cx": 1438.99,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(0.51, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 734.8,
+          "h": 1,
+          "cx": 415.01,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 734.9, 0)",
+        "rect": {
+          "x": 782.51,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 785.51,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "1",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 2.1,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "track",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 553,
+            "y": 516.5,
+            "w": 0,
+            "h": 0,
+            "cx": 553,
+            "cy": 516.5
+          },
+          "opacity": "0",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "0",
+          "transform": "matrix(2.5, 0, 0, 2.5, -107, -107)"
+        },
+        "dot": "0",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "0"
+        },
+        "dist": "DIST 128.6m",
+        "dataState": "TRACKING // 跟踪中",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0128.6m  ·  LOCK 00%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      }
+    },
+    {
+      "t": 8,
+      "state": "preview",
+      "phase": "moss",
+      "elapsed": 9.51309999999404,
+      "lastT": 8,
+      "reduced": true,
+      "dataPhase": "moss",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 8,
+        "progress": 0.7,
+        "pct": 70,
+        "trackWidth": 1441,
+        "fill": 0.7,
+        "spark": 1008.6999999999999,
+        "complete": false
+      },
+      "lock": {
+        "phase": "maintain",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": true,
+        "lockedAt": 7.42,
+        "t": 8
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": null,
+        "num": "70",
+        "cap": "INITIALIZING",
+        "opacity": "1",
+        "rect": {
+          "x": 1389.59,
+          "y": 808.7,
+          "w": 98.8,
+          "h": 56.67,
+          "cx": 1438.99,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(0.7, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 1008.55,
+          "h": 1,
+          "cx": 551.88,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 1008.7, 0)",
+        "rect": {
+          "x": 1056.31,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 1059.31,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "1",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 4.1,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "maintain",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 553,
+            "y": 516.5,
+            "w": 0,
+            "h": 0,
+            "cx": 553,
+            "cy": 516.5
+          },
+          "opacity": "0.889",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "0.889",
+          "transform": "matrix(1, 0, 0, 1, -107, -107)"
+        },
+        "dot": "0.889",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "0.889"
+        },
+        "dist": "DIST 000.0m",
+        "dataState": "LOCKED · 550W",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0000.0m  ·  LOCK 100%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "0.889",
+          "rect": {
+            "x": 486.95,
+            "y": 450.45,
+            "w": 132.09,
+            "h": 132.09,
+            "cx": 553,
+            "cy": 516.5
+          }
+        }
+      }
+    },
+    {
+      "t": 9.4,
+      "state": "preview",
+      "phase": "split",
+      "elapsed": 10.076099999994039,
+      "lastT": 9.4,
+      "reduced": true,
+      "dataPhase": "split",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 9.4,
+        "progress": 0.82,
+        "pct": 82,
+        "trackWidth": 1441,
+        "fill": 0.82,
+        "spark": 1181.62,
+        "complete": false
+      },
+      "lock": {
+        "phase": "maintain",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": true,
+        "lockedAt": 7.42,
+        "t": 9.4
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": null,
+        "num": "82",
+        "cap": "INITIALIZING",
+        "opacity": "1",
+        "rect": {
+          "x": 1389.59,
+          "y": 808.7,
+          "w": 98.8,
+          "h": 56.67,
+          "cx": 1438.99,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(0.82, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 1181.44,
+          "h": 1,
+          "cx": 638.33,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 1181.6, 0)",
+        "rect": {
+          "x": 1229.21,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 1232.21,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "1",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 4.96,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "maintain",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 553,
+            "y": 516.5,
+            "w": 0,
+            "h": 0,
+            "cx": 553,
+            "cy": 516.5
+          },
+          "opacity": "0",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "0",
+          "transform": "matrix(1, 0, 0, 1, -107, -107)"
+        },
+        "dot": "0",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "0"
+        },
+        "dist": "DIST 000.0m",
+        "dataState": "LOCKED · 550W",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0000.0m  ·  LOCK 100%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      }
+    },
+    {
+      "t": 10.2,
+      "state": "preview",
+      "phase": "earth",
+      "elapsed": 10.436599999994039,
+      "lastT": 10.2,
+      "reduced": true,
+      "dataPhase": "earth",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 10.2,
+        "progress": 0.89,
+        "pct": 89,
+        "trackWidth": 1441,
+        "fill": 0.89,
+        "spark": 1282.49,
+        "complete": false
+      },
+      "lock": {
+        "phase": "maintain",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": true,
+        "lockedAt": 7.42,
+        "t": 9.4
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": null,
+        "num": "89",
+        "cap": "INITIALIZING",
+        "opacity": "1",
+        "rect": {
+          "x": 1389.59,
+          "y": 808.7,
+          "w": 98.8,
+          "h": 56.67,
+          "cx": 1438.99,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(0.89, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 1282.3,
+          "h": 1,
+          "cx": 688.76,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 1282.5, 0)",
+        "rect": {
+          "x": 1330.11,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 1333.11,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "1",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 4.96,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "maintain",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          },
+          "opacity": "0",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "0",
+          "transform": "none"
+        },
+        "dot": "0",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "0"
+        },
+        "dist": "DIST 000.0m",
+        "dataState": "LOCKED · 550W",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0000.0m  ·  LOCK 100%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      }
+    },
+    {
+      "t": 11.2,
+      "reused": true,
+      "file": "E:\\dshdesign\\dsh-startup-moss2\\_work\\splash\\v03\\shots\\calm-t11.2.png",
+      "state": "preview",
+      "phase": "handoff",
+      "elapsed": 8.17290000000596,
+      "lastT": 11.2,
+      "reduced": true,
+      "dataPhase": "handoff",
+      "rootConnected": true,
+      "api": {
+        "state": "preview",
+        "progress": 0.38983050847457623,
+        "reduced": true,
+        "duration": 11.8
+      },
+      "prog": {
+        "t": 11.2,
+        "progress": 1,
+        "pct": 100,
+        "trackWidth": 1441,
+        "fill": 1,
+        "spark": 1441,
+        "complete": true
+      },
+      "lock": {
+        "phase": "maintain",
+        "reticle": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        },
+        "locked": true,
+        "lockedAt": 7.42,
+        "t": 7.9
+      },
+      "audio": {
+        "ok": false,
+        "ctxState": "none",
+        "started": false,
+        "nodes": 0,
+        "masterGain": 0,
+        "events": 0,
+        "error": ""
+      },
+      "buildAudioFn": true,
+      "stage": {
+        "x": 0,
+        "y": 0,
+        "w": 1536,
+        "h": 960
+      },
+      "pct": {
+        "dataComplete": "1",
+        "num": "100",
+        "cap": "BOOT COMPLETE / 加载完成",
+        "opacity": "1",
+        "rect": {
+          "x": 1347.91,
+          "y": 808.7,
+          "w": 140.48,
+          "h": 56.67,
+          "cx": 1418.15,
+          "cy": 837.04
+        }
+      },
+      "fill": {
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "rect": {
+          "x": 47.61,
+          "y": 886.38,
+          "w": 1440.78,
+          "h": 1,
+          "cx": 768,
+          "cy": 886.88
+        }
+      },
+      "spark": {
+        "transform": "matrix(1, 0, 0, 1, 1441, 0)",
+        "rect": {
+          "x": 1488.61,
+          "y": 884.38,
+          "w": 6,
+          "h": 5,
+          "cx": 1491.61,
+          "cy": 886.88
+        }
+      },
+      "trackWidth": 1441,
+      "bottom": {
+        "opacity": "1",
+        "display": "block",
+        "rect": {
+          "x": 47.61,
+          "y": 864.48,
+          "w": 1440.78,
+          "h": 22.89,
+          "cx": 768,
+          "cy": 875.93
+        }
+      },
+      "videoMoss": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 4.96,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      },
+      "tgt": {
+        "layer": {
+          "phase": "maintain",
+          "opacity": "1"
+        },
+        "reticle": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          },
+          "opacity": "1",
+          "transform": "none"
+        },
+        "ringO": {
+          "opacity": "1",
+          "transform": "none"
+        },
+        "dot": "1",
+        "lockLabel": {
+          "text": "LOCKED · 550W",
+          "opacity": "1"
+        },
+        "dist": "DIST 000.0m",
+        "dataState": "LOCKED · 550W",
+        "dataRead": "X 553.0  Y 516.5  ·  DIST 0000.0m  ·  LOCK 100%",
+        "grid": "0",
+        "scan": {
+          "top": "",
+          "opacity": "0"
+        },
+        "corners": [
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "ghosts": [
+          "0",
+          "0",
+          "0"
+        ],
+        "shock": [
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          },
+          {
+            "opacity": "0",
+            "transform": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "cx": 0,
+              "cy": 0
+            }
+          }
+        ],
+        "gaze": {
+          "opacity": "1",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "progress-sync@6",
+      "pass": true,
+      "detail": {
+        "num": 51,
+        "fillScale": 0.51,
+        "sparkRatio": 0.5099930603747398,
+        "progress": 0.51,
+        "trackWidth": 1441
+      }
+    },
+    {
+      "name": "progress-sync@8",
+      "pass": true,
+      "detail": {
+        "num": 70,
+        "fillScale": 0.7,
+        "sparkRatio": 0.7000000000000001,
+        "progress": 0.7,
+        "trackWidth": 1441
+      }
+    },
+    {
+      "name": "progress-sync@9.4",
+      "pass": true,
+      "detail": {
+        "num": 82,
+        "fillScale": 0.82,
+        "sparkRatio": 0.8199861207494795,
+        "progress": 0.82,
+        "trackWidth": 1441
+      }
+    },
+    {
+      "name": "progress-sync@10.2",
+      "pass": true,
+      "detail": {
+        "num": 89,
+        "fillScale": 0.89,
+        "sparkRatio": 0.8900069396252602,
+        "progress": 0.89,
+        "trackWidth": 1441
+      }
+    },
+    {
+      "name": "progress-sync@11.2",
+      "pass": true,
+      "detail": {
+        "num": 100,
+        "fillScale": 1,
+        "sparkRatio": 1,
+        "progress": 1,
+        "trackWidth": 1441
+      }
+    },
+    {
+      "name": "progress-complete@11.2",
+      "pass": true,
+      "detail": {
+        "num": 100,
+        "dataComplete": "1",
+        "cap": "BOOT COMPLETE / 加载完成"
+      }
+    },
+    {
+      "name": "reticle-lock@7.4",
+      "pass": true,
+      "detail": {
+        "deviationPx": 0.04,
+        "reticle": {
+          "x": 553,
+          "y": 516.5,
+          "w": 0,
+          "h": 0,
+          "cx": 553,
+          "cy": 516.5
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        }
+      }
+    },
+    {
+      "name": "reticle-lock@7.9",
+      "pass": true,
+      "detail": {
+        "deviationPx": 0.04,
+        "reticle": {
+          "x": 553,
+          "y": 516.5,
+          "w": 0,
+          "h": 0,
+          "cx": 553,
+          "cy": 516.5
+        },
+        "eye": {
+          "x": 552.96,
+          "y": 516.48
+        }
+      }
+    },
+    {
+      "name": "moss-video-attrs-untouched",
+      "pass": true,
+      "detail": {
+        "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+        "currentTime": 0.7,
+        "playbackRate": 1,
+        "paused": true,
+        "styleFilter": "",
+        "styleTransform": "",
+        "styleOpacity": "1",
+        "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+        "computedTransform": "none",
+        "videoWidth": 1280,
+        "videoHeight": 720,
+        "className": "ms-video"
+      }
+    }
+  ],
+  "exceptions": [],
+  "consoles": [],
+  "final": {
+    "state": "preview",
+    "phase": "earth",
+    "elapsed": 10.438799999982118,
+    "lastT": 10.2,
+    "reduced": true,
+    "dataPhase": "earth",
+    "rootConnected": true,
+    "api": {
+      "state": "preview",
+      "progress": 0.38983050847457623,
+      "reduced": true,
+      "duration": 11.8
+    },
+    "prog": {
+      "t": 10.2,
+      "progress": 0.89,
+      "pct": 89,
+      "trackWidth": 1441,
+      "fill": 0.89,
+      "spark": 1282.49,
+      "complete": false
+    },
+    "lock": {
+      "phase": "maintain",
+      "reticle": {
+        "x": 552.96,
+        "y": 516.48
+      },
+      "eye": {
+        "x": 552.96,
+        "y": 516.48
+      },
+      "locked": true,
+      "lockedAt": 7.42,
+      "t": 9.4
+    },
+    "audio": {
+      "ok": false,
+      "ctxState": "none",
+      "started": false,
+      "nodes": 0,
+      "masterGain": 0,
+      "events": 0,
+      "error": ""
+    },
+    "buildAudioFn": true,
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "w": 1536,
+      "h": 960
+    },
+    "pct": {
+      "dataComplete": null,
+      "num": "89",
+      "cap": "INITIALIZING",
+      "opacity": "1",
+      "rect": {
+        "x": 1389.59,
+        "y": 808.7,
+        "w": 98.8,
+        "h": 56.67,
+        "cx": 1438.99,
+        "cy": 837.04
+      }
+    },
+    "fill": {
+      "transform": "matrix(0.89, 0, 0, 1, 0, 0)",
+      "rect": {
+        "x": 47.61,
+        "y": 886.38,
+        "w": 1282.3,
+        "h": 1,
+        "cx": 688.76,
+        "cy": 886.88
+      }
+    },
+    "spark": {
+      "transform": "matrix(1, 0, 0, 1, 1282.5, 0)",
+      "rect": {
+        "x": 1330.11,
+        "y": 884.38,
+        "w": 6,
+        "h": 5,
+        "cx": 1333.11,
+        "cy": 886.88
+      }
+    },
+    "trackWidth": 1441,
+    "bottom": {
+      "opacity": "1",
+      "display": "block",
+      "rect": {
+        "x": 47.61,
+        "y": 864.48,
+        "w": 1440.78,
+        "h": 22.89,
+        "cx": 768,
+        "cy": 875.93
+      }
+    },
+    "videoMoss": {
+      "src": "/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+      "currentSrc": "http://127.0.0.1:57123/dsh-moss2/asset/moss/moss-cinema-720.mp4?v=0.2.0",
+      "currentTime": 4.96,
+      "playbackRate": 1,
+      "paused": true,
+      "styleFilter": "",
+      "styleTransform": "",
+      "styleOpacity": "1",
+      "computedFilter": "contrast(1.08) brightness(0.9) saturate(0.96)",
+      "computedTransform": "none",
+      "videoWidth": 1280,
+      "videoHeight": 720,
+      "className": "ms-video"
+    },
+    "tgt": {
+      "layer": {
+        "phase": "maintain",
+        "opacity": "1"
+      },
+      "reticle": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "cx": 0,
+          "cy": 0
+        },
+        "opacity": "0",
+        "transform": "none"
+      },
+      "ringO": {
+        "opacity": "0",
+        "transform": "none"
+      },
+      "dot": "0",
+      "lockLabel": {
+        "text": "LOCKED · 550W",
+        "opacity": "0"
+      },
+      "dist": "DIST 000.0m",
+      "dataState": "LOCKED · 550W",
+      "dataRead": "X 553.0  Y 516.5  ·  DIST 0000.0m  ·  LOCK 100%",
+      "grid": "0",
+      "scan": {
+        "top": "",
+        "opacity": "0"
+      },
+      "corners": [
+        {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        },
+        {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        },
+        {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        },
+        {
+          "opacity": "0",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      ],
+      "ghosts": [
+        "0",
+        "0",
+        "0"
+      ],
+      "shock": [
+        {
+          "opacity": "0",
+          "transform": "none",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        },
+        {
+          "opacity": "0",
+          "transform": "none",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "cx": 0,
+            "cy": 0
+          }
+        }
+      ],
+      "gaze": {
+        "opacity": "0",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "cx": 0,
+          "cy": 0
+        }
+      }
+    }
+  },
+  "summary": {
+    "checks": 9,
+    "failed": 0,
+    "shots": 6,
+    "samples": 5,
+    "exceptions": 0
+  }
+}

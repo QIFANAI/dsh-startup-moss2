@@ -1,0 +1,368 @@
+[
+  {
+    "name": "模式菜单",
+    "trigger": {
+      "x": 800,
+      "y": 482,
+      "rect": {
+        "x": 773.5,
+        "y": 472,
+        "w": 52,
+        "h": 20
+      },
+      "aria": ""
+    },
+    "docH": {
+      "base": 1020,
+      "now": 1020,
+      "grew": 0
+    },
+    "scrollY": {
+      "base": 0,
+      "now": 0
+    },
+    "menuCount": 1,
+    "menus": [
+      {
+        "position": "fixed",
+        "x": 745.5,
+        "y": 500,
+        "w": 324,
+        "h": 272,
+        "inViewport": true,
+        "hit": "BUTTON[menuitem]",
+        "bgHasPlasma": true,
+        "rules": [
+          {
+            "sheet": "assets/index-lh_YM6sT.css",
+            "sel": ":where(._surface_1w4el_1)",
+            "decl": "position:relative",
+            "important": ""
+          },
+          {
+            "sheet": "assets/index-lh_YM6sT.css",
+            "sel": "._list_1p5el_7",
+            "decl": "position:absolute; top:calc(100% + 4px); left:0px; z-index:100",
+            "important": ""
+          },
+          {
+            "sheet": "assets/index-lh_YM6sT.css",
+            "sel": "._portal_1p5el_46",
+            "decl": "position:fixed; top:auto; left:auto; z-index:1100",
+            "important": ""
+          }
+        ]
+      }
+    ],
+    "dialogs": [],
+    "tooltips": [],
+    "nearTrigger": 28,
+    "pass": true
+  },
+  {
+    "name": "点选「创造模式」",
+    "pass": true,
+    "label": {
+      "x": 800,
+      "y": 482,
+      "rect": {
+        "x": 773.5,
+        "y": 472,
+        "w": 52,
+        "h": 20
+      },
+      "aria": ""
+    }
+  },
+  {
+    "name": "模型菜单",
+    "trigger": {
+      "x": 1393,
+      "y": 595,
+      "rect": {
+        "x": 1331.5,
+        "y": 586,
+        "w": 122,
+        "h": 17
+      },
+      "aria": ""
+    },
+    "docH": {
+      "base": 1020,
+      "now": 1020,
+      "grew": 0
+    },
+    "scrollY": {
+      "base": 0,
+      "now": 0
+    },
+    "menuCount": 1,
+    "menus": [
+      {
+        "position": "fixed",
+        "x": 1266.5,
+        "y": 497,
+        "w": 240,
+        "h": 76,
+        "inViewport": true,
+        "hit": "BUTTON[menuitem]",
+        "bgHasPlasma": true,
+        "rules": [
+          {
+            "sheet": "assets/index-lh_YM6sT.css",
+            "sel": ":where(._surface_1w4el_1)",
+            "decl": "position:relative",
+            "important": ""
+          },
+          {
+            "sheet": "(inline)",
+            "sel": "._9r0rkG_menu",
+            "decl": "position:fixed; z-index:1100",
+            "important": ""
+          }
+        ]
+      }
+    ],
+    "dialogs": [],
+    "tooltips": [],
+    "nearTrigger": 89,
+    "pass": true
+  },
+  {
+    "name": "工作区菜单",
+    "trigger": {
+      "x": 683,
+      "y": 482,
+      "rect": {
+        "x": 624.5,
+        "y": 468,
+        "w": 117,
+        "h": 28
+      },
+      "text": "默认工作区",
+      "aria": "选择工作区"
+    },
+    "docH": {
+      "base": 1020,
+      "now": 1020,
+      "grew": 0
+    },
+    "scrollY": {
+      "base": 0,
+      "now": 0
+    },
+    "menuCount": 1,
+    "menus": [
+      {
+        "position": "fixed",
+        "x": 624.5,
+        "y": 500,
+        "w": 144,
+        "h": 83,
+        "inViewport": true,
+        "hit": "DIV[presentation]",
+        "bgHasPlasma": true,
+        "rules": [
+          {
+            "sheet": "assets/index-lh_YM6sT.css",
+            "sel": ":where(._surface_1w4el_1)",
+            "decl": "position:relative",
+            "important": ""
+          },
+          {
+            "sheet": "assets/index-lh_YM6sT.css",
+            "sel": "._list_1p5el_7",
+            "decl": "position:absolute; top:calc(100% + 4px); left:0px; z-index:100",
+            "important": ""
+          },
+          {
+            "sheet": "assets/index-lh_YM6sT.css",
+            "sel": "._portal_1p5el_46",
+            "decl": "position:fixed; top:auto; left:auto; z-index:1100",
+            "important": ""
+          }
+        ]
+      }
+    ],
+    "dialogs": [],
+    "tooltips": [],
+    "nearTrigger": 32,
+    "pass": true
+  },
+  {
+    "name": "+ 命令面板",
+    "docH": {
+      "base": 1020,
+      "now": 1020,
+      "grew": 0
+    },
+    "scrollY": {
+      "base": 0,
+      "now": 0
+    },
+    "panels": [],
+    "pass": true
+  },
+  {
+    "name": "+ → 权限浮层",
+    "trigger": {
+      "rect": {
+        "tag": "SPAN",
+        "role": "",
+        "cx": 666,
+        "cy": 411,
+        "x": 652.5,
+        "y": 401,
+        "w": 26,
+        "h": 20
+      }
+    },
+    "docH": {
+      "base": 1020,
+      "now": 1020,
+      "grew": 0
+    },
+    "scrollY": {
+      "base": 0,
+      "now": 0
+    },
+    "menuCount": 1,
+    "menus": [
+      {
+        "position": "static",
+        "x": 624.5,
+        "y": 394,
+        "w": 944,
+        "h": 102,
+        "inViewport": true,
+        "hit": "DIV[option]",
+        "bgHasPlasma": true,
+        "rules": []
+      }
+    ],
+    "dialogs": [],
+    "tooltips": [],
+    "nearTrigger": 7,
+    "pass": true
+  },
+  {
+    "name": "tooltip",
+    "tooltips": [
+      {
+        "position": "fixed",
+        "top": "573px",
+        "left": "642.5px",
+        "zIndex": "1100",
+        "bgImage": "none",
+        "bgColor": "rgba(9, 15, 25, 0.94)",
+        "pointerEvents": "none",
+        "x": 577,
+        "y": 547,
+        "w": 131,
+        "h": 26,
+        "bottom": 573,
+        "text": "添加文件或调用指令"
+      }
+    ],
+    "pass": true
+  },
+  {
+    "name": "账号菜单",
+    "trigger": {
+      "x": 140,
+      "y": 988,
+      "aria": "账号菜单",
+      "txt": "HQF",
+      "rect": {
+        "x": 10,
+        "y": 966,
+        "w": 260,
+        "h": 44
+      }
+    },
+    "docH": {
+      "base": 1020,
+      "now": 1020,
+      "grew": 0
+    },
+    "scrollY": {
+      "base": 0,
+      "now": 0
+    },
+    "menuCount": 1,
+    "menus": [
+      {
+        "position": "fixed",
+        "x": 12,
+        "y": 852,
+        "w": 144,
+        "h": 110,
+        "inViewport": true,
+        "hit": "SPAN",
+        "bgHasPlasma": true,
+        "rules": [
+          {
+            "sheet": "assets/index-lh_YM6sT.css",
+            "sel": ":where(._surface_1w4el_1)",
+            "decl": "position:relative",
+            "important": ""
+          },
+          {
+            "sheet": "assets/index-lh_YM6sT.css",
+            "sel": "._list_1p5el_7",
+            "decl": "position:absolute; top:calc(100% + 4px); left:0px; z-index:100",
+            "important": ""
+          },
+          {
+            "sheet": "assets/index-lh_YM6sT.css",
+            "sel": "._portal_1p5el_46",
+            "decl": "position:fixed; top:auto; left:auto; z-index:1100",
+            "important": ""
+          }
+        ]
+      }
+    ],
+    "dialogs": [],
+    "tooltips": [],
+    "nearTrigger": 114,
+    "pass": true
+  },
+  {
+    "name": "设置页/设置浮层",
+    "docH": {
+      "base": 1020,
+      "now": 1020,
+      "grew": 0
+    },
+    "scrollY": {
+      "base": 0,
+      "now": 0
+    },
+    "dialogs": [
+      {
+        "pos": "relative",
+        "x": 560,
+        "y": 110,
+        "w": 800,
+        "h": 800,
+        "text": "设置账号与余额通用设置模型内置插件Agent 预设MOSS 主题打开配置文件关闭"
+      }
+    ],
+    "panels": [
+      {
+        "pos": "fixed",
+        "y": 0,
+        "h": 1020,
+        "cls": "AnXs9G_overlay"
+      },
+      {
+        "pos": "relative",
+        "y": 110,
+        "h": 800,
+        "cls": "AnXs9G_panel"
+      }
+    ],
+    "mossSection": true,
+    "pass": true
+  }
+]

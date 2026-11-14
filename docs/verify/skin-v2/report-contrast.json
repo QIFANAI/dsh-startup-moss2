@@ -1,0 +1,490 @@
+{
+  "generatedAt": "2026-11-06T11:57:22.557Z",
+  "host": "http://127.0.0.1:57123",
+  "viewport": {
+    "width": 1536,
+    "height": 960
+  },
+  "items": [
+    {
+      "text": "新会话",
+      "tag": "span",
+      "cls": "wtg9ga_newSessionLabel wtg9ga_wide",
+      "fontSize": 14,
+      "fontWeight": "500",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 129,
+        "y": 74,
+        "w": 42,
+        "h": 22
+      },
+      "bgLuma": 16,
+      "ratio": 16.7
+    },
+    {
+      "text": "Ctrl",
+      "tag": "kbd",
+      "cls": "_key_38b9q_1",
+      "fontSize": 12,
+      "fontWeight": "400",
+      "color": "rgb(147, 166, 186)",
+      "rect": {
+        "x": 184,
+        "y": 77,
+        "w": 19,
+        "h": 16
+      },
+      "bgLuma": 16.2,
+      "ratio": 7.6
+    },
+    {
+      "text": "Alt",
+      "tag": "kbd",
+      "cls": "_key_38b9q_1",
+      "fontSize": 12,
+      "fontWeight": "400",
+      "color": "rgb(147, 166, 186)",
+      "rect": {
+        "x": 217,
+        "y": 77,
+        "w": 15,
+        "h": 16
+      },
+      "bgLuma": 16.2,
+      "ratio": 7.6
+    },
+    {
+      "text": "插件",
+      "tag": "span",
+      "cls": "wtg9ga_panelTitle wtg9ga_wide",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 42,
+        "y": 121,
+        "w": 28,
+        "h": 22
+      },
+      "bgLuma": 7.4,
+      "ratio": 17.63
+    },
+    {
+      "text": "自动化任务",
+      "tag": "span",
+      "cls": "wtg9ga_panelTitle wtg9ga_wide",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 42,
+        "y": 159,
+        "w": 70,
+        "h": 22
+      },
+      "bgLuma": 7.4,
+      "ratio": 17.63
+    },
+    {
+      "text": "更多",
+      "tag": "span",
+      "cls": "wtg9ga_panelTitle wtg9ga_wide",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 42,
+        "y": 197,
+        "w": 28,
+        "h": 22
+      },
+      "bgLuma": 7.4,
+      "ratio": 17.64
+    },
+    {
+      "text": "工作区",
+      "tag": "span",
+      "cls": "GAkraW_sectionLabel GAkraW_wide",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(147, 166, 186)",
+      "rect": {
+        "x": 19,
+        "y": 244,
+        "w": 42,
+        "h": 20
+      },
+      "bgLuma": 6.7,
+      "ratio": 8.07
+    },
+    {
+      "text": "默认工作区",
+      "tag": "span",
+      "cls": "wnFoaW_title",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 42,
+        "y": 283,
+        "w": 219,
+        "h": 20
+      },
+      "bgLuma": 6.7,
+      "ratio": 17.7
+    },
+    {
+      "text": "新会话",
+      "tag": "span",
+      "cls": "wnFoaW_title",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 42,
+        "y": 318,
+        "w": 213,
+        "h": 20
+      },
+      "bgLuma": 22.1,
+      "ratio": 15.87
+    },
+    {
+      "text": "探索未至之境",
+      "tag": "span",
+      "cls": "",
+      "fontSize": 26,
+      "fontWeight": "500",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 819,
+        "y": 381,
+        "w": 156,
+        "h": 32
+      },
+      "bgLuma": 30.7,
+      "ratio": 14.51
+    },
+    {
+      "text": "预览版",
+      "tag": "span",
+      "cls": "WOwLGG_previewBadge",
+      "fontSize": 12,
+      "fontWeight": "500",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 982,
+        "y": 383,
+        "w": 52,
+        "h": 21
+      },
+      "bgLuma": 41.5,
+      "ratio": 12.69
+    },
+    {
+      "text": "默认工作区",
+      "tag": "span",
+      "cls": "WOwLGG_workspaceLabel",
+      "fontSize": 13,
+      "fontWeight": "500",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 518.6,
+        "y": 442,
+        "w": 65,
+        "h": 20
+      },
+      "bgLuma": 10.9,
+      "ratio": 17.28
+    },
+    {
+      "text": "标准模式",
+      "tag": "span",
+      "cls": "m2hUqa_seatLabel",
+      "fontSize": 13,
+      "fontWeight": "500",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 639.6,
+        "y": 442,
+        "w": 52,
+        "h": 20
+      },
+      "bgLuma": 15.8,
+      "ratio": 16.72
+    },
+    {
+      "text": "描述你想要构建的内容, / 调用指令, @ 文件或对话",
+      "tag": "div",
+      "cls": "GRgSLq_placeholder",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(111, 130, 153)",
+      "rect": {
+        "x": 500.6,
+        "y": 486,
+        "w": 809.8,
+        "h": 24
+      },
+      "bgLuma": 19.9,
+      "ratio": 4.68
+    },
+    {
+      "text": "工作区内修改",
+      "tag": "span",
+      "cls": "_86kJGG_triggerLabel",
+      "fontSize": 13,
+      "fontWeight": "500",
+      "color": "rgb(183, 199, 216)",
+      "rect": {
+        "x": 560.6,
+        "y": 555,
+        "w": 78,
+        "h": 20
+      },
+      "bgLuma": 14.2,
+      "ratio": 11.18
+    },
+    {
+      "text": "High",
+      "tag": "span",
+      "cls": "_9r0rkG_triggerEffort",
+      "fontSize": 13,
+      "fontWeight": "400",
+      "color": "rgb(111, 130, 153)",
+      "rect": {
+        "x": 1207.4,
+        "y": 555,
+        "w": 27,
+        "h": 20
+      },
+      "bgLuma": 18.8,
+      "ratio": 4.72
+    }
+  ],
+  "veil": "58",
+  "htmlClass": "dsh-moss-skin dsh-moss-skin--glass",
+  "screenshots": [
+    "_work\\verify2\\shots\\glass\\contrast-text.png",
+    "_work\\verify2\\shots\\glass\\contrast-notext.png"
+  ],
+  "bodyItems": [
+    {
+      "text": "描述你想要构建的内容, / 调用指令, @ 文件或对话",
+      "tag": "div",
+      "cls": "GRgSLq_placeholder",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(111, 130, 153)",
+      "rect": {
+        "x": 500.6,
+        "y": 486,
+        "w": 809.8,
+        "h": 24
+      },
+      "bgLuma": 19.9,
+      "ratio": 4.68
+    },
+    {
+      "text": "High",
+      "tag": "span",
+      "cls": "_9r0rkG_triggerEffort",
+      "fontSize": 13,
+      "fontWeight": "400",
+      "color": "rgb(111, 130, 153)",
+      "rect": {
+        "x": 1207.4,
+        "y": 555,
+        "w": 27,
+        "h": 20
+      },
+      "bgLuma": 18.8,
+      "ratio": 4.72
+    },
+    {
+      "text": "工作区",
+      "tag": "span",
+      "cls": "GAkraW_sectionLabel GAkraW_wide",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(147, 166, 186)",
+      "rect": {
+        "x": 19,
+        "y": 244,
+        "w": 42,
+        "h": 20
+      },
+      "bgLuma": 6.7,
+      "ratio": 8.07
+    },
+    {
+      "text": "工作区内修改",
+      "tag": "span",
+      "cls": "_86kJGG_triggerLabel",
+      "fontSize": 13,
+      "fontWeight": "500",
+      "color": "rgb(183, 199, 216)",
+      "rect": {
+        "x": 560.6,
+        "y": 555,
+        "w": 78,
+        "h": 20
+      },
+      "bgLuma": 14.2,
+      "ratio": 11.18
+    },
+    {
+      "text": "探索未至之境",
+      "tag": "span",
+      "cls": "",
+      "fontSize": 26,
+      "fontWeight": "500",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 819,
+        "y": 381,
+        "w": 156,
+        "h": 32
+      },
+      "bgLuma": 30.7,
+      "ratio": 14.51
+    },
+    {
+      "text": "新会话",
+      "tag": "span",
+      "cls": "wnFoaW_title",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 42,
+        "y": 318,
+        "w": 213,
+        "h": 20
+      },
+      "bgLuma": 22.1,
+      "ratio": 15.87
+    },
+    {
+      "text": "新会话",
+      "tag": "span",
+      "cls": "wtg9ga_newSessionLabel wtg9ga_wide",
+      "fontSize": 14,
+      "fontWeight": "500",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 129,
+        "y": 74,
+        "w": 42,
+        "h": 22
+      },
+      "bgLuma": 16,
+      "ratio": 16.7
+    },
+    {
+      "text": "标准模式",
+      "tag": "span",
+      "cls": "m2hUqa_seatLabel",
+      "fontSize": 13,
+      "fontWeight": "500",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 639.6,
+        "y": 442,
+        "w": 52,
+        "h": 20
+      },
+      "bgLuma": 15.8,
+      "ratio": 16.72
+    },
+    {
+      "text": "默认工作区",
+      "tag": "span",
+      "cls": "WOwLGG_workspaceLabel",
+      "fontSize": 13,
+      "fontWeight": "500",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 518.6,
+        "y": 442,
+        "w": 65,
+        "h": 20
+      },
+      "bgLuma": 10.9,
+      "ratio": 17.28
+    },
+    {
+      "text": "插件",
+      "tag": "span",
+      "cls": "wtg9ga_panelTitle wtg9ga_wide",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 42,
+        "y": 121,
+        "w": 28,
+        "h": 22
+      },
+      "bgLuma": 7.4,
+      "ratio": 17.63
+    },
+    {
+      "text": "自动化任务",
+      "tag": "span",
+      "cls": "wtg9ga_panelTitle wtg9ga_wide",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 42,
+        "y": 159,
+        "w": 70,
+        "h": 22
+      },
+      "bgLuma": 7.4,
+      "ratio": 17.63
+    },
+    {
+      "text": "更多",
+      "tag": "span",
+      "cls": "wtg9ga_panelTitle wtg9ga_wide",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 42,
+        "y": 197,
+        "w": 28,
+        "h": 22
+      },
+      "bgLuma": 7.4,
+      "ratio": 17.64
+    },
+    {
+      "text": "默认工作区",
+      "tag": "span",
+      "cls": "wnFoaW_title",
+      "fontSize": 14,
+      "fontWeight": "400",
+      "color": "rgb(233, 241, 250)",
+      "rect": {
+        "x": 42,
+        "y": 283,
+        "w": 219,
+        "h": 20
+      },
+      "bgLuma": 6.7,
+      "ratio": 17.7
+    }
+  ],
+  "summary": {
+    "candidates": 16,
+    "bodyCandidates": 13,
+    "minRatio": 4.68,
+    "failCount": 0,
+    "threshold": 4.5,
+    "pass": true
+  }
+}
