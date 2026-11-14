@@ -19,15 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-NOTE ON BUNDLED MEDIA
-
-`lib/assets/earth/*`, `lib/assets/moss/*`, `lib/assets/neuro/*` and
-`lib/assets/audio/*` include third-party Wallpaper Engine workshop assets and a
-user-recorded audio track (see THIRD-PARTY-NOTICES.md). They are NOT covered by
-the MIT license above and remain the property of their respective rights
-holders. They are included in this repository by the maintainer's decision for
-personal, non-commercial fan sharing; no ownership is claimed. See
-THIRD-PARTY-NOTICES.md for provenance and takedown contact.
