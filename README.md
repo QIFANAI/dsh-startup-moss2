@@ -58,7 +58,7 @@
 
 ### 方式 A：拖给 DSH 装（推荐，离线 · 无损）
 
-把 [Releases](https://github.com/QIFANAI/dsh-startup-moss2/releases) 里的 `MOSS550W·流浪地球启动动画+UI皮肤组合包.zip` 拖进 DSH 对话框，说「帮我安装这个插件」，
+把 [Releases](https://github.com/QIFANAI/dsh-startup-moss2/releases) 里的 `MOSS550W-wandering-earth-combo-v0.5.0.zip`（组合包原名 `MOSS550W·流浪地球启动动画+UI皮肤组合包.zip`） 拖进 DSH 对话框，说「帮我安装这个插件」，
 按包内 `00-给DSH的安装说明.md` 执行。组合包已内嵌完整的 `dsh-startup-moss2-0.5.0.tgz`
 （48 个文件，含 earth 1080p+720p 短 GOP 视频、neuro/moss 视频、`audio/moss-arm-sfx.m4a` 实录音效、
 字体与全部文档），**不联网、不删减素材**；装完用包内 `tools/verify.ps1` 逐文件校验。

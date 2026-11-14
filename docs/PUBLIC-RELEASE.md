@@ -13,6 +13,7 @@
 - Release 附件是可直接安装的完整包：
   - `dsh-startup-moss2-0.5.0.tgz` — 17,567,506 B，SHA256 `8e4b198cbf5b64ccf51dec0ba0b5825ab843dc0916112575e35002b4a4b3e54d`
   - `MOSS550W·流浪地球启动动画+UI皮肤组合包.zip` — 17,599,691 B，SHA256 `d77aee5f649d368208ac1c778593390f4d67e73a8ea8fcdb1f2c985bb1d60753`
+    （GitHub Release 附件名：`MOSS550W-wandering-earth-combo-v0.5.0.zip`）
 
 ## 2. 与交付时“仅本机自用”口径的差异
 

@@ -16,7 +16,7 @@
 
 ### 方式 A：拖给 DSH 的 agent（推荐，离线 · 无损）
 
-把 [Releases](https://github.com/QIFANAI/dsh-startup-moss2/releases) 里的 `MOSS550W·流浪地球启动动画+UI皮肤组合包.zip` 拖进 DSH 对话框，说「帮我安装这个插件」，按包内
+把 [Releases](https://github.com/QIFANAI/dsh-startup-moss2/releases) 里的 `MOSS550W-wandering-earth-combo-v0.5.0.zip`（组合包原名 `MOSS550W·流浪地球启动动画+UI皮肤组合包.zip`） 拖进 DSH 对话框，说「帮我安装这个插件」，按包内
 `00-给DSH的安装说明.md` 执行：agent 会先用 `tools\install.ps1` 做完整性预检并把 tgz 复制到
 `%USERPROFILE%\.dsh\_packages\`（稳定副本，勿删），再用 `plugin_manager install_bundle` 安装；
 首次重开后用 `tools\verify.ps1` 逐文件校验（48/48 文件 + 11 个冻结哈希）。
