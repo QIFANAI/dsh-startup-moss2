@@ -1,0 +1,71 @@
+{
+  "name": "dsh-startup-moss2",
+  "version": "0.5.0",
+  "rights": "代码 MIT；内嵌 Wallpaper Engine 工坊素材与用户自制音效版权归原权利人，按作者决定随仓库公开分享（非商业个人同人用途，见 THIRD-PARTY-NOTICES.md）。",
+  "description": "MOSS 550W · 流浪地球 — DSH 启动动画 + UI 皮肤（v0.5 动态地球+柔化交接+机械臂实录音效）：神经接口开幕 → MOSS 苏醒（红色准心锁定特效）→ 一半 MOSS/一半流浪地球转场 → 地球动态视频背景 + 深空玻璃驾驶舱；程序化 BGM/音效、品牌红眼与输入卡角括号呼吸、启动进度条与百分比同步。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "startup",
+    "splash",
+    "boot-animation",
+    "moss",
+    "550w",
+    "the-wandering-earth",
+    "skin",
+    "glass",
+    "video-background"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "preview",
+    "locale",
+    "test",
+    "docs/*.md",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "INSTALL.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md"
+  ],
+  "scripts": {
+    "test": "node test/smoke-host.mjs && node test/smoke-assets.mjs && node test/smoke-splash.mjs && node test/smoke-client.mjs && node test/smoke-css-regress.mjs",
+    "pack": "npm pack --pack-destination releases"
+  },
+  "license": "MIT",
+  "author": "沈宏宏 (QIFANAI)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QIFANAI/dsh-startup-moss2.git"
+  },
+  "homepage": "https://github.com/QIFANAI/dsh-startup-moss2",
+  "bugs": {
+    "url": "https://github.com/QIFANAI/dsh-startup-moss2/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "dsh-startup-moss2",
+  "version": "0.5.0",
+  "tag": "v0.5.0",
+  "repository": "https://github.com/QIFANAI/dsh-startup-moss2",
+  "distribution": "full-media-source",
+  "mediaIncluded": true,
+  "hostTested": "DSH 0.2.2-rc.1",
+  "artifacts": [
+    {
+      "file": "dsh-startup-moss2-0.5.0.tgz",
+      "bytes": 17567506,
+      "sha256": "8e4b198cbf5b64ccf51dec0ba0b5825ab843dc0916112575e35002b4a4b3e54d"
+    },
+    {
+      "file": "MOSS550W·流浪地球启动动画+UI皮肤组合包.zip",
+      "bytes": 17599691,
+      "sha256": "d77aee5f649d368208ac1c778593390f4d67e73a8ea8fcdb1f2c985bb1d60753"
+    }
+  ]
+}

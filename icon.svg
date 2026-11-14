@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="MOSS 550W">
+  <defs>
+    <radialGradient id="eye" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe4d6"/>
+      <stop offset="22%" stop-color="#ff6a3d"/>
+      <stop offset="52%" stop-color="#ff3d1f"/>
+      <stop offset="78%" stop-color="#8f1d0b"/>
+      <stop offset="100%" stop-color="#2a0803"/>
+    </radialGradient>
+    <linearGradient id="earth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fd3ff"/>
+      <stop offset="46%" stop-color="#4f8bff"/>
+      <stop offset="100%" stop-color="#0b2c5e"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9fc6ff" stop-opacity=".85"/>
+      <stop offset="55%" stop-color="#4f8bff" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#9fc6ff" stop-opacity=".12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="38%" cy="58%" r="60%">
+      <stop offset="0%" stop-color="#ff3d1f" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#ff3d1f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="#04070c"/>
+  <rect x="1.25" y="1.25" width="61.5" height="61.5" rx="12.75" fill="none" stroke="#8fb8ff" stroke-opacity=".18" stroke-width=".5"/>
+
+  <!-- 地球弧（右侧） -->
+  <circle cx="46" cy="34" r="17" fill="url(#earth)" opacity=".92"/>
+  <path d="M30 34a17 17 0 0 0 32 0" fill="none" stroke="#8fd3ff" stroke-opacity=".55" stroke-width=".75"/>
+  <path d="M35 27c6 3 12 3 18 0" fill="none" stroke="#e9f1fa" stroke-opacity=".25" stroke-width=".6"/>
+
+  <!-- 深空遮罩，让地球只露出右侧弧 -->
+  <path d="M0 0h34v64H0z" fill="#04070c"/>
+  <path d="M34 0v64" stroke="#8fb8ff" stroke-opacity=".22" stroke-width=".6"/>
+
+  <!-- MOSS 红眼（左侧主铭牌） -->
+  <circle cx="20" cy="36" r="15" fill="url(#glow)"/>
+  <circle cx="20" cy="36" r="11.4" fill="none" stroke="url(#ring)" stroke-width="1"/>
+  <g stroke="#9fc6ff" stroke-opacity=".5" stroke-width=".6">
+    <path d="M20 22.5v4"/><path d="M20 45.5v4"/>
+    <path d="M6.5 36h4"/><path d="M29.5 36h4"/>
+    <path d="M10.4 26.4l2.6 2.6"/><path d="M27 43l2.6 2.6"/>
+    <path d="M29.6 26.4L27 29"/><path d="M13 43l-2.6 2.6"/>
+  </g>
+  <circle cx="20" cy="36" r="7.6" fill="#120402" stroke="#ff3d1f" stroke-opacity=".85" stroke-width="1"/>
+  <circle cx="20" cy="36" r="5.1" fill="url(#eye)"/>
+  <circle cx="20" cy="36" r="1.7" fill="#fff6f1" opacity=".92"/>
+  <circle cx="20" cy="36" r="11.4" fill="none" stroke="#ff3d1f" stroke-opacity=".28" stroke-width="2.6"/>
+
+  <!-- HUD 角标 -->
+  <g stroke="#9fc6ff" stroke-opacity=".42" stroke-width=".9" fill="none">
+    <path d="M6 10h5M6 10v5"/>
+    <path d="M58 10h-5M58 10v5"/>
+    <path d="M6 54h5M6 54v-5"/>
+    <path d="M58 54h-5M58 54v-5"/>
+  </g>
+  <text x="20" y="58.4" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="4.6" letter-spacing=".9" fill="#e9f1fa" fill-opacity=".58">550W</text>
+</svg>

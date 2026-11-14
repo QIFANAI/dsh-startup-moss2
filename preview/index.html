@@ -1,0 +1,1518 @@
+<!doctype html>
+<html lang="zh-CN" data-platform="win32" data-windows-titlebar
+      class="dsh-moss-skin dsh-moss-skin--glass"
+      style="--moss-veil:58;--moss-blur:16px">
+<head>
+<meta charset="utf-8">
+<title>MOSS 550W · v0.5 四幕预览（100% 定格 0.60s + bloom 12.70–13.30 + 810ms warp + 地球动态化 + arm-sfx）</title>
+<!-- =====================================================================
+     真实宿主 token 声明块（从 _ref/ui-theme/client.js 抽取，原样注入）
+     light = body{...}；dark = body[data-ds-dark-theme]{...}
+     ===================================================================== -->
+<style id="host-tokens">/* ── design-platform.css · static 色阶（light 基准）── */
+
+body {
+  --dsw-static-amber-100: #fef5e7;
+  --dsw-static-amber-400: #f7ad31;
+  --dsw-static-amber-500: #f59e0b;
+  --dsw-static-amber-600: #dd8629;
+  --dsw-static-amber-900: #27241f;
+  --dsw-static-blue-100: #dbeafe;
+  --dsw-static-blue-300: #93c5fd;
+  --dsw-static-blue-400: #60a5fa;
+  --dsw-static-blue-450: #4d93f8;
+  --dsw-static-blue-500: #3b82f6;
+  --dsw-static-blue-50: #eff6ff;
+  --dsw-static-blue-50p: #eaf3ff;
+  --dsw-static-blue-600: #2563eb;
+  --dsw-static-blue-75: #e5f0ff;
+  --dsw-static-blue-800: #1e40af;
+  --dsw-static-blue-900: #0e3074;
+  --dsw-static-blue-950: #172554;
+  --dsw-static-deepseek-100: #e4edfd;
+  --dsw-static-deepseek-200: #d3e2ff;
+  --dsw-static-deepseek-300: #b7c8fe;
+  --dsw-static-deepseek-400: #7aaaff;
+  --dsw-static-deepseek-450: #5686fe;
+  --dsw-static-deepseek-500: #4176e6;
+  --dsw-static-deepseek-50: #edf3fe;
+  --dsw-static-deepseek-600: #4868b2;
+  --dsw-static-deepseek-700-delete: #2f4c8f;
+  --dsw-static-deepseek-800: #34415b;
+  --dsw-static-deepseek-900: #283142;
+  --dsw-static-green-100: #e6faed;
+  --dsw-static-green-400: #4ed17e;
+  --dsw-static-green-500-a08: #22c55e14;
+  --dsw-static-green-500-a12: #22c55e1f;
+  --dsw-static-green-500: #22c55e;
+  --dsw-static-green-900: #233c2c;
+  --dsw-static-neutral-00: #fff;
+  --dsw-static-neutral-1000: #000;
+  --dsw-static-neutral-100: #f5f5f5;
+  --dsw-static-neutral-150: #ededed;
+  --dsw-static-neutral-200: #e5e5e5;
+  --dsw-static-neutral-250: #dcdcdc;
+  --dsw-static-neutral-300: #d4d4d4;
+  --dsw-static-neutral-400: #a2a4a6;
+  --dsw-static-neutral-500: #7f8287;
+  --dsw-static-neutral-50: #fafafa;
+  --dsw-static-neutral-550: #65676b;
+  --dsw-static-neutral-600: #545557;
+  --dsw-static-neutral-700: #3c3c3d;
+  --dsw-static-neutral-800: #292929;
+  --dsw-static-neutral-850: #212123;
+  --dsw-static-neutral-900: #0f0f0f;
+  --dsw-static-neutral-bluish-00: #fff;
+  --dsw-static-neutral-bluish-1000: #0f1115;
+  --dsw-static-neutral-bluish-100: #ebeef2;
+  --dsw-static-neutral-bluish-150: #e9ecf2;
+  --dsw-static-neutral-bluish-200: #e1e5ee;
+  --dsw-static-neutral-bluish-300: #cfd3d6;
+  --dsw-static-neutral-bluish-310: #cad2db;
+  --dsw-static-neutral-bluish-400: #adb2b8;
+  --dsw-static-neutral-bluish-500: #979da6;
+  --dsw-static-neutral-bluish-50: #f9fafb;
+  --dsw-static-neutral-bluish-55: #f5f7fa;
+  --dsw-static-neutral-bluish-600: #81858c;
+  --dsw-static-neutral-bluish-60: #f5f6f7;
+  --dsw-static-neutral-bluish-700: #61666b;
+  --dsw-static-neutral-bluish-750: #43454a;
+  --dsw-static-neutral-bluish-75: #f1f3f5;
+  --dsw-static-neutral-bluish-800: #353638;
+  --dsw-static-neutral-bluish-850: #2c2c2e;
+  --dsw-static-neutral-bluish-875: #232324;
+  --dsw-static-neutral-bluish-900: #1b1b1c;
+  --dsw-static-neutral-bluish-90: #edf0f4;
+  --dsw-static-neutral-bluish-950: #151517;
+  --dsw-static-red-100: #fee2e2;
+  --dsw-static-red-400-a12: #f25a5a1f;
+  --dsw-static-red-400: #f25a5a;
+  --dsw-static-red-500: #ef4444;
+  --dsw-static-red-50: #fef2f2;
+  --dsw-static-red-600-a08: #ec131314;
+  --dsw-static-red-600: #ec1313;
+  --dsw-static-red-900: #570c0c;
+  --dsw-static-violet-400: #a78bfa;
+  --dsw-static-violet-600: #7c3aed;
+}
+
+/* ── design-platform.css · static 色阶（dark 覆盖）── */
+
+body[data-ds-dark-theme] {
+  --dsw-static-amber-100: #fef5e7;
+  --dsw-static-amber-400: #f7ad31;
+  --dsw-static-amber-500: #f59e0b;
+  --dsw-static-amber-600: #dd8629;
+  --dsw-static-amber-900: #27241f;
+  --dsw-static-blue-100: #dbeafe;
+  --dsw-static-blue-300: #93c5fd;
+  --dsw-static-blue-400: #60a5fa;
+  --dsw-static-blue-450: #4d93f8;
+  --dsw-static-blue-500: #3b82f6;
+  --dsw-static-blue-50: #eff6ff;
+  --dsw-static-blue-50p: #eaf3ff;
+  --dsw-static-blue-600: #2563eb;
+  --dsw-static-blue-75: #e5f0ff;
+  --dsw-static-blue-800: #1e40af;
+  --dsw-static-blue-900: #0e3074;
+  --dsw-static-blue-950: #172554;
+  --dsw-static-deepseek-100: #e4edfd;
+  --dsw-static-deepseek-200: #d3e2ff;
+  --dsw-static-deepseek-300: #b7c8fe;
+  --dsw-static-deepseek-400: #7aaaff;
+  --dsw-static-deepseek-450: #5686fe;
+  --dsw-static-deepseek-500: #4176e6;
+  --dsw-static-deepseek-50: #edf3fe;
+  --dsw-static-deepseek-600: #4868b2;
+  --dsw-static-deepseek-700-delete: #2f4c8f;
+  --dsw-static-deepseek-800: #34415b;
+  --dsw-static-deepseek-900: #283142;
+  --dsw-static-green-100: #e6faed;
+  --dsw-static-green-400: #4ed17e;
+  --dsw-static-green-500-a08: #22c55e14;
+  --dsw-static-green-500-a12: #22c55e1f;
+  --dsw-static-green-500: #22c55e;
+  --dsw-static-green-900: #233c2c;
+  --dsw-static-neutral-00: #fff;
+  --dsw-static-neutral-1000: #000;
+  --dsw-static-neutral-100: #f5f5f5;
+  --dsw-static-neutral-150: #ededed;
+  --dsw-static-neutral-200: #e5e5e5;
+  --dsw-static-neutral-250: #dcdcdc;
+  --dsw-static-neutral-300: #d4d4d4;
+  --dsw-static-neutral-400: #a2a4a6;
+  --dsw-static-neutral-500: #7f8287;
+  --dsw-static-neutral-50: #fafafa;
+  --dsw-static-neutral-550: #65676b;
+  --dsw-static-neutral-600: #545557;
+  --dsw-static-neutral-700: #3c3c3d;
+  --dsw-static-neutral-800: #292929;
+  --dsw-static-neutral-850: #212123;
+  --dsw-static-neutral-900: #0f0f0f;
+  --dsw-static-neutral-bluish-00: #fff;
+  --dsw-static-neutral-bluish-1000: #0f1115;
+  --dsw-static-neutral-bluish-100: #ebeef2;
+  --dsw-static-neutral-bluish-150: #e9ecf2;
+  --dsw-static-neutral-bluish-200: #e1e5ee;
+  --dsw-static-neutral-bluish-300: #cfd3d6;
+  --dsw-static-neutral-bluish-310: #cad2db;
+  --dsw-static-neutral-bluish-400: #adb2b8;
+  --dsw-static-neutral-bluish-500: #979da6;
+  --dsw-static-neutral-bluish-50: #f9fafb;
+  --dsw-static-neutral-bluish-55: #f5f7fa;
+  --dsw-static-neutral-bluish-600: #81858c;
+  --dsw-static-neutral-bluish-60: #f9fafb;
+  --dsw-static-neutral-bluish-700: #61666b;
+  --dsw-static-neutral-bluish-750: #43454a;
+  --dsw-static-neutral-bluish-75: #f1f3f5;
+  --dsw-static-neutral-bluish-800: #353638;
+  --dsw-static-neutral-bluish-850: #2c2c2e;
+  --dsw-static-neutral-bluish-875: #232324;
+  --dsw-static-neutral-bluish-900: #1b1b1c;
+  --dsw-static-neutral-bluish-90: #edf0f4;
+  --dsw-static-neutral-bluish-950: #151517;
+  --dsw-static-red-100: #fee2e2;
+  --dsw-static-red-400-a12: #f25a5a1f;
+  --dsw-static-red-400: #f25a5a;
+  --dsw-static-red-500: #ef4444;
+  --dsw-static-red-50: #fef2f2;
+  --dsw-static-red-600-a08: #ec131314;
+  --dsw-static-red-600: #ec1313;
+  --dsw-static-red-900: #570c0c;
+  --dsw-static-violet-400: #a78bfa;
+  --dsw-static-violet-600: #7c3aed;
+}
+
+/* ── design-platform.css · alias 语义层（light 基准）── */
+
+body {
+  --dsw-alias-bg-base: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-bg-document-preview: var(--dsw-static-neutral-bluish-100);
+  --dsw-alias-bg-document-selection: color-mix(in srgb, var(--dsw-static-blue-500) 40%, transparent);
+  --dsw-alias-bg-layer-1: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-bg-layer-2: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-bg-layer-3: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-bg-mask-1: #0000003d;
+  --dsw-alias-bg-mask-2: #0000001f;
+  --dsw-alias-bg-mask-3: #0000007a;
+  --dsw-alias-bg-mask-drop: #ffffffb3;
+  --dsw-alias-bg-mask-photo: #000000e0;
+  --dsw-alias-bg-module-platform: var(--dsw-static-neutral-bluish-60);
+  --dsw-alias-bg-multi-select: var(--dsw-static-neutral-bluish-60);
+  --dsw-alias-bg-overlay: var(--dsw-static-neutral-bluish-150);
+  --dsw-alias-bg-skeleton: #0000000a;
+  --dsw-alias-border-inverted2: #0000;
+  --dsw-alias-border-inverted: #0000;
+  --dsw-alias-border-l1: #0000000a;
+  --dsw-alias-border-l2-darkmode-thin: #0000001a;
+  --dsw-alias-border-l2: #0000001a;
+  --dsw-alias-border-l3: #0000001f;
+  --dsw-alias-border-l4: #00000029;
+  --dsw-alias-brand-primary-invert: var(--dsw-static-neutral-bluish-1000);
+  --dsw-alias-brand-primary-new-colorprimary-new-color: #4176e6;
+  --dsw-alias-brand-primary: var(--dsw-static-neutral-bluish-1000);
+  --dsw-alias-brand-text: var(--dsw-static-neutral-bluish-1000);
+  --dsw-alias-button-contrast-fill: var(--dsw-static-neutral-bluish-700);
+  --dsw-alias-button-elevated-fill: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-button-floating-fill: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-button-floating-hover: var(--dsw-static-neutral-bluish-75);
+  --dsw-alias-button-ghost-active-border: var(--dsw-static-neutral-bluish-500);
+  --dsw-alias-button-ghost-active-fill: var(--dsw-static-neutral-bluish-100);
+  --dsw-alias-button-ghost-active-hover: var(--dsw-static-neutral-bluish-150);
+  --dsw-alias-button-info-fill: var(--dsw-static-deepseek-500);
+  --dsw-alias-button-info-hover: var(--dsw-static-deepseek-400);
+  --dsw-alias-button-primary-dimmed: var(--dsw-static-neutral-bluish-100);
+  --dsw-alias-button-primary-fill: var(--dsw-alias-brand-primary);
+  --dsw-alias-button-primary-hover: var(--dsw-static-neutral-bluish-750);
+  --dsw-alias-button-tool-bar-fill-invisible: #1f1f1f5c;
+  --dsw-alias-button-tool-bar-fill: #54555780;
+  --dsw-alias-button-tool-bar-hover: #54555799;
+  --dsw-alias-code-diff-added: var(--dsw-static-green-500-a08);
+  --dsw-alias-code-diff-deleted: var(--dsw-static-red-600-a08);
+  --dsw-alias-file-diff-added-bg: #e6f4e7;
+  --dsw-alias-file-diff-added-gutter: #edf7ed;
+  --dsw-alias-file-diff-added-marker: #01a241;
+  --dsw-alias-file-diff-deleted-bg: #fce6e2;
+  --dsw-alias-file-diff-deleted-gutter: #fdece9;
+  --dsw-alias-file-diff-deleted-marker: #ba2723;
+  --dsw-alias-illustration-background: var(--dsw-static-neutral-bluish-55);
+  --dsw-alias-illustration-backing: var(--dsw-static-neutral-bluish-310);
+  --dsw-alias-illustration-detail: var(--dsw-static-neutral-bluish-310);
+  --dsw-alias-illustration-inset: var(--dsw-alias-illustration-surface);
+  --dsw-alias-illustration-shadow: var(--dsw-alias-illustration-surface);
+  --dsw-alias-illustration-surface: var(--dsw-static-neutral-bluish-90);
+  --dsw-alias-interactive-bg-active: #2631481a;
+  --dsw-alias-interactive-bg-hover-accent: #26314824;
+  --dsw-alias-interactive-bg-hover-danger: #ec13130d;
+  --dsw-alias-interactive-bg-hover-solid: var(--dsw-static-neutral-bluish-75);
+  --dsw-alias-interactive-bg-hover: #2631480f;
+  --dsw-alias-label-caption: var(--dsw-static-neutral-bluish-400);
+  --dsw-alias-label-deep-diving-shimmer: color-mix(in srgb, var(--dsw-static-deepseek-500) 30%, var(--dsw-static-blue-950));
+  --dsw-alias-label-deep-diving: color-mix(in srgb, var(--dsw-static-deepseek-500) 70%, var(--dsw-static-blue-950));
+  --dsw-alias-label-dimmed: var(--dsw-static-neutral-bluish-200);
+  --dsw-alias-label-document-preview: var(--dsw-static-neutral-bluish-700);
+  --dsw-alias-label-primary-bluish: var(--dsw-static-blue-900);
+  --dsw-alias-label-primary-dimmed: var(--dsw-static-neutral-bluish-950);
+  --dsw-alias-label-primary-foreground: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-label-primary-inverted: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-label-primary: var(--dsw-static-neutral-bluish-1000);
+  --dsw-alias-label-secondary: var(--dsw-static-neutral-bluish-700);
+  --dsw-alias-label-shimmer: color-mix(in srgb, var(--dsw-static-neutral-1000) 30%, transparent);
+  --dsw-alias-label-tertiary: var(--dsw-static-neutral-bluish-600);
+  --dsw-alias-link: var(--dsw-static-deepseek-500);
+  --dsw-alias-markdown-citation: var(--dsw-static-neutral-bluish-100);
+  --dsw-alias-markdown-code-block-banner: var(--dsw-static-neutral-bluish-50);
+  --dsw-alias-markdown-code-block: var(--dsw-static-neutral-bluish-50);
+  --dsw-alias-markdown-code-segment-selected: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-markdown-code-segment-unselected: var(--dsw-static-neutral-bluish-75);
+  --dsw-alias-markdown-inline-code: var(--dsw-static-neutral-50);
+  --dsw-alias-markdown-placeholder: var(--dsw-static-neutral-bluish-60);
+  --dsw-alias-markdown-tag: var(--dsw-static-neutral-bluish-75);
+  --dsw-alias-menu-group-header-fill: #f8f9faf0;
+  --dsw-alias-menu-icon: var(--dsw-static-neutral-bluish-800);
+  --dsw-alias-scrollbar-bg-l1: var(--dsw-static-neutral-200);
+  --dsw-alias-scrollbar-bg-l2: var(--dsw-static-neutral-200);
+  --dsw-alias-scrollbar-hover-l1: var(--dsw-static-neutral-300);
+  --dsw-alias-scrollbar-hover-l2: var(--dsw-static-neutral-300);
+  --dsw-alias-state-business-primary: var(--dsw-static-deepseek-500);
+  --dsw-alias-state-business-tertiary: var(--dsw-static-deepseek-100);
+  --dsw-alias-state-done-primary: var(--dsw-static-violet-600);
+  --dsw-alias-state-error-primary: var(--dsw-static-red-600);
+  --dsw-alias-state-error-secondary: var(--dsw-static-red-400);
+  --dsw-alias-state-idle-primary: var(--dsw-static-neutral-300);
+  --dsw-alias-state-success-primary: var(--dsw-static-green-500);
+  --dsw-alias-state-success-secondary: var(--dsw-static-green-400);
+  --dsw-alias-state-success-tertiary: var(--dsw-static-green-100);
+  --dsw-alias-state-warn-label: var(--dsw-static-amber-600);
+  --dsw-alias-state-warn-primary: var(--dsw-static-amber-500);
+  --dsw-alias-state-warn-secondary: var(--dsw-static-amber-400);
+  --dsw-alias-state-warn-tertiary: var(--dsw-static-amber-100);
+  --dsw-alias-switch-thumb: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-toast-bg: var(--dsw-static-neutral-bluish-800);
+  --dsw-alias-toast-label: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-tooltip-bg: var(--dsw-static-neutral-bluish-850);
+  --dsw-alias-tooltip-key-bg: color-mix(in srgb, var(--dsw-alias-tooltip-bg), white 18%);
+  --dsw-alias-turn-trigger-bg-hover: var(--dsw-alias-interactive-bg-hover);
+  --dsw-alias-turn-trigger-bg: var(--dsw-alias-markdown-code-block);
+  --dsw-menu-surface-fill: #fcfdfeb3;
+  --dsw-specific-bubble-highlight: var(--dsw-static-deepseek-200);
+  --dsw-specific-bubble: var(--dsw-static-deepseek-50);
+  --dsw-specific-input-major: var(--dsw-static-neutral-bluish-00);
+  --dsw-specific-login-input: var(--dsw-static-neutral-bluish-50);
+  --dsw-specific-menu: var(--dsw-menu-surface-fill);
+  --dsw-specific-selector: var(--dsw-static-neutral-bluish-60);
+  --dsw-specific-sidebar-fill: var(--dsw-static-neutral-bluish-50);
+  --dsw-specific-sidebar-nav-item-active-accent: var(--dsw-static-deepseek-100);
+  --dsw-specific-sidebar-nav-item-active: var(--dsw-static-neutral-bluish-100);
+  --dsw-specific-tip: var(--dsw-static-neutral-bluish-60);
+  background-color: var(--dsw-alias-bg-base);
+}
+
+/* ── design-platform.css · alias 语义层（dark 覆盖）── */
+
+body[data-ds-dark-theme] {
+  --dsw-alias-bg-base: var(--dsw-static-neutral-bluish-950);
+  --dsw-alias-bg-document-preview: var(--dsw-static-neutral-bluish-950);
+  --dsw-alias-bg-document-selection: color-mix(in srgb, var(--dsw-static-blue-500) 40%, transparent);
+  --dsw-alias-bg-layer-1: var(--dsw-static-neutral-bluish-875);
+  --dsw-alias-bg-layer-2: var(--dsw-static-neutral-bluish-850);
+  --dsw-alias-bg-layer-3: var(--dsw-static-neutral-bluish-800);
+  --dsw-alias-bg-mask-1: #00000080;
+  --dsw-alias-bg-mask-2: #0003;
+  --dsw-alias-bg-mask-3: #0000007a;
+  --dsw-alias-bg-mask-drop: #272730b3;
+  --dsw-alias-bg-mask-photo: #000000e0;
+  --dsw-alias-bg-module-platform: var(--dsw-static-neutral-bluish-800);
+  --dsw-alias-bg-multi-select: var(--dsw-static-neutral-850);
+  --dsw-alias-bg-overlay: var(--dsw-static-neutral-bluish-700);
+  --dsw-alias-bg-skeleton: #ffffff14;
+  --dsw-alias-border-inverted2: #ffffff14;
+  --dsw-alias-border-inverted: #ffffff0f;
+  --dsw-alias-border-l1: #ffffff0f;
+  --dsw-alias-border-l2-darkmode-thin: #ffffff0f;
+  --dsw-alias-border-l2: #ffffff1f;
+  --dsw-alias-border-l3: #ffffff29;
+  --dsw-alias-border-l4: #fff3;
+  --dsw-alias-brand-primary-invert: var(--dsw-static-neutral-bluish-50);
+  --dsw-alias-brand-primary-new-colorprimary-new-color: var(--dsw-static-deepseek-450);
+  --dsw-alias-brand-primary: var(--dsw-static-neutral-bluish-50);
+  --dsw-alias-brand-text: var(--dsw-static-neutral-bluish-50);
+  --dsw-alias-button-contrast-fill: var(--dsw-static-neutral-bluish-50);
+  --dsw-alias-button-elevated-fill: var(--dsw-static-neutral-bluish-750);
+  --dsw-alias-button-floating-fill: var(--dsw-static-neutral-bluish-850);
+  --dsw-alias-button-floating-hover: var(--dsw-static-neutral-bluish-800);
+  --dsw-alias-button-ghost-active-border: var(--dsw-static-neutral-bluish-600);
+  --dsw-alias-button-ghost-active-fill: var(--dsw-static-neutral-bluish-750);
+  --dsw-alias-button-ghost-active-hover: var(--dsw-static-neutral-bluish-700);
+  --dsw-alias-button-info-fill: var(--dsw-static-deepseek-400);
+  --dsw-alias-button-info-hover: var(--dsw-static-deepseek-500);
+  --dsw-alias-button-primary-dimmed: var(--dsw-static-neutral-bluish-750);
+  --dsw-alias-button-primary-fill: var(--dsw-alias-brand-primary);
+  --dsw-alias-button-primary-hover: var(--dsw-static-neutral-bluish-100);
+  --dsw-alias-button-tool-bar-fill-invisible: #1f1f1f5c;
+  --dsw-alias-button-tool-bar-fill: #54555780;
+  --dsw-alias-button-tool-bar-hover: #54555799;
+  --dsw-alias-code-diff-added: var(--dsw-static-green-500-a12);
+  --dsw-alias-code-diff-deleted: var(--dsw-static-red-400-a12);
+  --dsw-alias-file-diff-added-bg: #1f3124;
+  --dsw-alias-file-diff-added-gutter: #132016;
+  --dsw-alias-file-diff-added-marker: #41c977;
+  --dsw-alias-file-diff-deleted-bg: #3c1f1b;
+  --dsw-alias-file-diff-deleted-gutter: #28130e;
+  --dsw-alias-file-diff-deleted-marker: #fa423e;
+  --dsw-alias-illustration-background: var(--dsw-static-neutral-bluish-850);
+  --dsw-alias-illustration-backing: var(--dsw-static-neutral-bluish-750);
+  --dsw-alias-illustration-detail: var(--dsw-static-neutral-bluish-600);
+  --dsw-alias-illustration-inset: var(--dsw-alias-illustration-backing);
+  --dsw-alias-illustration-shadow: var(--dsw-alias-illustration-backing);
+  --dsw-alias-illustration-surface: var(--dsw-static-neutral-bluish-700);
+  --dsw-alias-interactive-bg-active: #ffffff24;
+  --dsw-alias-interactive-bg-hover-accent: #ffffff3d;
+  --dsw-alias-interactive-bg-hover-danger: #f25a5a26;
+  --dsw-alias-interactive-bg-hover-solid: var(--dsw-static-neutral-bluish-800);
+  --dsw-alias-interactive-bg-hover: #ffffff14;
+  --dsw-alias-label-caption: var(--dsw-static-neutral-bluish-600);
+  --dsw-alias-label-deep-diving-shimmer: color-mix(in srgb, var(--dsw-static-blue-300) 65%, var(--dsw-static-deepseek-400));
+  --dsw-alias-label-deep-diving: color-mix(in srgb, var(--dsw-static-deepseek-450) 55%, var(--dsw-static-neutral-bluish-400));
+  --dsw-alias-label-dimmed: var(--dsw-static-neutral-bluish-750);
+  --dsw-alias-label-document-preview: var(--dsw-static-neutral-bluish-300);
+  --dsw-alias-label-primary-bluish: var(--dsw-static-neutral-bluish-50);
+  --dsw-alias-label-primary-dimmed: var(--dsw-static-neutral-bluish-100);
+  --dsw-alias-label-primary-foreground: var(--dsw-static-neutral-bluish-1000);
+  --dsw-alias-label-primary-inverted: var(--dsw-static-neutral-bluish-800);
+  --dsw-alias-label-primary: var(--dsw-static-neutral-bluish-50);
+  --dsw-alias-label-secondary: var(--dsw-static-neutral-bluish-300);
+  --dsw-alias-label-shimmer: color-mix(in srgb, var(--dsw-static-neutral-00) 45%, transparent);
+  --dsw-alias-label-tertiary: var(--dsw-static-neutral-bluish-400);
+  --dsw-alias-link: var(--dsw-static-deepseek-400);
+  --dsw-alias-markdown-citation: var(--dsw-static-neutral-bluish-800);
+  --dsw-alias-markdown-code-block-banner: var(--dsw-static-neutral-bluish-850);
+  --dsw-alias-markdown-code-block: var(--dsw-static-neutral-bluish-900);
+  --dsw-alias-markdown-code-segment-selected: var(--dsw-static-neutral-bluish-800);
+  --dsw-alias-markdown-code-segment-unselected: var(--dsw-static-neutral-bluish-900);
+  --dsw-alias-markdown-inline-code: var(--dsw-static-neutral-800);
+  --dsw-alias-markdown-placeholder: var(--dsw-static-neutral-bluish-850);
+  --dsw-alias-markdown-tag: var(--dsw-static-neutral-bluish-850);
+  --dsw-alias-menu-group-header-fill: #303136f0;
+  --dsw-alias-menu-icon: var(--dsw-alias-label-primary-dimmed);
+  --dsw-alias-scrollbar-bg-l1: var(--dsw-static-neutral-700);
+  --dsw-alias-scrollbar-bg-l2: var(--dsw-static-neutral-600);
+  --dsw-alias-scrollbar-hover-l1: var(--dsw-static-neutral-600);
+  --dsw-alias-scrollbar-hover-l2: var(--dsw-static-neutral-550);
+  --dsw-alias-state-business-primary: var(--dsw-static-deepseek-400);
+  --dsw-alias-state-business-tertiary: var(--dsw-static-deepseek-800);
+  --dsw-alias-state-done-primary: var(--dsw-static-violet-400);
+  --dsw-alias-state-error-primary: var(--dsw-static-red-400);
+  --dsw-alias-state-error-secondary: var(--dsw-static-red-400);
+  --dsw-alias-state-idle-primary: var(--dsw-static-neutral-600);
+  --dsw-alias-state-success-primary: var(--dsw-static-green-500);
+  --dsw-alias-state-success-secondary: var(--dsw-static-green-400);
+  --dsw-alias-state-success-tertiary: var(--dsw-static-green-900);
+  --dsw-alias-state-warn-label: var(--dsw-static-amber-600);
+  --dsw-alias-state-warn-primary: var(--dsw-static-amber-500);
+  --dsw-alias-state-warn-secondary: var(--dsw-static-amber-400);
+  --dsw-alias-state-warn-tertiary: var(--dsw-static-amber-900);
+  --dsw-alias-switch-thumb: var(--dsw-static-neutral-bluish-400);
+  --dsw-alias-toast-bg: var(--dsw-static-neutral-bluish-750);
+  --dsw-alias-toast-label: var(--dsw-static-neutral-bluish-00);
+  --dsw-alias-tooltip-bg: var(--dsw-static-neutral-bluish-750);
+  --dsw-alias-tooltip-key-bg: color-mix(in srgb, var(--dsw-alias-tooltip-bg), white 18%);
+  --dsw-alias-turn-trigger-bg-hover: var(--dsw-alias-interactive-bg-active);
+  --dsw-alias-turn-trigger-bg: var(--dsw-alias-interactive-bg-hover);
+  --dsw-menu-surface-fill: #303136a3;
+  --dsw-specific-bubble-highlight: var(--dsw-static-neutral-bluish-750);
+  --dsw-specific-bubble: var(--dsw-static-neutral-bluish-850);
+  --dsw-specific-input-major: var(--dsw-static-neutral-bluish-850);
+  --dsw-specific-login-input: var(--dsw-static-neutral-bluish-900);
+  --dsw-specific-menu: var(--dsw-menu-surface-fill);
+  --dsw-specific-selector: var(--dsw-static-neutral-bluish-800);
+  --dsw-specific-sidebar-fill: var(--dsw-static-neutral-bluish-900);
+  --dsw-specific-sidebar-nav-item-active-accent: var(--dsw-static-neutral-bluish-800);
+  --dsw-specific-sidebar-nav-item-active: var(--dsw-static-neutral-bluish-750);
+  --dsw-specific-tip: var(--dsw-static-neutral-bluish-800);
+}</style>
+<style id="host-base">
+/* 宿主基础布局复刻（仅 mock 用；数值来自 0.2.2-rc.1 app.asar 提取的 CSS） */
+/* ── client.js 首屏关键 CSS（lib/index.js CRITICAL_CSS 原样复刻；真实运行时在 </head> 里注入）── */
+html.moss-lock, html.moss-lock body { overflow: hidden !important; }
+#dsh-moss-ambient { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; background: #04070c; }
+#root { position: relative; z-index: 1; }
+html.dsh-moss-skin, html.dsh-moss-skin body { background: transparent !important; }
+:root {
+  --dsh-content-font-size: 14px;
+  --dsh-code-font-size: 11px;
+  --dsh-windows-titlebar-height: 40px;
+  --dsw-radius-xs: 4px; --dsw-radius-sm: 8px; --dsw-radius-md: 12px;
+  --dsw-radius-lg: 16px; --dsw-radius-xl: 20px; --dsw-radius-panel: 28px;
+  --dsh-font-family-text-default: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --dsh-font-family-code-default: "SF Mono", "JetBrains Mono", "Fira Code", Consolas, "Liberation Mono", Menlo, Courier, "PingFang SC", "Microsoft YaHei";
+  --dsw-font-family: var(--dsh-font-family-text-default);
+  --ds-font-family-code: var(--dsh-font-family-code-default);
+  --dsw-focus-ring-width: 2px;
+  --dsw-menu-backdrop-filter: blur(40px) saturate(150%);
+  --dsw-mask-blur: none;
+  --dsw-shadow-lv3: 0 0 1px 0 #0003, 0 0 4px 0 #00000005, 0 12px 32px 0 #00000014;
+  --dsw-elevation-stroke-color: var(--dsw-alias-border-l4);
+  --dsw-elevation-stroke: 0 0 0 .5px var(--dsw-elevation-stroke-color);
+  --dsw-elevation-soft: var(--dsw-elevation-stroke), 0 4px 16px 0 #00000008, 0 0 24px 0 #00000008;
+  --dsw-elevation-panel: var(--dsw-elevation-stroke), 0 3px 8px 0 #00000008, 0 0 16px 0 #00000005;
+  --dsw-elevation-prominent: var(--dsw-elevation-stroke), 0 3px 8px 0 #0000000a, 0 0 20px 0 #0000000d;
+  --dsw-font-markdown-code-block: 400 11px/1.55 var(--ds-font-family-code);
+  --dsh-scrollbar-width: 5px;
+  --dsh-scrollbar-track-margin: 0px;
+  --dsh-scrollbar-thumb-border: 0px;
+  --dsh-sidebar-inline-padding: 8px;
+  --dsh-sidebar-row-padding: 12px;
+  --dsh-composer-card-max-width: 748px;
+  --dsh-composer-side-clearance: 24px;
+  --dsh-composer-dock-inset: 0px;
+  --dsh-frame-top-clearance: 40px;
+  --dsh-frame-chrome-top: 40px;
+  --dsh-windows-content-radius: 16px;
+}
+html, body, #root { height: 100%; margin: 0; }
+body {
+  font-family: var(--dsw-font-family);
+  -webkit-font-smoothing: antialiased;
+  color: var(--dsw-alias-label-primary);
+  background: var(--dsw-alias-bg-base);
+  font-size: 14px;
+  line-height: 22px;
+  overflow: hidden;
+}
+/* AppFrame（ui-layout 0.2.2-rc.1 AppFrame.module.css 复刻） */
+.mP3x-q_frame {
+  box-sizing: border-box;
+  background: var(--dsw-alias-bg-base);
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-columns: 264px minmax(0, 1fr);
+  height: 100%;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+}
+html[data-windows-titlebar] .mP3x-q_frame {
+  padding-top: var(--dsh-windows-titlebar-height);
+  background: var(--dsw-specific-sidebar-fill);
+}
+html[data-windows-titlebar] .mP3x-q_frame:before {
+  content: "";
+  height: var(--dsh-windows-titlebar-height);
+  background: var(--dsw-specific-sidebar-fill);
+  -webkit-app-region: drag;
+  position: absolute;
+  inset: 0 0 auto;
+}
+.mP3x-q_sidebarCol {
+  background: var(--dsw-specific-sidebar-fill);
+  border-right: .5px solid var(--dsw-alias-border-l3);
+  grid-area: 1 / 1;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+html[data-windows-titlebar] .mP3x-q_sidebarCol { border-right: none; }
+.mP3x-q_centerCol {
+  flex-direction: column;
+  grid-area: 1 / 2;
+  min-width: 0;
+  display: flex;
+  overflow: hidden;
+}
+html[data-windows-titlebar] .mP3x-q_centerCol {
+  background: var(--dsw-alias-bg-base);
+  border-radius: var(--dsh-windows-content-radius) 0 0 0;
+}
+/* 会话根（ui-conversation ConversationRoot.module.css 复刻） */
+.an3WzG_root {
+  background: var(--dsw-alias-bg-base);
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+.an3WzG_header {
+  box-sizing: border-box;
+  border-bottom: .5px solid var(--dsw-alias-border-l3);
+  flex: none;
+  grid-template-columns: auto minmax(0, 1fr);
+  min-height: 76px;
+  padding: 10px 28px 0 20px;
+  display: grid;
+}
+.an3WzG_headerBlank { border-bottom: none; min-height: 0; padding-bottom: 0; }
+.an3WzG_headerLeading { flex: none; grid-area: 1 / 1; align-items: center; gap: 8px; display: flex; }
+.an3WzG_titleRow { min-height: 30px; grid-column: 2; align-items: center; display: flex; padding-inline-start: 40px; }
+.an3WzG_titleCluster { flex: 1; align-items: center; gap: 10px; display: flex; min-width: 0; }
+.an3WzG_crumb { border-radius: var(--dsw-radius-md); max-width: 220px; color: var(--dsw-alias-label-tertiary); cursor: pointer; background: 0 0; border: none; padding: 4px 8px; font-size: 14px; line-height: 20px; }
+.an3WzG_crumbCurrent { color: var(--dsw-alias-label-primary); font-weight: 500; }
+.an3WzG_headerActions { flex: none; align-items: center; gap: 8px; display: flex; }
+.an3WzG_tabs { z-index: 1; box-sizing: border-box; flex-wrap: wrap; grid-column: 1 / -1; align-items: flex-start; gap: 16px 20px; width: 100%; margin-top: 10px; padding-left: 8px; display: flex; position: relative; }
+.an3WzG_viewTabs { flex-wrap: wrap; gap: 32px; min-height: 25px; display: flex; }
+.an3WzG_tab {
+  --dsh-tab-hit-inline: 10px;
+  box-sizing: border-box;
+  min-height: 35px;
+  margin: -10px calc(-1 * var(--dsh-tab-hit-inline)) 0;
+  padding: 10px var(--dsh-tab-hit-inline) 9px;
+  color: var(--dsw-alias-label-tertiary);
+  cursor: pointer;
+  background: 0 0;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  position: relative;
+}
+.an3WzG_scrollBody { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; position: relative; }
+/* 输入区（ui-conversation InputBar.module.css 复刻） */
+.an3WzG_composerSeat { flex-direction: column; flex: none; display: flex; }
+.an3WzG_root[data-phase=active] .an3WzG_composerSeat {
+  z-index: 9;
+  overflow-anchor: none;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--dsw-alias-bg-base) 0%, transparent) 0px, var(--dsw-alias-bg-base) 36px);
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+}
+.GRgSLq_root { padding: 0 var(--dsh-composer-side-clearance) 4px; flex-direction: column; align-items: center; display: flex; }
+.GRgSLq_dock { justify-content: center; align-items: center; gap: 12px; max-width: 100%; padding-top: 4px; display: flex; }
+.GRgSLq_card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--dsh-composer-card-max-width);
+  --dsw-elevation-stroke-color: var(--dsw-alias-border-l2);
+  border-radius: var(--dsw-radius-panel);
+  background: var(--dsw-specific-input-major);
+  box-shadow: var(--dsw-elevation-soft);
+  font-size: var(--dsh-content-font-size, 14px);
+  line-height: 24px;
+  border: 0;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+  display: flex;
+  position: relative;
+}
+.GRgSLq_field { padding: 0 18px; min-height: 24px; color: var(--dsw-alias-label-placeholder, var(--dsw-alias-label-caption)); }
+.GRgSLq_toolbar { display: flex; align-items: center; gap: 8px; padding: 0 10px 10px 18px; }
+.GRgSLq_chip { border-radius: var(--dsw-radius-md); background: var(--dsw-alias-bg-module-platform); color: var(--dsw-alias-label-secondary); font-size: 12px; line-height: 18px; padding: 2px 8px; }
+.GRgSLq_send { margin-left: auto; border-radius: 999px; width: 30px; height: 30px; display: grid; place-items: center; background: var(--dsw-alias-brand-primary); color: var(--dsw-alias-label-primary-inverted); font-size: 13px; }
+/* 侧栏（ui-sidebar SidebarRoot.module.css 简化复刻） */
+.wtg9ga_root { display: flex; flex-direction: column; height: 100%; min-height: 0; padding: 10px var(--dsh-sidebar-inline-padding); gap: 2px; }
+.wtg9ga_brand { display: flex; align-items: center; gap: 8px; padding: 6px 4px 12px; color: var(--dsw-alias-label-primary); font-weight: 600; }
+.wtg9ga_new { margin: 4px 0 8px; border-radius: var(--dsw-radius-md); border: .5px solid var(--dsw-alias-border-l2); background: var(--dsw-specific-selector); color: var(--dsw-alias-label-secondary); font-size: 13px; padding: 7px 12px; display: flex; align-items: center; gap: 8px; }
+.wtg9ga_section { color: var(--dsw-alias-label-caption); font-size: 12px; padding: 10px 6px 4px; }
+.wtg9ga_rows { display: flex; flex-direction: column; gap: 1px; overflow-y: auto; min-height: 0; }
+.wtg9ga_row {
+  display: flex; align-items: center; gap: 8px;
+  border-radius: var(--dsw-radius-md);
+  padding: 6px var(--dsh-sidebar-row-padding);
+  color: var(--dsw-alias-label-secondary);
+  font-size: 13px; line-height: 20px;
+  cursor: pointer;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.wtg9ga_row[aria-selected="true"] { background: var(--dsw-specific-sidebar-nav-item-active); color: var(--dsw-alias-label-primary); }
+.wtg9ga_footer { margin-top: auto; display: flex; align-items: center; gap: 8px; padding: 8px 4px 2px; color: var(--dsw-alias-label-caption); font-size: 12px; }
+/* 会话内容（消息 / 空态 / 代码块） */
+.mock-scrollInner { max-width: 748px; margin: 0 auto; padding: 18px 24px 24px; }
+.mock-hero { padding: 96px 8px 24px; text-align: center; }
+.mock-hero h1 { font-size: 28px; line-height: 38px; font-weight: 600; color: var(--dsw-alias-label-primary); margin: 0 0 10px; }
+.mock-hero p { color: var(--dsw-alias-label-tertiary); font-size: 14px; margin: 0; }
+.mock-msg { display: flex; flex-direction: column; gap: 6px; margin: 18px 0; }
+.mock-msg-user .mock-bubble { align-self: flex-end; max-width: 78%; border-radius: var(--dsw-radius-lg); background: var(--dsw-specific-bubble); padding: 10px 14px; color: var(--dsw-alias-label-primary); }
+.mock-msg-assistant .mock-text { color: var(--dsw-alias-label-primary); }
+.mock-msg-assistant .mock-meta { color: var(--dsw-alias-label-caption); font-size: 12px; }
+.md-code-block {
+  border: .5px solid var(--dsw-alias-border-l1);
+  border-radius: var(--dsw-radius-lg);
+  background: var(--dsw-alias-markdown-code-block);
+  color: var(--dsw-alias-label-primary);
+  font: var(--dsw-font-markdown-code-block);
+  overflow: hidden;
+  margin: 12px 0;
+}
+[data-code-block-banner] {
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: .5px solid var(--dsw-alias-border-l1);
+  background: var(--dsw-alias-markdown-code-block-banner);
+  color: var(--dsw-alias-label-tertiary);
+  font: 400 11px/1.6 var(--ds-font-family-code);
+  padding: 6px 12px;
+}
+.md-code-block pre { margin: 0; padding: 10px 14px; overflow-x: auto; }
+.md-code-block code { font-family: var(--ds-font-family-code); font-size: 11px; line-height: 17px; }
+.tok-k { color: var(--shiki-token-keyword); }
+.tok-s { color: var(--shiki-token-string); }
+.tok-c { color: var(--shiki-token-comment); }
+/* 菜单 / 弹窗（宿主原样 token 驱动） */
+.F07MqG_panel {
+  position: absolute; z-index: 1100;
+  box-sizing: border-box;
+  border-radius: var(--dsw-radius-lg);
+  background: var(--dsw-specific-menu);
+  backdrop-filter: var(--dsw-menu-backdrop-filter);
+  box-shadow: var(--dsw-elevation-prominent);
+  min-width: 220px;
+  padding: 6px;
+  display: none;
+  --dsw-elevation-stroke-color: var(--dsw-alias-border-l3);
+}
+.F07MqG_panel.is-open { display: block; }
+.F07MqG_item {
+  display: flex; align-items: center; gap: 10px;
+  border-radius: var(--dsw-radius-md);
+  color: var(--dsw-alias-label-primary);
+  font-size: 13px; line-height: 20px;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+.F07MqG_item.is-hover { background: var(--dsw-alias-interactive-bg-hover); }
+.F07MqG_sep { height: .5px; margin: 5px 6px; background: var(--dsw-alias-border-l2); }
+.mock-mask {
+  position: fixed; inset: 0; z-index: 1090;
+  background: var(--dsw-alias-bg-mask-1);
+  backdrop-filter: var(--dsw-mask-blur);
+  display: none;
+}
+.mock-mask.is-open { display: block; }
+._dialog_14mp3_33 {
+  position: absolute; z-index: 1100;
+  box-sizing: border-box;
+  display: flex; flex-direction: column; gap: 14px;
+  width: 380px; padding: 0 0 20px; overflow: hidden;
+  border: 0; border-radius: var(--dsw-radius-panel);
+  background: var(--dsw-alias-bg-layer-2);
+  box-shadow: var(--dsw-elevation-prominent);
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
+  display: none;
+}
+._dialog_14mp3_33.is-open { display: flex; }
+._dialog_14mp3_33 h3 { margin: 0; padding: 18px 24px 0; font-size: 16px; color: var(--dsw-alias-label-primary); }
+._dialog_14mp3_33 p { margin: 0; padding: 0 24px; color: var(--dsw-alias-label-secondary); font-size: 13px; }
+.mock-btnRow { display: flex; justify-content: flex-end; gap: 8px; padding: 0 24px; }
+.mock-btn { border-radius: var(--dsw-radius-md); padding: 6px 14px; font-size: 13px; background: var(--dsw-alias-button-ghost-active-fill); color: var(--dsw-alias-label-primary); }
+.mock-btn.primary { background: var(--dsw-alias-button-primary-fill); color: var(--dsw-alias-label-primary-foreground); }
+/* mock 专用：窗口按钮 / 状态指示（模拟 Electron 原生 overlay，真实窗口里由系统绘制） */
+.mock-wincontrols { position: fixed; top: 0; right: 0; height: var(--dsh-windows-titlebar-height); display: flex; align-items: center; gap: 2px; padding-right: 6px; z-index: 2147483000; }
+.mock-wincontrols span { width: 46px; height: var(--dsh-windows-titlebar-height); display: grid; place-items: center; color: var(--dsw-alias-label-secondary); font: 400 12px/1 "Segoe MDL2 Assets", "Segoe UI Symbol", sans-serif; }
+.mock-wincontrols .close { color: var(--dsw-alias-label-primary); }
+.mock-winmenu { position: fixed; top: 0; left: 48px; height: var(--dsh-windows-titlebar-height); display: flex; align-items: center; gap: 14px; z-index: 2147483000; color: var(--dsw-alias-label-secondary); font: 400 12px/1 var(--dsw-font-family); }
+/* mock 专用：只留背景层（验证 ambient 真的渲染，而不是被 #root 的底色填满） */
+html.mock-ambient-only #root,
+html.mock-ambient-only .mock-wincontrols,
+html.mock-ambient-only .mock-winmenu,
+html.mock-ambient-only .mock-tag { visibility: hidden !important; }
+/* mock 专用：状态注入（模拟宿主 :hover / 焦点态；skin.css 不写这些） */
+.wtg9ga_row.is-hover { background: var(--dsw-alias-interactive-bg-hover); color: var(--dsw-alias-label-primary); }
+.mock-tag { position: fixed; left: 8px; bottom: 6px; z-index: 2147483000; font: 400 10px/1.4 Consolas, monospace; color: #7f8a9a; pointer-events: none; }
+</style>
+<!-- 皮肤本体 -->
+<link rel="stylesheet" href="./skin.css">
+<link rel="stylesheet" href="./splash.css">
+
+<!-- ===== preview chrome (generated by _work/verify4/build-preview-v4.mjs) ===== -->
+<style id="moss2-preview-chrome">
+  .mock-tag { display: none !important; }
+  #moss2-preview-bar {
+    position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
+    z-index: 2147482000; display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+    max-width: min(1320px, calc(100vw - 32px));
+    padding: 9px 12px; border-radius: 14px;
+    background: rgba(6, 11, 19, .82); border: 1px solid rgba(150, 200, 255, .18);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .55);
+    color: #dfe9f4; font: 400 12px/1.4 system-ui, "Microsoft YaHei", sans-serif;
+    backdrop-filter: blur(18px) saturate(1.15);
+  }
+  #moss2-preview-bar .grp { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+  #moss2-preview-bar .sep { width: 1px; height: 20px; background: rgba(150,200,255,.18); }
+  #moss2-preview-bar .lbl { color: #8fa3b8; font-size: 11px; letter-spacing: .04em; }
+  #moss2-preview-bar button {
+    font: inherit; color: #dfe9f4; cursor: pointer;
+    background: rgba(255,255,255,.05); border: 1px solid rgba(150,200,255,.16);
+    border-radius: 8px; padding: 4px 9px; white-space: nowrap;
+  }
+  #moss2-preview-bar button:hover { border-color: rgba(150,200,255,.4); }
+  #moss2-preview-bar button[data-on="1"] {
+    border-color: rgba(255, 61, 31, .62); background: rgba(255, 61, 31, .12);
+    box-shadow: inset 0 0 0 1px rgba(255, 61, 31, .18);
+  }
+  #moss2-preview-bar input[type="range"] { width: 86px; accent-color: #ff3d1f; }
+  #moss2-preview-bar .val { width: 34px; text-align: right; color: #8fd3ff; font-family: ui-monospace, Consolas, monospace; }
+  /* v0.4 探针读数 chip：进度 / 终局对焦 / 地球冷态·点火 */
+  #moss2-preview-bar .ro {
+    color: #8fd3ff; font-family: ui-monospace, Consolas, monospace; font-size: 11px;
+    padding: 2px 6px; border-radius: 6px; background: rgba(143, 211, 255, .08);
+    border: 1px solid rgba(143, 211, 255, .16); white-space: nowrap;
+  }
+  #moss2-preview-bar .ro[data-complete="1"] { color: #7dffb0; border-color: rgba(125, 255, 176, .45); }
+  #moss2-motion-readout {
+    color: #8fd3ff; font-family: ui-monospace, Consolas, monospace; font-size: 11px;
+    padding: 2px 6px; border-radius: 6px; background: rgba(143, 211, 255, .08);
+    border: 1px solid rgba(143, 211, 255, .16); white-space: nowrap;
+  }
+  #moss2-preview-badge {
+    position: fixed; left: 16px; bottom: 16px; z-index: 2147482000;
+    color: #7f93a8; font: 400 10px/1.4 ui-monospace, Consolas, monospace;
+    letter-spacing: .1em; pointer-events: none; text-shadow: 0 1px 2px #000;
+  }
+  #moss2-playhead {
+    position: fixed; right: 16px; bottom: 16px; z-index: 2147482000;
+    color: #8fd3ff; font: 400 10px/1.4 ui-monospace, Consolas, monospace;
+    letter-spacing: .06em; pointer-events: none; text-shadow: 0 1px 2px #000;
+  }
+  @media (max-width: 1100px) {
+    #moss2-preview-bar { left: 10px; right: 10px; transform: none; }
+  }
+</style>
+</head>
+<body data-ds-dark-theme>
+<!-- ===================== 背景层（client.js 生成的 7 层 DOM） ===================== -->
+<!-- 真实资产：lib/assets/earth/**（asset-lab 已产出，路径与 lib/index.js ASSET_TYPES 一致） -->
+<div id="dsh-moss-ambient" aria-hidden="true">
+  <img class="ma-still" alt="" src="./asset/earth/earth-poster.webp"
+       onerror="this.onerror=null;this.src='./asset/earth/earth-poster.jpg'">
+  <video class="ma-video" muted playsinline loop autoplay preload="auto"
+         poster="./asset/earth/earth-poster.webp"
+         src="./asset/earth/earth-720.mp4"></video>
+  <div class="ma-veil"></div>
+  <div class="ma-vignette"></div>
+  <div class="ma-grain"></div>
+  <div class="ma-scan"></div>
+  <div class="ma-rim"></div>
+</div>
+
+<!-- 模拟 Windows 原生标题条左侧「应用 / 编辑」菜单（真实是 WCO shadow-DOM，不在 DOM） -->
+<div class="mock-winmenu" aria-hidden="true">应用　编辑</div>
+
+<!-- 模拟 Windows 原生窗口按钮（Electron titleBarOverlay 绘制，位于网页之上） -->
+<div class="mock-wincontrols" aria-hidden="true">
+  <span>&#xE921;</span><span>&#xE922;</span><span class="close">&#xE8BB;</span>
+</div>
+
+<div id="root">
+  <div class="mP3x-q_frame">
+    <!-- ===================== 侧栏 ===================== -->
+    <div class="mP3x-q_sidebarCol">
+      <div class="wtg9ga_root">
+        <div class="wtg9ga_brand">
+          <span style="width:16px;height:16px;display:inline-block;border-radius:4px;background:var(--dsw-alias-brand-primary)"></span>
+          DeepSeek Harness
+        </div>
+        <div class="wtg9ga_new">+ 新会话</div>
+        <div class="wtg9ga_section">今天</div>
+        <div class="wtg9ga_rows">
+          <div class="wtg9ga_row" role="treeitem" aria-selected="true">MOSS 皮肤：视频背景与玻璃面板</div>
+          <div class="wtg9ga_row" role="treeitem" aria-selected="false">host-map 测绘与 token 全量核对</div>
+          <div class="wtg9ga_row" role="treeitem" aria-selected="false">地球素材无缝循环转码</div>
+          <div class="wtg9ga_row" role="treeitem" aria-selected="false">启动动画时间线 8.2s</div>
+          <div class="wtg9ga_row" role="treeitem" aria-selected="false">550W 调色板与 HUD 词典</div>
+        </div>
+        <div class="wtg9ga_section">更早</div>
+        <div class="wtg9ga_rows">
+          <div class="wtg9ga_row" role="treeitem" aria-selected="false">设计规格 v1.0 评审</div>
+          <div class="wtg9ga_row" role="treeitem" aria-selected="false">皮肤可读性对比度实测</div>
+        </div>
+        <div class="wtg9ga_footer">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--dsw-alias-state-success-primary)"></span>
+          <span>workspace · dsh-startup-moss2</span>
+        </div>
+      </div>
+    </div>
+    <!-- ===================== 主列 ===================== -->
+    <div class="mP3x-q_centerCol">
+      <main class="an3WzG_root" data-phase="active">
+        <header class="an3WzG_header" data-window-drag>
+          <div class="an3WzG_headerLeading" data-conversation-header-leading="">
+            <span style="width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--dsw-alias-bg-module-platform);color:var(--dsw-alias-label-primary);font-size:13px">M</span>
+          </div>
+          <div class="an3WzG_titleRow">
+            <div class="an3WzG_titleCluster">
+              <button class="an3WzG_crumb">dsh-startup-moss2</button>
+              <span class="an3WzG_crumbSep">/</span>
+              <button class="an3WzG_crumb an3WzG_crumbCurrent">MOSS 皮肤：视频背景与玻璃面板</button>
+            </div>
+            <div class="an3WzG_headerActions">
+              <span style="border-radius:6px;border:.5px solid var(--dsw-alias-border-l2);color:var(--dsw-alias-label-tertiary);font-size:12px;padding:3px 8px">deepseek-flash</span>
+              <span style="color:var(--dsw-alias-label-tertiary);font-size:16px;letter-spacing:2px">···</span>
+            </div>
+          </div>
+          <div class="an3WzG_tabs" role="tablist">
+            <div class="an3WzG_viewTabs">
+              <button class="an3WzG_tab" role="tab" aria-selected="true">对话</button>
+              <button class="an3WzG_tab" role="tab" aria-selected="false">变更</button>
+              <button class="an3WzG_tab" role="tab" aria-selected="false">文件</button>
+            </div>
+          </div>
+        </header>
+        <div class="an3WzG_scrollBody" data-conversation-scroll>
+          <div class="mock-scrollInner">
+            <!-- 空态 -->
+            <div class="mock-hero" data-mock-hero>
+              <h1>让人类永远保持理智，确实是一种奢求。</h1>
+              <p>MOSS 550W 在线 · 输入消息开始新的对话</p>
+            </div>
+            <!-- 会话态 -->
+            <div data-mock-session style="display:none">
+              <div class="mock-msg mock-msg-user">
+                <div class="mock-bubble">把主界面背景换成地球动态视频，UI 用深空玻璃面板。</div>
+              </div>
+              <div class="mock-msg mock-msg-assistant">
+                <div class="mock-meta">MOSS 550W · 刚刚</div>
+                <div class="mock-text">
+                  <p style="margin:0 0 10px">已接入 <strong>550W</strong> 驾驶舱皮肤：背景为 1920×1080 地球自转循环影像，面板为深空玻璃，HUD 遥测章贴在顶栏右侧。</p>
+                  <div class="md-code-block">
+                    <div data-code-block-banner><span>lib/skin.css</span><span>css</span></div>
+                    <pre><code><span class="tok-c">/* 背景层：视频铺底 + 双层压暗 */</span>
+<span class="tok-k">html</span>.dsh-moss-skin--glass <span class="tok-k">#dsh-moss-ambient</span> .ma-veil {
+  background: radial-gradient(ellipse <span class="tok-s">120% 90%</span> at <span class="tok-s">46% 46%</span>, ...);
+}</code></pre>
+                  </div>
+                  <p style="margin:10px 0 0">正文对比度实测 ≥ <strong>7.2:1</strong>，二级文字 ≥ <strong>5.6:1</strong>，装饰层不进入正文通道。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="an3WzG_composerSeat" data-composer-seat>
+          <div class="GRgSLq_root">
+            <div class="GRgSLq_card" data-composer-card tabindex="0">
+              <div class="GRgSLq_field">给 MOSS 发送消息…</div>
+              <div class="GRgSLq_toolbar">
+                <span class="GRgSLq_chip">+</span>
+                <span class="GRgSLq_chip">工作区</span>
+                <span class="GRgSLq_chip">模型 · deepseek-flash</span>
+                <span class="GRgSLq_send">↑</span>
+              </div>
+            </div>
+            <div class="GRgSLq_dock">
+              <span style="font-size:12px;color:var(--dsw-alias-label-caption)">Enter 发送 · Shift+Enter 换行</span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ===================== 浮层：菜单 / 弹窗 ===================== -->
+  <div class="F07MqG_panel" role="menu" aria-label="视图菜单">
+    <div class="F07MqG_item">重命名会话</div>
+    <div class="F07MqG_item is-hover">固定到顶部</div>
+    <div class="F07MqG_item">导出为 Markdown</div>
+    <div class="F07MqG_sep"></div>
+    <div class="F07MqG_item">归档</div>
+    <div class="F07MqG_item">删除会话</div>
+  </div>
+  <div class="mock-mask" aria-hidden="true"></div>
+  <div class="_dialog_14mp3_33" role="dialog" aria-modal="true" aria-label="确认删除">
+    <h3>删除这个会话？</h3>
+    <p>会话记录将从本地工作区移除，无法恢复。MOSS 建议先导出留档。</p>
+    <div class="mock-btnRow">
+      <span class="mock-btn">取消</span>
+      <span class="mock-btn primary">删除</span>
+    </div>
+  </div>
+</div>
+
+<div class="mock-tag" id="mock-tag"></div>
+
+<script>
+window.__mossMockSetState = function (state) {
+  state = String(state || 'empty');
+  var html = document.documentElement;
+  var body = document.body;
+  var parts = state.split('+');
+  var tag = [];
+
+  function has(n) { return parts.indexOf(n) >= 0; }
+
+  // 复位
+  html.classList.remove('dsh-moss-skin--immersive', 'dsh-moss-skin--static',
+    'dsh-moss-skin--paused', 'dsh-moss-skin--noblur', 'dsh-moss-enter', 'mock-ambient-only');
+  if (!html.classList.contains('dsh-moss-skin--glass')) html.classList.add('dsh-moss-skin--glass');
+  if (!html.classList.contains('dsh-moss-skin')) html.classList.add('dsh-moss-skin');
+  body.setAttribute('data-ds-dark-theme', '');
+  html.style.setProperty('--moss-veil', '58');
+  html.style.setProperty('--moss-blur', '16px');
+  html.style.removeProperty('--moss-exposure');
+  html.style.removeProperty('--moss-main-a');
+  var v = document.querySelector('.ma-video');
+  if (v) { v.muted = true; v.defaultMuted = true; v.loop = true; v.playbackRate = 1; if (v.paused) { try { v.play() } catch (e) {} } }
+  document.querySelector('[data-mock-hero]').style.display = 'block';
+  document.querySelector('[data-mock-session]').style.display = 'none';
+  document.querySelector('.an3WzG_header').classList.remove('an3WzG_headerBlank');
+  document.querySelector('.an3WzG_tabs').style.display = '';
+  Array.prototype.forEach.call(document.querySelectorAll('.wtg9ga_row'), function (r) { r.classList.remove('is-hover'); });
+  document.querySelector('[role="menu"]').classList.remove('is-open');
+  document.querySelector('.mock-mask').classList.remove('is-open');
+  document.querySelector('[role="dialog"]').classList.remove('is-open');
+
+  // 若切到「空态」以外的状态，默认展示会话内容
+  if (!has('empty') && !has('blank') && (has('session') || has('hover') || has('focus') || has('menu'))) {
+    document.querySelector('[data-mock-hero]').style.display = 'none';
+    document.querySelector('[data-mock-session]').style.display = 'block';
+  }
+
+  if (has('immersive')) {
+    html.classList.remove('dsh-moss-skin--glass');
+    html.classList.add('dsh-moss-skin--immersive');
+  }
+  if (has('static')) html.classList.add('dsh-moss-skin--static');
+  if (has('paused')) html.classList.add('dsh-moss-skin--paused');
+  if (has('noblur')) html.classList.add('dsh-moss-skin--noblur');
+  if (has('enter')) html.classList.add('dsh-moss-enter');
+  else html.classList.remove('dsh-moss-enter');
+  if (has('light')) body.removeAttribute('data-ds-dark-theme');
+  if (has('ambientonly')) html.classList.add('mock-ambient-only');
+  // 只隐藏文字（保留玻璃/背景），用来精确测「文字正下方的背景亮度」
+  var notextStyle = document.getElementById('mock-notext');
+  if (has('notext')) {
+    if (!notextStyle) {
+      notextStyle = document.createElement('style'); notextStyle.id = 'mock-notext';
+      notextStyle.textContent = '#root *,#root{color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:none!important}';
+      document.head.appendChild(notextStyle);
+    }
+  } else if (notextStyle) { notextStyle.remove() }
+  // 最亮帧压测：把曝光补偿拉到 2.5（≈ 默认 1.55 的 1.6 倍），模拟素材最亮帧
+  if (has('bright')) {
+    html.style.setProperty('--moss-exposure', '2.5');
+    html.style.setProperty('--moss-saturation', '1.35');
+  }
+  if (has('veil0')) html.style.setProperty('--moss-veil', '0');
+  if (has('veil40')) html.style.setProperty('--moss-veil', '40');
+  if (has('vk38')) html.style.setProperty('--moss-veil-k', '0.0038');
+  if (has('vk42')) html.style.setProperty('--moss-veil-k', '0.0042');
+  if (has('exp165')) html.style.setProperty('--moss-exposure', '1.65');
+  if (has('exp175')) html.style.setProperty('--moss-exposure', '1.75');
+  if (has('exp185')) html.style.setProperty('--moss-exposure', '1.85');
+  ['mb1:1', 'mb3:3'].forEach(function (pair) { var kv=pair.split(':'); if (has(kv[0])) html.style.setProperty('--moss-main-blur', kv[1]+'px'); });
+  ['ma18:.18', 'ma20:.20', 'ma24:.24', 'ma26:.26', 'ma30:.30'].forEach(function (pair) { var kv=pair.split(':'); if (has(kv[0])) html.style.setProperty('--moss-main-a', kv[1]); });
+  if (has('veil50')) html.style.setProperty('--moss-veil', '50');
+  if (has('veil85')) html.style.setProperty('--moss-veil', '85');
+  if (has('veil100')) html.style.setProperty('--moss-veil', '100');
+  if (has('blur0')) html.style.setProperty('--moss-blur', '0px');
+  // 标定用：主列磨砂半径 / 主列玻璃 alpha（--calib 采样，产物落 _work/skin/calib/）
+  ['mb0:0', 'mb2:2', 'mb4:4', 'mb6:6', 'mb8:8', 'mb12:12'].forEach(function (pair) {
+    var kv = pair.split(':'); if (has(kv[0])) html.style.setProperty('--moss-main-blur', kv[1] + 'px');
+  });
+  ['ma22:.22', 'ma28:.28', 'ma34:.34', 'ma40:.40'].forEach(function (pair) {
+    var kv = pair.split(':'); if (has(kv[0])) html.style.setProperty('--moss-main-a', kv[1]);
+  });
+  if (has('session') || has('hover') || has('focus') || has('menu')) {
+    document.querySelector('[data-mock-hero]').style.display = 'none';
+    document.querySelector('[data-mock-session]').style.display = 'block';
+    document.querySelector('.an3WzG_header').classList.remove('an3WzG_headerBlank');
+  }
+  if (has('blank')) {
+    document.querySelector('[data-mock-session]').style.display = 'none';
+    document.querySelector('[data-mock-hero]').style.display = 'block';
+    document.querySelector('.an3WzG_header').classList.add('an3WzG_headerBlank');
+    document.querySelector('.an3WzG_tabs').style.display = 'none';
+  }
+  if (has('hover')) {
+    document.querySelectorAll('.wtg9ga_row')[1].classList.add('is-hover');
+  }
+  if (has('menu')) {
+    var panel = document.querySelector('[role="menu"]');
+    panel.classList.add('is-open');
+    panel.style.top = '112px';
+    panel.style.left = 'calc(50% + 180px)';
+    if (has('dialog')) {
+      document.querySelector('.mock-mask').classList.add('is-open');
+      document.querySelector('[role="dialog"]').classList.add('is-open');
+      document.querySelector('.mock-btnRow .mock-btn').classList.add('is-hover');
+    }
+  }
+  if (has('focus')) {
+    document.querySelector('[data-composer-card]').focus();
+  }
+  if (has('hudfull')) html.setAttribute('data-moss-hud', 'full');
+  tag.push(state);
+  tag.push('veil=' + (html.style.getPropertyValue('--moss-veil') || '58'));
+  tag.push('reducedMotion=' + (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches));
+  tag.push('classes=' + html.className);
+  document.getElementById('mock-tag').textContent = 'mock · ' + tag.join(' · ');
+  window.__mossMockState = state;
+};
+
+window.__mossMockSetState((location.hash || '#empty').slice(1));
+</script>
+
+<!-- ===== v0.2 preview control bar (I/II/III/IV · 三档 · veil/blur · 动态背景) + v0.5 探针 ===== -->
+<div id="moss2-preview-badge">MOSS 550W · v0.5.0 · PREVIEW ｜ 真宿主 /dsh-moss2/preview（非真实 DSH 窗口）</div>
+<div id="moss2-playhead">t=0.00s · boot</div>
+<div id="moss2-preview-bar" role="toolbar" aria-label="MOSS2 v0.5 预览控制">
+  <span class="lbl">皮肤</span>
+  <div class="grp">
+    <button type="button" data-tier="glass">玻璃</button>
+    <button type="button" data-tier="immersive">沉浸</button>
+    <button type="button" data-tier="off">关闭</button>
+  </div>
+  <span class="sep"></span>
+  <span class="lbl">压暗</span>
+  <input type="range" id="moss2-veil" min="0" max="100" step="1" value="58">
+  <span class="val" id="moss2-veil-val">58</span>
+  <span class="lbl">模糊</span>
+  <input type="range" id="moss2-blur" min="0" max="40" step="1" value="16">
+  <span class="val" id="moss2-blur-val">16</span>
+  <span class="sep"></span>
+  <span class="lbl">启动动画</span>
+  <div class="grp">
+    <button type="button" id="moss2-replay-splash">重播</button>
+    <button type="button" id="moss2-freeze-toggle">定格</button>
+    <button type="button" data-act-jump="I">I 神经接口</button>
+    <button type="button" data-act-jump="II">II MOSS 苏醒</button>
+    <button type="button" data-act-jump="III">III 转场</button>
+    <button type="button" data-act-jump="IV">IV 流浪地球</button>
+  </div>
+  <span class="sep"></span>
+  <span class="lbl">v0.5 探针</span>
+  <div class="grp">
+    <button type="button" data-jump-t="7.42">锁定帧 7.42s</button>
+    <button type="button" data-jump-t="8.3">分割 8.3s</button>
+    <button type="button" data-jump-t="9.4">冷态 9.4s</button>
+    <button type="button" data-jump-t="10.35">点火起点 10.35s</button>
+    <button type="button" data-jump-t="10.46">遮罩移除 10.46s</button>
+    <button type="button" data-jump-t="10.7">亮态 10.7s</button>
+    <button type="button" data-jump-t="11.0">亮态 11.0s</button>
+    <button type="button" data-jump-t="11.3">亮态 11.3s</button>
+    <button type="button" data-jump-t="11.8">交接 11.8s</button>
+    <button type="button" data-jump-t="12.1">100% 定格 12.1s</button>
+    <button type="button" data-jump-t="12.7">bloom 起 12.7s</button>
+    <button type="button" data-jump-t="13.0">bloom 峰 13.0s</button>
+    <button type="button" data-jump-t="13.4">warp 溶解 13.4s</button>
+    <button type="button" data-jump-t="13.7">溶解末 13.7s</button>
+    <button type="button" data-jump-t="13.9">结束 13.9s</button>
+    <span id="moss2-progress-readout" class="ro">P —</span>
+    <span id="moss2-lock-readout" class="ro">A2 —</span>
+    <span id="moss2-focus-readout" class="ro">F —</span>
+    <span id="moss2-earth-readout" class="ro">E —</span>
+    <span id="moss2-handoff-readout" class="ro">H —</span>
+    <span id="moss2-ambient-readout" class="ro">AMB —</span>
+    <span id="moss2-audio-readout" class="ro">AU —</span>
+  </div>
+  <span class="sep"></span>
+  <span class="lbl">动态背景</span>
+  <div class="grp">
+    <button type="button" id="moss2-toggle-video">视频开</button>
+    <span id="moss2-motion-readout">Δ=--</span>
+  </div>
+  <span class="sep"></span>
+  <div class="grp">
+    <button type="button" id="moss2-state-empty">空态</button>
+    <button type="button" id="moss2-state-session">会话态</button>
+  </div>
+</div>
+<script>
+(function () {
+  var html = document.documentElement;
+  var qs = new URLSearchParams(location.search);
+  var FACTS = { ready: true, profile: 'DESKTOP', workspace: 'dsh-startup-moss2', model: 'deepseek-flash', sessions: 12, version: '0.2.2-rc.1', bundleCount: 7 };
+  var CFG = { enabled: true, mode: 'always', skin: 'glass', quality: 'standard', veil: 58, blur: 16, hud: 'normal', sound: false, volume: 50, allowSkip: true, reducedMotion: false };
+  var tier = qs.get('tier') || 'glass';
+  var hud = qs.get('hud') || 'normal';
+  var veil = Number(qs.get('veil') || 58);
+  var blur = Number(qs.get('blur') || 16);
+  var video = true;
+  var frozen = false;
+  var frameTimer = null;
+
+  function sync() {
+    if (!history.replaceState) return;
+    var p = new URLSearchParams(location.search);
+    p.set('tier', tier); p.set('hud', hud); p.set('veil', String(veil)); p.set('blur', String(blur));
+    history.replaceState(null, '', location.pathname + '?' + p.toString());
+  }
+
+  function applyTier(next) {
+    tier = next;
+    html.classList.toggle('dsh-moss-skin', next !== 'off');
+    html.classList.toggle('dsh-moss-skin--glass', next === 'glass');
+    html.classList.toggle('dsh-moss-skin--immersive', next === 'immersive');
+    var ambient = document.getElementById('dsh-moss-ambient');
+    if (ambient) ambient.style.display = next === 'off' ? 'none' : '';
+    document.querySelectorAll('#moss2-preview-bar [data-tier]').forEach(function (b) {
+      b.dataset.on = b.dataset.tier === next ? '1' : '0';
+    });
+    CFG.skin = next;
+    sync();
+  }
+  function applyHud(next) {
+    hud = next;
+    html.setAttribute('data-moss-hud', next);
+    CFG.hud = next;
+    sync();
+  }
+  function applyVeil(v) {
+    veil = v;
+    html.style.setProperty('--moss-veil', String(v));
+    document.getElementById('moss2-veil').value = String(v);
+    document.getElementById('moss2-veil-val').textContent = String(v);
+    CFG.veil = v;
+    sync();
+  }
+  function applyBlur(v) {
+    blur = v;
+    html.style.setProperty('--moss-blur', v + 'px');
+    document.getElementById('moss2-blur').value = String(v);
+    document.getElementById('moss2-blur-val').textContent = String(v);
+    CFG.blur = v;
+    sync();
+  }
+  function applyVideo(on) {
+    video = on;
+    var v = document.querySelector('#dsh-moss-ambient video');
+    html.classList.toggle('dsh-moss-skin--static', !on);
+    if (v) { try { if (on) { v.play(); } else { v.pause(); } } catch (e) {} }
+    var btn = document.getElementById('moss2-toggle-video');
+    btn.textContent = on ? '视频开' : '视频暂停（演示）';
+    btn.dataset.on = on ? '1' : '0';
+    sync();
+  }
+
+  function setGlobals() {
+    window.__DSH_MOSS2__ = Object.assign({}, CFG, { version: '0.5.0', facts: FACTS });
+    window.__DSH_MOSS2_FACTS__ = FACTS;
+    window.__DSH_MOSS2_VERSION__ = '0.5.0';
+    window.__DSH_MOSS2_ASSET_BASE__ = './asset/';
+    window.__DSH_MOSS2_SKIP__ = false;
+    window.__DSH_MOSS2_SPLASH__ = true;
+  }
+  function ensureRoot() {
+    var root = document.getElementById('dsh-moss-root');
+    if (!root) {
+      root = document.createElement('div');
+      root.id = 'dsh-moss-root';
+      root.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(root);
+    }
+    return root;
+  }
+  function loadSplashScript() {
+    return new Promise(function (resolve) {
+      var s = document.createElement('script');
+      s.src = './splash.js?t=' + Date.now();
+      s.onload = function () { resolve(true); };
+      s.onerror = function () { resolve(false); };
+      document.head.appendChild(s);
+    });
+  }
+  function startSplash(previewT) {
+    ensureRoot().innerHTML = '';
+    html.classList.remove('moss-lock');
+    html.classList.remove('dsh-moss-enter');
+    frozen = false;
+    syncFreezeBtn();
+    setGlobals();
+    if (previewT !== undefined && previewT !== null) window.__DSH_MOSS2_PREVIEW_T__ = previewT;
+    else try { delete window.__DSH_MOSS2_PREVIEW_T__ } catch (e) { window.__DSH_MOSS2_PREVIEW_T__ = undefined }
+    var api = window.__DSH_MOSS2_API__;
+    if (api && typeof api.freeze === 'function') { try { api.freeze(false) } catch (e) {} }
+    if (typeof window.__DSH_MOSS2_REPLAY__ === 'function') {
+      try { if (window.__DSH_MOSS2_REPLAY__()) return; } catch (e) {}
+    }
+    loadSplashScript();
+  }
+  function syncFreezeBtn() {
+    var btn = document.getElementById('moss2-freeze-toggle');
+    if (btn) { btn.textContent = frozen ? '继续' : '定格'; btn.dataset.on = frozen ? '1' : '0'; }
+  }
+  function toggleFreeze() {
+    var api = window.__DSH_MOSS2_API__;
+    if (!api || typeof api.freeze !== 'function') return;
+    try {
+      if (frozen) { api.freeze(false); frozen = false; }
+      else { api.freeze(true); frozen = true; }
+    } catch (e) {}
+    syncFreezeBtn();
+  }
+  function jumpTo(t) {
+    var api = window.__DSH_MOSS2_API__;
+    var root = ensureRoot();
+    var live = root.firstChild && typeof api === 'object' && api !== null;
+    if (typeof api === 'object' && api !== null && typeof api.freeze === 'function') {
+      var st = api.state;
+      if (!root.firstChild || st === 'done' || st === 'disabled' || st === undefined) {
+        startSplash(t);
+        return;
+      }
+      try { api.freeze(false) } catch (e) {}
+      try { api.freeze(t) } catch (e) {}
+      frozen = true;
+      syncFreezeBtn();
+      return;
+    }
+    startSplash(t);
+  }
+  function readSplashState() {
+    try {
+      var s = window.__DSH_MOSS2_SPLASH__;
+      var p = window.__DSH_MOSS2_PREVIEW__;
+      var t = p && typeof p.t === 'number' ? p.t : null;
+      var state = s && typeof s === 'object' && s.state ? s.state : (typeof s === 'boolean' ? (s ? 'boot' : 'disabled') : '?');
+      document.getElementById('moss2-playhead').textContent = 't=' + (t === null ? '0.00' : t.toFixed(2)) + 's · ' + state;
+    } catch (e) {}
+  }
+
+  /* ── v0.5 探针：全局进度层 + 第二幕目标锁定/终局对焦（§3.1）+ 地球冷态/点火/预 seek（§2.2）
+   *         + 交接 handoff/ambient held/armSfx（§3.1/§3.2/§4.3）。只读探针与 DOM。 ── */
+  function readV5Probes() {
+    var out = {
+      root: false,
+      globalProgressLayer: false,
+      globalPctLayer: false,
+      progress: null,
+      tgtLayer: false,
+      tgt: null,
+      focus: null,
+      focusDom: null,
+      earth: null,
+      handoff: null,
+      ambientHandoff: null,
+      audio: null,
+      controls: { focusReadout: false, earthReadout: false, handoffReadout: false, ambientReadout: false, audioReadout: false, jumpTs: [] }
+    };
+    try {
+      var root = document.getElementById('dsh-moss-root');
+      out.root = !!root;
+      if (root) {
+        var hud = root.querySelector('.ms-global-hud');
+        out.globalProgressLayer = !!(hud && hud.querySelector('.ms-bottom .ms-progress .ms-progress-fill') && hud.querySelector('.ms-progress-spark'));
+        out.globalPctLayer = !!(hud && hud.querySelector('.ms-pct [data-pct-num]'));
+        var prog = window.__DSH_MOSS2_PROGRESS__;
+        if (prog && typeof prog === 'object') {
+          out.progress = {
+            t: +Number(prog.t || 0).toFixed(3),
+            progress: Number(prog.progress),
+            pct: Number(prog.pct),
+            fill: Number(prog.fill),
+            spark: Number(prog.spark),
+            trackWidth: Number(prog.trackWidth),
+            complete: !!prog.complete
+          };
+        } else {
+          var fillEl = root.querySelector('.ms-progress-fill');
+          var sparkEl = root.querySelector('.ms-progress-spark');
+          var pctNumEl = root.querySelector('[data-pct-num]');
+          var pctBox = root.querySelector('.ms-pct');
+          if (pctNumEl) {
+            out.progress = {
+              domPct: Number(String(pctNumEl.textContent || '').replace(/[^0-9.-]/g, '')),
+              fillTransform: fillEl ? getComputedStyle(fillEl).transform : null,
+              sparkTransform: sparkEl ? getComputedStyle(sparkEl).transform : null,
+              completeAttr: !!(pctBox && pctBox.getAttribute('data-complete') === '1')
+            };
+          }
+        }
+        var tgt = root.querySelector('.ms-tgt-layer');
+        out.tgtLayer = !!tgt;
+        if (tgt) {
+          var ret = root.querySelector('[data-tgt-reticle]');
+          var lock = window.__DSH_MOSS2_LOCK__;
+          var rr = ret ? ret.getBoundingClientRect() : null;
+          var reticle = rr ? { x: Math.round(rr.x + rr.width / 2), y: Math.round(rr.y + rr.height / 2) } : null;
+          var eye = lock && lock.eye && typeof lock.eye.x === 'number' ? { x: Math.round(lock.eye.x), y: Math.round(lock.eye.y) } : null;
+          out.tgt = {
+            phase: tgt.getAttribute('data-tgt') || (lock && lock.phase) || null,
+            corners: root.querySelectorAll('.ms-tgt-corner').length,
+            ghosts: root.querySelectorAll('.ms-tgt-ghost').length,
+            shocks: root.querySelectorAll('.ms-lock-shock').length,
+            vignette: !!root.querySelector('.ms-moss-vignette'),
+            reticle: reticle,
+            eye: eye,
+            locked: lock ? !!lock.locked : null,
+            distToEye: reticle && eye ? Math.round(Math.sqrt(Math.pow(reticle.x - eye.x, 2) + Math.pow(reticle.y - eye.y, 2))) : null
+          };
+        }
+      }
+    } catch (e) { /* 探针失败不影响预览功能 */ }
+    window.__MOSS2_PREVIEW_V5__ = out;
+    try {
+      var pr = document.getElementById('moss2-progress-readout');
+      if (pr) {
+        var q = out.progress;
+        if (!q) pr.textContent = 'P —（启动层未出现）';
+        else if (q.pct !== undefined) pr.textContent = 'P ' + q.pct + '% · fill ' + Number(q.progress).toFixed(2) + ' · 进度层' + (out.globalProgressLayer ? '=global-hud' : '=缺失');
+        else pr.textContent = 'P ' + q.domPct + '% · 进度层' + (out.globalProgressLayer ? '=global-hud' : '=缺失');
+        if (q && (q.complete || q.completeAttr)) pr.setAttribute('data-complete', '1');
+        else pr.removeAttribute('data-complete');
+      }
+      var lr = document.getElementById('moss2-lock-readout');
+      if (lr) {
+        var g = out.tgt;
+        if (!g) lr.textContent = 'A2 —（第二幕未出现）';
+        else lr.textContent = 'A2 ' + (g.phase || '?') + ' · 角' + g.corners + ' 准心=' + (g.reticle ? g.reticle.x + ',' + g.reticle.y : '--') + ' 眼=' + (g.eye ? g.eye.x + ',' + g.eye.y : '--') + ' Δ' + (g.distToEye === null ? '--' : g.distToEye + 'px') + (g.locked ? ' · LOCKED' : '');
+      }
+      /* v0.4 §3.1 终局对焦框：DOM 四角几何 + 探针 focus 对象 */
+      var fRoot = root ? root.querySelector('.ms-tgt-focus') : null;
+      var fCorners = fRoot ? root.querySelectorAll('.ms-tgt-focus__corner') : [];
+      var lockP = window.__DSH_MOSS2_LOCK__;
+      out.focusDom = fRoot ? { corners: fCorners.length, visible: getComputedStyle(fRoot).opacity !== '0' } : { corners: 0, visible: false };
+      if (lockP && lockP.focus) {
+        out.focus = {
+          eye: lockP.eye ? { x: Math.round(lockP.eye.x), y: Math.round(lockP.eye.y) } : null,
+          half: Number(lockP.focus.half), w: Number(lockP.focus.w), h: Number(lockP.focus.h),
+          aligned: lockP.focus.aligned === true || lockP.focusAligned === true,
+          corners: fCorners.length
+        };
+      }
+      var earthP = window.__DSH_MOSS2_EARTH_STATE__;
+      if (earthP) {
+        out.earth = {
+          phase: earthP.phase, scale: earthP.scale, playbackRate: earthP.playbackRate,
+          jetVisible: earthP.jetVisible, jetAt: earthP.jetAt,
+          preSeeked: earthP.preSeeked, seekAt: earthP.seekAt, seekedAt: earthP.seekedAt,
+          seekMs: earthP.seekMs, igniteSeekMs: earthP.igniteSeekMs
+        };
+      }
+      var hd = window.__DSH_MOSS2_HANDOFF__;
+      if (hd) {
+        out.handoff = {
+          ok: !!hd.ok, at: hd.at, to: hd.to, revealAt: hd.revealAt, fadeAt: hd.fadeAt,
+          duration: hd.duration, earthAtPred: hd.earthAtPred, flashAt: hd.flashAt, done: !!hd.done
+        };
+      }
+      var amb = window.__DSH_MOSS2_AMBIENT_HANDOFF__;
+      if (amb) {
+        out.ambientHandoff = {
+          held: !!amb.held, armedAt: amb.armedAt, revealIn: amb.revealIn,
+          playAt: amb.playAt, playedAt: amb.playedAt, ctAtArmed: amb.ctAtArmed
+        };
+      }
+      var au = window.__DSH_MOSS2_AUDIO_STATE__;
+      if (au) {
+        out.audio = {
+          ok: au.ok, ctxState: au.ctxState, started: au.started,
+          armSfx: au.armSfx ? {
+            ok: au.armSfx.ok, fallback: au.armSfx.fallback, duration: au.armSfx.duration,
+            offset: au.armSfx.offset, gain: au.armSfx.gain, decodedAt: au.armSfx.decodedAt
+          } : null
+        };
+      }
+      var fr = document.getElementById('moss2-focus-readout');
+      if (fr) {
+        var F = out.focus;
+        if (!F) fr.textContent = 'F —（第二幕未出现）';
+        else fr.textContent = 'F half=' + F.half + ' ' + F.w + '×' + F.h + (F.aligned ? ' ✓ALIGNED' : ' ✗未对齐') + ' 角' + F.corners;
+      }
+      var er = document.getElementById('moss2-earth-readout');
+      if (er) {
+        var E = out.earth;
+        if (!E) er.textContent = 'E —（地球幕未出现）';
+        else er.textContent = 'E ' + E.phase + ' · jet=' + (E.jetVisible ? 'YES' : 'no') + ' · seek=' + (E.igniteSeekMs === undefined || E.igniteSeekMs === null ? '--' : Math.round(E.igniteSeekMs) + 'ms') + ' · pre=' + (E.preSeeked ? 'Y' : 'n');
+      }
+      var hr = document.getElementById('moss2-handoff-readout');
+      if (hr) {
+        var H = out.handoff;
+        if (!H) hr.textContent = 'H —（交接未发生）';
+        else hr.textContent = 'H at=' + H.at + ' reveal=' + H.revealAt + ' fade=' + H.fadeAt + ' dur=' + H.duration + ' earthAt=' + H.earthAtPred + (H.done ? ' · done' : '');
+      }
+      var ambr = document.getElementById('moss2-ambient-readout');
+      if (ambr) {
+        var A = out.ambientHandoff;
+        if (!A) ambr.textContent = 'AMB —（无交接数据）';
+        else ambr.textContent = 'AMB held=' + (A.held ? 'Y' : 'n') + ' revealIn=' + A.revealIn + ' playAt=' + A.playAt + ' playedAt=' + A.playedAt;
+      }
+      var aur = document.getElementById('moss2-audio-readout');
+      if (aur) {
+        var U = out.audio;
+        if (!U) aur.textContent = 'AU —（音频未建）';
+        else aur.textContent = 'AU ok=' + (U.ok ? 'Y' : 'n') + ' armSfx=' + (U.armSfx ? (U.armSfx.ok ? 'OK' : 'FAIL') + (U.armSfx.fallback ? '/fallback' : '') + ' ' + Number(U.armSfx.duration).toFixed(2) + 's' : '--');
+      }
+      var ctl = {
+        focusReadout: !!document.getElementById('moss2-focus-readout'),
+        earthReadout: !!document.getElementById('moss2-earth-readout'),
+        handoffReadout: !!document.getElementById('moss2-handoff-readout'),
+        ambientReadout: !!document.getElementById('moss2-ambient-readout'),
+        audioReadout: !!document.getElementById('moss2-audio-readout'),
+        jumpTs: Array.prototype.map.call(document.querySelectorAll('#moss2-preview-bar [data-jump-t]'), function (b) { return Number(b.getAttribute('data-jump-t')) })
+      };
+      out.controls = ctl;
+    } catch (e) { /* noop */ }
+    return out;
+  }
+  /* 外部（verify5 / accept 脚本）可强制刷新探针读数，避免读到 900ms 轮询的上一帧旧值 */
+  window.__MOSS2_PREVIEW_V5__ = window.__MOSS2_PREVIEW_V5__ || null;
+  window.__MOSS2_READ_V5__ = readV5Probes;
+  window.__MOSS2_READ_V4__ = readV5Probes; /* v0.4 兼容别名 */
+
+  /* 动态背景演示：canvas 采样 ambient video 两帧，显示平均像素差 */
+  function sampleVideo() {
+    var v = document.querySelector('#dsh-moss-ambient video');
+    if (!v) return null;
+    var w = 64, h = 36;
+    var c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    var ctx = c.getContext('2d', { willReadFrequently: true });
+    try { ctx.drawImage(v, 0, 0, w, h); } catch (e) { return null; }
+    var d = ctx.getImageData(0, 0, w, h).data;
+    var out = new Array(w * h);
+    for (var i = 0; i < w * h; i++) out[i] = 0.2126 * d[i * 4] + 0.7152 * d[i * 4 + 1] + 0.0722 * d[i * 4 + 2];
+    return { data: out, t: v.currentTime };
+  }
+  function updateMotionReadout() {
+    var el = document.getElementById('moss2-motion-readout');
+    if (!el) return;
+    var a = sampleVideo();
+    if (!a) { el.textContent = 'Δ=--'; return; }
+    setTimeout(function () {
+      var b = sampleVideo();
+      if (!b) { el.textContent = 'Δ=--'; return; }
+      var sum = 0;
+      for (var i = 0; i < a.data.length; i++) sum += Math.abs(a.data[i] - b.data[i]);
+      var mean = sum / a.data.length;
+      var v = document.querySelector('#dsh-moss-ambient video');
+      el.textContent = 'Δ=' + mean.toFixed(2) + (v && v.paused ? ' · 已暂停' : ' · 播放中') + ' / 视频 ' + (a.t.toFixed(2)) + 's';
+    }, 260);
+  }
+
+  /* 绑定 */
+  document.querySelectorAll('#moss2-preview-bar [data-tier]').forEach(function (b) {
+    b.addEventListener('click', function () { applyTier(b.dataset.tier); });
+  });
+  document.querySelectorAll('#moss2-preview-bar [data-act-jump]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var map = { I: 2.2, II: 5.2, III: 9.0, IV: 10.9 };
+      jumpTo(map[b.dataset.actJump || b.dataset.actJump] || 0);
+    });
+  });
+  /* v0.3：锁定帧跳转（第二幕准心锁定，t=7.42s） */
+  document.querySelectorAll('#moss2-preview-bar [data-jump-t]').forEach(function (b) {
+    b.addEventListener('click', function () { jumpTo(Number(b.dataset.jumpT) || 0); });
+  });
+  document.getElementById('moss2-replay-splash').addEventListener('click', function () { startSplash(); });
+  document.getElementById('moss2-freeze-toggle').addEventListener('click', toggleFreeze);
+  document.getElementById('moss2-toggle-video').addEventListener('click', function () { applyVideo(!video); });
+  document.getElementById('moss2-veil').addEventListener('input', function (e) { applyVeil(Number(e.target.value)); });
+  document.getElementById('moss2-blur').addEventListener('input', function (e) { applyBlur(Number(e.target.value)); });
+  document.getElementById('moss2-state-empty').addEventListener('click', function () {
+    if (window.__mossMockSetState) window.__mossMockSetState('empty');
+  });
+  document.getElementById('moss2-state-session').addEventListener('click', function () {
+    if (window.__mossMockSetState) window.__mossMockSetState('session');
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 's' && e.altKey) startSplash();
+    if (e.key === 'f' && e.altKey) toggleFreeze();
+  });
+
+  applyTier(tier === 'immersive' ? 'immersive' : tier === 'off' ? 'off' : 'glass');
+  applyHud(hud === 'full' ? 'full' : hud === 'off' ? 'off' : 'normal');
+  applyVeil(isFinite(veil) ? veil : 58);
+  applyBlur(isFinite(blur) ? blur : 16);
+  applyVideo(true);
+
+  frameTimer = setInterval(function () { updateMotionReadout(); readSplashState(); readV5Probes(); }, 900);
+  setTimeout(updateMotionReadout, 400);
+  readSplashState();
+  readV5Probes();
+
+  if (qs.get('splash') === '1') setTimeout(function () { startSplash() }, 150);
+})();
+</script>
+</body>
+</html>
+

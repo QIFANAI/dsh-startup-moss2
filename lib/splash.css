@@ -1,0 +1,2287 @@
+/* ============================================================================
+ * dsh-startup-moss2 v0.2 — 启动层视觉「四素材 · 四幕叙事」
+ * ----------------------------------------------------------------------------
+ * 权威依据：docs/design-spec-v2.md §3（色彩脚本）/ §4（时间线）/ §6（DOM 契约）
+ *
+ * 图层（从底到顶）：
+ *   ① 黑场 prologue（0.00–0.50，冰白细线 + 微字标）
+ *   ② 幕 I   .ms-act--neuro  z1：BCI 神经接口视频 + 品牌开幕 HUD
+ *   ③ 幕 II  .ms-act--moss   z2：全屏 MOSS 视频 + 550W HUD / 红眼锁定
+ *   ④ 幕 IV  .ms-act--earth  z3：地球全屏（= UI ambient 同裁切）
+ *   ⑤ 幕 III .ms-split       z6：竖直分割转场覆盖层（左 MOSS / 右地球 / 接缝）
+ *   ⑥ 全局 HUD .ms-global-hud z8：四角/刻线/顶栏/页脚/噪点/扫描线
+ *   ⑦ 闪光/脉冲 z10、跳过 z11、跳过黑场过渡 z12
+ *
+ * 红线（design-spec-v2 §1）：
+ *   本文件**不使用 @media (prefers-reduced-motion) 关闭任何视频/主视觉**。
+ *   系统 reduce 在本机恒为 true（Windows 关了系统动画），v0.1 因此真机失效。
+ *   只有用户显式配置 reducedMotion=true 时 root 加 .ms-calm：仅停装饰动画
+ *   （扫描线/呼吸/闪烁/准星脉动），视频照播、四幕时间线不变。
+ *
+ * 字体：本地 JetBrains Mono（@font-face 走 ASSET_BASE 同源 /dsh-moss2/asset/）；
+ *       中文回退系统字体（Microsoft YaHei / PingFang SC / Noto Sans CJK）。
+ * ========================================================================== */
+
+/* ── 捆绑字体（404 → 系统等宽，不阻塞首帧） ────────────────────────────── */
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/dsh-moss2/asset/fonts/jetbrains-mono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/dsh-moss2/asset/fonts/jetbrains-mono-500.woff2") format("woff2");
+}
+
+/* ── 启动期间锁滚（Host 自举脚本与 splash.js 都会加/去） ───────────────── */
+html.moss-lock,
+html.moss-lock body {
+  overflow: hidden !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 1. 根容器 / 令牌
+ * ══════════════════════════════════════════════════════════════════════════ */
+#dsh-moss-root {
+  /* §3 色彩脚本：幕 I 青绿 / 幕 II MOSS 红 / 幕 III 对半 / 幕 IV 地球蓝 */
+  --ms-void: #04070c;
+  --ms-void-2: #070c14;
+  --ms-ice: #eef7ff;
+  --ms-ice-2: #cfe2f2;
+  --ms-steel: #93a9c0;
+  --ms-steel-2: #657b92;
+  --ms-steel-3: #4a5d72;
+  --ms-teal: #55f2cf;          /* BCI 神经接口青绿 */
+  --ms-teal-2: #1fb9a0;
+  --ms-moss: #ff3b30;          /* MOSS 红 */
+  --ms-moss-hi: #ff7a52;
+  --ms-moss-dim: #7d140d;
+  --ms-earth: #6db8ff;         /* 地球蓝 */
+  --ms-plasma: #a5e6ff;
+  --ms-amber: #ffb454;
+  --ms-line: rgba(150, 200, 255, .11);
+  --ms-line-2: rgba(150, 200, 255, .20);
+
+  --ms-font-mono: "JetBrains Mono", "MOSS Mono", ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+  --ms-font-cn: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Source Han Sans SC", system-ui, sans-serif;
+  --ms-font-ui: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+
+  --ms-pad-x: clamp(22px, 3.1vw, 64px);
+  --ms-pad-y: clamp(18px, 3.4vh, 48px);
+  --ms-frame-inset: clamp(14px, 2.2vh, 26px);
+
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: var(--ms-void);
+  color: var(--ms-ice);
+  font-family: var(--ms-font-ui);
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  isolation: isolate;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+  color-scheme: dark;
+  /* v0.5 §3.1：13.05 起启动层 warp 溶解（JS 内联写 opacity 1→0 + transform scale 1→1.03，
+   * 810ms cubic-bezier(.4,0,.2,1)；不用 blur）。transform-origin 固定在画面中心。 */
+  transform-origin: 50% 50%;
+  will-change: opacity, transform;
+}
+#dsh-moss-root,
+#dsh-moss-root *,
+#dsh-moss-root *::before,
+#dsh-moss-root *::after {
+  box-sizing: border-box;
+}
+#dsh-moss-root .ms-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--ms-void);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 2. 黑场序幕（0.00–0.50）
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-prologue {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  background: #020305;
+  pointer-events: none;
+}
+.ms-pro-line {
+  position: absolute;
+  left: var(--ms-pad-x);
+  bottom: calc(var(--ms-pad-y) + 96px);
+  width: min(300px, 26vw);
+  height: 1px;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, rgba(238, 247, 255, .95) 0%, rgba(238, 247, 255, .35) 68%, rgba(238, 247, 255, 0) 100%);
+  box-shadow: 0 0 14px rgba(190, 230, 255, .55);
+}
+.ms-pro-line::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -1.5px;
+  width: 4px;
+  height: 4px;
+  background: var(--ms-ice);
+  box-shadow: 0 0 12px 2px rgba(200, 240, 255, .9);
+}
+.ms-pro-word {
+  position: absolute;
+  left: var(--ms-pad-x);
+  bottom: calc(var(--ms-pad-y) + 68px);
+  font-family: var(--ms-font-mono);
+  font-size: clamp(10px, 1.05vw, 13px);
+  font-weight: 500;
+  letter-spacing: .58em;
+  color: var(--ms-ice);
+  text-shadow: 0 0 22px rgba(170, 225, 255, .28);
+  white-space: nowrap;
+  opacity: 0;
+}
+.ms-pro-cap {
+  position: absolute;
+  left: var(--ms-pad-x);
+  bottom: calc(var(--ms-pad-y) + 50px);
+  font-family: var(--ms-font-mono);
+  font-size: 8.5px;
+  letter-spacing: .34em;
+  color: var(--ms-steel-2);
+  white-space: nowrap;
+  opacity: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 3. 幕容器 / 视频 / 兜底美术
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-act {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ms-act--neuro { z-index: 1; }
+.ms-act--moss { z-index: 2; }
+.ms-act--earth { z-index: 3; }
+
+.ms-clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: none;
+  will-change: clip-path;
+}
+.ms-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  opacity: 0;
+  display: block;
+  background: transparent;
+  pointer-events: none;
+  will-change: opacity, transform;
+  transform-origin: 50% 50%;
+}
+/* 幕 II MOSS：无 transform（保留素材自身「机械细节→主眼」运镜）；红眼坐标据此换算。
+ * 轻调色让灰棚压向「深空黑 + 机体灰白」（§3 色彩脚本），红眼与红色准星更跳。 */
+.ms-act--moss .ms-video {
+  transform: none;
+  filter: contrast(1.08) brightness(.90) saturate(.96);
+}
+/* 幕 IV 地球：与 UI ambient **完全一致** 的裁切/曝光
+ * （skin.css：object-fit:cover / object-position:50% 50% / transform:scale(1.12)
+ *   + filter brightness(var(--moss-exposure)) saturate(var(--moss-saturation))） */
+.ms-act--earth .ms-video {
+  transform: scale(1.12);
+  filter: brightness(var(--moss-exposure, 1.75)) saturate(var(--moss-saturation, 1.22));
+}
+/* saver：ambient 用的是不缩放的 .ma-still，启动层海报层与之对齐（交接不跳） */
+#dsh-moss-root.ms-saver .ms-act--earth .ms-video {
+  transform: none;
+}
+.ms-act--failed .ms-video {
+  opacity: 0 !important;
+}
+
+/* ── 3.1 纯 CSS 兜底美术（视频 404 / 解码失败 / saver 海报前的底） ─────── */
+.ms-fallback {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+/* 幕 I：BCI 面板的暗青底 + 网格 + 中心脑区辉光 */
+.ms-fallback--neuro {
+  background:
+    radial-gradient(ellipse 62% 48% at 50% 46%, rgba(52, 208, 190, .16) 0%, rgba(18, 90, 92, .10) 46%, transparent 72%),
+    repeating-linear-gradient(to right, rgba(90, 240, 220, .055) 0 1px, transparent 1px 46px),
+    repeating-linear-gradient(to bottom, rgba(90, 240, 220, .045) 0 1px, transparent 1px 46px),
+    linear-gradient(158deg, #05161c 0%, #031013 52%, #010507 100%);
+}
+/* 幕 II：灰棚底 + MOSS 红眼（37.4% / 53.8%） */
+.ms-fallback--moss {
+  background:
+    radial-gradient(circle 30px at 37.4% 53.8%, #ffe6dc 0%, var(--ms-moss-hi) 22%, var(--ms-moss) 46%, rgba(255, 59, 48, .28) 64%, transparent 78%),
+    radial-gradient(circle 150px at 37.4% 53.8%, rgba(255, 59, 48, .20) 0%, transparent 70%),
+    radial-gradient(ellipse 64% 74% at 40% 50%, #99a1ad 0%, #6d7582 38%, #3c434f 74%, #191d25 100%);
+}
+/* 幕 IV：深空 + 地球轮廓 + 等离子尾迹的极简兜底 */
+.ms-fallback--earth {
+  background:
+    radial-gradient(circle 190px at 49% 52%, rgba(109, 184, 255, .20) 0%, rgba(80, 150, 230, .07) 52%, transparent 72%),
+    radial-gradient(circle 78px at 49% 52%, rgba(165, 230, 255, .18) 0%, rgba(90, 170, 230, .06) 62%, transparent 78%),
+    radial-gradient(circle 1.4px at 18% 24%, rgba(255, 255, 255, .65), transparent 60%),
+    radial-gradient(circle 1px at 32% 68%, rgba(255, 255, 255, .5), transparent 60%),
+    radial-gradient(circle 1.6px at 72% 22%, rgba(255, 255, 255, .6), transparent 60%),
+    radial-gradient(circle 1px at 84% 62%, rgba(255, 255, 255, .45), transparent 60%),
+    radial-gradient(circle 1.2px at 58% 84%, rgba(255, 255, 255, .5), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 52% 54%, #03060c 0%, #010206 70%, #000 100%);
+}
+
+/* ── 3.2 幕内压暗/暗角（保证 HUD 可读，不糊视频主体） ─────────────────── */
+.ms-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ms-veil--neuro {
+  background:
+    linear-gradient(180deg, rgba(2, 6, 10, .92) 0%, rgba(2, 6, 10, .78) 56px, rgba(2, 6, 10, .34) 104px, transparent 150px),
+    linear-gradient(180deg, transparent 68%, rgba(2, 6, 10, .86) 100%),
+    linear-gradient(90deg, rgba(2, 6, 10, .45) 0%, transparent 16%, transparent 84%, rgba(2, 6, 10, .45) 100%);
+}
+.ms-veil--moss {
+  background:
+    /* 顶部 0–100px 统一压暗：盖住素材自带抬头/暗带，避免与我们的 topbar 叠影 */
+    linear-gradient(180deg, rgba(3, 6, 11, .82) 0%, rgba(3, 6, 11, .52) 58px, rgba(3, 6, 11, .16) 100px, transparent 140px),
+    linear-gradient(90deg, rgba(4, 7, 12, .60) 0%, rgba(4, 7, 12, .26) 24%, transparent 46%),
+    linear-gradient(270deg, rgba(4, 7, 12, .46) 0%, rgba(4, 7, 12, .14) 24%, transparent 40%),
+    linear-gradient(180deg, rgba(4, 7, 12, .60) 0%, transparent 15%, transparent 60%, rgba(4, 7, 12, .88) 100%),
+    radial-gradient(ellipse 90% 82% at 46% 46%, transparent 34%, rgba(4, 7, 12, .40) 74%, rgba(4, 7, 12, .76) 100%);
+}
+.ms-veil--earth {
+  background:
+    linear-gradient(180deg, rgba(3, 6, 12, .40) 0%, transparent 16%, transparent 72%, rgba(3, 6, 12, .72) 100%),
+    radial-gradient(ellipse 96% 86% at 50% 46%, transparent 48%, rgba(3, 6, 12, .28) 82%, rgba(3, 6, 12, .58) 100%);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 4. 幕 I HUD：DEEPSEEK HARNESS 品牌开幕
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.ms-hud--neuro { z-index: 2; }
+
+/* 4.1 顶部 BCI 通道标签 */
+.ms-bci-tag {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--ms-frame-inset) + 40px);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--ms-font-mono);
+  font-size: clamp(9px, .85vw, 11px);
+  letter-spacing: .30em;
+  text-transform: uppercase;
+  color: rgba(190, 245, 232, .92);
+  white-space: nowrap;
+  opacity: 0;
+  text-shadow: 0 0 18px rgba(40, 200, 180, .35);
+}
+.ms-bci-tag i {
+  width: 5px;
+  height: 5px;
+  background: var(--ms-teal);
+  box-shadow: 0 0 9px rgba(85, 242, 207, .9);
+  transform: rotate(45deg);
+}
+.ms-bci-tag b {
+  font-weight: 400;
+  color: rgba(255, 59, 48, .55);
+}
+.ms-bci-tag span:nth-of-type(2) {
+  font-family: var(--ms-font-cn);
+  letter-spacing: .26em;
+}
+
+/* 4.2 中央品牌大字标 */
+.ms-neuro-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(1240px, 94vw);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+.ms-neuro-center::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 132%;
+  height: 340%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: radial-gradient(ellipse 48% 40% at 50% 50%,
+    rgba(2, 8, 10, .88) 0%,
+    rgba(2, 8, 10, .68) 38%,
+    rgba(2, 8, 10, .26) 64%,
+    transparent 82%);
+  -webkit-backdrop-filter: blur(5px) saturate(.9);
+  backdrop-filter: blur(5px) saturate(.9);
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 26%, rgba(0, 0, 0, .7) 58%, transparent 84%);
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 26%, rgba(0, 0, 0, .7) 58%, transparent 84%);
+}
+.ms-neuro-title-wrap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 2px 6px 6px;
+  clip-path: inset(0 100% 0 0);
+  -webkit-clip-path: inset(0 100% 0 0);
+}
+.ms-neuro-title {
+  margin: 0;
+  font-family: var(--ms-font-mono);
+  font-size: clamp(34px, 5.15vw, 94px);
+  font-weight: 500;
+  letter-spacing: .155em;
+  line-height: 1.04;
+  white-space: nowrap;
+  color: #f4fcff;
+  text-shadow:
+    0 0 20px rgba(120, 255, 228, .22),
+    0 0 74px rgba(80, 220, 255, .14),
+    0 0 160px rgba(60, 200, 190, .10);
+}
+.ms-neuro-shine {
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  left: 0;
+  width: 13%;
+  background: linear-gradient(100deg,
+    transparent 0%,
+    rgba(255, 255, 255, .03) 26%,
+    rgba(226, 255, 250, .52) 50%,
+    rgba(255, 255, 255, .04) 74%,
+    transparent 100%);
+  mix-blend-mode: screen;
+  filter: blur(.6px);
+  opacity: 0;
+  pointer-events: none;
+}
+.ms-neuro-sub {
+  margin-top: clamp(12px, 2vh, 22px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1.2vw, 16px);
+  font-family: var(--ms-font-mono);
+  font-size: clamp(10px, 1.05vw, 13.5px);
+  letter-spacing: .40em;
+  text-transform: uppercase;
+  color: #d9fbf2;
+  text-shadow:
+    0 0 14px rgba(2, 10, 12, .95),
+    0 2px 10px rgba(0, 0, 0, .9),
+    0 0 26px rgba(50, 220, 195, .35);
+  opacity: 0;
+  white-space: nowrap;
+}
+.ms-neuro-sub i {
+  font-style: normal;
+  color: rgba(255, 59, 48, .52);
+  letter-spacing: 0;
+}
+.ms-neuro-sub span:last-child {
+  font-family: var(--ms-font-cn);
+  letter-spacing: .30em;
+  text-transform: none;
+}
+
+/* 4.3 左下启动日志（3 行打字） */
+.ms-neuro-log {
+  position: absolute;
+  left: var(--ms-pad-x);
+  bottom: calc(var(--ms-pad-y) + 52px);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-family: var(--ms-font-mono);
+  font-size: clamp(9.5px, .92vw, 12px);
+  letter-spacing: .06em;
+  color: rgba(206, 246, 240, .95);
+  text-shadow: 0 0 16px rgba(20, 60, 60, .9);
+  pointer-events: none;
+}
+.ms-log-line--neuro {
+  display: flex;
+  align-items: center;
+  min-height: 1.2em;
+  white-space: nowrap;
+  opacity: 0;
+  will-change: opacity;
+}
+.ms-log-line--neuro .ms-typed {
+  white-space: pre;
+}
+.ms-caret {
+  display: inline-block;
+  width: 6px;
+  height: 1.05em;
+  margin-left: 2px;
+  background: rgba(85, 242, 207, .9);
+  box-shadow: 0 0 10px rgba(85, 242, 207, .6);
+  animation: ms-caret-blink 1s steps(1, end) infinite;
+  opacity: 0;
+}
+@keyframes ms-caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: .12; }
+}
+
+/* 4.4 右下 LINK 08→100% 进度环 */
+.ms-link {
+  position: absolute;
+  right: var(--ms-pad-x);
+  bottom: calc(var(--ms-pad-y) + 30px);
+  width: clamp(88px, 7.8vw, 122px);
+  height: clamp(88px, 7.8vw, 122px);
+  opacity: 0;
+}
+.ms-link-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.ms-link-track {
+  fill: none;
+  stroke: rgba(140, 210, 235, .16);
+  stroke-width: 1.2;
+}
+.ms-link-arc {
+  fill: none;
+  stroke: var(--ms-teal);
+  stroke-width: 2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(85, 242, 207, .55));
+}
+.ms-link-dot {
+  fill: #eafff9;
+  filter: drop-shadow(0 0 6px rgba(160, 255, 235, .95));
+}
+.ms-link-txt {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ms-font-mono);
+  text-shadow: 0 0 18px rgba(10, 40, 40, .9);
+}
+.ms-link-cap {
+  font-size: 8px;
+  letter-spacing: .34em;
+  color: rgba(150, 205, 200, .8);
+}
+.ms-link-num {
+  margin-top: 2px;
+  font-size: clamp(17px, 1.6vw, 24px);
+  font-weight: 500;
+  color: #eafffb;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.ms-link-sign {
+  margin-top: 1px;
+  font-size: 8.5px;
+  letter-spacing: .2em;
+  color: rgba(85, 242, 207, .85);
+}
+
+/* 4.5 故障层（3.50 起；素材自带 3.22–3.30 / 3.74–3.82 两段闪光） */
+.ms-neuro-fault {
+  position: absolute;
+  right: var(--ms-pad-x);
+  bottom: calc(var(--ms-pad-y) + 168px);
+  font-family: var(--ms-font-mono);
+  font-size: 8.5px;
+  letter-spacing: .30em;
+  color: rgba(255, 120, 96, .9);
+  text-shadow: 0 0 16px rgba(255, 59, 48, .5);
+  opacity: 0;
+  white-space: nowrap;
+}
+.ms-glitch {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background:
+    repeating-linear-gradient(to bottom,
+      rgba(255, 255, 255, .10) 0 1px,
+      transparent 1px 3px,
+      rgba(85, 242, 207, .07) 3px 4px,
+      transparent 4px 7px),
+    linear-gradient(to bottom, transparent 32%, rgba(255, 255, 255, .12) 33%, transparent 35%, transparent 64%, rgba(85, 242, 207, .10) 65%, transparent 67%);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 5. 幕 II HUD：MOSS / 550W
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-hud--moss { z-index: 2; }
+
+/* 5.1 红色边缘辉光（装饰呼吸；.ms-calm 停） */
+.ms-moss-rim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+}
+.ms-moss-rim::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 92% 84% at 50% 48%, transparent 54%, rgba(255, 59, 48, .055) 80%, rgba(255, 59, 48, .13) 100%),
+    radial-gradient(ellipse 60% 52% at 46% 50%, transparent 60%, rgba(255, 59, 48, .05) 100%),
+    radial-gradient(ellipse 74% 26% at 50% 106%, rgba(255, 59, 48, .22) 0%, rgba(255, 59, 48, .06) 56%, transparent 100%);
+  animation: ms-rim-breathe 4.6s ease-in-out infinite;
+}
+@keyframes ms-rim-breathe {
+  0%, 100% { opacity: .55; }
+  50% { opacity: 1; }
+}
+
+/* 5.2 红眼凝视准星（位置由 JS 按 object-fit:cover 换算到视频红眼） */
+.ms-gaze {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: clamp(92px, 8.6vw, 148px);
+  height: clamp(92px, 8.6vw, 148px);
+  z-index: 4;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  will-change: left, top;
+}
+.ms-gaze-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.ms-gaze-ring--o {
+  inset: -18px;
+  border: 1px dashed rgba(255, 59, 48, .55);
+  box-shadow: 0 0 18px rgba(255, 59, 48, .22);
+  transform: translate(-50%, -50%) scale(3.4);
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+}
+.ms-gaze-ring--i {
+  inset: 4px;
+  border: 1.5px solid rgba(255, 90, 70, .85);
+  box-shadow:
+    0 0 22px rgba(255, 59, 48, .35),
+    inset 0 0 22px rgba(255, 59, 48, .18);
+  transform: translate(-50%, -50%) scale(2.2);
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+}
+.ms-gaze-corner {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border: 0 solid var(--ms-moss-hi);
+  opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(255, 59, 48, .8));
+}
+.ms-gaze-corner--tl { left: -28px; top: -28px; border-left-width: 2px; border-top-width: 2px; }
+.ms-gaze-corner--tr { right: -28px; top: -28px; border-right-width: 2px; border-top-width: 2px; }
+.ms-gaze-corner--bl { left: -28px; bottom: -28px; border-left-width: 2px; border-bottom-width: 2px; }
+.ms-gaze-corner--br { right: -28px; bottom: -28px; border-right-width: 2px; border-bottom-width: 2px; }
+.ms-gaze-cross {
+  position: absolute;
+  left: -46px;
+  right: -46px;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 90, 70, .55) 26%,
+    rgba(255, 150, 120, .95) 50%,
+    rgba(255, 90, 70, .55) 74%,
+    transparent 100%);
+  box-shadow: 0 0 10px rgba(255, 59, 48, .55);
+  transform: translateY(-.5px);
+}
+.ms-gaze-cross::after {
+  content: "";
+  position: absolute;
+  top: -46px;
+  bottom: -46px;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(255, 90, 70, .45) 26%,
+    rgba(255, 150, 120, .9) 50%,
+    rgba(255, 90, 70, .45) 74%,
+    transparent 100%);
+  box-shadow: 0 0 10px rgba(255, 59, 48, .45);
+  transform: translateX(-.5px);
+}
+.ms-gaze-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 50%;
+  background: #ffd9cd;
+  box-shadow:
+    0 0 8px 2px rgba(255, 59, 48, .95),
+    0 0 26px 8px rgba(255, 59, 48, .35);
+  animation: ms-gaze-pulse 2.2s ease-in-out infinite;
+}
+@keyframes ms-gaze-pulse {
+  0%, 100% { transform: scale(.82); opacity: .8; }
+  50% { transform: scale(1.35); opacity: 1; }
+}
+.ms-gaze-label {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 26px);
+  transform: translateX(-50%);
+  font-family: var(--ms-font-mono);
+  font-size: 8.5px;
+  letter-spacing: .30em;
+  color: rgba(255, 140, 118, .95);
+  text-shadow: 0 0 16px rgba(255, 59, 48, .55);
+  white-space: nowrap;
+  opacity: 0;
+}
+
+/* 5.3 左上 550W 标题块 */
+.ms-moss-title {
+  position: absolute;
+  left: var(--ms-pad-x);
+  top: calc(var(--ms-pad-y) + 26px);
+  z-index: 1;
+  pointer-events: none;
+}
+.ms-moss-title::after {
+  content: "";
+  position: absolute;
+  left: -30px;
+  right: -150px;
+  top: -26px;
+  bottom: -22px;
+  z-index: -1;
+  background: radial-gradient(ellipse 62% 58% at 34% 50%,
+    rgba(4, 7, 12, .62) 0%,
+    rgba(4, 7, 12, .34) 52%,
+    transparent 82%);
+}
+.ms-moss-title::before {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 1px;
+  margin-bottom: clamp(12px, 1.8vh, 20px);
+  background: linear-gradient(90deg, rgba(255, 59, 48, .95), rgba(255, 59, 48, 0));
+  box-shadow: 0 0 12px rgba(255, 59, 48, .35);
+}
+.ms-550w {
+  font-family: var(--ms-font-mono);
+  font-size: clamp(46px, 6.2vw, 112px);
+  font-weight: 500;
+  line-height: .86;
+  letter-spacing: .02em;
+  color: var(--ms-ice);
+  text-shadow:
+    0 0 20px rgba(233, 241, 250, .18),
+    0 0 72px rgba(255, 59, 48, .12),
+    0 0 140px rgba(79, 139, 255, .10);
+  opacity: 0;
+  will-change: transform;
+}
+.ms-moss-en {
+  margin-top: clamp(10px, 1.6vh, 16px);
+  font-family: var(--ms-font-mono);
+  font-size: clamp(9px, .9vw, 11px);
+  letter-spacing: .52em;
+  text-transform: uppercase;
+  color: var(--ms-ice-2);
+  opacity: 0;
+}
+.ms-moss-cn {
+  margin-top: 8px;
+  font-family: var(--ms-font-cn);
+  font-size: clamp(9.5px, .9vw, 11.5px);
+  letter-spacing: .32em;
+  color: var(--ms-steel);
+  opacity: 0;
+}
+
+/* 5.4 右侧启动日志（逐行） */
+.ms-moss-log {
+  position: absolute;
+  right: var(--ms-pad-x);
+  top: 26%;
+  width: min(368px, 30vw);
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  pointer-events: none;
+  font-family: var(--ms-font-mono);
+  background: linear-gradient(90deg, rgba(4, 7, 12, .34), transparent 92%);
+}
+.ms-moss-log::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -8px;
+  bottom: -8px;
+  width: 1px;
+  background: linear-gradient(to bottom,
+    transparent,
+    rgba(255, 59, 48, .32) 14%,
+    rgba(255, 59, 48, .32) 86%,
+    transparent);
+}
+.ms-moss-log::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -10px;
+  width: 4px;
+  height: 4px;
+  background: var(--ms-moss);
+  box-shadow: 0 0 10px rgba(255, 59, 48, .85);
+  transform: rotate(45deg) translate(-1.5px, 0);
+}
+.ms-moss-log .ms-log-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: clamp(9.5px, .88vw, 11px);
+  letter-spacing: .08em;
+  white-space: nowrap;
+  color: var(--ms-ice-2);
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.ms-log-t {
+  flex: none;
+  min-width: 47px;
+  font-size: 8.5px;
+  letter-spacing: .05em;
+  color: rgba(110, 130, 152, .82);
+}
+.ms-log-name { color: #d7e3ee; }
+.ms-log-sep { color: rgba(255, 59, 48, .58); }
+.ms-log-state {
+  margin-left: auto;
+  color: var(--ms-plasma);
+  letter-spacing: .06em;
+}
+
+/* 5.5 左下真实遥测 */
+.ms-moss-tel {
+  position: absolute;
+  left: var(--ms-pad-x);
+  bottom: calc(var(--ms-pad-y) + 128px);
+  width: min(340px, 29vw);
+  padding-left: 12px;
+  border-left: 1px solid rgba(143, 211, 255, .22);
+  background: linear-gradient(90deg, rgba(6, 11, 19, .52), transparent 88%);
+  pointer-events: none;
+  opacity: 0;
+  font-family: var(--ms-font-mono);
+  will-change: opacity, transform;
+}
+.ms-tel-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid var(--ms-line);
+  font-size: 8.5px;
+  letter-spacing: .30em;
+  text-transform: uppercase;
+  color: var(--ms-steel-2);
+}
+.ms-tel-head i {
+  width: 5px;
+  height: 5px;
+  background: var(--ms-moss);
+  box-shadow: 0 0 8px rgba(255, 59, 48, .75);
+  transform: rotate(45deg);
+}
+.ms-tel-head b {
+  color: rgba(255, 59, 48, .5);
+  font-weight: 400;
+}
+.ms-tel-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(150, 200, 255, .06);
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.ms-tel-row:last-child { border-bottom: 0; }
+.ms-tel-k {
+  flex: none;
+  width: 78px;
+  font-size: 8.5px;
+  letter-spacing: .18em;
+  color: var(--ms-steel-3);
+}
+.ms-tel-v {
+  min-width: 0;
+  font-size: 10px;
+  letter-spacing: .02em;
+  color: var(--ms-steel);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 5.6 7.10 起 MOSS 已上线 + 引文（放在右侧灰棚留白区，不挡机体/红眼） */
+.ms-online {
+  position: absolute;
+  right: var(--ms-pad-x);
+  top: 55%;
+  width: min(470px, 37vw);
+  pointer-events: none;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.ms-online::before {
+  content: "";
+  position: absolute;
+  left: -44px;
+  right: -30px;
+  top: -34px;
+  bottom: -30px;
+  z-index: -1;
+  background: radial-gradient(ellipse 60% 60% at 42% 50%,
+    rgba(4, 7, 12, .82) 0%,
+    rgba(4, 7, 12, .52) 52%,
+    transparent 84%);
+}
+.ms-online-rule {
+  display: block;
+  width: 104px;
+  height: 1px;
+  margin-bottom: clamp(12px, 1.8vh, 18px);
+  background: linear-gradient(90deg, rgba(255, 59, 48, .95), rgba(255, 59, 48, .1));
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  box-shadow: 0 0 14px rgba(255, 59, 48, .45);
+}
+.ms-online-main {
+  display: inline-block;
+  padding: 9px 22px 10px;
+  border-left: 2px solid var(--ms-moss);
+  background: linear-gradient(90deg, rgba(255, 59, 48, .16) 0%, rgba(4, 7, 12, .66) 40%, rgba(4, 7, 12, .26) 100%);
+  box-shadow:
+    0 0 36px rgba(255, 59, 48, .20),
+    inset 0 0 26px rgba(255, 59, 48, .07);
+  font-family: var(--ms-font-mono);
+  font-size: clamp(26px, 2.9vw, 44px);
+  font-weight: 500;
+  letter-spacing: .14em;
+  color: #fdf7f4;
+  white-space: nowrap;
+  text-shadow:
+    0 0 26px rgba(255, 59, 48, .34),
+    0 0 90px rgba(255, 59, 48, .16);
+  position: relative;
+}
+.ms-online-main::before,
+.ms-online-main::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  width: 9px;
+  height: 1px;
+  background: rgba(255, 122, 82, .9);
+}
+.ms-online-main::before { left: 0; }
+.ms-online-main::after { right: 0; }
+.ms-online-main b {
+  font-weight: 400;
+  color: var(--ms-moss);
+}
+.ms-online-sub {
+  margin-top: clamp(12px, 1.8vh, 18px);
+  font-family: var(--ms-font-cn);
+  font-size: clamp(11px, 1.02vw, 13.5px);
+  letter-spacing: .18em;
+  line-height: 1.7;
+  color: #c9b6b0;
+  opacity: 0;
+  text-shadow: 0 0 18px rgba(0, 0, 0, .8);
+}
+
+/* 5.7 底部进度条 + 右下 INITIALIZING */
+.ms-bottom {
+  position: absolute;
+  left: var(--ms-pad-x);
+  right: var(--ms-pad-x);
+  bottom: calc(var(--ms-pad-y) + 40px);
+  pointer-events: none;
+  opacity: 0;
+}
+.ms-bottom-label {
+  margin-bottom: 10px;
+  font-family: var(--ms-font-mono);
+  font-size: 8.5px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--ms-steel-2);
+  opacity: 0;
+}
+.ms-bottom-label b {
+  color: var(--ms-moss);
+  font-weight: 400;
+}
+.ms-progress {
+  position: relative;
+  height: 1px;
+  background: var(--ms-line-2);
+}
+.ms-progress-fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: linear-gradient(90deg,
+    rgba(125, 20, 13, .42) 0%,
+    var(--ms-moss-dim) 24%,
+    var(--ms-moss) 74%,
+    var(--ms-moss-hi) 100%);
+  box-shadow:
+    0 0 10px rgba(255, 59, 48, .55),
+    0 -1px 14px rgba(255, 59, 48, .22);
+}
+.ms-progress-spark {
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 6px;
+  height: 5px;
+  background: var(--ms-moss);
+  box-shadow: 0 0 12px 2px rgba(255, 59, 48, .8);
+}
+.ms-pct {
+  position: absolute;
+  right: var(--ms-pad-x);
+  bottom: calc(var(--ms-pad-y) + 62px);
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  pointer-events: none;
+  opacity: 0;
+  font-family: var(--ms-font-mono);
+  transform-origin: 100% 100%;
+}
+.ms-pct-cap {
+  position: absolute;
+  right: 2px;
+  top: -19px;
+  font-size: 8px;
+  letter-spacing: .30em;
+  text-transform: uppercase;
+  color: var(--ms-steel-2);
+  /* v0.3 完成态文案变长（BOOT COMPLETE / 加载完成）：不换行，向左伸展 */
+  white-space: nowrap;
+}
+.ms-pct-num {
+  font-size: clamp(38px, 4.5vw, 70px);
+  font-weight: 500;
+  line-height: .82;
+  letter-spacing: .01em;
+  color: var(--ms-ice);
+  text-shadow: 0 0 26px rgba(255, 59, 48, .18);
+  font-variant-numeric: tabular-nums;
+}
+.ms-pct-sign {
+  font-size: clamp(11px, 1.1vw, 14px);
+  letter-spacing: .1em;
+  color: var(--ms-moss);
+  transform: translateY(-3px);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 6. 幕 III 转场：竖直分割
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-split {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+.ms-split__moss,
+.ms-split__earth {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+}
+.ms-split__moss {
+  left: 0;
+  background:
+    linear-gradient(90deg, rgba(22, 6, 4, .26) 0%, rgba(18, 6, 6, .14) 48%, rgba(255, 59, 48, .03) 100%),
+    radial-gradient(ellipse 70% 68% at 28% 50%, rgba(255, 59, 48, .05) 0%, transparent 72%);
+  box-shadow: inset -26px 0 46px -22px rgba(255, 59, 48, .40);
+}
+.ms-split__earth {
+  right: 0;
+  background:
+    linear-gradient(270deg, rgba(3, 8, 18, .20) 0%, rgba(3, 8, 18, .08) 46%, rgba(109, 184, 255, .02) 100%),
+    radial-gradient(ellipse 70% 68% at 76% 50%, rgba(109, 184, 255, .015) 0%, transparent 72%);
+  box-shadow: inset 26px 0 46px -22px rgba(109, 184, 255, .22);
+}
+.ms-split-label {
+  position: absolute;
+  top: calc(var(--ms-frame-inset) + 46px);
+  padding: 5px 12px;
+  font-family: var(--ms-font-mono);
+  font-size: clamp(9px, .88vw, 11px);
+  letter-spacing: .30em;
+  white-space: nowrap;
+  opacity: 0;
+  background: linear-gradient(90deg, rgba(4, 7, 12, .55), rgba(4, 7, 12, .12));
+  text-shadow: 0 0 20px rgba(0, 0, 0, .85);
+}
+.ms-split__moss .ms-split-label {
+  left: var(--ms-pad-x);
+  border-left: 1px solid rgba(255, 59, 48, .75);
+  color: rgba(255, 178, 162, .98);
+}
+.ms-split__earth .ms-split-label {
+  right: var(--ms-pad-x);
+  border-right: 1px solid rgba(109, 184, 255, .75);
+  background: linear-gradient(270deg, rgba(4, 7, 12, .55), rgba(4, 7, 12, .12));
+  color: rgba(178, 220, 255, .98);
+}
+.ms-split__seam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(234, 248, 255, .55) 8%,
+    rgba(234, 248, 255, .96) 30%,
+    #ffffff 50%,
+    rgba(234, 248, 255, .96) 70%,
+    rgba(234, 248, 255, .55) 92%,
+    transparent 100%);
+  box-shadow:
+    0 0 14px rgba(210, 240, 255, .95),
+    0 0 52px rgba(120, 190, 255, .55),
+    0 0 150px rgba(109, 184, 255, .28);
+  opacity: 0;
+  pointer-events: none;
+}
+.ms-split__seam::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 42px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(200, 235, 255, .07) 30%,
+    rgba(235, 250, 255, .38) 50%,
+    rgba(200, 235, 255, .07) 70%,
+    transparent 100%);
+  filter: blur(1.2px);
+}
+.ms-split__ticks {
+  position: absolute;
+  top: 9%;
+  bottom: 9%;
+  left: 50%;
+  width: 8px;
+  transform: translateX(-50%);
+  background:
+    repeating-linear-gradient(to bottom,
+      rgba(232, 250, 255, .95) 0 2px,
+      transparent 2px 11px);
+  opacity: .95;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+}
+.ms-split__handover {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: clamp(16px, 2.4vh, 26px) clamp(28px, 3.6vw, 54px);
+  opacity: 0;
+  will-change: opacity, transform;
+  background: radial-gradient(ellipse 62% 58% at 50% 50%, rgba(3, 6, 12, .72) 0%, rgba(3, 6, 12, .42) 56%, transparent 82%);
+}
+.ms-split__handover::before,
+.ms-split__handover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: min(320px, 24vw);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(196, 236, 255, .65) 50%, transparent);
+}
+.ms-split__handover::before { top: 0; }
+.ms-split__handover::after { bottom: 0; }
+.ms-ho-cn {
+  font-family: var(--ms-font-cn);
+  font-size: clamp(22px, 2.7vw, 42px);
+  font-weight: 500;
+  letter-spacing: .34em;
+  text-indent: .34em;
+  color: #f5fbff;
+  white-space: nowrap;
+  text-shadow:
+    0 0 26px rgba(150, 215, 255, .36),
+    0 0 90px rgba(109, 184, 255, .20);
+}
+.ms-ho-en {
+  margin-top: clamp(10px, 1.6vh, 16px);
+  font-family: var(--ms-font-mono);
+  font-size: clamp(9px, .92vw, 12px);
+  letter-spacing: .44em;
+  text-transform: uppercase;
+  color: rgba(175, 222, 255, .92);
+  white-space: nowrap;
+  text-shadow: 0 0 22px rgba(109, 184, 255, .35);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 7. 幕 IV HUD：流浪地球
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-hud--earth { z-index: 2; }
+.ms-earth-cap {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--ms-pad-y) + 44px);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.4vw, 18px);
+  pointer-events: none;
+  opacity: 0;
+  white-space: nowrap;
+  text-shadow: 0 0 22px rgba(0, 0, 0, .85);
+}
+.ms-earth-cn {
+  font-family: var(--ms-font-cn);
+  font-size: clamp(14px, 1.28vw, 18px);
+  font-weight: 500;
+  letter-spacing: .28em;
+  color: #eef7ff;
+  text-shadow: 0 0 20px rgba(0, 0, 0, .95), 0 0 34px rgba(109, 184, 255, .22);
+}
+.ms-earth-cap i {
+  font-style: normal;
+  font-family: var(--ms-font-mono);
+  font-size: 10px;
+  color: rgba(130, 200, 255, .7);
+}
+.ms-earth-sub {
+  font-family: var(--ms-font-mono);
+  font-size: clamp(10.5px, .98vw, 13px);
+  letter-spacing: .24em;
+  color: rgba(196, 228, 252, .98);
+  text-shadow: 0 0 18px rgba(0, 0, 0, .9);
+}
+.ms-earth-mark {
+  position: absolute;
+  right: var(--ms-pad-x);
+  top: calc(var(--ms-frame-inset) + 42px);
+  font-family: var(--ms-font-mono);
+  font-size: clamp(8px, .78vw, 9.5px);
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(165, 195, 220, .78);
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.ms-earth-mark i {
+  font-style: normal;
+  color: rgba(255, 59, 48, .5);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 8. 全局 HUD / 装饰
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-global-hud {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+}
+/* 全局四角暗角（三幕共用，深空质感；不压画面主体） */
+.ms-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 104% 92% at 50% 46%, transparent 44%, rgba(2, 4, 9, .30) 78%, rgba(2, 4, 9, .62) 100%),
+    linear-gradient(180deg, rgba(2, 4, 9, .30) 0%, transparent 14%, transparent 86%, rgba(2, 4, 9, .34) 100%);
+}
+.ms-grain {
+  position: absolute;
+  inset: 0;
+  opacity: .045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+.ms-scan {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: repeating-linear-gradient(to bottom,
+    rgba(170, 215, 255, .040) 0 1px,
+    transparent 1px 3px);
+}
+.ms-scan::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 14vh;
+  background: linear-gradient(to bottom,
+    rgba(143, 211, 255, .05) 0%,
+    rgba(143, 211, 255, .012) 52%,
+    transparent 100%);
+  border-top: 1px solid rgba(143, 211, 255, .10);
+  animation: ms-scan-move 16s linear infinite;
+}
+@keyframes ms-scan-move {
+  0% { transform: translate3d(0, -15vh, 0); }
+  100% { transform: translate3d(0, 118vh, 0); }
+}
+.ms-frame {
+  position: absolute;
+  inset: var(--ms-frame-inset);
+  opacity: 0;
+}
+.ms-corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 0 solid rgba(196, 222, 244, .34);
+}
+.ms-corner--tl { left: 0; top: 0; border-left-width: 1px; border-top-width: 1px; }
+.ms-corner--tr { right: 0; top: 0; border-right-width: 1px; border-top-width: 1px; }
+.ms-corner--bl { left: 0; bottom: 0; border-left-width: 1px; border-bottom-width: 1px; }
+.ms-corner--br { right: 0; bottom: 0; border-right-width: 1px; border-bottom-width: 1px; }
+.ms-ruler {
+  position: absolute;
+  opacity: .5;
+}
+.ms-ruler--l {
+  left: -13px; top: 34px; bottom: 34px; width: 7px;
+  background: repeating-linear-gradient(to bottom, rgba(170, 210, 245, .24) 0, rgba(170, 210, 245, .24) 1px, transparent 1px, transparent 9px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+}
+.ms-ruler--r {
+  right: -13px; top: 34px; bottom: 34px; width: 7px;
+  background: repeating-linear-gradient(to bottom, rgba(170, 210, 245, .24) 0, rgba(170, 210, 245, .24) 1px, transparent 1px, transparent 9px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+}
+.ms-ruler--t {
+  top: -13px; left: 34px; right: 34px; height: 7px;
+  background: repeating-linear-gradient(to right, rgba(170, 210, 245, .20) 0, rgba(170, 210, 245, .20) 1px, transparent 1px, transparent 9px);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+}
+.ms-ruler--b {
+  bottom: -13px; left: 34px; right: 34px; height: 7px;
+  background: repeating-linear-gradient(to right, rgba(170, 210, 245, .20) 0, rgba(170, 210, 245, .20) 1px, transparent 1px, transparent 9px);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+}
+.ms-topbar {
+  position: absolute;
+  top: calc(var(--ms-frame-inset) + 10px);
+  left: calc(var(--ms-frame-inset) + 18px);
+  right: calc(var(--ms-frame-inset) + 18px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--ms-font-mono);
+  font-size: clamp(8px, .78vw, 9.5px);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ms-steel);
+  opacity: 0;
+  white-space: nowrap;
+}
+.ms-topbar b {
+  font-weight: 400;
+  color: rgba(255, 59, 48, .55);
+}
+.ms-topbar-l { color: var(--ms-ice-2); letter-spacing: .30em; }
+.ms-topbar-r { color: var(--ms-steel-3); }
+.ms-footer {
+  position: absolute;
+  bottom: calc(var(--ms-pad-y) * .42 + 2px);
+  left: var(--ms-pad-x);
+  right: var(--ms-pad-x);
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  font-family: var(--ms-font-mono);
+  font-size: clamp(7.5px, .72vw, 9px);
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  color: var(--ms-steel-3);
+  opacity: 0;
+  white-space: nowrap;
+}
+.ms-footer b {
+  font-weight: 400;
+  color: rgba(255, 59, 48, .62);
+}
+.ms-foot-r { text-align: right; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 9. 闪光 / 脉冲 / 跳过 / 跳过黑场
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  background: #ffffff;
+}
+.ms-pulse {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  width: min(68vw, 880px);
+  height: min(68vw, 880px);
+  transform: translate(-50%, -50%) scale(.3);
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(255, 59, 48, .30) 0%,
+    rgba(255, 59, 48, .10) 34%,
+    transparent 64%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+}
+.ms-skip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--ms-pad-y) * .42 + 20px);
+  transform: translateX(-50%);
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--ms-font-mono);
+  font-size: 8.5px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: rgba(196, 218, 238, .62);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: color 160ms linear;
+  white-space: nowrap;
+}
+.ms-skip span {
+  padding: 2px 6px;
+  border: 1px solid rgba(180, 210, 235, .34);
+  border-radius: 2px;
+  font-size: 8px;
+  letter-spacing: .14em;
+  color: rgba(214, 234, 250, .8);
+}
+.ms-skip:hover {
+  color: rgba(232, 245, 255, .95);
+}
+.ms-skip:hover span {
+  border-color: rgba(232, 245, 255, .7);
+}
+.ms-skipfade {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  background: #020305;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 9.5 v0.3 §4：进度条完成态（全局固定层；4.36→11.0 持续可见，11.0 到 100%）
+ * ══════════════════════════════════════════════════════════════════════════ */
+/* 完成瞬间：整体提亮一次 120–140ms 后回落（0% 亮度=1，定格暂停也不误导） */
+.ms-progress--complete {
+  animation: ms-bar-complete 140ms ease-out 1;
+}
+@keyframes ms-bar-complete {
+  0% { filter: brightness(1); }
+  28% { filter: brightness(2.6) saturate(1.3); }
+  100% { filter: brightness(1); }
+}
+.ms-progress--complete .ms-progress-fill {
+  background: linear-gradient(90deg,
+    rgba(255, 140, 100, .55) 0%,
+    var(--ms-moss) 34%,
+    var(--ms-moss-hi) 70%,
+    #ffe9df 100%);
+  box-shadow:
+    0 0 14px rgba(255, 120, 80, .75),
+    0 0 34px rgba(190, 230, 255, .35),
+    0 -1px 16px rgba(255, 140, 100, .30);
+}
+.ms-progress--complete .ms-progress-spark {
+  background: #ffffff;
+  box-shadow: 0 0 16px 3px rgba(220, 245, 255, .95), 0 0 34px 8px rgba(255, 120, 90, .55);
+}
+/* 完成态文案：INITIALIZING → BOOT COMPLETE / 加载完成（data-complete 由 JS 写） */
+.ms-pct[data-complete="1"] .ms-pct-cap {
+  color: rgba(186, 236, 255, .95);
+  text-shadow: 0 0 14px rgba(150, 220, 255, .45);
+}
+.ms-pct[data-complete="1"] .ms-pct-num {
+  color: #ffffff;
+  text-shadow:
+    0 0 24px rgba(190, 236, 255, .55),
+    0 0 70px rgba(109, 184, 255, .35);
+}
+.ms-pct[data-complete="1"] .ms-pct-sign {
+  color: var(--ms-plasma);
+}
+#dsh-moss-root .ms-moss-rim.ms-rim--complete::before {
+  opacity: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 9.6 v0.3 §5：第二幕「红色准心锁定 MOSS」特效层
+ *   全部为 MOSS 视频之上的叠加层（pointer-events:none），不改变 video 元素
+ *   的 src/currentTime/playbackRate/filter/transform（§5 铁律）。
+ *   闪烁频率在 JS 侧统一 ≤3Hz（正弦包络，无硬闪 / 无高频 strobe）。
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-tgt-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 1;
+  overflow: hidden;
+}
+/* 全屏细网格（3.90–4.30 淡入；透明度由 JS 按运动能量给） */
+.ms-tgt-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background:
+    repeating-linear-gradient(to right, rgba(255, 70, 50, .115) 0 1px, transparent 1px 46px),
+    repeating-linear-gradient(to bottom, rgba(255, 70, 50, .095) 0 1px, transparent 1px 46px),
+    repeating-linear-gradient(to right, rgba(255, 70, 50, .045) 0 1px, transparent 1px 11.5px),
+    repeating-linear-gradient(to bottom, rgba(255, 70, 50, .035) 0 1px, transparent 1px 11.5px);
+  -webkit-mask-image: radial-gradient(ellipse 78% 72% at 50% 50%, #000 34%, rgba(0, 0, 0, .55) 72%, transparent 100%);
+  mask-image: radial-gradient(ellipse 78% 72% at 50% 50%, #000 34%, rgba(0, 0, 0, .55) 72%, transparent 100%);
+  mix-blend-mode: screen;
+}
+/* 红色扫描线（捕获阶段自上而下；锁定后慢速往返） */
+.ms-tgt-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  opacity: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 59, 48, .28) 12%,
+    rgba(255, 90, 70, .95) 42%,
+    #ffd9cd 50%,
+    rgba(255, 90, 70, .95) 58%,
+    rgba(255, 59, 48, .28) 88%,
+    transparent 100%);
+  box-shadow:
+    0 0 12px rgba(255, 59, 48, .85),
+    0 0 42px rgba(255, 59, 48, .45),
+    0 6px 26px rgba(255, 59, 48, .22);
+  mix-blend-mode: screen;
+}
+/* 4 角括号（相对视口四角；由 JS 飞入 / 向主眼收缩） */
+.ms-tgt-corner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 46px;
+  height: 46px;
+  border: 0 solid rgba(255, 96, 74, .95);
+  opacity: 0;
+  filter: drop-shadow(0 0 7px rgba(255, 59, 48, .85));
+  will-change: left, top, transform;
+}
+.ms-tgt-corner[data-corner="tl"] { border-left-width: 2px; border-top-width: 2px; }
+.ms-tgt-corner[data-corner="tr"] { border-right-width: 2px; border-top-width: 2px; }
+.ms-tgt-corner[data-corner="bl"] { border-left-width: 2px; border-bottom-width: 2px; }
+.ms-tgt-corner[data-corner="br"] { border-right-width: 2px; border-bottom-width: 2px; }
+/* 3 个假目标点（平滑闪灭，≈2.3Hz） */
+.ms-tgt-ghost {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px dashed rgba(255, 120, 96, .95);
+  transform: translate(-50%, -50%) rotate(45deg);
+  opacity: 0;
+  box-shadow: 0 0 12px rgba(255, 59, 48, .55);
+}
+.ms-tgt-ghost::before,
+.ms-tgt-ghost::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 21px;
+  height: 1px;
+  background: rgba(255, 96, 74, .85);
+  transform: translate(-50%, -50%);
+}
+.ms-tgt-ghost::after { transform: translate(-50%, -50%) rotate(90deg); }
+/* 准心：0×0 锚点，子元素以自身 translate(-50%,-50%) 居中（屏幕坐标由 JS 写） */
+.ms-tgt-reticle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: 2;
+  will-change: left, top, opacity;
+}
+.ms-tgt-ring-o {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 214px;
+  height: 214px;
+  border: 1px dashed rgba(255, 59, 48, .55);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(2.5);
+  box-shadow:
+    0 0 26px rgba(255, 59, 48, .18),
+    inset 0 0 26px rgba(255, 59, 48, .10);
+}
+.ms-tgt-ring-i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 104px;
+  height: 104px;
+  border: 1.5px solid rgba(255, 96, 74, .92);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1.6);
+  box-shadow:
+    0 0 24px rgba(255, 59, 48, .38),
+    inset 0 0 24px rgba(255, 59, 48, .18);
+}
+/* 8 段刻度环（repeating-conic 45° 分段，节流旋转由 JS 写） */
+.ms-tgt-ticks {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 156px;
+  height: 156px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: repeating-conic-gradient(from 0deg,
+    rgba(255, 110, 84, .95) 0deg 3.2deg,
+    transparent 3.2deg 45deg);
+  -webkit-mask-image: radial-gradient(circle, transparent 64%, #000 66%, #000 94%, transparent 100%);
+  mask-image: radial-gradient(circle, transparent 64%, #000 66%, #000 94%, transparent 100%);
+  filter: drop-shadow(0 0 5px rgba(255, 59, 48, .55));
+}
+.ms-tgt-cross {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 172px;
+  height: 172px;
+  transform: translate(-50%, -50%) scale(0.62);
+}
+.ms-tgt-cross::before,
+.ms-tgt-cross::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.ms-tgt-cross::before {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 96, 74, .55) 22%,
+    rgba(255, 170, 145, .95) 50%,
+    rgba(255, 96, 74, .55) 78%,
+    transparent 100%);
+  box-shadow: 0 0 10px rgba(255, 59, 48, .7);
+}
+.ms-tgt-cross::after {
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(255, 96, 74, .5) 22%,
+    rgba(255, 170, 145, .9) 50%,
+    rgba(255, 96, 74, .5) 78%,
+    transparent 100%);
+  box-shadow: 0 0 10px rgba(255, 59, 48, .6);
+}
+.ms-tgt-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffe3da;
+  box-shadow:
+    0 0 10px 2px rgba(255, 59, 48, .95),
+    0 0 32px 10px rgba(255, 59, 48, .35);
+}
+.ms-tgt-dist {
+  position: absolute;
+  left: 0;
+  top: 116px;
+  transform: translateX(-50%);
+  font-family: var(--ms-font-mono);
+  font-size: 8.5px;
+  letter-spacing: .22em;
+  color: rgba(255, 176, 152, .95);
+  text-shadow: 0 0 14px rgba(255, 59, 48, .55);
+  white-space: nowrap;
+}
+.ms-tgt-locklabel {
+  position: absolute;
+  left: 0;
+  top: 132px;
+  transform: translate(-50%, 0) scale(1.45);
+  padding: 3px 10px;
+  border: 1px solid rgba(255, 96, 74, .85);
+  background: linear-gradient(90deg, rgba(255, 59, 48, .20), rgba(4, 7, 12, .72) 55%);
+  font-family: var(--ms-font-mono);
+  font-size: 9px;
+  letter-spacing: .24em;
+  color: #ffe6dd;
+  text-shadow: 0 0 14px rgba(255, 59, 48, .7);
+  white-space: nowrap;
+  opacity: 0;
+}
+/* 顶部数据读数（TARGET SEARCH → LOCKED；X/Y/DIST/LOCK 数字滚动） */
+.ms-tgt-data {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--ms-frame-inset) + 34px);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  opacity: 0;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.ms-tgt-state {
+  font-family: var(--ms-font-mono);
+  font-size: clamp(10px, 1vw, 12.5px);
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: rgba(255, 142, 118, .98);
+  text-shadow:
+    0 0 16px rgba(255, 59, 48, .65),
+    0 0 44px rgba(255, 59, 48, .28);
+}
+.ms-tgt-read {
+  font-family: var(--ms-font-mono);
+  font-size: clamp(8px, .78vw, 9.5px);
+  letter-spacing: .16em;
+  color: rgba(255, 196, 176, .82);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 12px rgba(255, 59, 48, .45);
+}
+/* 轻微色差闪（全程 ≤2 次，0.16–0.18s 平滑包络） */
+.ms-tgt-chroma {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  mix-blend-mode: screen;
+  background:
+    linear-gradient(90deg,
+      rgba(255, 46, 30, .16) 0%,
+      transparent 7%,
+      transparent 93%,
+      rgba(64, 190, 255, .14) 100%),
+    linear-gradient(180deg, rgba(255, 59, 48, .06) 0%, transparent 18%);
+}
+/* 白色/红色冲击波环 ×2（7.10 / 7.42 起扩散） */
+.ms-lock-shock {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 230px;
+  height: 230px;
+  border: 2px solid rgba(255, 120, 100, .92);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.3);
+  box-shadow:
+    0 0 40px rgba(255, 59, 48, .55),
+    inset 0 0 30px rgba(255, 59, 48, .30);
+  z-index: 5;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.ms-lock-shock--b {
+  border-color: rgba(232, 248, 255, .92);
+  box-shadow:
+    0 0 46px rgba(200, 240, 255, .5),
+    inset 0 0 26px rgba(255, 90, 70, .35);
+}
+/* 红色 vignette 呼吸（锁定后增强） */
+.ms-moss-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 86% 78% at 50% 48%, transparent 50%, rgba(255, 32, 20, .10) 80%, rgba(255, 32, 20, .26) 100%),
+    linear-gradient(180deg, rgba(255, 40, 24, .05) 0%, transparent 16%, transparent 84%, rgba(255, 32, 20, .07) 100%);
+  mix-blend-mode: screen;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 9.7 v0.4 §3.1：终局对焦框（四角对称；几何中心严格 = computeEyePoint() 主眼）
+ *   - .ms-tgt-focus 为 0×0 参考层，子元素全部由 JS 写 left/top + transform
+ *     （translate(-50%,-50%) 定位 → 元素 rect 中心 = 锚点）
+ *   - 四角 L 形臂：元素尺寸 = 2*arm = 0.60*FOCUS_HALF，臂长 = 50%（= 0.30*HALF）
+ *   - 线宽 2.5px / 颜色 var(--ms-moss-hi) / 内发光；7.42 起接替旧准心成为唯一框
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-tgt-focus {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  --ms-focus-box: 60px;
+  --ms-focus-ring: 186px;
+}
+.ms-tgt-focus__corner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--ms-focus-box);
+  height: var(--ms-focus-box);
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  filter: drop-shadow(0 0 7px rgba(255, 59, 48, .8)) drop-shadow(0 0 18px rgba(255, 90, 70, .35));
+  will-change: left, top, transform;
+}
+.ms-tgt-focus__corner::before,
+.ms-tgt-focus__corner::after {
+  content: "";
+  position: absolute;
+  background: var(--ms-moss-hi);
+  box-shadow:
+    0 0 6px rgba(255, 90, 70, .85),
+    0 0 16px rgba(255, 59, 48, .45),
+    inset 0 0 4px rgba(255, 236, 228, .9);
+}
+.ms-tgt-focus__corner::before { height: 2.5px; }
+.ms-tgt-focus__corner::after { width: 2.5px; }
+/* TL：臂向 +x / +y 从锚点伸向框内 */
+.ms-tgt-focus__corner[data-focus-corner="tl"]::before { left: 50%; top: calc(50% - 1.25px); width: 50%; }
+.ms-tgt-focus__corner[data-focus-corner="tl"]::after { left: calc(50% - 1.25px); top: 50%; height: 50%; }
+/* TR：臂向 -x / +y */
+.ms-tgt-focus__corner[data-focus-corner="tr"]::before { right: 50%; top: calc(50% - 1.25px); width: 50%; }
+.ms-tgt-focus__corner[data-focus-corner="tr"]::after { left: calc(50% - 1.25px); top: 50%; height: 50%; }
+/* BL：臂向 +x / -y */
+.ms-tgt-focus__corner[data-focus-corner="bl"]::before { left: 50%; top: calc(50% - 1.25px); width: 50%; }
+.ms-tgt-focus__corner[data-focus-corner="bl"]::after { left: calc(50% - 1.25px); bottom: 50%; height: 50%; }
+/* BR：臂向 -x / -y */
+.ms-tgt-focus__corner[data-focus-corner="br"]::before { right: 50%; top: calc(50% - 1.25px); width: 50%; }
+.ms-tgt-focus__corner[data-focus-corner="br"]::after { left: calc(50% - 1.25px); bottom: 50%; height: 50%; }
+/* 四边中点 tick */
+.ms-tgt-focus__tick {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5px;
+  height: 9px;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  background: linear-gradient(180deg, transparent, var(--ms-moss-hi) 22%, var(--ms-moss-hi) 78%, transparent);
+  filter: drop-shadow(0 0 6px rgba(255, 59, 48, .7));
+}
+.ms-tgt-focus__tick[data-focus-tick="l"],
+.ms-tgt-focus__tick[data-focus-tick="r"] {
+  width: 9px;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, var(--ms-moss-hi) 22%, var(--ms-moss-hi) 78%, transparent);
+}
+/* 内部圆环（沿用红色准心的环语言，收进框内） */
+.ms-tgt-focus__ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--ms-focus-ring);
+  height: var(--ms-focus-ring);
+  border: 1px solid rgba(255, 96, 74, .30);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  box-shadow:
+    0 0 22px rgba(255, 59, 48, .18),
+    inset 0 0 26px rgba(255, 59, 48, .12);
+  -webkit-mask-image: conic-gradient(from 0deg, #000 0deg 12deg, transparent 12deg 88deg, #000 88deg 102deg, transparent 102deg 178deg, #000 178deg 192deg, transparent 192deg 268deg, #000 268deg 282deg, transparent 282deg 358deg, #000 358deg 360deg);
+  mask-image: conic-gradient(from 0deg, #000 0deg 12deg, transparent 12deg 88deg, #000 88deg 102deg, transparent 102deg 178deg, #000 178deg 192deg, transparent 192deg 268deg, #000 268deg 282deg, transparent 282deg 358deg, #000 358deg 360deg);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 9.8 v0.4 §4：第二→三幕连续转场
+ *   - 预转场十字线（横=全宽 / 竖=全高，竖线滑到 50% 成为分割线）
+ *   - 8.24 水平拉丝；分割线 scaleY 0→1；四角 fly-out → 画面角标
+ *   - 右幕 data wipe 4 条水平扫描带；接缝数据包 ×3；点火预告
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-split__prep-h,
+.ms-split__prep-v {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  will-change: left, top, width, height, opacity;
+}
+.ms-split__prep-h {
+  height: 2.5px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, rgba(255, 59, 48, 0) 0%, rgba(255, 59, 48, .85) 6%, #fff 50%, rgba(255, 59, 48, .85) 94%, rgba(255, 59, 48, 0) 100%);
+  box-shadow:
+    0 0 12px rgba(255, 120, 90, .75),
+    0 0 44px rgba(255, 59, 48, .40),
+    0 0 130px rgba(255, 90, 70, .22);
+}
+.ms-split__prep-v {
+  width: 2.5px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(180deg, rgba(255, 59, 48, 0) 0%, rgba(255, 59, 48, .85) 6%, #fff 50%, rgba(255, 59, 48, .85) 94%, rgba(255, 59, 48, 0) 100%);
+  box-shadow:
+    0 0 12px rgba(255, 120, 90, .75),
+    0 0 44px rgba(255, 59, 48, .40),
+    0 0 130px rgba(255, 90, 70, .22);
+}
+/* 8.24 起水平拉丝扫描线（1px，自左向右一次） */
+.ms-split__flashline {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18vw;
+  height: 1.5px;
+  opacity: 0;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, transparent 0%, rgba(234, 248, 255, .30) 30%, rgba(255, 255, 255, .95) 50%, rgba(234, 248, 255, .30) 70%, transparent 100%);
+  box-shadow: 0 0 10px rgba(200, 240, 255, .85), 0 0 34px rgba(150, 210, 255, .45);
+  mix-blend-mode: screen;
+}
+/* 对焦框四角 fly-out → 幕 III 画面角标 */
+.ms-split__corner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  opacity: 0;
+  border: 0 solid rgba(234, 248, 255, .88);
+  filter: drop-shadow(0 0 7px rgba(150, 220, 255, .65));
+  transform: translate(-50%, -50%);
+  will-change: left, top, opacity;
+}
+.ms-split__corner[data-split-corner="tl"] { border-left-width: 2px; border-top-width: 2px; }
+.ms-split__corner[data-split-corner="tr"] { border-right-width: 2px; border-top-width: 2px; }
+.ms-split__corner[data-split-corner="bl"] { border-left-width: 2px; border-bottom-width: 2px; }
+.ms-split__corner[data-split-corner="br"] { border-right-width: 2px; border-bottom-width: 2px; }
+/* 右幕 data wipe：4 条水平扫描带（周期 25%） */
+.ms-split__wipe {
+  position: absolute;
+  left: 50%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(to bottom,
+    transparent 0 calc(25% - 1.5px),
+    rgba(196, 236, 255, .62) calc(25% - 1.5px) 25%,
+    transparent 25% 50%);
+  filter: blur(.4px);
+  mix-blend-mode: screen;
+}
+/* 接缝数据包 ×3（9.12–9.90 循环 2 次，左→右） */
+.ms-seam-packet {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  background: #f2fcff;
+  box-shadow:
+    0 0 10px 2px rgba(180, 235, 255, .95),
+    0 0 26px 6px rgba(110, 190, 255, .55);
+}
+.ms-seam-flash {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 26px;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(180deg, transparent, rgba(234, 248, 255, .98) 50%, transparent);
+  box-shadow: 0 0 12px 2px rgba(170, 225, 255, .85);
+}
+/* 9.82–10.18 点火预告（右上方，避让全局 HUD 的 INITIALIZING 百分比与底部进度条） */
+.ms-split__engine {
+  position: absolute;
+  right: var(--ms-pad-x);
+  top: calc(var(--ms-frame-inset) + 74px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  font-family: var(--ms-font-mono);
+  font-size: 9px;
+  letter-spacing: .30em;
+  text-transform: uppercase;
+  color: rgba(178, 226, 255, .95);
+  text-shadow: 0 0 16px rgba(120, 200, 255, .55), 0 0 40px rgba(80, 150, 240, .28);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.ms-split__engine b { font-weight: 500; color: #eaf8ff; }
+.ms-split__engine i { font-style: normal; color: rgba(255, 59, 48, .72); }
+.ms-split__engine span { font-family: var(--ms-font-cn); letter-spacing: .26em; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 9.9 v0.4 §5：地球冷态遮罩 / 点火闪光 / 扩散光环
+ *   - 幕 III 冷态：.ms-clip 上挂圆形 mask（行星 + 大气边缘），尾迹不可见
+ *   - 幕 IV 点火：.ms-ignite-flash（径向 + 行星边缘光弧，峰值 0.85）
+ *     + .ms-ignite-burst ×2（scale 0.4→2.6 / 0.55s / fade）
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-ignite-flash {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background:
+    radial-gradient(circle at var(--ms-planet-cx, 70%) var(--ms-planet-cy, 50%),
+      rgba(214, 246, 255, .92) 0%,
+      rgba(160, 226, 255, .62) 9%,
+      rgba(105, 190, 255, .28) 22%,
+      rgba(60, 130, 240, .08) 40%,
+      transparent 62%);
+}
+.ms-ignite-flash::before {
+  content: "";
+  position: absolute;
+  left: var(--ms-planet-cx, 70%);
+  top: var(--ms-planet-cy, 50%);
+  width: calc(var(--ms-planet-r, 220px) * 2);
+  height: calc(var(--ms-planet-r, 220px) * 2);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(226, 250, 255, .8);
+  box-shadow:
+    0 0 26px rgba(170, 232, 255, .85),
+    0 0 82px rgba(110, 190, 255, .40),
+    inset 0 0 48px rgba(120, 200, 255, .32);
+}
+.ms-ignite-burst {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--ms-planet-r, 220px) * 2);
+  height: calc(var(--ms-planet-r, 220px) * 2);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.4);
+  border-radius: 50%;
+  border: 2px solid var(--ms-plasma);
+  box-shadow:
+    0 0 30px rgba(165, 230, 255, .75),
+    inset 0 0 40px rgba(120, 200, 255, .30);
+  mix-blend-mode: screen;
+}
+.ms-earth-plume-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  background: var(--ms-void);
+}
+/* 幕 III 冷态：给地球层垫一层极暗冷色星空底（遮罩外区域不至于死黑，也不能抬亮
+ * 「右 35% 区域」的均值亮度——v0.4 §5.4 像素断言：冷态 < 点火后 55%） */
+.ms-act--earth.ms-earth-cold {
+  background:
+    radial-gradient(1.4px 1.4px at 18% 24%, rgba(255, 255, 255, .38), transparent 60%),
+    radial-gradient(1.1px 1.1px at 32% 68%, rgba(255, 255, 255, .28), transparent 60%),
+    radial-gradient(1.6px 1.6px at 72% 22%, rgba(255, 255, 255, .34), transparent 60%),
+    radial-gradient(1px 1px at 84% 62%, rgba(255, 255, 255, .27), transparent 60%),
+    radial-gradient(1.2px 1.2px at 58% 84%, rgba(255, 255, 255, .30), transparent 60%),
+    radial-gradient(1px 1px at 46% 14%, rgba(200, 230, 255, .26), transparent 60%),
+    radial-gradient(ellipse 70% 62% at 52% 54%, #010206 0%, #010204 68%, #000100 100%);
+}
+/* 幕 III 冷态：行星外圈压暗（v0.4 §5.4 像素断言：冷态均值亮度 < 点火后 55%，
+ * 同时 hot/cold ≥1.8×）；只压「行星之外」的右半空间，行星本体不受影响 */
+.ms-act--earth.ms-earth-cold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: radial-gradient(ellipse 50% 66% at 66.4% 50%,
+    transparent 0 38%,
+    rgba(0, 0, 0, .38) 52%,
+    rgba(0, 0, 0, .80) 100%);
+}
+
+/* 幕 III（split）：全局 HUD 轻压暗 32%，让分割构图更干净，也保证 §5.4 像素断言
+ * （冷态右半区均值亮度 < 点火后 55% / hot/cold ≥1.8×；HUD 文字是两侧同亮常量，压暗后才拉开） */
+#dsh-moss-root[data-phase="split"] .ms-global-hud {
+  opacity: .72;
+}
+
+/* 幕 IV 地球字幕：v0.4 字号 +1px / 字距 +0.04em */
+.ms-earth-cn { font-size: clamp(15px, 1.36vw, 19px); letter-spacing: .32em; }
+.ms-earth-sub { letter-spacing: .28em; }
+.ms-earth-mark { letter-spacing: .28em; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 9.10 v0.4 §6 段 1：BOOT COMPLETE 定格印章（11.86 clip 揭开 → 12.06 淡出）
+ * ══════════════════════════════════════════════════════════════════════════ */
+.ms-boot-stamp {
+  position: absolute;
+  left: 50%;
+  top: 57.5%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  clip-path: inset(0 100% 0 0);
+  -webkit-clip-path: inset(0 100% 0 0);
+  will-change: opacity, clip-path;
+}
+.ms-boot-stamp__line {
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  width: min(430px, 38vw);
+  height: 1px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: 50% 50%;
+  background: linear-gradient(90deg, transparent, rgba(206, 240, 255, .85) 50%, transparent);
+  box-shadow: 0 0 16px rgba(150, 215, 255, .55);
+}
+.ms-boot-stamp__main {
+  font-family: var(--ms-font-mono);
+  font-size: clamp(26px, 3.3vw, 54px);
+  font-weight: 500;
+  letter-spacing: .30em;
+  text-indent: .30em;
+  line-height: 1.05;
+  color: #f7fdff;
+  white-space: nowrap;
+  text-shadow:
+    0 0 26px rgba(180, 235, 255, .45),
+    0 0 80px rgba(110, 190, 255, .28),
+    0 0 180px rgba(80, 150, 240, .18);
+}
+.ms-boot-stamp__sub {
+  margin-top: clamp(10px, 1.5vh, 16px);
+  font-family: var(--ms-font-cn);
+  font-size: clamp(11px, 1.02vw, 14px);
+  letter-spacing: .52em;
+  text-indent: .52em;
+  color: rgba(196, 232, 255, .92);
+  white-space: nowrap;
+  text-shadow: 0 0 20px rgba(110, 190, 255, .35);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 10. 状态修饰：calm（用户显式 reducedMotion） / hold（QA 定格）
+ * ══════════════════════════════════════════════════════════════════════════ */
+/* .ms-calm：只停装饰动画；视频、四幕时间线、HUD 全部保留（§1 红线） */
+#dsh-moss-root.ms-calm .ms-scan::before,
+#dsh-moss-root.ms-calm .ms-moss-rim::before,
+#dsh-moss-root.ms-calm .ms-gaze-dot,
+#dsh-moss-root.ms-calm .ms-caret,
+#dsh-moss-root.ms-calm .ms-neuro-shine,
+#dsh-moss-root.ms-calm .ms-glitch {
+  animation: none !important;
+}
+/* v0.3 §5：--calm 只保留核心准心锁定（去网格/扫描/角括号/假目标/冲击波/色差/震动/vignette） */
+#dsh-moss-root.ms-calm .ms-tgt-grid,
+#dsh-moss-root.ms-calm .ms-tgt-scan,
+#dsh-moss-root.ms-calm .ms-tgt-corner,
+#dsh-moss-root.ms-calm .ms-tgt-ghost,
+#dsh-moss-root.ms-calm .ms-tgt-chroma,
+#dsh-moss-root.ms-calm .ms-lock-shock,
+#dsh-moss-root.ms-calm .ms-moss-vignette {
+  display: none !important;
+}
+#dsh-moss-root.ms-calm .ms-tgt-ticks {
+  display: none !important;
+}
+/* v0.4 §4：calm 去掉 wipe/扫描/数据包/飞散/点火光环，只保留 0.3s 淡入切分 */
+#dsh-moss-root.ms-calm .ms-split__prep-h,
+#dsh-moss-root.ms-calm .ms-split__prep-v,
+#dsh-moss-root.ms-calm .ms-split__flashline,
+#dsh-moss-root.ms-calm .ms-split__corner,
+#dsh-moss-root.ms-calm .ms-split__wipe,
+#dsh-moss-root.ms-calm .ms-seam-packet,
+#dsh-moss-root.ms-calm .ms-seam-flash,
+#dsh-moss-root.ms-calm .ms-split__engine,
+#dsh-moss-root.ms-calm .ms-ignite-burst {
+  display: none !important;
+}
+/* QA 定格：暂停全部 CSS 动画，相位完全由 JS 内联样式决定 */
+#dsh-moss-root.ms-hold,
+#dsh-moss-root.ms-hold *,
+#dsh-moss-root.ms-hold *::before,
+#dsh-moss-root.ms-hold *::after {
+  animation-play-state: paused !important;
+  transition: none !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 11. 响应式（1280×720 ～ 2560×1440；只缩构图，不改时间线）
+ * ══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 1500px), (max-height: 860px) {
+  .ms-moss-log { width: min(330px, 31vw); gap: 7px; }
+  .ms-moss-log .ms-log-line { font-size: 9.5px; }
+  .ms-moss-tel { width: min(300px, 30vw); bottom: calc(var(--ms-pad-y) + 112px); }
+  .ms-online { top: 54%; width: min(400px, 38vw); }
+  .ms-neuro-log { bottom: calc(var(--ms-pad-y) + 44px); gap: 7px; }
+  .ms-tgt-data { top: calc(var(--ms-frame-inset) + 28px); }
+  .ms-tgt-ring-o { width: 178px; height: 178px; }
+  .ms-tgt-ticks { width: 132px; height: 132px; }
+  .ms-tgt-cross { width: 146px; height: 146px; }
+}
+@media (max-width: 1180px) {
+  .ms-moss-log { display: none; }
+  .ms-moss-tel { display: none; }
+  .ms-topbar-r { display: none; }
+  .ms-ruler { display: none; }
+  .ms-neuro-title { letter-spacing: .10em; }
+  .ms-online { top: 52%; width: min(360px, 44vw); }
+  .ms-earth-mark { display: none; }
+  .ms-tgt-read { display: none; }
+}
+@media (max-height: 700px) {
+  .ms-moss-tel { bottom: calc(var(--ms-pad-y) + 96px); }
+  .ms-online { top: 46%; }
+  .ms-neuro-log { bottom: calc(var(--ms-pad-y) + 36px); }
+  .ms-link { width: 86px; height: 86px; }
+  .ms-prologue .ms-pro-line { bottom: calc(var(--ms-pad-y) + 76px); }
+  .ms-pro-word { bottom: calc(var(--ms-pad-y) + 50px); }
+  .ms-pro-cap { bottom: calc(var(--ms-pad-y) + 34px); }
+  .ms-tgt-dist { top: 100px; }
+  .ms-tgt-locklabel { top: 116px; }
+}
+@media (max-width: 700px) {
+  .ms-frame,
+  .ms-footer,
+  .ms-bci-tag { display: none; }
+  .ms-neuro-title { font-size: clamp(24px, 7vw, 38px); }
+  .ms-550w { font-size: clamp(34px, 11vw, 56px); }
+  .ms-online-main { white-space: normal; }
+  .ms-tgt-data { display: none; }
+  .ms-tgt-dist,
+  .ms-tgt-locklabel { display: none; }
+}

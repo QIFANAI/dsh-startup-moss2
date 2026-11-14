@@ -1,0 +1,9 @@
+# dsh-startup-moss2 — DSH bundle patch
+#
+# Host 半侧（webServer 路由 + 首屏注入 + 配置 API）挂进当前 profile；
+# 浏览器半侧（皮肤 / 启动层 / 设置页）由 package.json 的 dsh.client 组装。
+# 本包内嵌 Wallpaper Engine 第三方素材（地球 / MOSS 机体视频）与用户自制音效；
+# 完整素材随开源仓库发布，版权归原权利人（见 THIRD-PARTY-NOTICES.md）。
+- insert:
+    - id: dsh-startup-moss2
+      name: dsh-startup-moss2

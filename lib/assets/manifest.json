@@ -1,0 +1,355 @@
+{
+  "package": "dsh-startup-moss2",
+  "version": "0.5.0",
+  "generatedAt": "2026-11-09T04:41:33.838Z",
+  "generator": "asset-lab",
+  "notes": [
+    "v0.2 资产：新增神经接口开幕（neuro-boot 1080/720 + poster）与 MOSS 苏醒全屏实拍（moss-cinema 1080/720 + poster）；earth 四件与 fonts 三件沿用 v0.1 已验证产物（字节/sha256 与 v0.1 manifest 完全一致，未重编）。",
+    "所有视频均为 H.264 High / yuv420p / bt709（primaries+transfer+space）/ 无音轨 / +faststart，未叠加任何文字或水印。",
+    "体积口径：视频上限用 MiB（1024^2），海报上限用 KiB（1024）；实测占比见 docs/assets-report.md §5。",
+    "地球循环为 30.00s（源 30→60s 天然周期 + 1s xfade 回卷）。设计规格早期草案写的 28.00s 为过时数字，Lead 已修正为 30.00s；代码侧 armHandoff(t) 必须用 t % duration，不得写死 28。",
+    "海报均从对应成片第 0 帧导出（webp q80 method=6；earth 另有 jpg q90 4:4:4 兜底），poster↔视频第 0 帧一致性已量化进 assets-report §6。",
+    "素材 3（2940368322）是 Wallpaper Engine scene 工程（scene.pkg + 自定义 shader），离开引擎不可播放，v0.2 不打进包；其 preview.jpg 已复制为 docs/assets-ref/transition-ref.jpg 作为「左 MOSS / 右地球竖分割」的设计参照，运行时由素材 1+2 实时合成。",
+    "moss-eye-720.mp4 / moss-eye-poster.webp 为 v0.1 废弃资产，已从 v0.2 宿主白名单（lib/index.js ASSET_TYPES）移除、不在本 manifest 收录；文件由 Lead 在收尾时删除。",
+    "素材为 Wallpaper Engine 工坊第三方内容：仅本机自用，不二次分发、不上公共 registry。",
+    "自检数据源：_work/assets/v02/selfcheck.json（sha256/bytes/ffprobe 全部实测）+ _work/assets/v02/ffprobe/*.json（每文件全量 ffprobe JSON）。",
+    "v0.5（2026-11-09）：earth 720/1080 短 GOP（g=15）重编码，解决真宿主 seek 冻结导致幕 IV 地球变「静帧」；新增 audio/moss-arm-sfx.m4a（用户自制 MOSS 机械臂实录音效，源 = 带音效moss机器人.mp4 音轨 [0.58,5.00]，对齐 moss-cinema 本地 0–4.40s / 绝对 3.90–8.30s）。"
+  ],
+  "assets": [
+    {
+      "file": "earth/earth-1080.mp4",
+      "role": "ambient-background-high",
+      "title": "地球动态背景 1080p（主界面唯一动态背景；启动动画第四幕与 UI ambient 共用）",
+      "bytes": 8561335,
+      "limit_bytes": 12582912,
+      "sha256": "d02ebb414f05afeddd55483b210a8bfcd719f3fa54c98841ff6a4f24cf80b1e1",
+      "dimensions": "1920x1080",
+      "duration": 30,
+      "fps": 30,
+      "frames": 900,
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "audio": "none",
+      "faststart": true,
+      "container": "mp4",
+      "color": {
+        "primaries": "bt709",
+        "transfer": "bt709",
+        "space": "bt709",
+        "range": "tv"
+      },
+      "source": {
+        "file": "2949159595/流浪地球_15_1.mp4",
+        "in_s": 30,
+        "out_s": 60,
+        "preroll_in_s": 29,
+        "preroll_out_s": 30,
+        "xfade_s": 1,
+        "loop_period_s": 30,
+        "sha256": "ee49421a74b38938d72f264b9689dfd39a28748319c9b05034b4595c07ea84db",
+        "note": "源视频为精确 30.00s 等离子周期；尾部 1s 与 [29,30) 段交叉淡化回卷"
+      },
+      "loop": "source 30.00s natural period + 1s xfade wrap",
+      "generation": "ffmpeg -ss 28 -i \"2949159595/流浪地球_15_1.mp4\" -filter_complex \"[0:v]trim=start=2:end=32,setpts=PTS-STARTPTS,fps=30,scale=1920:1080:flags=lanczos,setsar=1,format=yuv420p[A];[0:v]trim=start=1:end=2,setpts=PTS-STARTPTS,fps=30,scale=1920:1080:flags=lanczos,setsar=1,format=yuv420p[B];[A][B]xfade=transition=fade:duration=1:offset=29[v]\" -map \"[v]\" -an -c:v libx264 -profile:v high -pix_fmt yuv420p -crf 24 -preset slow -color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart -y lib/assets/earth/earth-1080.mp4",
+      "keyframe_interval_s": 0.5,
+      "gop_frames": 15,
+      "revision": "v0.5-short-gop",
+      "notes_v05": "v0.5 短 GOP 重编码：仅改变 GOP/faststart 与码率控制以降低 seek 延迟（长 GOP 8.33s 时真宿主 seek 最长 1.9s→短 GOP 实测 10–20ms）；帧内容/构图/首帧不变（PSNR 720p avg 50.8dB / 1080p avg 52.1dB）。生成命令见 generation_v05。",
+      "generation_v05": "ffmpeg -i <旧成片> -c:v libx264 -preset medium -crf 23 -g 15 -keyint_min 15 -sc_threshold 0 -pix_fmt yuv420p -an -movflags +faststart -y <新成片>（v0.4 旧片保留在 _work/v05/encode/orig-*.mp4）"
+    },
+    {
+      "file": "earth/earth-720.mp4",
+      "role": "ambient-background-standard",
+      "title": "地球动态背景 720p（standard 画质档）",
+      "bytes": 4180284,
+      "limit_bytes": 6291456,
+      "sha256": "6835a6c7aea9c85417776d0408ee1c533f29395440fedffcff9ed13c5bdbeb21",
+      "dimensions": "1280x720",
+      "duration": 30,
+      "fps": 30,
+      "frames": 900,
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "audio": "none",
+      "faststart": true,
+      "container": "mp4",
+      "color": {
+        "primaries": "bt709",
+        "transfer": "bt709",
+        "space": "bt709",
+        "range": "tv"
+      },
+      "source": {
+        "file": "2949159595/流浪地球_15_1.mp4",
+        "in_s": 30,
+        "out_s": 60,
+        "preroll_in_s": 29,
+        "preroll_out_s": 30,
+        "xfade_s": 1,
+        "loop_period_s": 30,
+        "sha256": "ee49421a74b38938d72f264b9689dfd39a28748319c9b05034b4595c07ea84db"
+      },
+      "loop": "与 1080p 同源同窗口同回卷",
+      "generation": "ffmpeg -ss 28 -i \"2949159595/流浪地球_15_1.mp4\" -filter_complex \"[0:v]trim=start=2:end=32,setpts=PTS-STARTPTS,fps=30,scale=1280:720:flags=lanczos,setsar=1,format=yuv420p[A];[0:v]trim=start=1:end=2,setpts=PTS-STARTPTS,fps=30,scale=1280:720:flags=lanczos,setsar=1,format=yuv420p[B];[A][B]xfade=transition=fade:duration=1:offset=29[v]\" -map \"[v]\" -an -c:v libx264 -profile:v high -pix_fmt yuv420p -crf 24 -preset slow -color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart -y lib/assets/earth/earth-720.mp4",
+      "keyframe_interval_s": 0.5,
+      "gop_frames": 15,
+      "revision": "v0.5-short-gop",
+      "notes_v05": "v0.5 短 GOP 重编码：仅改变 GOP/faststart 与码率控制以降低 seek 延迟（长 GOP 8.33s 时真宿主 seek 最长 1.9s→短 GOP 实测 10–20ms）；帧内容/构图/首帧不变（PSNR 720p avg 50.8dB / 1080p avg 52.1dB）。生成命令见 generation_v05。",
+      "generation_v05": "ffmpeg -i <旧成片> -c:v libx264 -preset medium -crf 23 -g 15 -keyint_min 15 -sc_threshold 0 -pix_fmt yuv420p -an -movflags +faststart -y <新成片>（v0.4 旧片保留在 _work/v05/encode/orig-*.mp4）"
+    },
+    {
+      "file": "earth/earth-poster.webp",
+      "role": "ambient-poster-primary",
+      "title": "首屏海报（earth-1080 第 0 帧；webp 失败时用 jpg 兜底）",
+      "bytes": 26848,
+      "limit_bytes": 225280,
+      "sha256": "5b73cafb198f1f1cf54043e1ae7bd16189ae20ce437e86d9ff5b4745ac10844f",
+      "dimensions": "1920x1080",
+      "source": {
+        "file": "lib/assets/earth/earth-1080.mp4",
+        "frame": "first (n=0)",
+        "note": "从成片第 0 帧导出，不是源视频任意帧；poster↔帧0 SSIM 0.98641"
+      },
+      "loop": null,
+      "generation": "ffmpeg -i lib/assets/earth/earth-1080.mp4 -vf \"select=eq(n\\,0)\" -frames:v 1 -y _work/assets/earth/poster_firstframe_1080.png && python -c \"from PIL import Image; im=Image.open('_work/assets/earth/poster_firstframe_1080.png').convert('RGB'); im.save('lib/assets/earth/earth-poster.webp','WEBP',quality=82,method=6); im.save('lib/assets/earth/earth-poster.jpg','JPEG',quality=90,subsampling=0,optimize=True)\""
+    },
+    {
+      "file": "earth/earth-poster.jpg",
+      "role": "ambient-poster-fallback",
+      "title": "首屏海报 jpg 兜底（老 WebView / webp 失败）",
+      "bytes": 99748,
+      "limit_bytes": 409600,
+      "sha256": "612be4fce840279585eb0c3c033e68ce03f5d61c3c59fbeb7513d92fd19a733c",
+      "dimensions": "1920x1080",
+      "source": {
+        "file": "lib/assets/earth/earth-1080.mp4",
+        "frame": "first (n=0)",
+        "note": "poster↔帧0 SSIM 0.98382"
+      },
+      "loop": null,
+      "generation": "同 earth-poster.webp（同一次 Pillow 输出）"
+    },
+    {
+      "file": "neuro/neuro-boot-1080.mp4",
+      "role": "splash-act1-high",
+      "title": "DEEPSEEK HARNESS 神经接口开幕 1080p（启动动画第一幕）",
+      "bytes": 1784602,
+      "limit_bytes": 4194304,
+      "sha256": "93caee7452068d53c0968cb0e52b1540266b7debe2a9b77da8b400623b724988",
+      "dimensions": "1920x1080",
+      "duration": 3.4,
+      "fps": 25,
+      "frames": 85,
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "audio": "none",
+      "faststart": true,
+      "container": "mp4",
+      "color": {
+        "primaries": "bt709",
+        "transfer": "bt709",
+        "space": "bt709",
+        "range": "tv"
+      },
+      "source": {
+        "file": "2992034258/最终.mp4",
+        "in_s": 20.8,
+        "out_s": 24.2,
+        "seek": "input -ss 20.80（accurate seek，帧级对齐已用源帧 520 验证）",
+        "source_fps": 25,
+        "frames": 85,
+        "sha256": "6ec2614221f5c196e7f9019f882f05b7ec720fd1c4286f6e4c51ecd98c08e57f",
+        "note": "BCI 脑机接口面板：数据生成 83%→100%；末尾保留素材自带故障闪光（clip 2.72-2.80s / 3.24-3.32s 两段，主闪光在 3.24-3.32s）作为切入 MOSS 的剪辑点"
+      },
+      "loop": null,
+      "generation": "ffmpeg -ss 20.80 -i \"2992034258/最终.mp4\" -t 3.40 -vf \"fps=25,scale=1920:1080:flags=lanczos,setsar=1,format=yuv420p\" -frames:v 85 -an -c:v libx264 -preset slow -crf 24 -profile:v high -pix_fmt yuv420p -color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart -y lib/assets/neuro/neuro-boot-1080.mp4"
+    },
+    {
+      "file": "neuro/neuro-boot-720.mp4",
+      "role": "splash-act1-standard",
+      "title": "DEEPSEEK HARNESS 神经接口开幕 720p（standard 画质档）",
+      "bytes": 937830,
+      "limit_bytes": 1677721,
+      "sha256": "6972e6401bb12883d517869db851c92c719e73e87d8560e8a7af56b3d669b0de",
+      "dimensions": "1280x720",
+      "duration": 3.4,
+      "fps": 25,
+      "frames": 85,
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "audio": "none",
+      "faststart": true,
+      "container": "mp4",
+      "color": {
+        "primaries": "bt709",
+        "transfer": "bt709",
+        "space": "bt709",
+        "range": "tv"
+      },
+      "source": {
+        "file": "2992034258/最终.mp4",
+        "in_s": 20.8,
+        "out_s": 24.2,
+        "seek": "input -ss 20.80（accurate seek）",
+        "source_fps": 25,
+        "frames": 85,
+        "sha256": "6ec2614221f5c196e7f9019f882f05b7ec720fd1c4286f6e4c51ecd98c08e57f"
+      },
+      "loop": null,
+      "generation": "ffmpeg -ss 20.80 -i \"2992034258/最终.mp4\" -t 3.40 -vf \"fps=25,scale=1280:720:flags=lanczos,setsar=1,format=yuv420p\" -frames:v 85 -an -c:v libx264 -preset slow -crf 24 -profile:v high -pix_fmt yuv420p -color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart -y lib/assets/neuro/neuro-boot-720.mp4"
+    },
+    {
+      "file": "neuro/neuro-boot-poster.webp",
+      "role": "splash-act1-poster",
+      "title": "神经接口开幕海报（neuro-boot 第 0 帧，启动动画第一幕淡入底）",
+      "bytes": 183354,
+      "limit_bytes": 204800,
+      "sha256": "c92236a886cac896b990d3456383a22186cd4b8a5f42ddc450c9830d5a0de47a",
+      "dimensions": "1920x1080",
+      "source": {
+        "file": "lib/assets/neuro/neuro-boot-1080.mp4",
+        "frame": "first (n=0)",
+        "note": "poster↔帧0 SSIM 0.99426"
+      },
+      "loop": null,
+      "generation": "ffmpeg -i lib/assets/neuro/neuro-boot-1080.mp4 -vf \"select=eq(n\\,0)\" -frames:v 1 -y _work/assets/v02/frames/neuro_1080_frame0.png && python -c \"from PIL import Image; Image.open('_work/assets/v02/frames/neuro_1080_frame0.png').convert('RGB').save('lib/assets/neuro/neuro-boot-poster.webp','WEBP',quality=80,method=6)\""
+    },
+    {
+      "file": "moss/moss-cinema-1080.mp4",
+      "role": "splash-act2-high",
+      "title": "MOSS 苏醒全屏实拍 1080p（启动动画第二幕）",
+      "bytes": 932134,
+      "limit_bytes": 6291456,
+      "sha256": "96fc15b361a50d76342c2406ff3937769f1941c3ed07bb897871201f6e29f710",
+      "dimensions": "1920x1080",
+      "duration": 5,
+      "fps": 30,
+      "frames": 150,
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "audio": "none",
+      "faststart": true,
+      "container": "mp4",
+      "color": {
+        "primaries": "bt709",
+        "transfer": "bt709",
+        "space": "bt709",
+        "range": "tv"
+      },
+      "source": {
+        "file": "2926246706/1月31日.mp4",
+        "in_s": 0.6,
+        "out_s": 5.6,
+        "seek": "input -ss 0.60（accurate seek，帧级对齐已用源帧 18 验证）",
+        "source_fps": 30,
+        "frames": 150,
+        "grading": "eq=contrast=1.06:saturation=0.94",
+        "sha256": "2063f8c90e275158fcf4c747b351455c215352fb60e87c478dfe9696ef42b41e",
+        "note": "镜头从机械细节拉开到 MOSS 红色主眼；无裁切/无平移；红眼几何中心 (37.61%,53.86%)@1920x1080（n=98-149 恒定）；红眼首次点亮 clip 3.267s"
+      },
+      "loop": null,
+      "generation": "ffmpeg -ss 0.60 -i \"2926246706/1月31日.mp4\" -t 5.00 -vf \"fps=30,scale=1920:1080:flags=lanczos,eq=contrast=1.06:saturation=0.94,setsar=1,format=yuv420p\" -frames:v 150 -an -c:v libx264 -preset slow -crf 24 -profile:v high -pix_fmt yuv420p -color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart -y lib/assets/moss/moss-cinema-1080.mp4"
+    },
+    {
+      "file": "moss/moss-cinema-720.mp4",
+      "role": "splash-act2-standard",
+      "title": "MOSS 苏醒全屏实拍 720p（standard 画质档）",
+      "bytes": 418771,
+      "limit_bytes": 2726297,
+      "sha256": "f6d34426bdcd9ae6e99fd10edabb7ff0ef0edb2125d38b0c5296d5dcadec76b7",
+      "dimensions": "1280x720",
+      "duration": 5,
+      "fps": 30,
+      "frames": 150,
+      "profile": "High",
+      "pix_fmt": "yuv420p",
+      "audio": "none",
+      "faststart": true,
+      "container": "mp4",
+      "color": {
+        "primaries": "bt709",
+        "transfer": "bt709",
+        "space": "bt709",
+        "range": "tv"
+      },
+      "source": {
+        "file": "2926246706/1月31日.mp4",
+        "in_s": 0.6,
+        "out_s": 5.6,
+        "seek": "input -ss 0.60（accurate seek）",
+        "source_fps": 30,
+        "frames": 150,
+        "grading": "eq=contrast=1.06:saturation=0.94",
+        "sha256": "2063f8c90e275158fcf4c747b351455c215352fb60e87c478dfe9696ef42b41e"
+      },
+      "loop": null,
+      "generation": "ffmpeg -ss 0.60 -i \"2926246706/1月31日.mp4\" -t 5.00 -vf \"fps=30,scale=1280:720:flags=lanczos,eq=contrast=1.06:saturation=0.94,setsar=1,format=yuv420p\" -frames:v 150 -an -c:v libx264 -preset slow -crf 24 -profile:v high -pix_fmt yuv420p -color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart -y lib/assets/moss/moss-cinema-720.mp4"
+    },
+    {
+      "file": "moss/moss-cinema-poster.webp",
+      "role": "splash-act2-poster",
+      "title": "MOSS 苏醒海报（moss-cinema 第 0 帧，启动动画第二幕淡入底）",
+      "bytes": 24176,
+      "limit_bytes": 204800,
+      "sha256": "eed03e869a30571fe4ed5f2c7f1dca673c8f9ec0208e62d07eca6140fa66fa5d",
+      "dimensions": "1920x1080",
+      "source": {
+        "file": "lib/assets/moss/moss-cinema-1080.mp4",
+        "frame": "first (n=0)",
+        "note": "poster↔帧0 SSIM 0.99559；该帧红眼为暗态（符合「镜头拉开→红眼出现」）"
+      },
+      "loop": null,
+      "generation": "ffmpeg -i lib/assets/moss/moss-cinema-1080.mp4 -vf \"select=eq(n\\,0)\" -frames:v 1 -y _work/assets/v02/frames/moss_1080_frame0.png && python -c \"from PIL import Image; Image.open('_work/assets/v02/frames/moss_1080_frame0.png').convert('RGB').save('lib/assets/moss/moss-cinema-poster.webp','WEBP',quality=80,method=6)\""
+    },
+    {
+      "file": "audio/moss-arm-sfx.m4a",
+      "role": "moss-arm-sfx",
+      "title": "MOSS 机械臂实录音效（用户自制；幕 II 3.90–8.30 与机械臂运动逐帧对齐）",
+      "bytes": 72507,
+      "limit_bytes": 262144,
+      "sha256": "c3c0374b8b5881ae676309241455c494313c4eae63773de55f14a3e2030e561c",
+      "duration": 4.4,
+      "sampleRate": 48000,
+      "channels": 2,
+      "codec": {
+        "name": "aac",
+        "profile": "LC",
+        "bit_rate": "128229"
+      },
+      "container": "mp4/m4a",
+      "audio": "stereo",
+      "source": {
+        "file": "带音效moss机器人.mp4",
+        "stream": "audio:0 PCM s16le 48k stereo",
+        "user_slice_s": [
+          0.6,
+          5
+        ],
+        "abs_slice_s": [
+          3.9,
+          8.3
+        ],
+        "frame_match": {
+          "frame_offset": 18,
+          "offset_s": 0.6,
+          "metric": "mean absolute error on 192x108 grey",
+          "best_mae": 4.43,
+          "second_best_mae": 5.15,
+          "note": "moss[i] ≈ user[i+18]；用户音轨 [0.6,5.0] ↔ moss-cinema 本地 [0,4.40] ↔ 启动动画绝对 [3.90,8.30]"
+        },
+        "note": "用户 2026-11-09 自制音效；仅本机自用，不二次分发。"
+      },
+      "processing": {
+        "fadeInSec": 0.02,
+        "fadeOutSec": 0.05,
+        "fadeCurve": "cosine",
+        "peakGainDbApplied": -0.682,
+        "loudnessNormalization": "none（保持用户原始动态，仅峰值保护）",
+        "decodedSamplePeakDbfs": -1.884,
+        "integratedLufs": -16.7
+      },
+      "generation": "ffmpeg -ss 0.6 -to 5.0 -i 带音效moss机器人.mp4 -vn -af afade=t=in:d=0.02,afade=t=out:st=4.35:d=0.05,volume=-0.682dB -c:a aac -b:a 128k -ar 48000 -ac 2 -movflags +faststart lib/assets/audio/moss-arm-sfx.m4a（具体以 _work/v05/audio/build_asset.py 为准）",
+      "notes_v05": "v0.5 反馈 3：替换 v0.4 程序化 MOSS 关节音效；由 splash.js buildAudioGraph(opts.armBuffer) 在 3.90 起播，解码失败回退合成层。"
+    }
+  ]
+}

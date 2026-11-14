@@ -1,0 +1,26 @@
+# ---- 本机构建 / 验收工作区（不发布） ----
+_work/
+_probe/
+_ref/
+_tools/
+dist/
+*.log
+_重启接续.md
+
+# ---- 原始素材目录（Wallpaper Engine 工坊源文件，插件使用转码后的 lib/assets/**） ----
+/2926246706/
+/2940368322/
+/2949159595/
+/2992034258/
+带音效moss机器人.mp4
+
+# ---- 本机交付产物（由 GitHub Release 附件提供） ----
+releases/*.tgz
+releases/*.zip
+*.zip
+*.zip.sha256
+
+# ---- 依赖与系统垃圾 ----
+node_modules/
+.DS_Store
+Thumbs.db
